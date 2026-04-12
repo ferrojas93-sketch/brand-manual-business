@@ -23,8 +23,8 @@ const anatomia = [
     n: "02",
     t: "Paleta cromática",
     d: "Colores primarios, secundarios, ratios de uso, códigos Pantone, CMYK, RGB y HEX.",
-    img: "/portfolio/anfisbena/spread-05.jpg",
-    alt: "Paleta cromática — spread del manual Anfisbena con sistema de color aplicado",
+    img: "/portfolio/tramarca/spread-05.jpg",
+    alt: "Paleta cromática — spread del manual Tramarca con sistema de color aplicado",
   },
   {
     n: "03",
@@ -37,8 +37,8 @@ const anatomia = [
     n: "04",
     t: "Grid y composición",
     d: "Retícula editorial, márgenes, columnas y reglas de composición para cualquier formato.",
-    img: "/portfolio/matraz-innova/spread-07.jpg",
-    alt: "Grid y composición — spread del manual Matraz Innova con retícula editorial",
+    img: "/portfolio/tramarca/spread-07.jpg",
+    alt: "Grid y composición — spread del manual Tramarca con retícula editorial",
   },
   {
     n: "05",
@@ -51,22 +51,22 @@ const anatomia = [
     n: "06",
     t: "Aplicaciones",
     d: "Papelería, firma de email, redes sociales, presentaciones. Marca operando en vida real.",
-    img: "/portfolio/claramel/spread-08.jpg",
-    alt: "Aplicaciones — spread del manual Claramel con papelería y aplicaciones digitales",
+    img: "/portfolio/tramarca/spread-08.jpg",
+    alt: "Aplicaciones — spread del manual Tramarca con papelería y aplicaciones digitales",
   },
   {
     n: "07",
     t: "Guidelines de uso",
     d: "Qué se puede y qué no. Reglas explícitas para que nadie rompa el sistema por inercia.",
-    img: "/portfolio/anfisbena/spread-10.jpg",
-    alt: "Guidelines de uso — spread del manual Anfisbena con normas de aplicación",
+    img: "/portfolio/tramarca/spread-10.jpg",
+    alt: "Guidelines de uso — spread del manual Tramarca con normas de aplicación",
   },
   {
     n: "08",
     t: "Plantillas editables",
     d: "Figma editable + PDF final + assets sueltos. Entregamos el sistema, no solo la foto.",
-    img: "/portfolio/matraz-innova/spread-12.jpg",
-    alt: "Plantillas editables — spread del manual Matraz Innova mostrando plantillas listas para usar",
+    img: "/portfolio/tramarca/spread-12.jpg",
+    alt: "Plantillas editables — spread del manual Tramarca mostrando plantillas listas para usar",
   },
 ];
 
@@ -347,6 +347,27 @@ export default function HomePage() {
             Tier Esencial: capítulos 01-03 + aplicaciones básicas · Profesional: 01-07 · Premium:
             01-08 extendido + formación al equipo.
           </p>
+
+          <div className="mt-12 flex flex-col md:flex-row md:items-center gap-5 p-6 md:p-8 bg-negro text-papel">
+            <div className="flex-1">
+              <p className="font-mono text-[10px] uppercase tracking-widest text-lacre">
+                Mira el nuestro
+              </p>
+              <p className="mt-2 text-lg md:text-xl font-black tracking-tight">
+                Descarga el manual de marca de Tramarca completo.
+              </p>
+              <p className="mt-2 text-sm text-ceniza">
+                34 páginas, PDF A4 landscape, 29 MB. Lo que entregamos, enseñado en carne propia.
+              </p>
+            </div>
+            <a
+              href="/manual-tramarca.pdf"
+              download
+              className="shrink-0 inline-flex items-center gap-2 bg-lacre text-papel px-5 py-3 font-mono text-xs uppercase tracking-widest hover:bg-lacre-hover transition-colors"
+            >
+              Descargar PDF →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -569,8 +590,8 @@ export default function HomePage() {
               return (
                 <div
                   key={i}
-                  className={`h-3 md:h-4 flex-1 max-w-[160px] transition-colors ${
-                    taken ? "bg-lacre" : "bg-papel/15 border border-papel/20"
+                  className={`h-4 md:h-5 flex-1 max-w-[160px] transition-colors ${
+                    taken ? "bg-lacre" : "bg-papel/60 border border-papel"
                   }`}
                   aria-label={taken ? "Plaza ocupada" : "Plaza disponible"}
                 />
