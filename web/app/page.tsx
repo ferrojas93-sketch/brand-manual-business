@@ -521,7 +521,7 @@ export default function HomePage() {
           <div className="mt-16 max-w-3xl">
             <p className="text-base text-negro/80">
               Todos los tiers incluyen brief inicial, kickoff por videollamada y entrega en
-              PDF + Figma. Lo que no incluyen, lo decimos abajo. <strong>Punto.</strong>
+              PDF + Figma. Lo que no incluyen, lo decimos abajo.
             </p>
             <Link
               href="/precios"

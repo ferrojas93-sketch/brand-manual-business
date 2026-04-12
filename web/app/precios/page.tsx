@@ -80,7 +80,7 @@ export default function PreciosPage() {
               Una agencia tradicional española te pide entre 5.000€ y 50.000€ con custom pricing. Un freelance, entre 800€ y 1.500€ sin plazo garantizado. Canva, 12€/mes pero lo haces tú. Tramarca ocupa el hueco: productizado, precio público, plazo publicado, IVA incluido.
             </p>
             <p>
-              Lo que ves aquí es el precio final. No hay discovery de pago, ni propuesta a medida, ni sorpresas en la factura. <strong>Punto.</strong>
+              Lo que ves aquí es el precio final. Sin discovery de pago, sin propuesta a medida, sin sorpresas en la factura.
             </p>
           </div>
         </div>
@@ -219,7 +219,7 @@ export default function PreciosPage() {
             </ul>
             <p className="mt-8 text-base text-piedra italic">
               No somos una agencia full-service. Somos un estudio que hace un producto
-              concreto muy bien. Punto.
+              concreto muy bien.
             </p>
           </div>
         </div>
@@ -277,7 +277,7 @@ export default function PreciosPage() {
             </ButtonLink>
           </div>
           <p className="mt-6 font-mono text-xs text-piedra">
-            Respondemos en menos de 24 horas laborables. Sí o no. Punto.
+            Respondemos en menos de 24 horas laborables. Sí o no.
           </p>
         </div>
       </section>
