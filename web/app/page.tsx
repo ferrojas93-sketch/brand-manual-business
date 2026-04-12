@@ -211,64 +211,50 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Right column — dark panel with spread (manual's 50/50 split pattern) */}
+            {/* Right column — editorial collage of 3 images (what we are) */}
             <div className="lg:col-span-5 relative">
-              <div className="relative bg-negro text-papel p-6 md:p-10 min-h-[520px] lg:min-h-[720px]">
-                {/* Mini masthead */}
-                <div className="flex items-center justify-between font-mono text-[9px] uppercase tracking-[0.3em] text-piedra border-b border-papel/15 pb-3">
-                  <span><span className="text-lacre">2</span> · OBJETO</span>
-                  <span>02 / 34</span>
-                </div>
-
-                {/* Spread */}
-                <div className="mt-8 relative aspect-[1756/1242] overflow-hidden border border-papel/10 shadow-[0_40px_80px_-20px_rgba(0,0,0,0.5)]">
+              <div className="relative grid grid-cols-6 grid-rows-6 gap-3 md:gap-4 min-h-[520px] lg:min-h-[720px]">
+                {/* Image 1 — manual spread (retícula + M) */}
+                <figure className="col-span-6 row-span-4 relative overflow-hidden bg-arena">
                   <Image
-                    src="/portfolio/tramarca-cover.jpg"
-                    alt="Manual propio Tramarca — portada 34 páginas, Satoshi Black sobre Papel"
+                    src="/hero/01-manual-spread.jpg"
+                    alt="Manual de marca abierto — retícula modular y construcción tipográfica"
                     fill
                     sizes="(min-width: 1024px) 42vw, 100vw"
                     className="object-cover"
                     priority
                   />
-                </div>
-
-                {/* Caption block — manual caption style */}
-                <div className="mt-6 flex items-start gap-4">
-                  <span className="mt-1 block w-[2px] h-14 bg-lacre shrink-0" />
-                  <div>
-                    <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
-                      Prueba radical
+                  <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/70 via-negro/20 to-transparent p-4 md:p-5">
+                    <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">
+                      Fig. 01
                     </p>
-                    <p className="mt-2 text-lg md:text-xl text-papel font-black leading-tight">
-                      Este es nuestro manual<span className="text-lacre">.</span>
+                    <p className="mt-1 text-papel font-black text-sm md:text-base leading-tight">
+                      Sistema antes que estilo<span className="text-lacre">.</span>
                     </p>
-                    <p className="mt-1 text-sm text-ceniza leading-snug">
-                      34 páginas · 29 MB · PDF gratis
-                    </p>
-                  </div>
-                </div>
+                  </figcaption>
+                </figure>
 
-                <a
-                  href="/manual-tramarca.pdf"
-                  download
-                  className="mt-6 inline-flex items-center gap-2 bg-lacre hover:bg-lacre-hover text-papel px-5 py-3 font-mono text-xs uppercase tracking-[0.25em] transition-colors"
-                >
-                  Descargar PDF →
-                </a>
+                {/* Image 2 — wax seal (lacre literal) */}
+                <figure className="col-span-3 row-span-2 relative overflow-hidden bg-arena">
+                  <Image
+                    src="/hero/02-wax-seal.jpg"
+                    alt="Sello de lacre imprimiéndose sobre papel crema"
+                    fill
+                    sizes="(min-width: 1024px) 21vw, 50vw"
+                    className="object-cover"
+                  />
+                </figure>
 
-                {/* Watermark 02 inside dark block */}
-                <span
-                  aria-hidden
-                  className="watermark-number text-papel/[0.05] select-none"
-                  style={{
-                    fontSize: "clamp(12rem, 24vw, 22rem)",
-                    bottom: "-2rem",
-                    right: "-1.5rem",
-                    zIndex: 0,
-                  }}
-                >
-                  02
-                </span>
+                {/* Image 3 — desk flat-lay */}
+                <figure className="col-span-3 row-span-2 relative overflow-hidden bg-arena">
+                  <Image
+                    src="/hero/03-desk-flatlay.jpg"
+                    alt="Mesa de estudio editorial con pruebas tipográficas y muestras de color"
+                    fill
+                    sizes="(min-width: 1024px) 21vw, 50vw"
+                    className="object-cover"
+                  />
+                </figure>
               </div>
             </div>
           </div>
