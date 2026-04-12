@@ -52,6 +52,7 @@ Skills invocables con `/nombre`:
 | `/competitive-intel` | Análisis de competidores: pricing, positioning, SEO, gaps de mercado |
 | `/email-sequence` | Secuencias de email marketing: welcome, nurturing, post-propuesta, newsletter |
 | `/brand-manual-proposal` | Generar propuestas PDF profesionales para clientes de brand manuals |
+| `/brand-manual-build` | Construir el manual de marca completo (30-50pp) — Python → HTML → PDF A4 landscape con paleta CSS por Positioning Axis |
 | `/content-creator` | Contenido SEO-optimizado, brand voice analysis, social media content |
 
 ### Utilidades
@@ -69,22 +70,62 @@ Skills invocables con `/nombre`:
 ### Flujo recomendado para negocio/marketing
 `/competitive-intel` → `/office-hours` (positioning) → `/landing-page` → `/seo-audit` → `/email-sequence` → `/ship`
 
-### Flujo para construir una landing page completa (orquestación)
-1. `creative-director` → produce: Brand Tokens (colores, tipografía, voz)
-2. `seo-strategist` → produce: SEO Brief (keywords, intent, meta tags)
-3. `conversion-copywriter` → consume Brand Voice + SEO Brief → produce: Copy Deck
-4. `/landing-page` → consume Brand Tokens + SEO Brief + Copy Deck → produce: código Next.js
-5. `/seo-audit` → audita la página construida → produce: fixes
-6. `/qa` → verifica en navegador real
+### Flujo adaptativo para construir una web / landing page
+**Principio**: cada cliente es distinto (pharma, AI, editorial, luxury, SaaS…). El flujo se adapta según el **Positioning Axis** que decide el `creative-director` en el paso 1.
+
+#### Estrategia (común a todos)
+1. `creative-director` → produce: Brand Tokens (colores, tipografía, voz) **+ Positioning Axis**:
+   - `sistemático` — preciso, sobrio, corporate/tech/pharma (Linear, Vercel, Pentagram)
+   - `bold` — distintivo, editorial, lifestyle/luxury/creative (Stripe Press, Aesop)
+   - `híbrido` — sistema sobrio con momentos bold (hero, signature sections)
+2. `seo-strategist` → SEO Brief (keywords, intent, meta tags)
+3. `conversion-copywriter` → Copy Deck (consume Brand Voice + SEO Brief)
+4. `plan-design-review` → valida el plan con ojo de diseñador **antes de construir**
+
+#### Diseño (rama según Positioning Axis)
+5a. Si `sistemático` → `ui-ux-pro-max` (decisiones sistemáticas: spacing, hierarchy, density, stack Next.js+Tailwind/shadcn)
+5b. Si `bold` → `frontend-design` (UI distintiva, memorable, experimental)
+5c. Si `híbrido` → `ui-ux-pro-max` para sistema + `frontend-design` puntualmente en hero/signature sections
+
+#### Construcción y pulido (común)
+6. `/landing-page` → construye Next.js + Tailwind (consume Brand Tokens + SEO Brief + Copy Deck + output del paso 5)
+7. `emil-design-eng` → pulido universal: microinteracciones, transiciones, detalles que elevan percepción premium
+8. `ui-ux-designer` + `playwright` → crítica research-backed de la interfaz real (accessibility, hierarchy, contraste)
+9. `design-review` → caza inconsistencias visuales, spacing, jerarquía (distinto de `/qa`, que es funcional)
+10. `/visual-qa` → **mandatorio** (por memoria `feedback_visual_qa_always`)
+11. `/seo-audit` → SEO técnico + schema copy-paste
+12. `/qa` → funcional en navegador real
+13. `/ship` → `/canary`
+
+**Regla de oro**: el paso 1 determina 5a/5b/5c. Si `creative-director` no entrega Positioning Axis explícito, es un bloqueo — no continuar hasta tenerlo. Adaptar > hardcodear.
 
 ### Flujo para nueva propuesta de cliente
 1. Recoger datos del lead (formulario web → Supabase, o manual)
-2. `/brand-manual-proposal` → genera PDF personalizado
-3. `/email-sequence` Type 2 → envía propuesta + follow-ups automáticos
+2. `google_calendar` MCP → agendar discovery call (15-30 min)
+3. `/brand-manual-proposal` → genera PDF personalizado
+4. `gmail` MCP → crear draft de envío de propuesta (personalizar con contexto de la call)
+5. `stripe` plugin → generar payment link ligado a `Proposal.number` (tier + precio)
+6. `/email-sequence` Type 2 → envía propuesta + payment link + follow-ups automáticos
 
 ### Flujo post-venta
-1. `/email-sequence` Type 3 → onboarding (brief, updates, entrega)
-2. `/email-sequence` Type 4 → nurture (testimonial día +14, referral +90, upsell +180)
+1. `google_calendar` MCP → agendar kickoff + review 1 + review 2 en una tanda
+2. `/email-sequence` Type 3 → onboarding (brief, updates, entrega)
+3. `/email-sequence` Type 4 → nurture (testimonial día +14, referral +90, upsell +180)
+
+### MCPs de negocio (prioritarios en este proyecto)
+- **`stripe`** (plugin oficial): crear products/prices/payment links por Proposal. Una línea por tier (esencial/profesional/premium) + custom por proyecto grande.
+- **`gmail`**: drafts personalizados tras discovery call, buscar hilos con cliente, leer respuestas para actualizar `Lead.stage` en Supabase.
+- **`google_calendar`**: discovery calls, kickoffs, reviews. Evita el bottleneck de ida-y-vuelta de horarios.
+- **`supabase`** (ya conectado): CRM canónico. Lee/escribe Lead/Brief/Proposal/Project directamente.
+- **`playwright`**: QA de landing + screenshots + render de PDFs de brand manuals.
+
+### Workflow integrado Supabase + Stripe + Gmail
+Cuando una Proposal pasa a `status: accepted`:
+1. Leer Proposal desde Supabase (`claude_ai_Supabase__execute_sql`)
+2. Crear payment link en Stripe con el precio del tier
+3. Actualizar `Proposal.payment_link_url` en Supabase
+4. Gmail: draft personalizado con el link + kickoff call link de Calendar
+5. `/email-sequence` trigger automático `accepted → onboarding`
 
 ## Responsabilidades (RACI simplificado)
 

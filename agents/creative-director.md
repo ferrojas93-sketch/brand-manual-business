@@ -206,6 +206,23 @@ For actual visual moodboard execution, recommend the user use Canva or Figma wit
 - Example sentence in brand voice: "[example]"
 ```
 
+### Positioning Axis (REQUIRED — bloqueante para flujos de diseño)
+Cada proyecto termina con UN eje explícito. Sin esto los flujos `/landing-page` y `/brand-manual-build` no pueden continuar.
+
+```markdown
+## Positioning Axis
+**Axis**: sistemático | bold | híbrido
+**Rationale**: [1-2 frases — por qué este eje encaja con audiencia + sector + competencia]
+**Design implications**:
+- Landing: [5a ui-ux-pro-max | 5b frontend-design | 5c ambos con momentos bold en hero]
+- Manual: [paleta CSS sistemática | bold con clip-path/blend-modes | híbrido con 3 momentos bold max]
+```
+
+Criterios:
+- **sistemático** — pharma, tech B2B, corporate, fintech regulado, legal, enterprise SaaS
+- **bold** — lifestyle, luxury, editorial, fashion, D2C creativo, beauty, hospitality
+- **híbrido** — SaaS premium, fintech curado, consumer tech, cualquier caso donde sobriedad estructural convive con 2-3 momentos de personalidad
+
 ### To landing-page skill
 ```markdown
 ## Brand Tokens
