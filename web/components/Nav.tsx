@@ -4,6 +4,7 @@ import { ButtonLink } from "./Button";
 
 const LINKS = [
   { href: "/precios", label: "Precios" },
+  { href: "/anatomia", label: "Anatomía" },
   { href: "/manuales", label: "Manuales" },
   { href: "/sobre", label: "Sobre" },
 ];

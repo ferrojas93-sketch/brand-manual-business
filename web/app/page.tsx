@@ -4,6 +4,8 @@ import { ButtonLink } from "@/components/Button";
 import { PricingCards } from "@/components/PricingCards";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { JsonLd } from "@/components/JsonLd";
+import { SpreadFrame } from "@/components/SpreadFrame";
+import { Reveal } from "@/components/Reveal";
 import { MANUALES } from "@/lib/manuales";
 import { FOUNDING_SLOTS_REMAINING, FOUNDING_SLOTS_TOTAL } from "@/lib/tiers";
 import { jsonLdGraph, serviceSchema, faqSchema } from "@/lib/schema";
@@ -112,36 +114,48 @@ const homeFaqs = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero — canonical voice, dark, manual-first */}
-      <section className="relative section-dark border-b border-papel/10 overflow-hidden">
+      {/* Hero — magazine cover, single dominant spread, editorial anchor */}
+      <section className="relative section-dark noise border-b border-papel/10 overflow-hidden">
         <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          className="absolute inset-0 opacity-[0.06] pointer-events-none"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 20% 10%, var(--color-lacre) 0, transparent 40%)",
+              "radial-gradient(ellipse 60% 40% at 85% 20%, var(--color-lacre) 0, transparent 60%), radial-gradient(ellipse 40% 30% at 10% 90%, var(--color-lacre) 0, transparent 60%)",
           }}
         />
-        <div className="relative mx-auto max-w-[1600px] px-6 pt-12 md:pt-16 pb-0">
-          <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end">
+        {/* Issue masthead — top bar */}
+        <div className="relative mx-auto max-w-[1600px] px-6 pt-8 md:pt-10 flex items-center justify-between text-papel/60 font-mono text-[10px] uppercase tracking-[0.3em] border-b border-papel/10 pb-4">
+          <span>Nº 01 · Manual propio</span>
+          <span className="hidden md:inline">Madrid · MMXXVI</span>
+          <span>Satoshi / Lacre / Papel</span>
+        </div>
+
+        <div className="relative mx-auto max-w-[1600px] px-6 pt-14 md:pt-20 pb-0">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             {/* Left: typography — canonical voice */}
             <div className="lg:col-span-7 pb-16 lg:pb-28">
-              <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] text-lacre">
+              <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.35em] text-lacre">
                 Sistemas de marca · Documentados · Por escrito
               </p>
-              <h1 className="mt-10 text-[14vw] sm:text-[12vw] lg:text-[9.5vw] xl:text-[9rem] font-black tracking-[-0.05em] leading-[0.85] text-papel">
+              <h1 className="mt-10 font-display text-display-xl font-black tracking-[-0.05em] leading-[0.85] text-papel">
                 ¿Qué hay tras
                 <br />
                 tu marca<span className="text-lacre">?</span>
               </h1>
-              <p className="mt-10 max-w-xl text-xl md:text-2xl text-ceniza leading-[1.4]">
+              <p className="mt-10 max-w-xl text-lede text-ceniza leading-[1.45] font-display italic">
                 Lo que no se documenta, se improvisa. Lo que se improvisa, no es marca.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <ButtonLink href="/contacto" variant="primary" size="lg">
                   Hablemos de tu marca →
                 </ButtonLink>
-                <ButtonLink href="/precios" variant="ghost" size="lg" className="text-papel hover:bg-papel/10">
-                  Ver precios
+                <ButtonLink
+                  href="/anatomia"
+                  variant="ghost"
+                  size="lg"
+                  className="text-papel/70 hover:text-papel hover:bg-papel/5"
+                >
+                  Qué hay dentro →
                 </ButtonLink>
               </div>
               <div className="mt-12 grid grid-cols-3 gap-4 max-w-md border-t border-papel/15 pt-6">
@@ -149,19 +163,19 @@ export default function HomePage() {
                   <p className="font-mono text-[10px] uppercase tracking-widest text-piedra">
                     Esencial
                   </p>
-                  <p className="mt-1 text-2xl font-black text-papel">490€</p>
+                  <p className="mt-1 text-2xl font-black text-papel font-display">490€</p>
                 </div>
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-widest text-lacre">
                     Profesional
                   </p>
-                  <p className="mt-1 text-2xl font-black text-papel">990€</p>
+                  <p className="mt-1 text-2xl font-black text-papel font-display">990€</p>
                 </div>
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-widest text-piedra">
                     Premium
                   </p>
-                  <p className="mt-1 text-2xl font-black text-papel">1.990€</p>
+                  <p className="mt-1 text-2xl font-black text-papel font-display">1.990€</p>
                 </div>
               </div>
               <p className="mt-4 font-mono text-[10px] uppercase tracking-widest text-piedra">
@@ -169,56 +183,38 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Right: visuals — single dominant on mobile, 3-stack on desktop */}
+            {/* Right: single dominant spread with paspartú + meta */}
             <div className="lg:col-span-5 relative w-full">
-              {/* Mobile: single cover with lacre tag */}
-              <div className="lg:hidden relative mt-4 mb-10">
-                <div className="relative aspect-[1756/1242] shadow-2xl border border-negro/10 rotate-[-1deg]">
-                  <Image
-                    src="/portfolio/tramarca-cover.jpg"
-                    alt="Portada del manual propio Tramarca — 34 páginas"
-                    fill
-                    sizes="100vw"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-                <div className="absolute -top-3 right-4 bg-lacre text-papel font-mono text-[10px] uppercase tracking-widest px-3 py-2 rotate-[-4deg] shadow-xl">
-                  IVA incluido
-                </div>
+              {/* Giant issue number behind spread */}
+              <div
+                aria-hidden
+                className="hidden lg:block absolute -top-8 -right-6 font-display font-black leading-none text-papel/[0.04] select-none pointer-events-none"
+                style={{ fontSize: "clamp(12rem, 28vw, 22rem)" }}
+              >
+                01
               </div>
-              {/* Desktop: 3-stack */}
-              <div className="hidden lg:block relative h-[85vh] min-h-[600px]">
-                <div className="absolute top-0 right-0 w-[85%] aspect-[1756/1242] rotate-[2deg] shadow-2xl">
-                  <Image
-                    src="/portfolio/tramarca/spread-09.jpg"
-                    alt="Spread 9 del manual Tramarca — sistema tipográfico"
-                    fill
-                    sizes="45vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="absolute top-[20%] left-0 w-[82%] aspect-[1756/1242] -rotate-[3deg] shadow-2xl border border-negro/10">
-                  <Image
-                    src="/portfolio/anfisbena/spread-05.jpg"
-                    alt="Spread del manual Anfisbena — paleta de color"
-                    fill
-                    sizes="45vw"
-                    className="object-cover"
-                  />
-                </div>
-                <div className="absolute bottom-0 right-[5%] w-[90%] aspect-[1756/1242] rotate-[-1deg] shadow-2xl border-2 border-negro">
-                  <Image
-                    src="/portfolio/tramarca-cover.jpg"
-                    alt="Portada del manual propio Tramarca — 34 páginas, Lacre sobre Papel"
-                    fill
-                    sizes="50vw"
-                    className="object-cover"
-                    priority
-                  />
-                </div>
-                <div className="absolute top-[6%] left-[2%] bg-lacre text-papel font-mono text-[10px] uppercase tracking-widest px-3 py-2 rotate-[-6deg] shadow-xl">
-                  IVA incluido
+
+              <div className="relative mt-4 lg:mt-0">
+                <SpreadFrame
+                  src="/portfolio/tramarca-cover.jpg"
+                  alt="Portada del manual propio Tramarca — 34 páginas, Lacre sobre Papel crema"
+                  paspartu
+                  tag="En revisión"
+                  priority
+                  rotate="-1.5deg"
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                />
+                {/* Meta caption below spread */}
+                <div className="mt-6 pl-2 border-l-2 border-lacre">
+                  <p className="font-display text-xl md:text-2xl text-papel leading-tight">
+                    adn de marca
+                  </p>
+                  <p className="mt-1 text-sm text-ceniza italic font-display">
+                    &ldquo;Desde el folio, no desde la tela.&rdquo;
+                  </p>
+                  <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
+                    34 páginas · Satoshi Black · Lacre sobre Papel
+                  </p>
                 </div>
               </div>
             </div>
@@ -368,6 +364,75 @@ export default function HomePage() {
               Descargar PDF →
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Anatomía completa — tease → link a /anatomia */}
+      <section className="section-dark noise relative overflow-hidden">
+        <div
+          className="absolute inset-0 opacity-[0.05] pointer-events-none"
+          style={{
+            backgroundImage:
+              "radial-gradient(ellipse 50% 40% at 20% 80%, var(--color-lacre) 0, transparent 60%)",
+          }}
+        />
+        <div className="relative mx-auto max-w-[1500px] px-6 py-24 md:py-32">
+          <Reveal>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
+              <div className="max-w-3xl">
+                <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+                  Anatomía completa · Nº 02
+                </p>
+                <h2 className="mt-6 font-display text-display-lg font-black tracking-[-0.03em] leading-[0.95] text-papel">
+                  40 componentes.
+                  <br />
+                  <span className="text-ceniza">Diez capítulos. Cero humo.</span>
+                </h2>
+              </div>
+              <p className="max-w-md text-lede text-ceniza leading-[1.5] font-display italic">
+                Un manual en máximos no es más páginas. Son más reglas, más aplicadas,
+                con más consecuencia.
+              </p>
+            </div>
+          </Reveal>
+
+          {/* Grid preview: 10 chapters as tiles */}
+          <Reveal>
+            <div className="mt-14 grid grid-cols-2 md:grid-cols-5 gap-px bg-papel/10 border border-papel/10">
+              {[
+                { n: "01", t: "Fundamentos" },
+                { n: "02", t: "Logo system" },
+                { n: "03", t: "Tipografía" },
+                { n: "04", t: "Color" },
+                { n: "05", t: "Iconografía" },
+                { n: "06", t: "Fotografía" },
+                { n: "07", t: "Voz y tono" },
+                { n: "08", t: "Aplicaciones" },
+                { n: "09", t: "Arquitectura" },
+                { n: "10", t: "Governance" },
+              ].map((c) => (
+                <div key={c.n} className="bg-negro p-5 md:p-6 min-h-[120px] flex flex-col justify-between">
+                  <span className="font-mono text-[10px] uppercase tracking-widest text-lacre">
+                    {c.n}
+                  </span>
+                  <span className="font-display text-lg md:text-xl text-papel font-black tracking-tight leading-tight">
+                    {c.t}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+              <ButtonLink href="/anatomia" variant="primary" size="lg">
+                Ver los 40 componentes →
+              </ButtonLink>
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
+                Incluye comparativa por tier · 3 min de lectura
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
