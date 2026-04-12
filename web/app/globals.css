@@ -15,7 +15,7 @@
   --color-foreground: var(--color-negro);
 
   --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-fraunces), 'Satoshi', Georgia, serif;
+  --font-display: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
 
   --tracking-tight: -0.02em;
@@ -102,8 +102,33 @@ body {
 .animate-accordion-down { animation: accordion-down 250ms ease-out; }
 .animate-accordion-up   { animation: accordion-up 200ms ease-in; }
 
-/* Utility: display serif for editorial moments */
-.font-display { font-family: var(--font-display); font-feature-settings: "ss01","liga","dlig"; }
+/* Utility: display font (Satoshi) — alias so old .font-display usages still work */
+.font-display { font-family: var(--font-display); font-feature-settings: "ss01","ss02"; }
+
+/* Tramarca signature: diagonal Lacre line crossing a section (from manual). */
+.diagonal-lacre {
+  position: relative;
+}
+.diagonal-lacre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(to top right, transparent calc(50% - 1px), var(--color-lacre) calc(50% - 0.5px), var(--color-lacre) calc(50% + 0.5px), transparent calc(50% + 1px));
+  opacity: 0.9;
+  z-index: 1;
+}
+
+/* Tramarca signature: giant watermark chapter number (from manual pages 3,5). */
+.watermark-number {
+  position: absolute;
+  font-family: var(--font-sans);
+  font-weight: 900;
+  line-height: 0.8;
+  letter-spacing: -0.05em;
+  pointer-events: none;
+  user-select: none;
+}
 
 /* Paper noise overlay — subtle grain for editorial feel */
 .noise::before {

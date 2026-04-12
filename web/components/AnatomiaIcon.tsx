@@ -470,6 +470,94 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           ))}
         </svg>
       );
+    // 11 MOVIMIENTO
+    case "11-motion-logo":
+      return (
+        <svg {...common}>
+          <circle cx="32" cy="45" r="10" strokeDasharray="1 3" opacity="0.4" />
+          <circle cx="60" cy="45" r="14" strokeDasharray="2 3" opacity="0.7" />
+          <circle cx="88" cy="45" r="18" fill={lacre} stroke="none" />
+          <path d="M14 45 L102 45" strokeWidth={0.5} strokeDasharray="2 4" opacity="0.5" />
+          <path d="M98 42 L104 45 L98 48" strokeWidth={1} />
+        </svg>
+      );
+    case "11-microinteracciones":
+      return (
+        <svg {...common}>
+          <rect x="22" y="30" width="76" height="30" rx="3" />
+          <circle cx="38" cy="45" r="4" fill={lacre} stroke="none" />
+          <path d="M30 68 Q40 76 50 68" strokeWidth={1.5} />
+          <path d="M48 66 L52 70 L48 70" strokeWidth={1.5} fill="none" />
+          <line x1="60" y1="45" x2="90" y2="45" strokeWidth={1} />
+        </svg>
+      );
+    case "11-video":
+      return (
+        <svg {...common}>
+          <rect x="14" y="20" width="92" height="50" />
+          <path d="M50 32 L70 45 L50 58 Z" fill={lacre} stroke="none" />
+          <line x1="14" y1="74" x2="58" y2="74" strokeWidth={0.8} />
+          <line x1="14" y1="78" x2="40" y2="78" strokeWidth={0.8} />
+          <rect x="14" y="20" width="4" height="50" fill={stroke} stroke="none" opacity="0.4" />
+          <rect x="102" y="20" width="4" height="50" fill={stroke} stroke="none" opacity="0.4" />
+        </svg>
+      );
+    case "11-audio":
+      return (
+        <svg {...common}>
+          {[20, 32, 44, 56, 68, 80, 92, 104].map((x, i) => {
+            const heights = [18, 34, 52, 26, 44, 62, 30, 20];
+            const h = heights[i];
+            const y = 45 - h / 2;
+            return <rect key={x} x={x - 2} y={y} width="3" height={h} fill={i === 5 ? lacre : stroke} stroke="none" />;
+          })}
+        </svg>
+      );
+
+    // 12 EXTENSIONES
+    case "12-accesibilidad":
+      return (
+        <svg {...common}>
+          <circle cx="60" cy="45" r="30" />
+          <circle cx="60" cy="24" r="4" fill={stroke} stroke="none" />
+          <path d="M44 36 L76 36 M48 36 L52 70 L56 56 L64 56 L68 70 L72 36" />
+          <path d="M82 45 A 22 22 0 0 1 82 55" stroke={lacre} strokeWidth={1.8} />
+          <path d="M90 40 A 30 30 0 0 1 90 60" stroke={lacre} strokeWidth={1.8} />
+        </svg>
+      );
+    case "12-digital-ui":
+      return (
+        <svg {...common}>
+          <rect x="10" y="14" width="100" height="62" rx="2" />
+          <line x1="10" y1="26" x2="110" y2="26" />
+          <circle cx="16" cy="20" r="1.5" fill={stroke} stroke="none" />
+          <circle cx="22" cy="20" r="1.5" fill={stroke} stroke="none" />
+          <rect x="16" y="32" width="36" height="38" />
+          <rect x="56" y="32" width="50" height="18" fill={lacre} stroke="none" />
+          <rect x="56" y="54" width="50" height="16" />
+          <line x1="60" y1="60" x2="96" y2="60" strokeWidth={0.8} />
+          <line x1="60" y1="64" x2="88" y2="64" strokeWidth={0.8} />
+        </svg>
+      );
+    case "12-territorial":
+      return (
+        <svg {...common}>
+          <circle cx="60" cy="45" r="30" />
+          <ellipse cx="60" cy="45" rx="30" ry="12" />
+          <ellipse cx="60" cy="45" rx="12" ry="30" />
+          <path d="M30 45 Q42 30 60 30 Q78 30 90 45" />
+          <path d="M30 45 Q42 60 60 60 Q78 60 90 45" />
+          <circle cx="60" cy="45" r="3" fill={lacre} stroke="none" />
+        </svg>
+      );
+    case "12-legal":
+      return (
+        <svg {...common}>
+          <path d="M60 10 L88 22 L88 44 Q 88 68 60 80 Q 32 68 32 44 L32 22 Z" />
+          <text x="60" y="54" fontFamily="Georgia" fontSize="26" fontWeight="900" textAnchor="middle" stroke="none" fill={lacre}>®</text>
+        </svg>
+      );
+
     default:
       return (
         <svg {...common}>

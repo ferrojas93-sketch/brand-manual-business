@@ -125,6 +125,28 @@ export const ANATOMIA: AnatomiaChapter[] = [
       { slug: "10-formacion", t: "Formación del equipo", d: "Sesión de 90 min. Material complementario.", tiers: ["M"] },
     ],
   },
+  {
+    n: "11",
+    title: "Marca en movimiento",
+    kicker: "La marca ya no es solo estática.",
+    items: [
+      { slug: "11-motion-logo", t: "Motion del logo", d: "Entrada, salida, loop. Timing y curvas canónicas.", tiers: ["M"] },
+      { slug: "11-microinteracciones", t: "Microinteracciones", d: "Hover, carga, transición. 150–300ms con easing propio.", tiers: ["M"] },
+      { slug: "11-video", t: "Video y reel", d: "Aspect ratios, cortinillas, subtítulos, lower thirds.", tiers: ["M"] },
+      { slug: "11-audio", t: "Identidad sonora", d: "Logo sonoro, jingle, tono UI. Cuándo suena y cuándo no.", tiers: ["M"] },
+    ],
+  },
+  {
+    n: "12",
+    title: "Extensiones",
+    kicker: "Donde la marca toca el mundo real.",
+    items: [
+      { slug: "12-accesibilidad", t: "Accesibilidad", d: "WCAG AA. Contraste, tipografía legible, alt-text, foco visible.", tiers: ["P", "M"] },
+      { slug: "12-digital-ui", t: "Sistema digital", d: "Tokens, componentes base, estados, dark mode.", tiers: ["M"] },
+      { slug: "12-territorial", t: "Territorial", d: "Adaptación por idioma, mercado y sensibilidad cultural.", tiers: ["M"] },
+      { slug: "12-legal", t: "Legal y marca registrada", d: "TM, registro, usos autorizados, cesiones, derechos de imagen.", tiers: ["M"] },
+    ],
+  },
 ];
 
 export const TIER_LABEL: Record<Tier, string> = {

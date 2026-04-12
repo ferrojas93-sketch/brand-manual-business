@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Fraunces } from "next/font/google";
+import { IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { Nav } from "@/components/Nav";
@@ -18,13 +18,6 @@ const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
-});
-
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
-  subsets: ["latin"],
-  axes: ["opsz", "SOFT"],
-  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -49,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${plexMono.variable} ${fraunces.variable} antialiased`}>
+    <html lang="es" className={`${plexMono.variable} antialiased`}>
       <body className="min-h-screen flex flex-col bg-papel text-negro font-sans">
         <Nav />
         <main className="flex-1">{children}</main>

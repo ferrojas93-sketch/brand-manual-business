@@ -46,8 +46,8 @@ export default function AnatomiaPage() {
           <h1 className="mt-8 font-display text-display-xl font-black tracking-[-0.04em] leading-[0.85] text-papel max-w-5xl">
             Qué hay dentro de un manual<span className="text-lacre">.</span>
           </h1>
-          <p className="mt-10 max-w-2xl text-lede text-ceniza leading-[1.5] font-display italic">
-            Diez capítulos. {total} componentes. Ni uno de adorno.
+          <p className="mt-10 max-w-2xl text-lede text-ceniza leading-[1.5]">
+            Doce capítulos. {total} componentes. Ni uno de adorno<span className="text-lacre">.</span>
           </p>
           <div className="mt-10 grid grid-cols-3 gap-6 max-w-xl border-t border-papel/15 pt-6">
             {TIERS.map((t, i) => (
@@ -84,7 +84,7 @@ export default function AnatomiaPage() {
                   <h2 className="mt-6 font-display text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
                     {chapter.title}
                   </h2>
-                  <p className="mt-5 text-lg text-piedra font-display italic leading-snug max-w-md">
+                  <p className="mt-5 text-lg text-piedra leading-snug max-w-md">
                     {chapter.kicker}
                   </p>
                 </header>
