@@ -476,10 +476,10 @@ export default function HomePage() {
                     {m.testimonial!.quote}
                   </blockquote>
                   <figcaption className="mt-8 pt-6 border-t border-papel/10 flex items-center gap-4">
-                    <div className="relative w-14 h-14 shrink-0 overflow-hidden bg-negro border border-papel/10">
+                    <div className="relative w-14 h-14 shrink-0 overflow-hidden rounded-full bg-negro border border-papel/10">
                       <Image
-                        src={`/portfolio/${m.slug}-cover.jpg`}
-                        alt={`Manual de ${m.name}`}
+                        src={`/ilustraciones/retrato-${m.slug}.jpeg`}
+                        alt={`Retrato de ${m.testimonial!.author}`}
                         fill
                         sizes="56px"
                         className="object-cover"
@@ -654,19 +654,26 @@ export default function HomePage() {
           <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05] max-w-4xl">
             Cómo funciona. Cuatro pasos. Cero sorpresas.
           </h2>
-          <div className="mt-16 grid md:grid-cols-2 gap-x-16 gap-y-14">
+          <div className="mt-16 grid md:grid-cols-2 gap-x-16 gap-y-16">
             {[
-              { n: "01", t: "Brief", d: "Rellenas un cuestionario corto. No pedimos tu historia empresarial ni un moodboard. Preguntamos lo que importa: qué haces, a quién, y qué no funciona de tu marca actual." },
-              { n: "02", t: "Kickoff (día 1)", d: "Videollamada de 30 minutos. Acordamos dirección y firmamos el brief. Aquí arranca el plazo publicado." },
-              { n: "03", t: "Revisiones", d: "Una (Esencial) o dos (Profesional, Premium) revisiones. Cubren cambios acotados. Si quieres reescribir medio manual, lo presupuestamos aparte. Honesto." },
-              { n: "04", t: "Entrega", d: "PDF final + Figma editable + assets sueltos. El día que pone en el plazo. No \"aproximadamente\". El día." },
+              { n: "01", t: "Brief", d: "Rellenas un cuestionario corto. No pedimos tu historia empresarial ni un moodboard. Preguntamos lo que importa: qué haces, a quién, y qué no funciona de tu marca actual.", img: "/ilustraciones/proceso-01-brief.jpeg", alt: "Ilustración editorial de una mano firmando un brief — proceso paso 1" },
+              { n: "02", t: "Kickoff (día 1)", d: "Videollamada de 30 minutos. Acordamos dirección y firmamos el brief. Aquí arranca el plazo publicado.", img: "/ilustraciones/proceso-02-kickoff.jpeg", alt: "Ilustración editorial de kickoff por videollamada — proceso paso 2" },
+              { n: "03", t: "Revisiones", d: "Una (Esencial) o dos (Profesional, Premium) revisiones. Cubren cambios acotados. Si quieres reescribir medio manual, lo presupuestamos aparte. Honesto.", img: "/ilustraciones/proceso-03-produccion.jpeg", alt: "Ilustración editorial de producción y revisión — proceso paso 3" },
+              { n: "04", t: "Entrega", d: "PDF final + Figma editable + assets sueltos. El día que pone en el plazo. No \"aproximadamente\". El día.", img: "/ilustraciones/proceso-04-entrega.jpeg", alt: "Ilustración editorial de entrega del manual — proceso paso 4" },
             ].map((s) => (
               <div key={s.n} className="border-t border-negro/15 pt-6">
-                <div className="flex items-baseline gap-6">
-                  <span className="font-mono text-sm text-lacre">{s.n}</span>
-                  <h3 className="text-2xl md:text-3xl font-black tracking-tight">{s.t}</h3>
+                <div className="flex items-start gap-6">
+                  <div className="relative w-24 h-24 md:w-28 md:h-28 shrink-0 bg-arena overflow-hidden">
+                    <Image src={s.img} alt={s.alt} fill sizes="112px" className="object-cover" />
+                  </div>
+                  <div className="flex-1 pt-1">
+                    <div className="flex items-baseline gap-4">
+                      <span className="font-mono text-sm text-lacre">{s.n}</span>
+                      <h3 className="text-2xl md:text-3xl font-black tracking-tight">{s.t}</h3>
+                    </div>
+                    <p className="mt-3 text-base md:text-lg text-piedra leading-relaxed">{s.d}</p>
+                  </div>
                 </div>
-                <p className="mt-4 text-base md:text-lg text-piedra leading-relaxed">{s.d}</p>
               </div>
             ))}
           </div>
