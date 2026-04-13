@@ -5,7 +5,7 @@ import { Reveal } from "@/components/Reveal";
 import { SITE_URL } from "@/lib/tiers";
 
 export const metadata: Metadata = {
-  title: "Sobre Tramarca · Un estudio que solo hace manuales · España",
+  title: "Nosotros · Un estudio que solo hace manuales · Tramarca",
   description:
     "Un estudio español que solo hace manuales de marca. Precio público, IVA incluido, plazo publicado. Cuatro manuales entregados. Trabajamos por escrito.",
   alternates: { canonical: `${SITE_URL}/sobre` },
@@ -16,25 +16,25 @@ export default function SobrePage() {
     <>
       {/* Hero editorial — papel con retrato del estudio */}
       <section className="relative bg-papel border-b border-negro/15 overflow-hidden">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 pt-14 md:pt-20 pb-10 md:pb-16">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 pt-6 md:pt-8 pb-6 md:pb-8">
           <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-piedra border-b border-negro/15 pb-4">
-            <span><span className="text-lacre">34</span> · SOBRE</span>
-            <span className="hidden md:inline">Estudio · Madrid</span>
-            <span>34 / 34</span>
+            <span>Tramarca <span className="text-lacre">·</span> Estudio editorial</span>
+            <span className="hidden md:inline">Nosotros</span>
+            <span>Madrid <span className="text-lacre">·</span> 2026</span>
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pb-16 md:pb-24">
+        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-4 md:pt-6 pb-16 md:pb-24">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
             <div className="lg:col-span-7">
               <div className="flex items-start gap-6">
                 <span aria-hidden className="mt-2 block w-[3px] h-24 bg-lacre shrink-0" />
                 <div>
                   <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.35em] text-piedra">
-                    Sobre nosotros · Por escrito
+                    Nosotros <span className="text-lacre">·</span> Por escrito
                   </p>
                   <h1
-                    className="mt-7 font-sans font-black tracking-[-0.04em] leading-[0.9] text-negro"
+                    className="mt-5 font-sans font-black tracking-[-0.04em] leading-[0.9] text-negro"
                     style={{ fontSize: "clamp(3rem, 8vw, 7rem)" }}
                   >
                     Un estudio<br />
@@ -43,7 +43,7 @@ export default function SobrePage() {
                   </h1>
                 </div>
               </div>
-              <p className="mt-10 max-w-xl text-lg md:text-xl text-piedra leading-[1.55]">
+              <p className="mt-8 max-w-xl text-lg md:text-xl text-piedra leading-[1.55]">
                 No hacemos web, ni campañas, ni packaging, ni naming. Una sola cosa,
                 hecha bien. Precio público, IVA incluido, plazo publicado<span className="text-lacre">.</span>
               </p>

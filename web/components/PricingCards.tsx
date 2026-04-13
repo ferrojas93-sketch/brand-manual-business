@@ -26,28 +26,36 @@ export function PricingCards({ compact = false }: { compact?: boolean }) {
               </span>
             )}
 
+            {/* Tier label row — name + pages, small, above the price */}
             <div className="flex items-baseline justify-between">
-              <h3 className={cn("text-2xl font-black tracking-tight", isFeatured ? "text-papel" : "text-negro")}>
+              <span className={cn(
+                "font-mono text-[10px] uppercase tracking-[0.3em]",
+                isFeatured ? "text-lacre" : "text-lacre",
+              )}>
                 {tier.name}
-              </h3>
+              </span>
               <span className={cn("font-mono text-xs", isFeatured ? "text-ceniza" : "text-piedra")}>
                 {tier.pages}
               </span>
             </div>
 
-            <p className={cn("mt-2 text-sm", isFeatured ? "text-ceniza" : "text-piedra")}>
+            {/* Price — first and loud */}
+            <div className="mt-4 flex items-baseline gap-2">
+              <span className="text-6xl md:text-7xl font-black tracking-tighter leading-none">
+                {tier.priceDisplay}
+              </span>
+            </div>
+            <p className={cn("mt-2 text-xs font-mono uppercase tracking-widest", isFeatured ? "text-lacre" : "text-lacre")}>
+              IVA incluido
+            </p>
+
+            {/* Tagline under the price */}
+            <p className={cn("mt-6 text-sm", isFeatured ? "text-ceniza" : "text-piedra")}>
               {tier.label}
             </p>
 
-            <div className="mt-8 flex items-baseline gap-2">
-              <span className="text-5xl font-black tracking-tighter">{tier.priceDisplay}</span>
-            </div>
-            <p className={cn("mt-1 text-sm font-mono underline underline-offset-4", isFeatured ? "text-lacre" : "text-lacre")}>
-              IVA incluido.
-            </p>
-
             {!compact && (
-              <p className={cn("mt-6 text-sm leading-relaxed", isFeatured ? "text-papel" : "text-negro")}>
+              <p className={cn("mt-3 text-sm leading-relaxed", isFeatured ? "text-papel" : "text-negro")}>
                 {tier.promise}
               </p>
             )}

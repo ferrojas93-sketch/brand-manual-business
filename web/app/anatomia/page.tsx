@@ -5,9 +5,9 @@ import { AnatomiaIcon } from "@/components/AnatomiaIcon";
 import { ANATOMIA, TIER_LABEL, type Tier } from "@/lib/anatomia";
 
 export const metadata: Metadata = {
-  title: "Anatomía de un manual de marca — 40 componentes · Tramarca",
+  title: "Anatomía de un manual de marca — 48 componentes · Tramarca",
   description:
-    "Qué hay dentro de un manual de marca Tramarca, desglosado por capítulo y tier. 10 capítulos, 40 componentes, sin esoterismo.",
+    "Qué hay dentro de un manual de marca Tramarca, desglosado por capítulo y tier. 12 capítulos, 48 componentes, sin esoterismo.",
   alternates: { canonical: "https://tramarca.es/anatomia" },
 };
 
@@ -39,14 +39,14 @@ export default function AnatomiaPage() {
               "radial-gradient(ellipse 60% 40% at 85% 20%, var(--color-lacre) 0, transparent 60%)",
           }}
         />
-        <div className="relative mx-auto max-w-[1500px] px-6 pt-24 md:pt-32 pb-20 md:pb-28">
+        <div className="relative mx-auto max-w-[1500px] px-6 pt-20 md:pt-24 pb-16 md:pb-24">
           <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.35em] text-lacre">
-            Anatomía · Nº 02 · Índice completo
+            Anatomía <span className="text-piedra">·</span> Índice completo
           </p>
-          <h1 className="mt-8 font-display text-display-xl font-black tracking-[-0.04em] leading-[0.85] text-papel max-w-5xl">
+          <h1 className="mt-6 font-display font-black tracking-[-0.04em] leading-[0.9] text-papel max-w-5xl text-5xl md:text-7xl lg:text-[6rem]">
             Qué hay dentro de un manual<span className="text-lacre">.</span>
           </h1>
-          <p className="mt-10 max-w-2xl text-lede text-ceniza leading-[1.5]">
+          <p className="mt-8 max-w-2xl text-lg md:text-xl text-ceniza leading-[1.55]">
             Doce capítulos. {total} componentes. Ni uno de adorno<span className="text-lacre">.</span>
           </p>
           <div className="mt-10 grid grid-cols-3 gap-6 max-w-xl border-t border-papel/15 pt-6">
@@ -74,17 +74,17 @@ export default function AnatomiaPage() {
                 {/* Chapter header (sticky on desktop) */}
                 <header className="lg:col-span-4 lg:sticky lg:top-24 lg:self-start">
                   <div className="flex items-baseline gap-4">
-                    <span className="font-display font-black text-7xl md:text-8xl text-lacre leading-none">
+                    <span className="font-display font-black text-5xl md:text-6xl text-lacre leading-none tracking-[-0.03em]">
                       {chapter.n}
                     </span>
                     <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
                       Capítulo
                     </span>
                   </div>
-                  <h2 className="mt-6 font-display text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
-                    {chapter.title}
+                  <h2 className="mt-5 font-display text-3xl md:text-4xl font-black tracking-tight leading-[1.05]">
+                    {chapter.title}<span className="text-lacre">.</span>
                   </h2>
-                  <p className="mt-5 text-lg text-piedra leading-snug max-w-md">
+                  <p className="mt-4 text-base md:text-lg text-piedra leading-[1.5] max-w-md">
                     {chapter.kicker}
                   </p>
                 </header>
@@ -125,9 +125,9 @@ export default function AnatomiaPage() {
             <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
               Comparativa
             </p>
-            <h2 className="mt-6 font-display text-display-md font-black tracking-tight leading-[1.05] max-w-4xl">
-              Qué incluye cada tier.
-              <span className="text-piedra"> Línea por línea.</span>
+            <h2 className="mt-6 font-display text-3xl md:text-5xl font-black tracking-tight leading-[1.05] max-w-4xl">
+              Qué incluye cada tier<span className="text-lacre">.</span>
+              <span className="text-piedra"> Línea por línea<span className="text-lacre">.</span></span>
             </h2>
           </Reveal>
 
@@ -192,10 +192,10 @@ export default function AnatomiaPage() {
             <p className="font-mono text-xs uppercase tracking-widest text-lacre">
               Siguiente paso
             </p>
-            <h2 className="mt-6 font-display text-display-md font-black tracking-tight leading-[1.05]">
-              Tu marca merece este nivel.
+            <h2 className="mt-6 font-display text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
+              Tu marca merece este nivel<span className="text-lacre">.</span>
               <br />
-              <span className="text-ceniza">Empieza por hablarnos de ella.</span>
+              <span className="text-ceniza">Empieza por hablarnos de ella<span className="text-lacre">.</span></span>
             </h2>
           </div>
           <div className="md:col-span-5 flex flex-col sm:flex-row md:justify-end gap-4">

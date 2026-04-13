@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FileText, ClipboardCheck, PenTool, MessagesSquare, PackageCheck } from "lucide-react";
 import { ButtonLink } from "@/components/Button";
 import { PricingCards } from "@/components/PricingCards";
 import { FaqAccordion } from "@/components/FaqAccordion";
@@ -7,6 +8,7 @@ import { JsonLd } from "@/components/JsonLd";
 import { SpreadFrame } from "@/components/SpreadFrame";
 import { Reveal } from "@/components/Reveal";
 import { MANUALES } from "@/lib/manuales";
+import { ANATOMIA } from "@/lib/anatomia";
 import { FOUNDING_SLOTS_REMAINING, FOUNDING_SLOTS_TOTAL } from "@/lib/tiers";
 import { jsonLdGraph, serviceSchema, faqSchema } from "@/lib/schema";
 
@@ -16,98 +18,110 @@ const testimonials = MANUALES.filter((m) => m.testimonial);
 const anatomia = [
   {
     n: "01",
-    t: "Sistema de logo",
-    d: "Marca principal, variantes, monograma, clearspace, tamaños mínimos y usos prohibidos.",
-    img: "/portfolio/tramarca/spread-03.jpg",
-    alt: "Sistema de logo — spread del manual Tramarca con variantes y clearspace",
+    t: "Color",
+    d: "Primarios, secundarios, ratios de uso, Pantone, CMYK, RGB, HEX. El color no decora: clasifica.",
+    img: "/recursos/r01-color-swatches.png",
+    alt: "Paleta cromática — muestras de color impresas para la marca",
   },
   {
     n: "02",
-    t: "Paleta cromática",
-    d: "Colores primarios, secundarios, ratios de uso, códigos Pantone, CMYK, RGB y HEX.",
-    img: "/portfolio/tramarca/spread-05.jpg",
-    alt: "Paleta cromática — spread del manual Tramarca con sistema de color aplicado",
+    t: "Tipografía",
+    d: "Familias, pesos, escalas. Jerarquía reglada para titular, cuerpo y microtexto.",
+    img: "/recursos/r02-type-specimen.png",
+    alt: "Specimen tipográfico — familias y jerarquías documentadas",
   },
   {
     n: "03",
-    t: "Sistema tipográfico",
-    d: "Familias, pesos, jerarquías, leading y kerning. Reglas para titular, cuerpo y microtexto.",
-    img: "/portfolio/tramarca/spread-09.jpg",
-    alt: "Sistema tipográfico — spread del manual Tramarca mostrando jerarquía de Satoshi e IBM Plex Mono",
+    t: "Grid",
+    d: "Retícula editorial, márgenes, columnas. Sistema que sostiene cualquier formato.",
+    img: "/recursos/r04-drafting-grid.png",
+    alt: "Retícula de construcción — malla editorial con proporciones",
   },
   {
     n: "04",
-    t: "Grid y composición",
-    d: "Retícula editorial, márgenes, columnas y reglas de composición para cualquier formato.",
-    img: "/portfolio/tramarca/spread-07.jpg",
-    alt: "Grid y composición — spread del manual Tramarca con retícula editorial",
+    t: "Logo system",
+    d: "Marca principal, variantes, monograma, clearspace, mínimos y usos prohibidos.",
+    img: "/portfolio/tramarca/spread-03.jpg",
+    alt: "Sistema de logo — spread con variantes y clearspace",
   },
   {
     n: "05",
-    t: "Identidad verbal",
-    d: "Tono de voz, vocabulario, frases-patrón. Qué decimos, qué no, cómo suena escrito.",
-    img: "/portfolio/tramarca/spread-11.jpg",
-    alt: "Identidad verbal — spread del manual Tramarca con tono de voz y frases patrón",
+    t: "Voz",
+    d: "Tono, vocabulario, frases-patrón. Qué decimos, qué no, cómo suena escrito.",
+    img: "/recursos/r05-hand-notes.png",
+    alt: "Notas del estudio — tono de voz documentado a mano y revisado",
   },
   {
     n: "06",
     t: "Aplicaciones",
-    d: "Papelería, firma de email, redes sociales, presentaciones. Marca operando en vida real.",
+    d: "Papelería, firma, redes, presentaciones. La marca operando en el día a día.",
     img: "/portfolio/tramarca/spread-08.jpg",
-    alt: "Aplicaciones — spread del manual Tramarca con papelería y aplicaciones digitales",
+    alt: "Aplicaciones — papelería y aplicaciones digitales reales",
   },
   {
     n: "07",
-    t: "Guidelines de uso",
+    t: "Guidelines",
     d: "Qué se puede y qué no. Reglas explícitas para que nadie rompa el sistema por inercia.",
     img: "/portfolio/tramarca/spread-10.jpg",
-    alt: "Guidelines de uso — spread del manual Tramarca con normas de aplicación",
+    alt: "Guidelines — normas de aplicación y usos prohibidos",
   },
   {
     n: "08",
-    t: "Plantillas editables",
-    d: "Figma editable + PDF final + assets sueltos. Entregamos el sistema, no solo la foto.",
-    img: "/portfolio/tramarca/spread-12.jpg",
-    alt: "Plantillas editables — spread del manual Tramarca mostrando plantillas listas para usar",
+    t: "Entregable",
+    d: "PDF A4 landscape + Figma editable + assets sueltos. El sistema, no solo la foto.",
+    img: "/recursos/r06-stacked-books.png",
+    alt: "Manuales apilados — entregable final en PDF + Figma + assets",
   },
 ];
 
 const homeFaqs = [
   {
-    q: "¿Cuánto cuesta un manual de marca con Tramarca?",
-    a: "Tres tiers con pricing público e IVA incluido: Esencial 490€ (20-25 páginas), Profesional 990€ (30-40 páginas), Premium 1.990€ (40-50 páginas). Precios finales. Sin sorpresas.",
+    q: "¿Cuánto cuesta un manual de marca en España?",
+    a: "Un manual de marca profesional en España suele costar entre 1.500€ y 8.000€ más IVA en agencias tradicionales. En Tramarca publicamos tres tiers con precio cerrado e IVA incluido: Esencial 490€ (20-25 páginas, 5 días), Profesional 990€ (30-40 páginas, 7 días) y Premium 1.990€ (40-50 páginas, 10 días). Sin discovery, sin presupuesto a medida, sin letra pequeña. Lo que lees en la web es exactamente lo que pagas.",
   },
   {
-    q: "¿Qué incluye el IVA? ¿Hay costes ocultos?",
-    a: "El IVA 21% está incluido en los precios publicados. No hay costes ocultos. Cada tier detalla entregables, revisiones y plazos por adelantado. Lo que ves, pagas.",
+    q: "¿Qué incluye un manual de marca?",
+    a: "Un manual de marca Tramarca incluye sistema de identidad visual (logo, paleta, tipografía, grid), aplicaciones (papelería, firma de email, RRSS), guidelines de uso y, según el tier, estrategia de marca, identidad verbal y plantillas Figma editables. Entregamos PDF A4 landscape y archivos fuente. Todo documentado capítulo a capítulo: 48 componentes repartidos en 12 capítulos. Puedes ver el índice completo en /anatomia.",
+  },
+  {
+    q: "¿El IVA va incluido? ¿Hay costes ocultos?",
+    a: "Sí, el IVA 21% está incluido en los precios publicados (490€, 990€, 1.990€). No hay costes ocultos, ni fees de discovery, ni tarifas por revisión adicional dentro del scope. Emitimos factura electrónica española con IVA desglosado para tu contabilidad. Lo que ves en la web es el precio final, todo incluido.",
   },
   {
     q: "¿Cuánto tarda en entregarse un manual de marca?",
-    a: "Esencial: 5 días laborables. Profesional: 7. Premium: 10. Los plazos se cuentan desde el kickoff con brief firmado. No desde que nos llegó el mail.",
+    a: "Plazo publicado y garantizado desde el kickoff con brief firmado: Esencial 5 días laborables, Profesional 7 días, Premium 10 días. No son plazos 'aproximados' ni 'depende del feedback'. Si el brief está firmado el lunes, tienes manual Esencial el viernes. Las revisiones no alargan el plazo base: se cuentan como rondas acotadas dentro del proceso.",
   },
   {
     q: "¿Cuántas revisiones incluye cada tier?",
-    a: "Esencial incluye 1 revisión. Profesional y Premium, 2. Cada revisión cubre cambios acotados. Cambios de alcance se presupuestan aparte. Transparencia.",
+    a: "Esencial incluye 1 ronda de revisión. Profesional y Premium incluyen 2 rondas. Cada ronda cubre cambios acotados sobre la dirección ya aprobada en el brief. Cambios de scope (añadir capítulos, rebrand total, nuevos entregables) se presupuestan aparte y con precio transparente. Sin revisiones ilimitadas: eso siempre acaba mal para ambas partes.",
   },
   {
-    q: "¿Qué diferencia a Tramarca de una agencia?",
-    a: "Tramarca es productizado: scope cerrado, precio público, plazo publicado. Una agencia hace discovery, propuesta y custom pricing en semanas. Válido, pero distinto.",
+    q: "¿Cuál es la diferencia entre un manual de marca y un logo?",
+    a: "Un logo es un archivo. Un manual de marca es un sistema documentado: cómo se usa ese logo, con qué colores, en qué tipografías, en qué aplicaciones, con qué tono verbal, y qué no hacer. Un logo express de 150€ te da un .ai. Un manual Tramarca te da un documento operativo de 20-50 páginas que cualquiera en tu equipo puede aplicar sin preguntarte cada vez. Cosas distintas.",
+  },
+  {
+    q: "¿Qué diferencia a Tramarca de una agencia de branding?",
+    a: "Tramarca es un estudio productizado: scope cerrado, precio público, plazo publicado, entregables documentados. Una agencia tradicional hace discovery workshops, propuesta personalizada, custom pricing y timelines 'a definir' de 6-12 semanas. Ambos modelos son válidos. Nosotros hemos elegido el formato productizado para empresas que saben qué quieren y prefieren claridad operativa a ritual consultivo.",
+  },
+  {
+    q: "¿Sirve Tramarca para rebrand o solo para marca nueva?",
+    a: "Ambos. Los tiers Profesional y Premium funcionan especialmente bien para rebrand: partimos del activo existente, auditamos qué funciona y qué no, y reconstruimos desde sistema. Para marca nueva sin naming ni posicionamiento previo, recomendamos Premium (incluye estrategia completa e identidad verbal). Mismo precio, mismo plazo.",
   },
   {
     q: "¿Qué es el Founding Customer Program?",
-    a: "Los primeros cinco clientes pagan precio full y reciben extras (más páginas, formación, sesión extra) a cambio de case study público, testimonial en vídeo y dos referidos.",
+    a: "Los primeros cinco clientes de Tramarca pagan precio full (490€, 990€ o 1.990€ según tier) y reciben extras: +10 páginas sobre el tier elegido, sesión de estrategia adicional de 60 minutos, case study co-producido y prioridad de entrega. A cambio pedimos case study público, testimonial en vídeo y dos referidos cualificados. Se cierra cuando se cierra: tras los cinco, los precios se revisan al alza.",
   },
   {
-    q: "¿En qué se diferencia Tramarca de otras agencias?",
-    a: "Entregamos más páginas por menos dinero con IVA incluido y plazo publicado. Profesional 990€ por 30-40 páginas vs 1.490€+IVA por 20 en otros estudios. Publicamos el precio desde el minuto uno.",
+    q: "¿Hay garantía de devolución?",
+    a: "Sí. Si tras la primera entrega consideras que el manual no resuelve el brief firmado, devolvemos el 50% pagado al kickoff dentro de los 14 días siguientes a la entrega. No entregamos a medias: o sale el manual completo o devolvemos. Sin dramas, sin letra pequeña, sin mediación. Queda por escrito en el contrato.",
   },
   {
-    q: "¿Hay garantía de satisfacción?",
-    a: "Sí. Si tras la primera entrega crees que el manual no resuelve el brief acordado, te devolvemos el 50% pagado al kickoff dentro de los 14 días siguientes. Sin dramas. Sin letra pequeña.",
+    q: "¿Trabajáis con autónomos, PYMES o solo empresas grandes?",
+    a: "Autónomos, PYMES y empresas medianas. Emitimos factura con NIF personal o CIF, sin diferencia de precio ni de scope. Nuestro cliente tipo tiene facturación entre 100k€ y 10M€ y necesita un sistema de marca documentado sin pagar 8.000€ a una agencia ni conformarse con un logo de 150€. Empresas grandes con procesos de compra complejos suelen necesitar una agencia tradicional: no somos ese vendor.",
   },
   {
-    q: "¿Atendéis fuera de Madrid?",
-    a: "Sí. Trabajamos 100% online para toda España. Brief, reviews y entrega por videollamada y email. Ubicación tuya, irrelevante.",
+    q: "¿Atendéis fuera de Madrid? ¿Trabajáis en remoto?",
+    a: "Sí. Trabajamos 100% en remoto desde Madrid para toda España y Europa. Brief estructurado online, kickoff por email, reviews por email con deadlines claras, entrega en PDF y Figma. Nada de llamadas ni reuniones: el trabajo es async y por escrito, precisamente porque lo que entregamos es un documento. Si hace falta aclarar algo puntual, un mensaje. Rápido.",
   },
 ];
 
@@ -116,11 +130,11 @@ export default function HomePage() {
     <>
       {/* Hero — PAPEL split, manual-native composition (01 chapter cover + spread) */}
       <section className="relative bg-papel border-b border-negro/15 overflow-hidden">
-        {/* Masthead — mono ticker strip (from manual header pattern) */}
+        {/* Masthead — dateline editorial (no manual cosmetics) */}
         <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-6 md:pt-8 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-piedra border-b border-negro/15 pb-4">
-          <span><span className="text-lacre">1</span> · PROVOCACIÓN</span>
-          <span className="hidden md:inline">Tramarca · Manual de marca</span>
-          <span>01 / 34</span>
+          <span>Tramarca <span className="text-lacre">·</span> Estudio editorial</span>
+          <span className="hidden md:inline">Manuales de marca por escrito</span>
+          <span>Madrid <span className="text-lacre">·</span> 2026</span>
         </div>
 
         <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-10 md:pt-14">
@@ -330,6 +344,106 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Cómo funciona — proceso en 5 pasos */}
+      <section className="bg-papel border-b border-negro/10">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-24 md:py-32">
+          <Reveal>
+            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 max-w-6xl">
+              <div>
+                <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+                  Cómo funciona
+                </p>
+                <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
+                  Cinco pasos<span className="text-lacre">.</span>
+                  <br />
+                  <span className="text-piedra">Plazo publicado<span className="text-lacre">.</span></span>
+                </h2>
+              </div>
+              <p className="max-w-md text-base md:text-lg text-piedra leading-[1.55]">
+                Brief estructurado, confirmación async, producción, revisiones, entrega.
+                Sin workshops de seis semanas. Sin videollamadas obligatorias<span className="text-lacre">.</span>
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal>
+            <ol className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-negro/10 border border-negro/10">
+              {[
+                {
+                  n: "01",
+                  t: "Brief",
+                  d: "Cuestionario corto. Qué haces, a quién, qué no funciona de tu marca actual. Sin moodboard ni historia empresarial.",
+                  Icon: FileText,
+                  dur: "15 min",
+                },
+                {
+                  n: "02",
+                  t: "Confirmación",
+                  d: "Revisamos tu brief, devolvemos notas por email y firmamos la dirección. Async: tú decides cuándo respondes.",
+                  Icon: ClipboardCheck,
+                  dur: "Día 1",
+                },
+                {
+                  n: "03",
+                  t: "Producción",
+                  d: "El estudio trabaja. Construcción del sistema: tipografía, color, grid, componentes. Iteración interna antes de enseñar nada.",
+                  Icon: PenTool,
+                  dur: "Días 2–7",
+                },
+                {
+                  n: "04",
+                  t: "Revisiones",
+                  d: "Una ronda (Esencial) o dos (Profesional, Premium). Feedback estructurado por email. Cambios acotados, nunca reescrituras.",
+                  Icon: MessagesSquare,
+                  dur: "1–2 rondas",
+                },
+                {
+                  n: "05",
+                  t: "Entrega",
+                  d: "PDF A4 landscape + Figma editable + assets sueltos. El día que pone el plazo, no aproximadamente.",
+                  Icon: PackageCheck,
+                  dur: "Día 5 / 7 / 10",
+                },
+              ].map(({ n, t, d, Icon, dur }) => (
+                <li
+                  key={n}
+                  className="relative bg-papel p-6 md:p-8 flex flex-col min-h-[320px] transition-colors hover:bg-arena/60"
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                      Paso {n}
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
+                      {dur}
+                    </span>
+                  </div>
+                  <div className="mt-6 w-12 h-12 flex items-center justify-center border border-negro/15 bg-arena/40 text-lacre">
+                    <Icon className="w-6 h-6" strokeWidth={1.5} aria-hidden />
+                  </div>
+                  <h3 className="mt-6 font-display text-2xl md:text-[1.6rem] font-black tracking-[-0.02em] leading-[1.1]">
+                    {t}<span className="text-lacre">.</span>
+                  </h3>
+                  <p className="mt-3 text-sm md:text-base text-piedra leading-[1.5] flex-1">
+                    {d}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </Reveal>
+
+          <Reveal>
+            <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-5">
+              <ButtonLink href="/contacto" variant="primary" size="lg">
+                Empezar el brief →
+              </ButtonLink>
+              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
+                Respuesta en &lt;24h laborables <span className="text-lacre">·</span> Sin llamada obligatoria
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Anatomía de un manual — visual */}
       <section className="bg-arena">
         <div className="mx-auto max-w-[1500px] px-6 py-24 md:py-32">
@@ -356,7 +470,7 @@ export default function HomePage() {
                 key={a.n}
                 className="group relative flex flex-col border border-negro/10 hover:border-lacre transition-colors bg-papel"
               >
-                <div className="relative aspect-[1756/1242] bg-arena overflow-hidden">
+                <div className="relative aspect-[4/3] bg-arena overflow-hidden">
                   <Image
                     src={a.img}
                     alt={a.alt}
@@ -365,11 +479,13 @@ export default function HomePage() {
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-[700ms] ease-out"
                   />
                   <span className="absolute top-0 left-0 bg-negro text-papel font-mono text-[10px] uppercase tracking-widest px-3 py-1.5">
-                    {a.n}
+                    Cap. {a.n}
                   </span>
                 </div>
                 <div className="p-5 md:p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl md:text-2xl font-black tracking-tight">{a.t}</h3>
+                  <h3 className="text-xl md:text-2xl font-black tracking-tight">
+                    {a.t}<span className="text-lacre">.</span>
+                  </h3>
                   <p className="mt-3 text-sm md:text-base text-piedra leading-relaxed flex-1">
                     {a.d}
                   </p>
@@ -435,31 +551,48 @@ export default function HomePage() {
             </div>
           </Reveal>
 
-          {/* Grid preview: 12 chapters as tiles */}
+          {/* Grid preview: 12 chapters as tiles — kicker + count per chapter */}
           <Reveal>
-            <div className="mt-14 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-px bg-papel/10 border border-papel/10">
-              {[
-                { n: "01", t: "Fundamentos" },
-                { n: "02", t: "Logo system" },
-                { n: "03", t: "Tipografía" },
-                { n: "04", t: "Color" },
-                { n: "05", t: "Iconografía" },
-                { n: "06", t: "Fotografía" },
-                { n: "07", t: "Voz y tono" },
-                { n: "08", t: "Aplicaciones" },
-                { n: "09", t: "Arquitectura" },
-                { n: "10", t: "Governance" },
-                { n: "11", t: "Movimiento" },
-                { n: "12", t: "Extensiones" },
-              ].map((c) => (
-                <div key={c.n} className="bg-negro p-5 md:p-6 min-h-[120px] flex flex-col justify-between">
-                  <span className="font-mono text-[10px] uppercase tracking-widest text-lacre">
-                    {c.n}
+            <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-papel/10 border border-papel/10">
+              {ANATOMIA.map((c) => (
+                <Link
+                  key={c.n}
+                  href="/anatomia"
+                  className="group relative bg-negro p-6 md:p-7 min-h-[200px] flex flex-col justify-between overflow-hidden transition-colors hover:bg-carbon"
+                >
+                  {/* Lacre accent bar — grows on hover */}
+                  <span
+                    aria-hidden
+                    className="absolute left-0 top-0 w-[3px] h-0 bg-lacre transition-all duration-500 group-hover:h-full"
+                  />
+
+                  <div className="flex items-start justify-between gap-4">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                      Cap. {c.n}
+                    </span>
+                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-piedra group-hover:text-ceniza transition-colors">
+                      {c.items.length} comp.
+                    </span>
+                  </div>
+
+                  <div className="mt-8">
+                    <h3 className="font-display text-2xl md:text-[1.75rem] text-papel font-black tracking-[-0.02em] leading-[1.05]">
+                      {c.title}
+                      <span className="text-lacre">.</span>
+                    </h3>
+                    <p className="mt-3 text-sm text-ceniza leading-[1.45] max-w-[42ch]">
+                      {c.kicker}
+                    </p>
+                  </div>
+
+                  {/* Arrow reveal */}
+                  <span
+                    aria-hidden
+                    className="absolute right-5 bottom-5 font-mono text-[11px] uppercase tracking-widest text-lacre opacity-0 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                  >
+                    Ver →
                   </span>
-                  <span className="font-display text-lg md:text-xl text-papel font-black tracking-tight leading-tight">
-                    {c.t}
-                  </span>
-                </div>
+                </Link>
               ))}
             </div>
           </Reveal>
@@ -647,8 +780,8 @@ export default function HomePage() {
           </div>
           <div className="mt-16 max-w-3xl">
             <p className="text-base text-negro/80">
-              Todos los tiers incluyen brief inicial, kickoff por videollamada y entrega en
-              PDF + Figma. Lo que no incluyen, lo decimos abajo.
+              Todos los tiers incluyen brief estructurado, kickoff por email y entrega en
+              PDF + Figma. Proceso async por escrito. Lo que no incluyen, lo decimos abajo<span className="text-lacre">.</span>
             </p>
             <Link
               href="/precios"
@@ -753,51 +886,20 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Proceso */}
-      <section>
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <p className="font-mono text-xs uppercase tracking-widest text-lacre">Proceso</p>
-          <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05] max-w-4xl">
-            Cómo funciona. Cuatro pasos. Cero sorpresas.
-          </h2>
-          <div className="mt-16 grid md:grid-cols-2 gap-x-16 gap-y-16">
-            {[
-              { n: "01", t: "Brief", d: "Rellenas un cuestionario corto. No pedimos tu historia empresarial ni un moodboard. Preguntamos lo que importa: qué haces, a quién, y qué no funciona de tu marca actual.", img: "/ilustraciones/proceso-01-brief.jpeg", alt: "Ilustración editorial de una mano firmando un brief — proceso paso 1" },
-              { n: "02", t: "Kickoff (día 1)", d: "Videollamada de 30 minutos. Acordamos dirección y firmamos el brief. Aquí arranca el plazo publicado.", img: "/ilustraciones/proceso-02-kickoff.jpeg", alt: "Ilustración editorial de kickoff por videollamada — proceso paso 2" },
-              { n: "03", t: "Revisiones", d: "Una (Esencial) o dos (Profesional, Premium) revisiones. Cubren cambios acotados. Si quieres reescribir medio manual, lo presupuestamos aparte. Honesto.", img: "/ilustraciones/proceso-03-produccion.jpeg", alt: "Ilustración editorial de producción y revisión — proceso paso 3" },
-              { n: "04", t: "Entrega", d: "PDF final + Figma editable + assets sueltos. El día que pone en el plazo. No \"aproximadamente\". El día.", img: "/ilustraciones/proceso-04-entrega.jpeg", alt: "Ilustración editorial de entrega del manual — proceso paso 4" },
-            ].map((s) => (
-              <div key={s.n} className="border-t border-negro/15 pt-6">
-                <div className="flex items-start gap-6">
-                  <div className="relative w-24 h-24 md:w-28 md:h-28 shrink-0 bg-arena overflow-hidden">
-                    <Image src={s.img} alt={s.alt} fill sizes="112px" className="object-cover" />
-                  </div>
-                  <div className="flex-1 pt-1">
-                    <div className="flex items-baseline gap-4">
-                      <span className="font-mono text-sm text-lacre">{s.n}</span>
-                      <h3 className="text-2xl md:text-3xl font-black tracking-tight">{s.t}</h3>
-                    </div>
-                    <p className="mt-3 text-base md:text-lg text-piedra leading-relaxed">{s.d}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Proceso — movido arriba, 5 pasos, iconos, sin videollamada */}
 
       {/* Qué NO somos */}
       <section className="bg-arena">
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
           <p className="font-mono text-xs uppercase tracking-widest text-lacre">Honestidad</p>
           <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05] max-w-4xl">
-            Qué no somos. Por ahorrarte una llamada.
+            Qué no somos<span className="text-lacre">.</span> Por ahorrarte un email<span className="text-lacre">.</span>
           </h2>
           <div className="mt-16 space-y-12 max-w-4xl">
             {[
               { t: "No somos una agencia de discovery de seis semanas.", d: "Nosotros entregamos en 5-10 días. Una agencia te hace dos meses de workshops, presentación en PDF y tres rondas de propuesta. Todo vale. Pero no es lo mismo." },
               { t: "No somos Canva ni una plantilla.", d: "Si necesitas un brand kit a 12€/mes, usa Canva. Nosotros hacemos manuales que vas a enseñar a tu equipo sin vergüenza." },
-              { t: "No hacemos logo express a 150€.", d: "Manual de marca ≠ logo + papelería. Esto es sistema completo. Si solo necesitas logo, hay sitios más baratos. Lo decimos con cariño." },
+              { t: "No hacemos logo express a 150€.", d: "Manual de marca no es logo + papelería. Esto es sistema completo. Si solo necesitas logo, hay sitios más baratos. Lo decimos con cariño." },
             ].map((x) => (
               <div key={x.t} className="border-l-2 border-lacre pl-6">
                 <h3 className="text-2xl md:text-3xl font-black tracking-tight">{x.t}</h3>
@@ -813,7 +915,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-5xl px-6 py-24 md:py-32">
           <p className="font-mono text-xs uppercase tracking-widest text-lacre">FAQ</p>
           <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
-            Preguntas que nos hacéis.
+            Preguntas que nos hacéis<span className="text-lacre">.</span>
           </h2>
           <div className="mt-12">
             <FaqAccordion items={homeFaqs} />

@@ -18,7 +18,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li><Link href="/precios" className="hover:text-lacre transition-colors">Precios</Link></li>
               <li><Link href="/manuales" className="hover:text-lacre transition-colors">Manuales</Link></li>
-              <li><Link href="/sobre" className="hover:text-lacre transition-colors">Sobre Tramarca</Link></li>
+              <li><Link href="/sobre" className="hover:text-lacre transition-colors">Nosotros</Link></li>
               <li><Link href="/contacto" className="hover:text-lacre transition-colors">Hablemos de tu marca</Link></li>
             </ul>
           </div>

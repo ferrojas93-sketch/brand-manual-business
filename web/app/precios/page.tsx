@@ -66,28 +66,41 @@ const comparisonRows = [
 export default function PreciosPage() {
   return (
     <>
-      <section>
-        <div className="mx-auto max-w-7xl px-6 pt-20 md:pt-28 pb-16">
-          <p className="font-mono text-xs uppercase tracking-widest text-lacre">Precios</p>
-          <h1 className="mt-6 text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.95]">
-            Cuánto cuesta un manual de marca con Tramarca.
-          </h1>
-          <div className="mt-10 max-w-3xl space-y-5 text-lg md:text-xl text-negro/80 leading-relaxed">
-            <p>
-              Un manual de marca con Tramarca cuesta <strong>490€, 990€ o 1.990€, IVA incluido</strong>. Tres tiers productizados. Entregamos en 5, 7 o 10 días laborables. Páginas reales: 20-25 en Esencial, 30-40 en Profesional, 40-50 en Premium. Revisiones incluidas: 1 en Esencial, 2 en los otros dos.
-            </p>
-            <p className="text-piedra">
-              Una agencia tradicional española te pide entre 5.000€ y 50.000€ con custom pricing. Un freelance, entre 800€ y 1.500€ sin plazo garantizado. Canva, 12€/mes pero lo haces tú. Tramarca ocupa el hueco: productizado, precio público, plazo publicado, IVA incluido.
-            </p>
-            <p>
-              Lo que ves aquí es el precio final. Sin discovery de pago, sin propuesta a medida, sin sorpresas en la factura.
-            </p>
+      {/* Hero compacto + price cards arriba, horizontal en desktop */}
+      <section className="bg-papel border-b border-negro/10">
+        <div className="mx-auto max-w-7xl px-6 pt-16 md:pt-20 pb-10 md:pb-14">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+            <div className="lg:col-span-7">
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+                Precios <span className="text-piedra">·</span> IVA incluido
+              </p>
+              <h1 className="mt-5 text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95]">
+                Cuánto cuesta un manual
+                <br className="hidden sm:block" /> de marca con Tramarca
+                <span className="text-lacre">.</span>
+              </h1>
+            </div>
+            <div className="lg:col-span-5">
+              <p className="text-base md:text-lg text-piedra leading-[1.55]">
+                Tres tiers productizados: <strong className="text-negro">490€, 990€ o 1.990€, IVA incluido</strong>.
+                Entrega en 5, 7 o 10 días laborables. Páginas reales, revisiones incluidas,
+                precio final<span className="text-lacre">.</span>
+              </p>
+              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-widest text-piedra">
+                <span>Precio publicado</span>
+                <span className="text-lacre">·</span>
+                <span>Plazo garantizado</span>
+                <span className="text-lacre">·</span>
+                <span>Sin sorpresas</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Price cards primero */}
       <section className="bg-arena">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6 py-14 md:py-20">
           <PricingCards />
         </div>
       </section>
@@ -185,7 +198,7 @@ export default function PreciosPage() {
             <ul className="mt-8 space-y-3 text-base md:text-lg text-negro/85">
               {[
                 "Brief inicial (cuestionario estructurado)",
-                "Kickoff por videollamada (30min)",
+                "Kickoff por email (async, sin reuniones)",
                 "Entrega en PDF final (A4 landscape) + Figma editable",
                 "Alineación de revisiones por email con deadlines claras",
                 "Soporte post-entrega durante 30 días (dudas de uso)",
@@ -200,12 +213,12 @@ export default function PreciosPage() {
           </div>
           <div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
-              Lo que no hacemos. Por honestidad.
+              Lo que queda fuera del tier<span className="text-lacre">.</span>
             </h2>
             <ul className="mt-8 space-y-3 text-base md:text-lg text-negro/85">
               {[
                 "Copywriting extenso (web, campañas, slogans comerciales)",
-                "Naming / verbal identity para marca nueva (cotización específica)",
+                "Naming / verbal identity para marca nueva",
                 "Diseño web, landing pages, ecommerce",
                 "Packaging, ilustración, motion, fotografía",
                 "Marketing ads, SEO, estrategia digital",
@@ -217,9 +230,9 @@ export default function PreciosPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-base text-piedra italic">
-              No somos una agencia full-service. Somos un estudio que hace un producto
-              concreto muy bien.
+            <p className="mt-8 text-base text-piedra">
+              Si tu proyecto necesita algo que no entra en el tier, lo cotizamos aparte.
+              Sin problema<span className="text-lacre">.</span>
             </p>
           </div>
         </div>

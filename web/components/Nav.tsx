@@ -6,7 +6,7 @@ const LINKS = [
   { href: "/precios", label: "Precios" },
   { href: "/anatomia", label: "Anatomía" },
   { href: "/manuales", label: "Manuales" },
-  { href: "/sobre", label: "Sobre" },
+  { href: "/sobre", label: "Nosotros" },
 ];
 
 export function Nav() {

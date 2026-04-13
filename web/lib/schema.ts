@@ -186,7 +186,7 @@ export const faqSchema = {
       name: "¿Atendéis fuera de Madrid?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí. Tramarca opera 100% online para toda España. El proceso (brief, reviews, entrega) se hace por videollamada y email.",
+        text: "Sí. Tramarca opera 100% online para toda España. Todo el proceso (brief, reviews, entrega) se hace por email. Sin reuniones ni videollamadas: async y por escrito.",
       },
     },
     {
