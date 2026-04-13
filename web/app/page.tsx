@@ -8,7 +8,6 @@ import { JsonLd } from "@/components/JsonLd";
 import { SpreadFrame } from "@/components/SpreadFrame";
 import { Reveal } from "@/components/Reveal";
 import { MANUALES } from "@/lib/manuales";
-import { ANATOMIA } from "@/lib/anatomia";
 import { FOUNDING_SLOTS_REMAINING, FOUNDING_SLOTS_TOTAL } from "@/lib/tiers";
 import { jsonLdGraph, serviceSchema, faqSchema } from "@/lib/schema";
 
@@ -138,20 +137,6 @@ export default function HomePage() {
         </div>
 
         <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-10 md:pt-14">
-          {/* Giant watermark "01" — signature of the manual */}
-          <span
-            aria-hidden
-            className="watermark-number text-negro/[0.055] select-none"
-            style={{
-              fontSize: "clamp(26rem, 58vw, 56rem)",
-              top: "-4rem",
-              right: "-2rem",
-              zIndex: 0,
-            }}
-          >
-            01
-          </span>
-
           {/* Diagonal Lacre line cutting across (manual signature) */}
           <svg
             aria-hidden
@@ -519,94 +504,6 @@ export default function HomePage() {
               Descargar PDF →
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* Anatomía completa — tease → link a /anatomia */}
-      <section className="section-dark noise relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.05] pointer-events-none"
-          style={{
-            backgroundImage:
-              "radial-gradient(ellipse 50% 40% at 20% 80%, var(--color-lacre) 0, transparent 60%)",
-          }}
-        />
-        <div className="relative mx-auto max-w-[1500px] px-6 py-24 md:py-32">
-          <Reveal>
-            <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
-              <div className="max-w-3xl">
-                <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
-                  Anatomía completa · Nº 02
-                </p>
-                <h2 className="mt-6 font-display text-display-lg font-black tracking-[-0.03em] leading-[0.95] text-papel">
-                  48 componentes<span className="text-lacre">.</span>
-                  <br />
-                  <span className="text-ceniza">Doce capítulos. Cero humo.</span>
-                </h2>
-              </div>
-              <p className="max-w-md text-lede text-ceniza leading-[1.5]">
-                Un manual en máximos no es más páginas. Son más reglas, más aplicadas,
-                con más consecuencia<span className="text-lacre">.</span>
-              </p>
-            </div>
-          </Reveal>
-
-          {/* Grid preview: 12 chapters as tiles — kicker + count per chapter */}
-          <Reveal>
-            <div className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-papel/10 border border-papel/10">
-              {ANATOMIA.map((c) => (
-                <Link
-                  key={c.n}
-                  href="/anatomia"
-                  className="group relative bg-negro p-6 md:p-7 min-h-[200px] flex flex-col justify-between overflow-hidden transition-colors hover:bg-carbon"
-                >
-                  {/* Lacre accent bar — grows on hover */}
-                  <span
-                    aria-hidden
-                    className="absolute left-0 top-0 w-[3px] h-0 bg-lacre transition-all duration-500 group-hover:h-full"
-                  />
-
-                  <div className="flex items-start justify-between gap-4">
-                    <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
-                      Cap. {c.n}
-                    </span>
-                    <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-piedra group-hover:text-ceniza transition-colors">
-                      {c.items.length} comp.
-                    </span>
-                  </div>
-
-                  <div className="mt-8">
-                    <h3 className="font-display text-2xl md:text-[1.75rem] text-papel font-black tracking-[-0.02em] leading-[1.05]">
-                      {c.title}
-                      <span className="text-lacre">.</span>
-                    </h3>
-                    <p className="mt-3 text-sm text-ceniza leading-[1.45] max-w-[42ch]">
-                      {c.kicker}
-                    </p>
-                  </div>
-
-                  {/* Arrow reveal */}
-                  <span
-                    aria-hidden
-                    className="absolute right-5 bottom-5 font-mono text-[11px] uppercase tracking-widest text-lacre opacity-0 translate-x-[-4px] group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
-                  >
-                    Ver →
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-              <ButtonLink href="/anatomia" variant="primary" size="lg">
-                Ver los 48 componentes →
-              </ButtonLink>
-              <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
-                Incluye comparativa por tier · 3 min de lectura
-              </p>
-            </div>
-          </Reveal>
         </div>
       </section>
 
