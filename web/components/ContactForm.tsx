@@ -3,10 +3,13 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Button } from "./Button";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 const schema = z.object({
   name: z.string().min(2, "Necesitamos tu nombre. Breve."),
@@ -25,6 +28,8 @@ type FormValues = z.infer<typeof schema>;
 
 export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: string; defaultFounding?: boolean }) {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance | null>(null);
 
   const {
     register,
@@ -42,20 +47,28 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
   });
 
   async function onSubmit(data: FormValues) {
+    if (TURNSTILE_SITE_KEY && !turnstileToken) {
+      setStatus("error");
+      return;
+    }
     setStatus("sending");
     trackEvent("form_submit", { form: "contact", tier: data.tier });
 
     const res = await fetch("/api/lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, turnstileToken }),
     });
 
     if (res.ok) {
       setStatus("sent");
       reset();
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
     } else {
       setStatus("error");
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
     }
   }
 
@@ -139,7 +152,18 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
       </label>
       {errors.consent && <p className={errorCls}>{errors.consent.message}</p>}
 
-      <Button type="submit" variant="primary" size="lg" disabled={status === "sending"}>
+      {TURNSTILE_SITE_KEY && (
+        <Turnstile
+          ref={turnstileRef}
+          siteKey={TURNSTILE_SITE_KEY}
+          onSuccess={(token) => setTurnstileToken(token)}
+          onExpire={() => setTurnstileToken(null)}
+          onError={() => setTurnstileToken(null)}
+          options={{ theme: "light", size: "flexible" }}
+        />
+      )}
+
+      <Button type="submit" variant="primary" size="lg" disabled={status === "sending" || (!!TURNSTILE_SITE_KEY && !turnstileToken)}>
         {status === "sending" ? "Enviando…" : "Enviar →"}
       </Button>
 
