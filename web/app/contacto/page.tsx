@@ -116,6 +116,30 @@ export default async function ContactoPage({
         </div>
       </section>
 
+      {/* Signature visual — flatlay del proceso async sin decirlo */}
+      <section className="bg-papel border-y border-negro/10">
+        <div className="mx-auto max-w-[1720px] px-6 md:px-10 py-12 md:py-16">
+          <figure className="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden">
+            <Image
+              src="/hero-v5/contacto-hero-flatlay.jpg"
+              alt="Escritorio editorial con el manual Tramarca cerrado, iPhone en modo silencio, taza cerámica lacre y papelería — el objeto que llegará tras la propuesta"
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
+            <figcaption className="absolute bottom-6 left-6 md:bottom-10 md:left-10 max-w-sm">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                Fig. 06 · Escritorio editorial
+              </p>
+              <p className="mt-2 text-negro font-black text-xl md:text-2xl leading-tight">
+                Lo que recibes, por escrito<span className="text-lacre">.</span>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
       {/* Formulario — fondo contrastado editorial */}
       <section className="bg-arena">
         <div className="mx-auto max-w-3xl px-6 py-10 md:py-14">

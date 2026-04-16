@@ -58,27 +58,43 @@ export default function AnatomiaPage() {
           }}
         />
         <div className="relative mx-auto max-w-[1500px] px-6 pt-20 md:pt-24 pb-16 md:pb-24">
-          <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.35em] text-lacre">
-            Anatomía <span className="text-piedra">·</span> Índice completo
-          </p>
-          <h1 className="mt-6 font-display font-black tracking-[-0.04em] leading-[0.9] text-papel max-w-5xl text-5xl md:text-7xl lg:text-[6rem]">
-            Qué hay dentro de un manual<span className="text-lacre">.</span>
-          </h1>
-          <p className="mt-8 max-w-2xl text-lg md:text-xl text-ceniza leading-[1.55]">
-            Doce capítulos. {total} componentes. Ni uno de adorno<span className="text-lacre">.</span>
-          </p>
-          <div className="mt-10 grid grid-cols-3 gap-6 max-w-xl border-t border-papel/15 pt-6">
-            {TIERS.map((t, i) => (
-              <div key={t}>
-                <p className={`font-mono text-[10px] uppercase tracking-widest ${i === 1 ? "text-lacre" : "text-piedra"}`}>
-                  {TIER_LABEL[t]}
-                </p>
-                <p className="mt-1 text-2xl font-black text-papel font-display">
-                  {ANATOMIA.reduce((s, c) => s + c.items.filter((i) => i.tiers.includes(t)).length, 0)}
-                  <span className="text-piedra text-sm font-mono ml-2">componentes</span>
-                </p>
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-7">
+              <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.35em] text-lacre">
+                Anatomía <span className="text-piedra">·</span> Índice completo
+              </p>
+              <h1 className="mt-6 font-display font-black tracking-[-0.04em] leading-[0.9] text-papel text-5xl md:text-6xl lg:text-[5rem]">
+                Qué hay dentro de un manual<span className="text-lacre">.</span>
+              </h1>
+              <p className="mt-8 max-w-2xl text-lg md:text-xl text-ceniza leading-[1.55]">
+                Doce capítulos. {total} componentes. Ni uno de adorno<span className="text-lacre">.</span>
+              </p>
+              <div className="mt-10 grid grid-cols-3 gap-6 max-w-xl border-t border-papel/15 pt-6">
+                {TIERS.map((t, i) => (
+                  <div key={t}>
+                    <p className={`font-mono text-[10px] uppercase tracking-widest ${i === 1 ? "text-lacre" : "text-piedra"}`}>
+                      {TIER_LABEL[t]}
+                    </p>
+                    <p className="mt-1 text-2xl font-black text-papel font-display">
+                      {ANATOMIA.reduce((s, c) => s + c.items.filter((i) => i.tiers.includes(t)).length, 0)}
+                      <span className="text-piedra text-sm font-mono ml-2">componentes</span>
+                    </p>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <div className="lg:col-span-5">
+              <figure className="relative aspect-[16/9] overflow-hidden border border-papel/10 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.6)]">
+                <Image
+                  src="/hero-v5/anatomia-hero-dark.jpg"
+                  alt="Manual Tramarca abierto mostrando tipografía y grilla con hairline lacre — fondo editorial oscuro"
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </figure>
+            </div>
           </div>
         </div>
       </section>
@@ -139,32 +155,44 @@ export default function AnatomiaPage() {
       {/* Editorial anchor — el sistema impreso, no solo iconografiado */}
       <section className="bg-negro">
         <div className="mx-auto max-w-[1720px] px-6 md:px-10 py-20 md:py-28">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
-            <div className="lg:col-span-5">
-              <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
-                Impreso, no maquetado
-              </p>
-              <h2 className="mt-6 text-4xl md:text-5xl font-black tracking-tight leading-[1.05] text-papel">
-                Así se ve un manual Tramarca cuando sale de imprenta<span className="text-lacre">.</span>
-              </h2>
-              <p className="mt-8 text-base md:text-lg text-ceniza leading-[1.6]">
-                Construcción del logotipo a la izquierda, paleta documentada a
-                la derecha, hex a pie de página. Cada decisión con su razón en
-                la misma página. Si no se puede imprimir, no se entrega<span className="text-lacre">.</span>
-              </p>
-            </div>
-            <div className="lg:col-span-7">
-              <figure className="relative aspect-[16/9] overflow-hidden bg-arena border border-papel/10 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.5)]">
-                <Image
-                  src="/hero-v5/anatomia-spread.jpg"
-                  alt="Doble página del manual Tramarca — sistema de construcción del logo a la izquierda y paleta de color a la derecha"
-                  fill
-                  sizes="(min-width: 1024px) 58vw, 100vw"
-                  className="object-cover"
-                  priority
-                />
-              </figure>
-            </div>
+          <div className="max-w-3xl mb-14 md:mb-20">
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+              Impreso, no maquetado
+            </p>
+            <h2 className="mt-6 text-4xl md:text-5xl font-black tracking-tight leading-[1.05] text-papel">
+              Así se ve un manual Tramarca cuando sale de imprenta<span className="text-lacre">.</span>
+            </h2>
+            <p className="mt-8 text-base md:text-lg text-ceniza leading-[1.6]">
+              Construcción del logotipo, paleta documentada, hex a pie de página,
+              tira de calibración 4-color en la prueba. Cada decisión con su razón
+              en la misma página. Si no se puede imprimir, no se entrega<span className="text-lacre">.</span>
+            </p>
+          </div>
+          <div className="grid md:grid-cols-12 gap-4 md:gap-6">
+            <figure className="md:col-span-8 relative aspect-[16/9] overflow-hidden bg-arena border border-papel/10 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.5)]">
+              <Image
+                src="/hero-v5/anatomia-spread.jpg"
+                alt="Doble página del manual Tramarca — sistema de construcción del logo a la izquierda y paleta de color a la derecha"
+                fill
+                sizes="(min-width: 1024px) 66vw, 100vw"
+                className="object-cover"
+              />
+              <figcaption className="absolute bottom-4 left-5 font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">
+                Fig. 04 · Spread 12/48
+              </figcaption>
+            </figure>
+            <figure className="md:col-span-4 relative aspect-[16/9] md:aspect-auto overflow-hidden bg-papel border border-papel/10 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.5)]">
+              <Image
+                src="/hero-v5/anatomia-cmyk.jpg"
+                alt="Detalle macro de calibración 4-color CMYK más lacre sobre papel con retícula impresa"
+                fill
+                sizes="(min-width: 1024px) 33vw, 100vw"
+                className="object-cover"
+              />
+              <figcaption className="absolute bottom-4 left-5 font-mono text-[9px] uppercase tracking-[0.3em] text-negro">
+                Fig. 05 · Calibración
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>

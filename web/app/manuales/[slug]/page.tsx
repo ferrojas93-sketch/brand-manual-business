@@ -117,6 +117,39 @@ export default async function ManualDetailPage({
         </div>
       </section>
 
+      {slug === "tramarca" && (
+        <section className="bg-papel border-y border-negro/10">
+          <div className="mx-auto max-w-7xl px-6 py-16 md:py-24">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+              <div className="lg:col-span-5">
+                <p className="font-mono text-xs uppercase tracking-widest text-lacre">
+                  En mano
+                </p>
+                <h2 className="mt-5 text-3xl md:text-4xl font-black tracking-tight leading-[1.1]">
+                  El libro que queremos que salga de la propuesta<span className="text-lacre">.</span>
+                </h2>
+                <p className="mt-6 text-base md:text-lg text-piedra leading-[1.6]">
+                  Tapa dura, encuadernación cosida, cream con el wordmark en el
+                  centro. Lo que la imprenta entrega, lo que el cliente defiende.
+                  Escala real, sin retoque<span className="text-lacre">.</span>
+                </p>
+              </div>
+              <div className="lg:col-span-7">
+                <figure className="relative aspect-[3/4] max-w-md mx-auto overflow-hidden bg-arena border border-negro/10 shadow-[0_40px_80px_-30px_rgba(12,12,12,0.3)]">
+                  <Image
+                    src="/hero-v5/tramarca-cover-hand.jpg"
+                    alt="Mano sosteniendo el manual Tramarca cerrado — cream con wordmark y period lacre, escala real"
+                    fill
+                    sizes="(min-width: 1024px) 38vw, 80vw"
+                    className="object-cover"
+                  />
+                </figure>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       <section className="bg-arena">
         <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <h2 className="font-mono text-xs uppercase tracking-widest text-lacre mb-12">
