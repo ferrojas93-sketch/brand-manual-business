@@ -76,7 +76,7 @@ const anatomia = [
 const homeFaqs = [
   {
     q: "¿Cuánto cuesta un manual de marca en España?",
-    a: "Un manual de marca profesional en España suele costar entre 1.500€ y 8.000€ más IVA en agencias tradicionales. En Tramarca publicamos tres tiers con precio cerrado e IVA incluido: Esencial 490€ (20-25 páginas, 5 días), Profesional 990€ (30-40 páginas, 7 días) y Premium 1.990€ (40-50 páginas, 10 días). Sin discovery, sin presupuesto a medida, sin letra pequeña. Lo que lees en la web es exactamente lo que pagas.",
+    a: "En agencias tradicionales un manual de marca profesional suele costar entre 1.500€ y 8.000€ más IVA, tras un proceso de discovery y propuesta personalizada. En Tramarca publicamos tres tiers con precio cerrado e IVA incluido: Esencial 490€ (20-25 páginas, 5 días), Profesional 990€ (30-40 páginas, 7 días) y Premium 1.990€ (40-50 páginas, 10 días). Lo que ves en la web es el precio final.",
   },
   {
     q: "¿Qué incluye un manual de marca?",
@@ -84,23 +84,31 @@ const homeFaqs = [
   },
   {
     q: "¿El IVA va incluido? ¿Hay costes ocultos?",
-    a: "Sí, el IVA 21% está incluido en los precios publicados (490€, 990€, 1.990€). No hay costes ocultos, ni fees de discovery, ni tarifas por revisión adicional dentro del scope. Emitimos factura electrónica española con IVA desglosado para tu contabilidad. Lo que ves en la web es el precio final, todo incluido.",
+    a: "Sí, el IVA 21% está incluido en los precios publicados (490€, 990€, 1.990€). No hay fees de discovery ni tarifas por revisión adicional dentro del scope acordado. Emitimos factura electrónica española con IVA desglosado para tu contabilidad. El precio que ves es el precio final.",
   },
   {
     q: "¿Cuánto tarda en entregarse un manual de marca?",
-    a: "Plazo publicado y garantizado desde el kickoff con brief firmado: Esencial 5 días laborables, Profesional 7 días, Premium 10 días. No son plazos 'aproximados' ni 'depende del feedback'. Si el brief está firmado el lunes, tienes manual Esencial el viernes. Las revisiones no alargan el plazo base: se cuentan como rondas acotadas dentro del proceso.",
+    a: "Plazo publicado y garantizado desde el kickoff con brief firmado: Esencial 5 días laborables, Profesional 7 días, Premium 10 días. No son plazos orientativos. Si el brief se firma el lunes, el manual Esencial está entregado el viernes. Las revisiones incluidas no alargan el plazo base: se cuentan como rondas acotadas dentro del proceso.",
   },
   {
     q: "¿Cuántas revisiones incluye cada tier?",
-    a: "Esencial incluye 1 ronda de revisión. Profesional y Premium incluyen 2 rondas. Cada ronda cubre cambios acotados sobre la dirección ya aprobada en el brief. Cambios de scope (añadir capítulos, rebrand total, nuevos entregables) se presupuestan aparte y con precio transparente. Sin revisiones ilimitadas: eso siempre acaba mal para ambas partes.",
+    a: "Esencial incluye 1 ronda de revisión. Profesional y Premium incluyen 2 rondas. Cada ronda cubre cambios acotados sobre la dirección ya aprobada en el brief. Los cambios de scope (añadir capítulos, rebrand total, entregables nuevos) se presupuestan aparte con precio transparente. Preferimos revisiones acotadas a revisiones ilimitadas porque protege el plazo y el foco del proyecto.",
+  },
+  {
+    q: "¿Qué pasa si necesito más revisiones de las incluidas?",
+    a: "Si tras las revisiones incluidas quieres una ronda adicional, te pasamos presupuesto acotado antes de empezar: tarifa por horas o fija según el alcance. Lo decides tú. También puedes ampliar a un tier superior en cualquier momento pagando solo la diferencia (490→990→1.990€). Nunca aparece un extra sin que lo hayas aprobado antes por escrito.",
+  },
+  {
+    q: "¿Puedo pagar en dos veces?",
+    a: "Sí. Los tiers Profesional y Premium se pagan en dos plazos: 50% al kickoff (con brief firmado) y 50% en la entrega final. El tier Esencial se paga íntegro al kickoff. Aceptamos transferencia SEPA o Stripe (tarjeta, Apple Pay, Google Pay). Emitimos factura electrónica en cada pago.",
   },
   {
     q: "¿Cuál es la diferencia entre un manual de marca y un logo?",
-    a: "Un logo es un archivo. Un manual de marca es un sistema documentado: cómo se usa ese logo, con qué colores, en qué tipografías, en qué aplicaciones, con qué tono verbal, y qué no hacer. Un logo express de 150€ te da un .ai. Un manual Tramarca te da un documento operativo de 20-50 páginas que cualquiera en tu equipo puede aplicar sin preguntarte cada vez. Cosas distintas.",
+    a: "Un logo es un archivo. Un manual de marca es un sistema documentado: cómo se usa ese logo, con qué colores, en qué tipografías, en qué aplicaciones, con qué tono verbal y qué evitar. Un manual Tramarca te da un documento operativo de 20-50 páginas que cualquiera en tu equipo puede aplicar sin tener que preguntar cada vez. Si solo necesitas un logo aislado, hay estudios especializados que lo hacen muy bien.",
   },
   {
     q: "¿Qué diferencia a Tramarca de una agencia de branding?",
-    a: "Tramarca es un estudio productizado: scope cerrado, precio público, plazo publicado, entregables documentados. Una agencia tradicional hace discovery workshops, propuesta personalizada, custom pricing y timelines 'a definir' de 6-12 semanas. Ambos modelos son válidos. Nosotros hemos elegido el formato productizado para empresas que saben qué quieren y prefieren claridad operativa a ritual consultivo.",
+    a: "Tramarca es un estudio productizado: scope cerrado, precio público, plazo publicado, entregables documentados. Una agencia tradicional hace discovery workshops, propuesta personalizada, pricing custom y timelines de 6-12 semanas. Ambos modelos son válidos según el caso. Tramarca encaja mejor para equipos que ya tienen claro el proyecto y prefieren claridad operativa. Para proyectos que necesitan un discovery profundo, una agencia tradicional puede ser mejor elección.",
   },
   {
     q: "¿Sirve Tramarca para rebrand o solo para marca nueva?",
@@ -108,7 +116,7 @@ const homeFaqs = [
   },
   {
     q: "¿Qué es el Founding Customer Program?",
-    a: "Los primeros cinco clientes de Tramarca pagan precio full (490€, 990€ o 1.990€ según tier) y reciben extras: +10 páginas sobre el tier elegido, sesión de estrategia adicional de 60 minutos, case study co-producido y prioridad de entrega. A cambio pedimos case study público, testimonial en vídeo y dos referidos cualificados. Se cierra cuando se cierra: tras los cinco, los precios se revisan al alza.",
+    a: "Los primeros cinco clientes de Tramarca pagan precio full (490€, 990€ o 1.990€ según tier) y reciben extras: +10 páginas sobre el tier elegido, sesión de estrategia adicional de 60 minutos, case study co-producido y prioridad de entrega. A cambio pedimos case study público, testimonial en vídeo y dos referidos cualificados. Tras los cinco, los precios se revisan al alza.",
   },
   {
     q: "¿Hay garantía de devolución?",
@@ -116,11 +124,11 @@ const homeFaqs = [
   },
   {
     q: "¿Trabajáis con autónomos, PYMES o solo empresas grandes?",
-    a: "Autónomos, PYMES y empresas medianas. Emitimos factura con NIF personal o CIF, sin diferencia de precio ni de scope. Nuestro cliente tipo tiene facturación entre 100k€ y 10M€ y necesita un sistema de marca documentado sin pagar 8.000€ a una agencia ni conformarse con un logo de 150€. Empresas grandes con procesos de compra complejos suelen necesitar una agencia tradicional: no somos ese vendor.",
+    a: "Autónomos, PYMES y empresas medianas. Emitimos factura con NIF personal o CIF, sin diferencia de precio ni de scope. El cliente tipo de Tramarca factura entre 100k€ y 10M€ y necesita un sistema de marca documentado con precio y plazo claros. Empresas grandes con procesos de compra complejos suelen necesitar agencias con equipo dedicado y soporte contractual amplio.",
   },
   {
     q: "¿Atendéis fuera de Madrid? ¿Trabajáis en remoto?",
-    a: "Sí. Trabajamos 100% en remoto desde Madrid para toda España y Europa. Brief estructurado online, kickoff por email, reviews por email con deadlines claras, entrega en PDF y Figma. Nada de llamadas ni reuniones: el trabajo es async y por escrito, precisamente porque lo que entregamos es un documento. Si hace falta aclarar algo puntual, un mensaje. Rápido.",
+    a: "Sí. Trabajamos 100% en remoto desde Madrid para toda España y Europa. Brief estructurado online, kickoff por email, reviews por email con deadlines claras, entrega en PDF y Figma. Todo el proceso es asíncrono y por escrito, precisamente porque lo que entregamos es un documento. Si hace falta aclarar algo puntual, un mensaje basta.",
   },
 ];
 
