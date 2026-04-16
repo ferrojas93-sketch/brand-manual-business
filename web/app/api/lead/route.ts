@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase";
 import { limitByEmail, limitByIp } from "@/lib/rate-limit";
 import { verifyTurnstile } from "@/lib/turnstile";
+import { notifyNewLead } from "@/lib/notify";
 
 export const runtime = "nodejs";
 
@@ -98,6 +99,16 @@ export async function POST(req: Request) {
     console.error("lead_insert_error", { code: error.code, message: error.message });
     return NextResponse.json({ error: "Database error" }, { status: 500 });
   }
+
+  await notifyNewLead({
+    name,
+    email,
+    company,
+    tier: body.tier ?? "no-lo-se",
+    founding: !!body.founding,
+    message,
+    ip,
+  });
 
   return NextResponse.json({ ok: true });
 }
