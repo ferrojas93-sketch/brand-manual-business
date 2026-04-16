@@ -239,58 +239,6 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Stats + portfolio */}
-      <section className="bg-papel border-t border-negro/10">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-20 md:py-28">
-          <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
-              Qué hemos entregado
-            </p>
-            <h2 className="mt-6 font-sans font-black tracking-tight leading-[1.05] max-w-5xl text-4xl md:text-6xl lg:text-7xl">
-              Cuatro manuales.
-              <br />
-              <span className="text-piedra">Ciento treinta y nueve páginas.</span>
-              <br />
-              Tres sectores<span className="text-lacre">.</span>
-            </h2>
-          </Reveal>
-
-          <Reveal>
-            <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-negro/15 border border-negro/15">
-              {[
-                { n: "04", l: "Manuales entregados" },
-                { n: "139", l: "Páginas producidas" },
-                { n: "03", l: "Sectores" },
-                { n: "100%", l: "Con PDF público" },
-              ].map((s) => (
-                <div key={s.l} className="bg-papel p-6 md:p-8">
-                  <p className="font-sans font-black text-4xl md:text-6xl text-negro tracking-[-0.03em]">
-                    {s.n}
-                  </p>
-                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
-                    {s.l}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <p className="mt-12 max-w-3xl text-lg md:text-xl text-piedra leading-relaxed">
-              Cultural (Anfisbena), artesanal (Claramel), deeptech (Matraz Innova) más
-              el nuestro propio. Portfolio público, PDFs descargables, sin mockups.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <ButtonLink href="/precios" variant="primary" size="lg">
-                Ver precios →
-              </ButtonLink>
-              <ButtonLink href="/manuales" variant="ghost" size="lg">
-                Ver manuales publicados
-              </ButtonLink>
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </>
   );
 }

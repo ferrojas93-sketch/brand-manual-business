@@ -6,9 +6,9 @@ const YEAR = 2026;
 export function Footer() {
   return (
     <footer className="section-dark">
-      <div className="mx-auto max-w-6xl px-6 pt-14 pb-8">
+      <div className="mx-auto max-w-4xl px-6 pt-12 pb-6">
         {/* Colophon editorial — tipo masthead de revista */}
-        <div className="grid md:grid-cols-12 gap-8 md:gap-10 pb-10 border-b border-papel/10">
+        <div className="grid md:grid-cols-12 gap-6 md:gap-8 pb-8 border-b border-papel/10">
           <div className="md:col-span-5">
             <Logo invert />
             <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.3em] text-lacre">

@@ -39,50 +39,50 @@ export default async function ContactoPage({
   return (
     <>
       <JsonLd data={schemaGraph} />
-      {/* Hero editorial asimétrico — título bold + dateline lateral */}
+      {/* Hero — imagen de fondo con overlay, proceso aside compacto */}
       <section className="relative bg-papel border-b border-negro/15 overflow-hidden">
-        {/* Masthead editorial */}
-        <div className="mx-auto max-w-[1720px] px-6 md:px-10 pt-5 md:pt-6 flex items-center justify-between gap-4 font-mono text-[10px] md:text-[11px] uppercase tracking-[0.28em] text-piedra border-b border-negro/15 pb-3 md:pb-4">
-          <span className="font-bold text-negro">
-            Tramarca<span className="text-lacre">.</span>
-          </span>
-          <span className="hidden md:inline text-center">
-            Contacto <span className="text-lacre">·</span> Respuesta en 24h laborables
-          </span>
-          <span>
-            Madrid <span className="text-lacre">·</span> hola@tramarca.es
-          </span>
+        {/* Flatlay como background con opacidad — se intuye sin competir */}
+        <div className="absolute inset-0 pointer-events-none">
+          <Image
+            src="/hero-v5/contacto-hero-flatlay.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover opacity-[0.18]"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-papel/80 via-papel/40 to-papel/80" />
         </div>
 
-        <div className="mx-auto max-w-[1720px] px-6 md:px-10 pt-8 md:pt-14 pb-10 md:pb-14">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="relative mx-auto max-w-[1400px] px-6 md:px-10 pt-16 md:pt-20 pb-14 md:pb-20">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-start">
             <div className="lg:col-span-7">
-              <div className="flex items-start gap-6">
+              <div className="flex items-start gap-5">
                 <span
                   aria-hidden
-                  className="mt-[0.18em] block w-[3px] h-[0.72em] bg-lacre shrink-0"
-                  style={{ fontSize: "clamp(4rem, 12vw, 11rem)" }}
+                  className="mt-[0.22em] block w-[3px] h-[0.68em] bg-lacre shrink-0"
+                  style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
                 />
                 <h1
-                  className="font-sans font-black tracking-[-0.045em] leading-[0.88] text-negro"
-                  style={{ fontSize: "clamp(4rem, 12vw, 11rem)" }}
+                  className="font-sans font-black tracking-[-0.04em] leading-[0.9] text-negro"
+                  style={{ fontSize: "clamp(3rem, 7vw, 6rem)" }}
                 >
                   Hablamos<span className="text-lacre">.</span>
                 </h1>
               </div>
-              <p className="mt-10 max-w-xl text-lg md:text-xl text-piedra leading-[1.55]">
+              <p className="mt-8 max-w-xl text-base md:text-lg text-piedra leading-[1.55]">
                 Rellena el formulario. Te escribimos en menos de 24 horas laborables
                 con propuesta y link de pago seguro. Si encaja, kickoff en 48h. Si
                 no, te lo decimos con honestidad<span className="text-lacre">.</span>
               </p>
             </div>
 
-            {/* Lateral proceso 3 pasos — lista vertical editorial */}
-            <aside className="lg:col-span-5 mt-6 lg:mt-4">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre mb-6">
+            {/* Lateral proceso 3 pasos — compacto */}
+            <aside className="lg:col-span-5 mt-4 lg:mt-2">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre mb-4">
                 Cómo funciona
               </p>
-              <ol className="space-y-0 divide-y divide-negro/15 border-y border-negro/15">
+              <ol className="divide-y divide-negro/15 border-y border-negro/15">
                 {[
                   {
                     n: "01",
@@ -100,12 +100,12 @@ export default async function ContactoPage({
                     d: "Confirmas pago, firmamos brief y arranca el contador del tier que elijas.",
                   },
                 ].map((s) => (
-                  <li key={s.n} className="flex items-baseline gap-5 py-5">
-                    <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-lacre shrink-0 min-w-[28px]">
+                  <li key={s.n} className="flex items-baseline gap-4 py-4">
+                    <span className="font-mono text-[11px] uppercase tracking-[0.3em] text-lacre shrink-0 min-w-[24px]">
                       {s.n}
                     </span>
                     <div className="min-w-0">
-                      <h2 className="font-black text-lg tracking-tight">{s.t}</h2>
+                      <h2 className="font-black text-base tracking-tight">{s.t}</h2>
                       <p className="mt-1 text-sm text-piedra leading-relaxed">{s.d}</p>
                     </div>
                   </li>
@@ -113,30 +113,6 @@ export default async function ContactoPage({
               </ol>
             </aside>
           </div>
-        </div>
-      </section>
-
-      {/* Signature visual — flatlay del proceso async sin decirlo */}
-      <section className="bg-papel border-y border-negro/10">
-        <div className="mx-auto max-w-[1720px] px-6 md:px-10 py-12 md:py-16">
-          <figure className="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden">
-            <Image
-              src="/hero-v5/contacto-hero-flatlay.jpg"
-              alt="Escritorio editorial con el manual Tramarca cerrado, iPhone en modo silencio, taza cerámica lacre y papelería — el objeto que llegará tras la propuesta"
-              fill
-              sizes="100vw"
-              className="object-cover"
-              priority
-            />
-            <figcaption className="absolute bottom-6 left-6 md:bottom-10 md:left-10 max-w-sm">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
-                Fig. 06 · Escritorio editorial
-              </p>
-              <p className="mt-2 text-negro font-black text-xl md:text-2xl leading-tight">
-                Lo que recibes, por escrito<span className="text-lacre">.</span>
-              </p>
-            </figcaption>
-          </figure>
         </div>
       </section>
 

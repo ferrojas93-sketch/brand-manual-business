@@ -125,26 +125,29 @@ export default function PreciosPage() {
           <div className="mt-12 overflow-x-auto">
             <div className="min-w-[780px] border border-negro/15">
               <div className="grid grid-cols-[1.1fr_1fr_1fr_1fr] bg-negro text-papel">
-                <div className="px-5 py-5 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
+                <div className="px-5 py-6 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra self-end">
                   Comparativa
                 </div>
-                <div className="px-5 py-5 border-l border-papel/15">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-ceniza">Tier 1</p>
-                  <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Esencial</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">490€ <span className="text-ceniza/70">· IVA incl.</span></p>
+                <div className="px-5 py-6 border-l border-papel/15">
+                  <p className="text-xl md:text-2xl font-black tracking-tight">Esencial</p>
+                  <p className="mt-2 text-base md:text-lg font-black tracking-tight tabular-nums">
+                    490€ <span className="font-mono text-[10px] font-normal text-ceniza/70">IVA incl.</span>
+                  </p>
                 </div>
-                <div className="relative px-5 py-5 border-l border-papel/15 bg-lacre/15">
+                <div className="relative px-5 py-6 border-l border-papel/15 bg-lacre/15">
                   <span className="absolute -top-2.5 left-5 bg-negro text-lacre border border-lacre font-mono text-[9px] uppercase tracking-[0.2em] px-2 py-0.5 font-bold">
                     Recomendado
                   </span>
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">Tier 2</p>
-                  <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Profesional</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">990€ <span className="text-ceniza/70">· IVA incl.</span></p>
+                  <p className="text-xl md:text-2xl font-black tracking-tight">Profesional</p>
+                  <p className="mt-2 text-base md:text-lg font-black tracking-tight tabular-nums text-lacre">
+                    990€ <span className="font-mono text-[10px] font-normal text-ceniza/70">IVA incl.</span>
+                  </p>
                 </div>
-                <div className="px-5 py-5 border-l border-papel/15">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-ceniza">Tier 3</p>
-                  <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Premium</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">1.990€ <span className="text-ceniza/70">· IVA incl.</span></p>
+                <div className="px-5 py-6 border-l border-papel/15">
+                  <p className="text-xl md:text-2xl font-black tracking-tight">Premium</p>
+                  <p className="mt-2 text-base md:text-lg font-black tracking-tight tabular-nums">
+                    1.990€ <span className="font-mono text-[10px] font-normal text-ceniza/70">IVA incl.</span>
+                  </p>
                 </div>
               </div>
 
@@ -302,27 +305,32 @@ export default function PreciosPage() {
         </div>
       </section>
 
-      {/* Signature moment — close-up del objeto que estás comprando */}
+      {/* Signature moment — close-up del objeto, contenido no full-bleed */}
       <section className="bg-negro">
-        <div className="mx-auto max-w-[1720px] px-6 md:px-10 py-0">
-          <figure className="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden">
-            <Image
-              src="/hero-v5/precios-binding.jpg"
-              alt="Detalle de encuadernación de un manual Tramarca — lomo gris carbon con marcapáginas lacre"
-              fill
-              sizes="100vw"
-              className="object-cover"
-              priority
-            />
-            <figcaption className="absolute bottom-6 left-6 md:bottom-10 md:left-10 max-w-sm">
+        <div className="mx-auto max-w-4xl px-6 py-16 md:py-20">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+            <figure className="md:col-span-7 relative aspect-[4/3] overflow-hidden border border-papel/10">
+              <Image
+                src="/hero-v5/precios-binding.jpg"
+                alt="Detalle de encuadernación de un manual Tramarca — lomo con marcapáginas lacre"
+                fill
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </figure>
+            <div className="md:col-span-5">
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
                 Fig. 03 · Acabado
               </p>
-              <p className="mt-2 text-papel font-black text-xl md:text-2xl leading-tight">
+              <p className="mt-3 text-papel font-black text-2xl md:text-3xl leading-tight">
                 Lo que pagas es un objeto defendible<span className="text-lacre">.</span>
               </p>
-            </figcaption>
-          </figure>
+              <p className="mt-5 text-ceniza text-sm md:text-base leading-relaxed">
+                Tapa dura, encuadernación cosida, marcapáginas textil. No un PDF
+                con logo, un libro que tu equipo saca cuando alguien duda<span className="text-lacre">.</span>
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
