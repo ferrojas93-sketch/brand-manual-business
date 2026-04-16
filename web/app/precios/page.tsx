@@ -4,7 +4,7 @@ import { PricingCards } from "@/components/PricingCards";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ButtonLink } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
-import { FOUNDING_SLOTS_REMAINING, FOUNDING_SLOTS_TOTAL, SITE_URL } from "@/lib/tiers";
+import { SITE_URL } from "@/lib/tiers";
 import { jsonLdGraph, serviceSchema, breadcrumbListSchema } from "@/lib/schema";
 import { cn } from "@/lib/utils";
 
@@ -38,7 +38,7 @@ const pricingFaqs = [
   },
   {
     q: "¿Subirán los precios?",
-    a: "Sí. Tras los cinco Founding o tras los primeros diez clientes (lo que ocurra antes), revisamos tarifas. Si te interesa, el precio actual se cierra con tu kickoff.",
+    a: "Sí. Tras los primeros diez clientes revisamos tarifas al alza. El precio que se queda cerrado es el del kickoff: una vez firmas brief, tu tier está amarrado a su precio actual.",
   },
   {
     q: "¿Hay garantía si no me convence?",
@@ -53,15 +53,16 @@ const pricingFaqs = [
 const comparisonRows = [
   { label: "Precio (IVA incl.)", esencial: "490€", profesional: "990€", premium: "1.990€" },
   { label: "Páginas", esencial: "20-25", profesional: "30-40", premium: "40-50" },
-  { label: "Plazo", esencial: "5 días", profesional: "7 días", premium: "10 días" },
-  { label: "Revisiones", esencial: "1", profesional: "2", premium: "2" },
-  { label: "Estrategia de marca", esencial: "—", profesional: "Básica", premium: "Completa" },
-  { label: "Identidad verbal", esencial: "—", profesional: "✓", premium: "✓ extendida" },
-  { label: "Sistema visual", esencial: "Logo + paleta + tipo", profesional: "Completo", premium: "Exhaustivo" },
-  { label: "Guidelines aplicación", esencial: "3 (papelería, social, firma)", profesional: "Extendidas (+web)", premium: "Totales (+merch)" },
-  { label: "Plantillas Figma", esencial: "—", profesional: "✓", premium: "✓" },
-  { label: "Formación equipo (90min)", esencial: "—", profesional: "—", premium: "✓" },
-  { label: "Entrega", esencial: "PDF + Figma", profesional: "PDF + Figma", premium: "PDF + Figma + assets sueltos" },
+  { label: "Plazo laborable", esencial: "5 días", profesional: "7 días", premium: "10 días" },
+  { label: "Rondas de revisión", esencial: "1", profesional: "2", premium: "2" },
+  { label: "Estrategia de marca", esencial: "—", profesional: "Básica", premium: "Completa (arquetipo + posicionamiento)" },
+  { label: "Identidad verbal", esencial: "—", profesional: "Tono + vocabulario", premium: "Extendida + naming + tagline" },
+  { label: "Sistema visual", esencial: "Logo + paleta + tipografía", profesional: "Completo + jerarquías", premium: "Exhaustivo + don'ts + variable fonts" },
+  { label: "Aplicaciones", esencial: "3 (papelería, social, firma)", profesional: "Extendidas (+ web + email)", premium: "Totales (+ merch + signage)" },
+  { label: "Plantillas Figma", esencial: "—", profesional: "Base editable", premium: "Biblioteca extendida" },
+  { label: "Dirección fotográfica", esencial: "—", profesional: "—", premium: "✓ incluida" },
+  { label: "Copia impresa hecha libro", esencial: "—", profesional: "—", premium: "✓ edición única enviada" },
+  { label: "Archivos fuente", esencial: "SVG + PNG + PDF", profesional: "+ Figma editable", premium: "+ assets empaquetados" },
 ];
 
 export default function PreciosPage() {
@@ -99,7 +100,69 @@ export default function PreciosPage() {
         </div>
       </section>
 
-      {/* Price cards primero */}
+      {/* Ancla comparativa — qué cuesta esto en otros sitios */}
+      <section className="bg-papel border-b border-negro/10">
+        <div className="mx-auto max-w-7xl px-6 py-14 md:py-20">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+            Qué cuesta esto en otros sitios
+          </p>
+          <h2 className="mt-5 text-3xl md:text-4xl font-black tracking-tight leading-[1.1] max-w-3xl">
+            Para que tengas la referencia antes de elegir<span className="text-lacre">.</span>
+          </h2>
+          <div className="mt-12 grid md:grid-cols-4 gap-px bg-negro/10 border border-negro/10">
+            <div className="bg-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
+                Agencia tradicional
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                6.000€–18.000€
+              </p>
+              <p className="mt-2 text-sm text-piedra leading-relaxed">
+                + IVA aparte. Discovery 6–12 semanas. 3–4 reuniones obligatorias.
+                Pricing custom en cada propuesta.
+              </p>
+            </div>
+            <div className="bg-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
+                Freelance generalista
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                800€–3.500€
+              </p>
+              <p className="mt-2 text-sm text-piedra leading-relaxed">
+                Plazo variable. Alcance negociado cada vez. Calidad
+                dependiente de quién coja tu proyecto.
+              </p>
+            </div>
+            <div className="bg-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
+                Canva + logo barato
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                ~80€
+              </p>
+              <p className="mt-2 text-sm text-piedra leading-relaxed">
+                Plantilla + un archivo. Sin sistema, sin documentación,
+                sin soporte, sin aplicaciones.
+              </p>
+            </div>
+            <div className="bg-negro text-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                Tramarca
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                490€–1.990€
+              </p>
+              <p className="mt-2 text-sm text-ceniza leading-relaxed">
+                IVA incluido. 5 a 10 días laborables. Todo async por email.
+                Precio cerrado publicado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Price cards */}
       <section className="bg-arena">
         <div className="mx-auto max-w-7xl px-6 py-14 md:py-20">
           <PricingCards />
@@ -127,22 +190,22 @@ export default function PreciosPage() {
                   Comparativa
                 </div>
                 <div className="px-5 py-5 border-l border-papel/15">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-piedra">Tier 1</p>
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-ceniza">Tier 1</p>
                   <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Esencial</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza">490€ <span className="text-piedra">· IVA incl.</span></p>
+                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">490€ <span className="text-ceniza/70">· IVA incl.</span></p>
                 </div>
                 <div className="relative px-5 py-5 border-l border-papel/15 bg-lacre/15">
-                  <span className="absolute -top-2.5 left-5 bg-lacre text-papel font-mono text-[9px] uppercase tracking-[0.25em] px-2 py-0.5">
+                  <span className="absolute -top-2.5 left-5 bg-negro text-lacre border border-lacre font-mono text-[9px] uppercase tracking-[0.2em] px-2 py-0.5 font-bold">
                     Recomendado
                   </span>
                   <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">Tier 2</p>
                   <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Profesional</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza">990€ <span className="text-piedra">· IVA incl.</span></p>
+                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">990€ <span className="text-ceniza/70">· IVA incl.</span></p>
                 </div>
                 <div className="px-5 py-5 border-l border-papel/15">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-piedra">Tier 3</p>
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-ceniza">Tier 3</p>
                   <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Premium</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza">1.990€ <span className="text-piedra">· IVA incl.</span></p>
+                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">1.990€ <span className="text-ceniza/70">· IVA incl.</span></p>
                 </div>
               </div>
 
@@ -234,36 +297,6 @@ export default function PreciosPage() {
               Si tu proyecto necesita algo que no entra en el tier, lo cotizamos aparte.
               Sin problema<span className="text-lacre">.</span>
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-dark">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <p className="font-mono text-xs uppercase tracking-widest text-lacre">
-            Founding Customer Program
-          </p>
-          <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05] max-w-4xl">
-            Quedan{" "}
-            <span className="text-lacre">
-              {FOUNDING_SLOTS_REMAINING} de {FOUNDING_SLOTS_TOTAL}
-            </span>{" "}
-            plazas.
-          </h2>
-          <p className="mt-8 text-lg text-ceniza max-w-3xl leading-relaxed">
-            Los primeros cinco clientes pagan precio full y reciben extras: +10 páginas
-            sobre el tier elegido, sesión de estrategia adicional (60min), case study
-            co-producido, prioridad de entrega. A cambio: case study público, testimonial
-            en vídeo, dos referidos. Se cierra cuando se cierra.
-          </p>
-          <div className="mt-10">
-            <ButtonLink
-              href={{ pathname: "/contacto", query: { founding: "true" } }}
-              variant="invert"
-              size="lg"
-            >
-              Hablamos →
-            </ButtonLink>
           </div>
         </div>
       </section>

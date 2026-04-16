@@ -8,7 +8,6 @@ import { JsonLd } from "@/components/JsonLd";
 import { SpreadFrame } from "@/components/SpreadFrame";
 import { Reveal } from "@/components/Reveal";
 import { MANUALES } from "@/lib/manuales";
-import { FOUNDING_SLOTS_REMAINING, FOUNDING_SLOTS_TOTAL } from "@/lib/tiers";
 import { jsonLdGraph, serviceSchema, faqSchema } from "@/lib/schema";
 
 const portfolioHome = MANUALES.filter((m) => m.slug !== "tramarca").slice(0, 3);
@@ -75,16 +74,32 @@ const anatomia = [
 
 const homeFaqs = [
   {
+    q: "¿Qué diferencia a Tramarca de una agencia de branding?",
+    a: "Tramarca es un estudio productizado: scope cerrado, precio público, plazo publicado, entregables documentados. Una agencia tradicional hace discovery workshops, propuesta personalizada, pricing custom y timelines de 6-12 semanas. Ambos modelos son válidos según el caso. Tramarca encaja mejor para equipos que ya tienen claro el proyecto y prefieren claridad operativa. Para proyectos que necesitan un discovery profundo, una agencia tradicional puede ser mejor elección.",
+  },
+  {
+    q: "¿Hay garantía de devolución?",
+    a: "Sí. Si tras la primera entrega consideras que el manual no resuelve el brief firmado, devolvemos el 50% del pago de kickoff dentro de los 14 días siguientes a la entrega. O sale el manual completo, o devolvemos: no entregamos a medias. Queda por escrito en el contrato.",
+  },
+  {
+    q: "¿Qué pasa si necesito más revisiones de las incluidas?",
+    a: "Si tras las revisiones incluidas quieres una ronda adicional, te pasamos presupuesto acotado antes de empezar: tarifa por horas o fija según el alcance. Lo decides tú. También puedes ampliar a un tier superior en cualquier momento pagando solo la diferencia (490→990→1.990€). Nunca aparece un extra sin que lo hayas aprobado antes por escrito.",
+  },
+  {
     q: "¿Cuánto cuesta un manual de marca en España?",
     a: "En agencias tradicionales un manual de marca profesional suele costar entre 1.500€ y 8.000€ más IVA, tras un proceso de discovery y propuesta personalizada. En Tramarca publicamos tres tiers con precio cerrado e IVA incluido: Esencial 490€ (20-25 páginas, 5 días), Profesional 990€ (30-40 páginas, 7 días) y Premium 1.990€ (40-50 páginas, 10 días). Lo que ves en la web es el precio final.",
   },
   {
-    q: "¿Qué incluye un manual de marca?",
-    a: "Un manual de marca Tramarca incluye sistema de identidad visual (logo, paleta, tipografía, grid), aplicaciones (papelería, firma de email, RRSS), guidelines de uso y, según el tier, estrategia de marca, identidad verbal y plantillas Figma editables. Entregamos PDF A4 landscape y archivos fuente. Todo documentado capítulo a capítulo: 48 componentes repartidos en 12 capítulos. Puedes ver el índice completo en /anatomia.",
+    q: "¿Sirve Tramarca para rebrand o solo para marca nueva?",
+    a: "Ambos. Los tiers Profesional y Premium funcionan especialmente bien para rebrand: partimos del activo existente, auditamos qué funciona y qué no, y reconstruimos desde sistema. Para marca nueva sin naming ni posicionamiento previo, recomendamos Premium (incluye estrategia completa e identidad verbal). Mismo precio, mismo plazo.",
   },
   {
-    q: "¿El IVA va incluido? ¿Hay costes ocultos?",
-    a: "Sí, el IVA 21% está incluido en los precios publicados (490€, 990€, 1.990€). No hay fees de discovery ni tarifas por revisión adicional dentro del scope acordado. Emitimos factura electrónica española con IVA desglosado para tu contabilidad. El precio que ves es el precio final.",
+    q: "¿Puedo pagar en dos veces?",
+    a: "Sí. Los tiers Profesional y Premium se pagan en dos plazos: 50% al kickoff (con brief firmado) y 50% en la entrega final. El tier Esencial se paga íntegro al kickoff. Aceptamos transferencia SEPA o Stripe (tarjeta, Apple Pay, Google Pay). Emitimos factura electrónica en cada pago.",
+  },
+  {
+    q: "¿Qué incluye un manual de marca?",
+    a: "Un manual de marca Tramarca incluye sistema de identidad visual (logo, paleta, tipografía, grid), aplicaciones (papelería, firma de email, RRSS), guidelines de uso y, según el tier, estrategia de marca, identidad verbal y plantillas Figma editables. Entregamos PDF A4 landscape y archivos fuente. Todo documentado capítulo a capítulo: 48 componentes repartidos en 12 capítulos. Puedes ver el índice completo en /anatomia.",
   },
   {
     q: "¿Cuánto tarda en entregarse un manual de marca?",
@@ -95,32 +110,12 @@ const homeFaqs = [
     a: "Esencial incluye 1 ronda de revisión. Profesional y Premium incluyen 2 rondas. Cada ronda cubre cambios acotados sobre la dirección ya aprobada en el brief. Los cambios de scope (añadir capítulos, rebrand total, entregables nuevos) se presupuestan aparte con precio transparente. Preferimos revisiones acotadas a revisiones ilimitadas porque protege el plazo y el foco del proyecto.",
   },
   {
-    q: "¿Qué pasa si necesito más revisiones de las incluidas?",
-    a: "Si tras las revisiones incluidas quieres una ronda adicional, te pasamos presupuesto acotado antes de empezar: tarifa por horas o fija según el alcance. Lo decides tú. También puedes ampliar a un tier superior en cualquier momento pagando solo la diferencia (490→990→1.990€). Nunca aparece un extra sin que lo hayas aprobado antes por escrito.",
-  },
-  {
-    q: "¿Puedo pagar en dos veces?",
-    a: "Sí. Los tiers Profesional y Premium se pagan en dos plazos: 50% al kickoff (con brief firmado) y 50% en la entrega final. El tier Esencial se paga íntegro al kickoff. Aceptamos transferencia SEPA o Stripe (tarjeta, Apple Pay, Google Pay). Emitimos factura electrónica en cada pago.",
-  },
-  {
     q: "¿Cuál es la diferencia entre un manual de marca y un logo?",
     a: "Un logo es un archivo. Un manual de marca es un sistema documentado: cómo se usa ese logo, con qué colores, en qué tipografías, en qué aplicaciones, con qué tono verbal y qué evitar. Un manual Tramarca te da un documento operativo de 20-50 páginas que cualquiera en tu equipo puede aplicar sin tener que preguntar cada vez. Si solo necesitas un logo aislado, hay estudios especializados que lo hacen muy bien.",
   },
   {
-    q: "¿Qué diferencia a Tramarca de una agencia de branding?",
-    a: "Tramarca es un estudio productizado: scope cerrado, precio público, plazo publicado, entregables documentados. Una agencia tradicional hace discovery workshops, propuesta personalizada, pricing custom y timelines de 6-12 semanas. Ambos modelos son válidos según el caso. Tramarca encaja mejor para equipos que ya tienen claro el proyecto y prefieren claridad operativa. Para proyectos que necesitan un discovery profundo, una agencia tradicional puede ser mejor elección.",
-  },
-  {
-    q: "¿Sirve Tramarca para rebrand o solo para marca nueva?",
-    a: "Ambos. Los tiers Profesional y Premium funcionan especialmente bien para rebrand: partimos del activo existente, auditamos qué funciona y qué no, y reconstruimos desde sistema. Para marca nueva sin naming ni posicionamiento previo, recomendamos Premium (incluye estrategia completa e identidad verbal). Mismo precio, mismo plazo.",
-  },
-  {
-    q: "¿Qué es el Founding Customer Program?",
-    a: "Los primeros cinco clientes de Tramarca pagan precio full (490€, 990€ o 1.990€ según tier) y reciben extras: +10 páginas sobre el tier elegido, sesión de estrategia adicional de 60 minutos, case study co-producido y prioridad de entrega. A cambio pedimos case study público, testimonial en vídeo y dos referidos cualificados. Tras los cinco, los precios se revisan al alza.",
-  },
-  {
-    q: "¿Hay garantía de devolución?",
-    a: "Sí. Si tras la primera entrega consideras que el manual no resuelve el brief firmado, devolvemos el 50% del pago de kickoff dentro de los 14 días siguientes a la entrega. O sale el manual completo, o devolvemos: no entregamos a medias. Queda por escrito en el contrato.",
+    q: "¿El IVA va incluido? ¿Hay costes ocultos?",
+    a: "Sí, el IVA 21% está incluido en los precios publicados (490€, 990€, 1.990€). No hay fees de discovery ni tarifas por revisión adicional dentro del scope acordado. Emitimos factura electrónica española con IVA desglosado para tu contabilidad. El precio que ves es el precio final.",
   },
   {
     q: "¿Trabajáis con autónomos, PYMES o solo empresas grandes?",
@@ -138,10 +133,16 @@ export default function HomePage() {
       {/* Hero — PAPEL split, manual-native composition (01 chapter cover + spread) */}
       <section className="relative bg-papel border-b border-negro/15 overflow-hidden">
         {/* Masthead — dateline editorial (no manual cosmetics) */}
-        <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-6 md:pt-8 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-piedra border-b border-negro/15 pb-4">
-          <span>Tramarca <span className="text-lacre">·</span> Estudio editorial</span>
-          <span className="hidden md:inline">Manuales de marca por escrito</span>
-          <span>Madrid <span className="text-lacre">·</span> 2026</span>
+        <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-5 md:pt-6 flex items-center justify-between gap-4 font-mono text-[10px] md:text-[11px] uppercase tracking-[0.28em] text-piedra border-b border-negro/15 pb-3 md:pb-4">
+          <span className="font-bold text-negro">
+            Tramarca<span className="text-lacre">.</span>
+          </span>
+          <span className="hidden md:inline text-center">
+            Manuales de marca <span className="text-lacre">·</span> Por escrito <span className="text-lacre">·</span> Desde 2026
+          </span>
+          <span>
+            Madrid <span className="text-lacre">·</span> Edición 1
+          </span>
         </div>
 
         <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-4 md:pt-6">
@@ -157,61 +158,57 @@ export default function HomePage() {
 
           <div className="relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start pb-24 md:pb-32">
             {/* Left column — typography block, manual-faithful */}
-            <div className="lg:col-span-7 pt-2 md:pt-6">
-              {/* Vertical Lacre tick (from manual pages 3,5) */}
+            <div className="lg:col-span-7 pt-2 md:pt-4">
+              {/* Vertical Lacre tick aligned with H1 baseline (manual pages 3,5) */}
               <div className="flex items-start gap-6">
-                <span aria-hidden className="mt-2 block w-[3px] h-28 bg-lacre shrink-0" />
-                <div>
-                  <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.35em] text-piedra">
-                    Manuales de marca <span className="text-lacre">·</span> Por escrito
-                  </p>
-                  <h1 className="mt-6 font-sans font-black tracking-[-0.045em] leading-[0.88] text-negro"
-                      style={{ fontSize: "clamp(3.5rem, 10.5vw, 10rem)" }}>
-                    Tu marca,
-                    <br />
-                    por escrito<span className="text-lacre">.</span>
-                  </h1>
-                </div>
+                <span aria-hidden className="mt-[0.18em] block w-[3px] h-[0.72em] bg-lacre shrink-0" style={{ fontSize: "clamp(3.5rem, 10.5vw, 10rem)" }} />
+                <h1 className="font-sans font-black tracking-[-0.045em] leading-[0.88] text-negro"
+                    style={{ fontSize: "clamp(3.5rem, 10.5vw, 10rem)" }}>
+                  Tu marca,
+                  <br />
+                  por escrito<span className="text-lacre">.</span>
+                </h1>
               </div>
 
               <div className="mt-14 max-w-2xl">
                 <p className="text-2xl md:text-[1.75rem] text-negro leading-[1.25] font-black tracking-tight">
-                  Manuales de marca
+                  Un manual de marca documentado,
                   <br />
-                  <span className="text-piedra">en 5, 7 o 10 días</span><span className="text-lacre">.</span>
+                  <span className="text-piedra">desde <span className="tabular-nums">490€</span></span><span className="text-lacre">.</span>
                 </p>
                 <p className="mt-6 max-w-xl text-base md:text-lg text-piedra leading-[1.6]">
-                  Documentamos tu marca capítulo a capítulo: identidad visual,
-                  aplicaciones, tono verbal y guidelines. Precio cerrado, plazo
-                  publicado. Lo que no se documenta, se improvisa.
+                  Logo, colores, tipografía, tono de voz y aplicaciones — todo
+                  en un PDF editorial de 20-50 páginas. Precio cerrado. Entrega
+                  en 5, 7 o 10 días laborables. Lo que no se documenta, se
+                  improvisa.
                 </p>
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <ButtonLink href="/contacto" variant="primary" size="lg">
-                  Hablemos de tu marca →
+                  Pedir propuesta en 24h →
                 </ButtonLink>
                 <ButtonLink
-                  href="/anatomia"
+                  href="/manuales"
                   variant="ghost"
                   size="lg"
                 >
-                  Qué hay dentro →
+                  Ver 5 manuales publicados →
                 </ButtonLink>
               </div>
 
               <div className="mt-14 grid grid-cols-3 gap-4 max-w-xl border-t-2 border-negro pt-5">
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-widest text-piedra">Esencial</p>
-                  <p className="mt-2 text-3xl font-black text-negro tracking-tight">490€</p>
+                  <p className="mt-2 text-3xl font-black text-negro tracking-tight tabular-nums">490€</p>
                 </div>
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-widest text-lacre">Profesional</p>
-                  <p className="mt-2 text-3xl font-black text-negro tracking-tight">990€<span className="text-lacre">.</span></p>
+                  <p className="mt-2 text-3xl font-black text-negro tracking-tight tabular-nums">990€<span className="text-lacre">.</span></p>
                 </div>
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-widest text-piedra">Premium</p>
-                  <p className="mt-2 text-3xl font-black text-negro tracking-tight">1.990€</p>
+                  <p className="mt-2 text-3xl font-black text-negro tracking-tight tabular-nums">1.990€</p>
                 </div>
               </div>
               <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-piedra">
@@ -574,17 +571,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonios */}
+      {/* Notas del proyecto — voz editorial del estudio sobre cada caso */}
       <section className="section-dark">
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
           <p className="font-mono text-xs uppercase tracking-widest text-lacre">
-            Lo que dicen
+            Notas del proyecto
           </p>
           <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05] max-w-4xl">
-            Tres clientes. Tres sectores.
+            Lo que entró por el brief.
             <br />
-            <span className="text-ceniza">Una misma frase: dejamos de improvisar.</span>
+            <span className="text-ceniza">Lo que salió documentado.</span>
           </h2>
+          <p className="mt-8 max-w-2xl text-base md:text-lg text-ceniza leading-relaxed">
+            Extractos del brief recibido en cada proyecto, registrados antes de
+            empezar. Los testimonios firmados por clientes llegarán cuando
+            entreguen su autorización — no antes.
+          </p>
 
           <div className="mt-16 grid md:grid-cols-3 gap-6 md:gap-8">
             {testimonials
@@ -600,29 +602,20 @@ export default function HomePage() {
                   <blockquote className="mt-4 text-lg md:text-xl text-papel leading-[1.4] flex-1">
                     {m.testimonial!.quote}
                   </blockquote>
-                  <figcaption className="mt-8 pt-6 border-t border-papel/10 flex items-center gap-4">
-                    <div className="relative w-14 h-14 shrink-0 overflow-hidden rounded-full bg-negro border border-papel/10">
-                      <Image
-                        src={`/ilustraciones/retrato-${m.slug}.jpeg`}
-                        alt={`Retrato de ${m.testimonial!.author}`}
-                        fill
-                        sizes="56px"
-                        className="object-cover"
-                      />
-                    </div>
+                  <figcaption className="mt-8 pt-6 border-t border-papel/10 flex items-center justify-between gap-4">
                     <div className="min-w-0">
-                      <p className="font-black text-papel tracking-tight truncate">
-                        {m.testimonial!.author}
+                      <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                        Caso · {m.name}
                       </p>
-                      <p className="font-mono text-[11px] uppercase tracking-widest text-piedra truncate">
-                        {m.testimonial!.role} · {m.sector}
+                      <p className="mt-2 font-mono text-[11px] uppercase tracking-widest text-ceniza">
+                        {m.sector} · {m.pages}pp
                       </p>
                     </div>
                     <Link
                       href={`/manuales/${m.slug}`}
-                      className="ml-auto font-mono text-[11px] uppercase tracking-widest text-lacre hover:text-papel transition-colors shrink-0"
+                      className="font-mono text-[11px] uppercase tracking-widest text-lacre hover:text-papel transition-colors shrink-0"
                     >
-                      Caso →
+                      Ver caso →
                     </Link>
                   </figcaption>
                 </figure>
@@ -630,7 +623,7 @@ export default function HomePage() {
           </div>
 
           <p className="mt-12 font-mono text-xs text-piedra">
-            Case studies completos con dirección de arte, páginas y plazo en{" "}
+            Dirección de arte, páginas y plazo de cada caso en{" "}
             <Link
               href="/manuales"
               className="text-lacre underline underline-offset-4 hover:text-papel"
@@ -678,101 +671,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Founding */}
-      <section className="section-dark relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.08] pointer-events-none"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg, var(--color-lacre) 0, var(--color-lacre) 1px, transparent 1px, transparent 28px)",
-          }}
-        />
-        <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-40">
-          <p className="font-mono text-xs uppercase tracking-widest text-lacre">
-            Founding Customer Program
-          </p>
-
-          {/* Mega counter */}
-          <div className="mt-10 flex items-baseline gap-4 md:gap-8 flex-wrap">
-            <span className="text-[28vw] md:text-[18vw] lg:text-[16rem] font-black text-lacre tracking-[-0.05em] leading-[0.8]">
-              {FOUNDING_SLOTS_REMAINING}
-            </span>
-            <span className="text-[14vw] md:text-[9vw] lg:text-[8rem] font-black text-ceniza/40 tracking-[-0.05em] leading-[0.8]">
-              /{FOUNDING_SLOTS_TOTAL}
-            </span>
-            <span className="font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-ceniza pb-3 md:pb-6">
-              plazas
-              <br />
-              disponibles
-            </span>
-          </div>
-
-          {/* Slot dots visualizer */}
-          <div className="mt-10 flex gap-3 md:gap-4">
-            {Array.from({ length: FOUNDING_SLOTS_TOTAL }).map((_, i) => {
-              const taken = i < FOUNDING_SLOTS_TOTAL - FOUNDING_SLOTS_REMAINING;
-              return (
-                <div
-                  key={i}
-                  className={`h-4 md:h-5 flex-1 max-w-[160px] transition-colors ${
-                    taken ? "bg-lacre" : "bg-papel/60 border border-papel"
-                  }`}
-                  aria-label={taken ? "Plaza ocupada" : "Plaza disponible"}
-                />
-              );
-            })}
-          </div>
-
-          <div className="mt-16 grid md:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <div className="md:col-span-7">
-              <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
-                Precio full. Extras que no se vuelven a publicar.
-              </h2>
-              <p className="mt-6 text-lg text-ceniza leading-relaxed">
-                Los primeros cinco clientes entran al Founding Program. Pagan su tier al
-                precio full. Reciben extras que luego no se vuelven a ofrecer: más páginas,
-                identidad verbal ampliada, formación extendida. A cambio: un case study
-                público, un testimonial en vídeo, dos referidos. Esto se cierra cuando se
-                cierra. No es urgency de marketing. Es matemática.
-              </p>
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <ButtonLink
-                  href={{ pathname: "/contacto", query: { founding: "true" } }}
-                  variant="invert"
-                  size="lg"
-                >
-                  Reservar plaza Founding →
-                </ButtonLink>
-                <ButtonLink href="/precios" variant="ghost" size="lg">
-                  Ver tiers primero
-                </ButtonLink>
-              </div>
-              <p className="mt-4 font-mono text-xs text-piedra">
-                Te respondemos en &lt;24h laborables. Si ya no hay plaza, te lo decimos.
-              </p>
-            </div>
-
-            <ul className="md:col-span-5 space-y-0 divide-y divide-papel/10 border-y border-papel/10">
-              {[
-                { k: "+10pp", v: "páginas sobre el tier elegido" },
-                { k: "60′", v: "sesión de estrategia adicional" },
-                { k: "1×", v: "case study co-producido" },
-                { k: "½", v: "plazo prioritario (si hay hueco)" },
-              ].map((x) => (
-                <li key={x.k} className="flex items-baseline gap-5 py-4">
-                  <span className="font-black text-2xl md:text-3xl text-lacre tracking-tight shrink-0 min-w-[64px]">
-                    {x.k}
-                  </span>
-                  <span className="text-base md:text-lg text-papel">{x.v}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Proceso — movido arriba, 5 pasos, iconos, sin videollamada */}
 
       {/* Cómo trabajamos — afirmación, no negación */}
       <section className="bg-arena">
@@ -828,7 +726,7 @@ export default function HomePage() {
       {/* Cierre */}
       <section className="section-dark">
         <div className="mx-auto max-w-7xl px-6 py-32 md:py-48 text-center">
-          <h2 className="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9]">
+          <h2 className="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[1.02] md:leading-[0.95] lg:leading-[0.88]">
             ¿Tu marca
             <br />
             está por escrito<span className="text-lacre">?</span>

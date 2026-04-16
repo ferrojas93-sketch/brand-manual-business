@@ -48,7 +48,7 @@ export const MANUALES: Manual[] = [
       "Logo construido desde el nombre, paleta corta, sistema tipográfico sobrio, aplicaciones básicas para ecommerce y redes. Veintinueve páginas, tier Esencial.",
     altCover: "Claramel — manual de marca 29 páginas entregado por Tramarca",
     testimonial: {
-      quote: "Arrancamos sin nada. Con el Esencial salimos a vender con marca de verdad: logo, colores, tipografía y aplicaciones para ecommerce. Precio cerrado y entrega en cinco días. Punto.",
+      quote: "Arrancamos sin nada. Con el Esencial salimos a vender con marca de verdad: logo, colores, tipografía y aplicaciones para ecommerce. Precio cerrado y entrega en cinco días.",
       author: "Fundadora",
       role: "Claramel",
     },
@@ -99,7 +99,7 @@ export const MANUALES: Manual[] = [
       "Paleta negra con Lacre como acento único. Satoshi + IBM Plex Mono. Voz provocativa con El Punto Final como tagline. Spreads cinematográficos. Treinta y cuatro páginas, autoproducido.",
     altCover: "Tramarca — manual propio 34 páginas diseñado por Tramarca para Tramarca",
     quote:
-      "Este manual existe para que, si algún día dudamos de lo que estamos haciendo, abramos esta página y nos acordemos. Punto.",
+      "Este manual existe para que, si algún día dudamos de lo que estamos haciendo, abramos esta página y nos acordemos.",
   },
 ];
 

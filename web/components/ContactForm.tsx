@@ -37,7 +37,6 @@ const schema = z.object({
   email: z.string().email("Email inválido").max(200),
   company: z.string().min(2, "¿Cómo se llama lo tuyo?").max(150),
   tier: z.enum(["esencial", "profesional", "premium", "no-lo-se"]),
-  founding: z.boolean().optional(),
   message: z.string().min(10, "Tres líneas mínimo").max(3000),
   brand_maturity: z.enum(["new_brand", "existing", "rebrand", "refresh", "update_manual", ""]).optional(),
   company_website: urlField,
@@ -101,13 +100,14 @@ async function uploadOne(file: File): Promise<Attachment> {
   return { filename: file.name, path, size: file.size, type: file.type };
 }
 
-export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: string; defaultFounding?: boolean }) {
+export function ContactForm({ defaultTier }: { defaultTier?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const turnstileRef = useRef<TurnstileInstance | null>(null);
   const [files, setFiles] = useState<UploadingFile[]>([]);
   const [openOptional, setOpenOptional] = useState(false);
   const [openAttachments, setOpenAttachments] = useState(false);
+  const [attachmentNotice, setAttachmentNotice] = useState<string | null>(null);
 
   const {
     register,
@@ -120,15 +120,15 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
       tier: (["esencial", "profesional", "premium"].includes(defaultTier ?? "")
         ? defaultTier
         : "no-lo-se") as FormValues["tier"],
-      founding: !!defaultFounding,
     },
   });
 
   async function onFilesSelected(selected: FileList | null) {
     if (!selected || selected.length === 0) return;
+    setAttachmentNotice(null);
     const current = files.filter((f) => f.status !== "error");
     if (current.length + selected.length > MAX_FILES) {
-      alert(`Máximo ${MAX_FILES} archivos.`);
+      setAttachmentNotice(`Máximo ${MAX_FILES} archivos por formulario.`);
       return;
     }
 
@@ -195,7 +195,7 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
       return;
     }
     if (files.some((f) => f.status === "uploading")) {
-      alert("Espera a que terminen de subir los archivos.");
+      setAttachmentNotice("Espera a que terminen de subir los archivos antes de enviar.");
       return;
     }
     setStatus("sending");
@@ -212,7 +212,6 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
       email: data.email,
       company: data.company,
       tier: data.tier,
-      founding: data.founding,
       message: data.message,
       consent: data.consent,
       honeypot: data.honeypot,
@@ -341,11 +340,6 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
             </select>
           </div>
         </div>
-
-        <label className="flex items-start gap-3 cursor-pointer">
-          <input type="checkbox" {...register("founding")} className="mt-1 accent-lacre w-4 h-4" />
-          <span className="text-sm text-piedra">¿Eres candidato al Founding Customer Program?</span>
-        </label>
 
         <div>
           <label className={labelCls} htmlFor="message">Cuéntanos el contexto</label>
@@ -477,6 +471,16 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
               />
             </label>
 
+            {attachmentNotice && (
+              <p
+                role="alert"
+                aria-live="polite"
+                className="text-sm font-mono text-lacre border-l-2 border-lacre pl-3 py-2 bg-lacre/5"
+              >
+                {attachmentNotice}
+              </p>
+            )}
+
             {files.length > 0 && (
               <ul className="space-y-2">
                 {files.map((f) => (
@@ -496,10 +500,10 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
                     <button
                       type="button"
                       onClick={() => removeFile(f.id)}
-                      className="font-mono text-xs text-piedra hover:text-lacre transition-colors"
-                      aria-label="Eliminar"
+                      className="shrink-0 flex items-center justify-center w-11 h-11 -my-3 -mr-3 font-mono text-xs text-piedra hover:text-lacre focus-visible:outline-2 focus-visible:outline-lacre transition-colors"
+                      aria-label={`Eliminar ${f.filename}`}
                     >
-                      ✕
+                      <span aria-hidden="true">✕</span>
                     </button>
                   </li>
                 ))}

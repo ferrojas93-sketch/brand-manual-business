@@ -13,7 +13,6 @@ type LeadNotification = {
   email: string;
   company: string;
   tier: string;
-  founding: boolean;
   message: string;
   ip: string;
   website?: string | null;
@@ -99,13 +98,13 @@ export async function notifyNewLead(lead: LeadNotification): Promise<void> {
 
     const attachmentsSigned = await signAttachmentUrls(lead.attachments ?? []);
 
-    const subject = `Lead ${lead.founding ? "[FOUNDING] " : ""}${tierLabel} · ${lead.company}`;
+    const subject = `Lead ${tierLabel} · ${lead.company}`;
 
     const textLines: string[] = [
       `Nombre: ${lead.name}`,
       `Email: ${lead.email}`,
       `Empresa: ${lead.company}`,
-      `Tier: ${tierLabel}${lead.founding ? " · Candidato Founding Customer" : ""}`,
+      `Tier: ${tierLabel}`,
     ];
     if (lead.role) textLines.push(`Rol: ${lead.role}`);
     if (lead.sector) textLines.push(`Sector: ${lead.sector}`);
@@ -136,7 +135,7 @@ export async function notifyNewLead(lead: LeadNotification): Promise<void> {
     detailRows.push(
       row(
         "Tier",
-        `${escape(tierLabel)}${lead.founding ? ' <strong style="color:#C4553A">· Founding</strong>' : ""}`
+        escape(tierLabel)
       )
     );
     if (lead.role) detailRows.push(row("Rol", escape(lead.role)));

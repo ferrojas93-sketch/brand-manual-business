@@ -106,7 +106,7 @@ export const serviceSchema = {
         "@type": "Offer",
         name: "Premium",
         description:
-          "Manual de marca 40-50 páginas. Estrategia + identidad verbal + guidelines exhaustivas. 2 revisiones. Entrega 10 días laborables.",
+          "Manual de marca 40-50 páginas. Estrategia + identidad verbal + guidelines exhaustivas + copia impresa encuadernada como libro de edición única. 2 revisiones. Entrega 10 días laborables.",
         price: "1990",
         priceCurrency: "EUR",
         priceSpecification: {
@@ -212,14 +212,6 @@ export const faqSchema = {
       acceptedAnswer: {
         "@type": "Answer",
         text: "Ambos. Profesional y Premium funcionan bien para rebrand partiendo del activo existente. Para marca nueva recomendamos Premium (estrategia + identidad verbal).",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "¿Qué es el Founding Customer Program?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Los primeros cinco clientes de Tramarca pagan precio full y reciben extras: +10 páginas sobre el tier, sesión de estrategia adicional, case study co-producido y prioridad de entrega. A cambio piden case study público, testimonial en vídeo y dos referidos. Tras los cinco, precios al alza.",
       },
     },
     {

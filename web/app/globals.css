@@ -1,4 +1,3 @@
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -6,7 +5,8 @@
   --color-carbon: #1C1C1C;
   --color-lacre: #C4553A;
   --color-lacre-hover: #A84730;
-  --color-piedra: #7A7672;
+  --color-piedra: #5E5A57;
+  --color-piedra-light: #7A7672;
   --color-ceniza: #B5B1AC;
   --color-arena: #E4E2DC;
   --color-papel: #F4F0EB;
@@ -14,8 +14,8 @@
   --color-background: var(--color-papel);
   --color-foreground: var(--color-negro);
 
-  --font-sans: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
-  --font-display: 'Satoshi', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-satoshi), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, SFMono-Regular, monospace;
 
   --tracking-tight: -0.02em;
@@ -169,4 +169,48 @@ body {
 }
 @media (prefers-reduced-motion: reduce) {
   .reveal, .animate-marquee { transition: none !important; animation: none !important; opacity: 1 !important; transform: none !important; }
+}
+
+/* Mobile drawer (Radix Dialog) */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes fade-out {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+@keyframes slide-in-right {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes slide-out-right {
+  from { transform: translateX(0); }
+  to   { transform: translateX(100%); }
+}
+.animate-fade-in       { animation: fade-in 200ms var(--ease-editorial); }
+.animate-fade-out      { animation: fade-out 200ms var(--ease-editorial); }
+.animate-slide-in-right  { animation: slide-in-right 320ms var(--ease-editorial); }
+.animate-slide-out-right { animation: slide-out-right 260ms var(--ease-editorial); }
+
+/* Body scroll lock while Dialog open (Radix sets data-scroll-locked) */
+body[data-scroll-locked] { overflow: hidden; }
+
+/* Focus-visible editorial (rings discretos, color lacre) */
+:focus-visible {
+  outline: 2px solid var(--color-lacre);
+  outline-offset: 3px;
+  border-radius: 1px;
+}
+button:focus-visible, a:focus-visible {
+  outline-offset: 4px;
+}
+input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--color-lacre);
+  outline-offset: 2px;
+}
+
+/* Tabular figures for prices / numeric data */
+.tabular-nums {
+  font-variant-numeric: tabular-nums lining-nums slashed-zero;
 }
