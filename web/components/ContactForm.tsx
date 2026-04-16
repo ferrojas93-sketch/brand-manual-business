@@ -26,8 +26,10 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>;
 
+type Status = "idle" | "sending" | "sent" | "error" | "awaiting-turnstile";
+
 export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: string; defaultFounding?: boolean }) {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<Status>("idle");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const turnstileRef = useRef<TurnstileInstance | null>(null);
 
@@ -48,7 +50,7 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
 
   async function onSubmit(data: FormValues) {
     if (TURNSTILE_SITE_KEY && !turnstileToken) {
-      setStatus("error");
+      setStatus("awaiting-turnstile");
       return;
     }
     setStatus("sending");
@@ -156,14 +158,23 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
         <Turnstile
           ref={turnstileRef}
           siteKey={TURNSTILE_SITE_KEY}
-          onSuccess={(token) => setTurnstileToken(token)}
+          onSuccess={(token) => {
+            setTurnstileToken(token);
+            if (status === "awaiting-turnstile") setStatus("idle");
+          }}
           onExpire={() => setTurnstileToken(null)}
           onError={() => setTurnstileToken(null)}
           options={{ theme: "light", size: "flexible" }}
         />
       )}
 
-      <Button type="submit" variant="primary" size="lg" disabled={status === "sending" || (!!TURNSTILE_SITE_KEY && !turnstileToken)}>
+      {status === "awaiting-turnstile" && (
+        <p className="text-sm text-piedra font-mono">
+          Espera un segundo — verificando que no eres un robot. Vuelve a pulsar Enviar cuando veas el check verde.
+        </p>
+      )}
+
+      <Button type="submit" variant="primary" size="lg" disabled={status === "sending"}>
         {status === "sending" ? "Enviando…" : "Enviar →"}
       </Button>
 
