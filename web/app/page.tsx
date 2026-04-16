@@ -112,7 +112,7 @@ const homeFaqs = [
   },
   {
     q: "¿Hay garantía de devolución?",
-    a: "Sí. Si tras la primera entrega consideras que el manual no resuelve el brief firmado, devolvemos el 50% pagado al kickoff dentro de los 14 días siguientes a la entrega. No entregamos a medias: o sale el manual completo o devolvemos. Sin dramas, sin letra pequeña, sin mediación. Queda por escrito en el contrato.",
+    a: "Sí. Si tras la primera entrega consideras que el manual no resuelve el brief firmado, devolvemos el 50% del pago de kickoff dentro de los 14 días siguientes a la entrega. O sale el manual completo, o devolvemos: no entregamos a medias. Queda por escrito en el contrato.",
   },
   {
     q: "¿Trabajáis con autónomos, PYMES o solo empresas grandes?",
@@ -785,18 +785,28 @@ export default function HomePage() {
 
       {/* Proceso — movido arriba, 5 pasos, iconos, sin videollamada */}
 
-      {/* Qué NO somos */}
+      {/* Cómo trabajamos — afirmación, no negación */}
       <section className="bg-arena">
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <p className="font-mono text-xs uppercase tracking-widest text-lacre">Honestidad</p>
+          <p className="font-mono text-xs uppercase tracking-widest text-lacre">Cómo trabajamos</p>
           <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05] max-w-4xl">
-            Qué no somos<span className="text-lacre">.</span> Por ahorrarte un email<span className="text-lacre">.</span>
+            Estudio productizado<span className="text-lacre">.</span>
+            {" "}Manuales completos<span className="text-lacre">.</span>
           </h2>
-          <div className="mt-16 space-y-12 max-w-4xl">
+          <div className="mt-16 grid md:grid-cols-3 gap-10 max-w-6xl">
             {[
-              { t: "No somos una agencia de discovery de seis semanas.", d: "Nosotros entregamos en 5-10 días. Una agencia te hace dos meses de workshops, presentación en PDF y tres rondas de propuesta. Todo vale. Pero no es lo mismo." },
-              { t: "No somos Canva ni una plantilla.", d: "Si necesitas un brand kit a 12€/mes, usa Canva. Nosotros hacemos manuales que vas a enseñar a tu equipo sin vergüenza." },
-              { t: "No hacemos logo express a 150€.", d: "Manual de marca no es logo + papelería. Esto es sistema completo. Si solo necesitas logo, hay sitios más baratos. Lo decimos con cariño." },
+              {
+                t: "Scope cerrado",
+                d: "Lo que entregamos está publicado capítulo a capítulo en /anatomia. 48 componentes, 12 secciones. Ningún trabajo empieza sin brief firmado.",
+              },
+              {
+                t: "Plazo publicado",
+                d: "5, 7 o 10 días laborables desde kickoff, según tier. No son plazos estimativos. Se incumplen pocas veces y cuando ocurre, lo avisamos antes.",
+              },
+              {
+                t: "Precio cerrado",
+                d: "490€, 990€ o 1.990€ con IVA. Sin discovery previo, sin propuesta personalizada, sin extras imprevistos. Lo que lees en la web es lo que pagas.",
+              },
             ].map((x) => (
               <div key={x.t} className="border-l-2 border-lacre pl-6">
                 <h3 className="text-2xl md:text-3xl font-black tracking-tight">{x.t}</h3>
@@ -804,6 +814,12 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+          <p className="mt-16 text-base md:text-lg text-piedra max-w-3xl leading-relaxed">
+            Si tu proyecto pide discovery profundo de seis semanas, una agencia
+            tradicional servirá mejor. Si necesitas solo un logo, hay estudios
+            especializados. Nosotros entregamos sistema de marca documentado,
+            con plazo y precio, para equipos que prefieren claridad a ritual.
+          </p>
         </div>
       </section>
 

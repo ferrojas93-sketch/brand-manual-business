@@ -164,7 +164,7 @@ export default function SobrePage() {
               "Especializarse es la única forma de ir rápido.",
               "El discovery eterno es pereza disfrazada de rigor.",
               "Lo que no se documenta, se improvisa.",
-              "Punto final.",
+              "Un buen sistema libera al equipo del permiso constante.",
             ].map((x, i) => (
               <li key={i} className="flex gap-6 items-baseline border-b border-papel/10 pb-6">
                 <span className="font-mono text-sm text-lacre shrink-0 mt-3">

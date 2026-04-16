@@ -77,9 +77,13 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
   if (status === "sent") {
     return (
       <div className="border border-negro/20 p-8 md:p-12 bg-arena">
-        <p className="font-mono text-xs uppercase tracking-widest text-lacre">Recibido</p>
+        <p className="font-mono text-xs uppercase tracking-widest text-lacre">Mensaje recibido</p>
         <p className="mt-4 text-2xl md:text-3xl font-black tracking-tight">
-          Hemos recibido tu mensaje. Te contestamos en menos de 24 horas. Punto.
+          Gracias. Te escribimos en menos de 24 horas laborables.
+        </p>
+        <p className="mt-4 text-base text-piedra leading-relaxed">
+          Mientras tanto, si te apetece ver cómo pensamos, échale un ojo a la
+          <a href="/anatomia" className="text-negro underline decoration-lacre decoration-2 underline-offset-4"> anatomía de un manual Tramarca</a>.
         </p>
       </div>
     );

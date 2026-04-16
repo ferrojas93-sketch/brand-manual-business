@@ -42,7 +42,7 @@ const pricingFaqs = [
   },
   {
     q: "¿Hay garantía si no me convence?",
-    a: "Sí. Si tras la primera entrega consideras que el manual no resuelve lo que acordamos en el brief, reembolsamos el 50% pagado al kickoff dentro de los 14 días siguientes a la entrega. No entregamos a medias: o sale el manual completo, o devolvemos. Punto.",
+    a: "Sí. Si tras la primera entrega consideras que el manual no resuelve lo que acordamos en el brief, reembolsamos el 50% del pago de kickoff dentro de los 14 días siguientes a la entrega. O sale el manual completo, o devolvemos: no entregamos a medias. Queda por escrito en el contrato.",
   },
   {
     q: "¿Dónde se paga?",
@@ -282,7 +282,7 @@ export default function PreciosPage() {
       <section className="section-dark">
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 text-center">
           <h2 className="text-5xl md:text-7xl font-black tracking-tighter">
-            Tres tiers. Sin rodeos.
+            Tres tiers. Precios cerrados.
           </h2>
           <div className="mt-10">
             <ButtonLink href="/contacto" variant="invert" size="lg">
