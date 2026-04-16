@@ -22,7 +22,6 @@ type LeadNotification = {
   role?: string | null;
   teamSize?: string | null;
   brandMaturity?: string | null;
-  urgency?: string | null;
   attachments?: Attachment[];
 };
 
@@ -35,12 +34,6 @@ const TEAM_SIZE_LABEL: Record<string, string> = {
   medium: "Mediano (6-20)",
   large: "Grande (21-50)",
   enterprise: "Corporate (50+)",
-};
-
-const URGENCY_LABEL: Record<string, string> = {
-  asap: "Esta semana",
-  soon: "En 1-2 meses",
-  flexible: "Flexible",
 };
 
 const BRAND_MATURITY_LABEL: Record<string, string> = {
@@ -118,7 +111,6 @@ export async function notifyNewLead(lead: LeadNotification): Promise<void> {
     if (lead.sector) textLines.push(`Sector: ${lead.sector}`);
     if (lead.teamSize) textLines.push(`Equipo: ${TEAM_SIZE_LABEL[lead.teamSize] ?? lead.teamSize}`);
     if (lead.brandMaturity) textLines.push(`Situación marca: ${BRAND_MATURITY_LABEL[lead.brandMaturity] ?? lead.brandMaturity}`);
-    if (lead.urgency) textLines.push(`Urgencia: ${URGENCY_LABEL[lead.urgency] ?? lead.urgency}`);
     if (lead.website) textLines.push(`Web: ${lead.website}`);
     if (lead.socialLinks?.linkedin) textLines.push(`LinkedIn: ${lead.socialLinks.linkedin}`);
     if (lead.socialLinks?.instagram) textLines.push(`Instagram: ${lead.socialLinks.instagram}`);
@@ -152,7 +144,6 @@ export async function notifyNewLead(lead: LeadNotification): Promise<void> {
     if (lead.teamSize) detailRows.push(row("Equipo", escape(TEAM_SIZE_LABEL[lead.teamSize] ?? lead.teamSize)));
     if (lead.brandMaturity)
       detailRows.push(row("Situación marca", escape(BRAND_MATURITY_LABEL[lead.brandMaturity] ?? lead.brandMaturity)));
-    if (lead.urgency) detailRows.push(row("Urgencia", escape(URGENCY_LABEL[lead.urgency] ?? lead.urgency)));
     if (lead.website)
       detailRows.push(
         row("Web", `<a href="${escape(lead.website)}" target="_blank" rel="noopener" style="color:#0C0C0C">${escape(lead.website)}</a>`)

@@ -9,7 +9,6 @@ export const runtime = "nodejs";
 type Tier = "esencial" | "profesional" | "premium" | "no-lo-se";
 type BrandMaturity = "new_brand" | "existing" | "rebrand" | "refresh" | "update_manual";
 type TeamSize = "solo" | "small" | "medium" | "large" | "enterprise";
-type Urgency = "asap" | "soon" | "flexible";
 
 type Attachment = {
   filename: string;
@@ -35,7 +34,6 @@ type LeadPayload = {
   role?: string;
   team_size?: TeamSize;
   brand_maturity?: BrandMaturity;
-  urgency?: Urgency;
   attachments?: Attachment[];
   company_website?: string;
 };
@@ -44,7 +42,6 @@ const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 const URL_RE = /^https?:\/\/[^\s]+$/i;
 
 const TEAM_SIZES: readonly TeamSize[] = ["solo", "small", "medium", "large", "enterprise"];
-const URGENCIES: readonly Urgency[] = ["asap", "soon", "flexible"];
 const BRAND_MATURITIES: readonly BrandMaturity[] = ["new_brand", "existing", "rebrand", "refresh", "update_manual"];
 
 function getIp(req: Request): string {
@@ -135,7 +132,6 @@ export async function POST(req: Request) {
   const brandMaturity = BRAND_MATURITIES.includes(body.brand_maturity as BrandMaturity)
     ? body.brand_maturity
     : null;
-  const urgency = URGENCIES.includes(body.urgency as Urgency) ? body.urgency : null;
   const tierInterest = tierToInterest(body.tier);
 
   const attachments = Array.isArray(body.attachments)
@@ -176,7 +172,6 @@ export async function POST(req: Request) {
       role,
       team_size: teamSize,
       brand_maturity: brandMaturity,
-      urgency,
       tier_interest: tierInterest,
       founding: !!body.founding,
       attachments,
@@ -201,7 +196,6 @@ export async function POST(req: Request) {
     role,
     teamSize: teamSize ?? null,
     brandMaturity: brandMaturity ?? null,
-    urgency: urgency ?? null,
     attachments,
   });
 

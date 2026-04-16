@@ -40,7 +40,6 @@ const schema = z.object({
   founding: z.boolean().optional(),
   message: z.string().min(10, "Tres líneas mínimo").max(3000),
   brand_maturity: z.enum(["new_brand", "existing", "rebrand", "refresh", "update_manual", ""]).optional(),
-  urgency: z.enum(["asap", "soon", "flexible", ""]).optional(),
   company_website: urlField,
   social_linkedin: urlField,
   social_instagram: urlField,
@@ -223,7 +222,6 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
       role: data.role || undefined,
       team_size: data.team_size || undefined,
       brand_maturity: data.brand_maturity || undefined,
-      urgency: data.urgency || undefined,
       attachments,
       turnstileToken,
     };
@@ -332,26 +330,16 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
             </select>
           </div>
           <div>
-            <label className={labelCls} htmlFor="urgency">Urgencia</label>
-            <select id="urgency" {...register("urgency")} className={cn(inputCls, "appearance-none cursor-pointer")}>
-              <option value="">Sin preferencia</option>
-              <option value="asap">Esta semana</option>
-              <option value="soon">En 1-2 meses</option>
-              <option value="flexible">Flexible</option>
+            <label className={labelCls} htmlFor="brand_maturity">Situación de tu marca</label>
+            <select id="brand_maturity" {...register("brand_maturity")} className={cn(inputCls, "appearance-none cursor-pointer")}>
+              <option value="">Sin especificar</option>
+              <option value="new_brand">Marca nueva — aún no existe</option>
+              <option value="existing">Marca existente — consolidada</option>
+              <option value="rebrand">Rebrand — cambio total</option>
+              <option value="refresh">Refresh — evolución visual</option>
+              <option value="update_manual">Actualizar manual que ya tengo</option>
             </select>
           </div>
-        </div>
-
-        <div>
-          <label className={labelCls} htmlFor="brand_maturity">Situación de tu marca</label>
-          <select id="brand_maturity" {...register("brand_maturity")} className={cn(inputCls, "appearance-none cursor-pointer")}>
-            <option value="">Sin especificar</option>
-            <option value="new_brand">Marca nueva — aún no existe</option>
-            <option value="existing">Marca existente — consolidada</option>
-            <option value="rebrand">Rebrand — cambio total</option>
-            <option value="refresh">Refresh — evolución visual</option>
-            <option value="update_manual">Actualizar manual que ya tengo</option>
-          </select>
         </div>
 
         <label className="flex items-start gap-3 cursor-pointer">
