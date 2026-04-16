@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PricingCards } from "@/components/PricingCards";
 import { FaqAccordion } from "@/components/FaqAccordion";
@@ -298,6 +299,30 @@ export default function PreciosPage() {
               </p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Signature moment — close-up del objeto que estás comprando */}
+      <section className="bg-negro">
+        <div className="mx-auto max-w-[1720px] px-6 md:px-10 py-0">
+          <figure className="relative w-full aspect-[4/3] md:aspect-[16/9] overflow-hidden">
+            <Image
+              src="/hero-v5/precios-binding.jpg"
+              alt="Detalle de encuadernación de un manual Tramarca — lomo gris carbon con marcapáginas lacre"
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
+            <figcaption className="absolute bottom-6 left-6 md:bottom-10 md:left-10 max-w-sm">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                Fig. 03 · Acabado
+              </p>
+              <p className="mt-2 text-papel font-black text-xl md:text-2xl leading-tight">
+                Lo que pagas es un objeto defendible<span className="text-lacre">.</span>
+              </p>
+            </figcaption>
+          </figure>
         </div>
       </section>
 

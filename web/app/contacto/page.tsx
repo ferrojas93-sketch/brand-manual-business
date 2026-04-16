@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Suspense } from "react";
 import { ContactForm } from "@/components/ContactForm";
 import { SITE_URL } from "@/lib/tiers";
@@ -146,6 +147,19 @@ export default async function ContactoPage({
             >
               hola@tramarca.es
             </a>
+          </div>
+
+          {/* Sello editorial — signature visual al cierre */}
+          <div className="mt-16 flex justify-center">
+            <figure className="relative w-40 md:w-52 aspect-square">
+              <Image
+                src="/hero-v5/contacto-seal.jpg"
+                alt="Sello editorial Tramarca — disco lacre con hairline horizontal"
+                fill
+                sizes="(min-width: 768px) 13rem, 10rem"
+                className="object-contain"
+              />
+            </figure>
           </div>
         </div>
       </section>

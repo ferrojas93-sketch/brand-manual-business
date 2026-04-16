@@ -226,22 +226,22 @@ export default function HomePage() {
                   </figcaption>
                 </figure>
 
-                {/* Image 2 — wax seal (lacre literal) */}
+                {/* Image 2 — manual físico Tramarca (objeto resultado) */}
                 <figure className="col-span-3 row-span-2 relative overflow-hidden bg-arena">
                   <Image
-                    src="/hero/02-wax-seal.jpg"
-                    alt="Sello de lacre imprimiéndose sobre papel crema"
+                    src="/hero-v5/home-hero-book.jpg"
+                    alt="Manual de marca Tramarca encuadernado — tapa crema con letra T y hairline lacre"
                     fill
                     sizes="(min-width: 1024px) 21vw, 50vw"
                     className="object-cover"
                   />
                 </figure>
 
-                {/* Image 3 — desk flat-lay */}
+                {/* Image 3 — type specimen (sistema tipográfico visible) */}
                 <figure className="col-span-3 row-span-2 relative overflow-hidden bg-arena">
                   <Image
-                    src="/hero/03-desk-flatlay.jpg"
-                    alt="Mesa de estudio editorial con pruebas tipográficas y muestras de color"
+                    src="/hero-v5/home-hero-specimen.jpg"
+                    alt="Specimen tipográfico A-Z sobre concreto pulido con detalle en lacre"
                     fill
                     sizes="(min-width: 1024px) 21vw, 50vw"
                     className="object-cover"
@@ -282,6 +282,53 @@ export default function HomePage() {
                 <span className="text-lacre">·</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Qué entregamos — flatlay product shot editorial */}
+      <section className="bg-papel border-b border-negro/15">
+        <div className="mx-auto max-w-[1720px] px-6 md:px-10 py-24 md:py-32">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="lg:col-span-5 order-2 lg:order-1">
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+                Qué entregamos
+              </p>
+              <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05]">
+                Un sistema, no un PDF suelto<span className="text-lacre">.</span>
+              </h2>
+              <p className="mt-8 text-lg text-piedra leading-[1.6] max-w-xl">
+                Manual editorial + aplicaciones + retícula + papelería + assets
+                listos para Figma. Todo empaquetado, todo documentado, todo
+                usable desde el día uno<span className="text-lacre">.</span>
+              </p>
+              <ul className="mt-8 space-y-2 font-mono text-[11px] uppercase tracking-[0.25em] text-piedra">
+                <li><span className="text-lacre">·</span>&nbsp; PDF A4 landscape editable</li>
+                <li><span className="text-lacre">·</span>&nbsp; Biblioteca Figma con variables</li>
+                <li><span className="text-lacre">·</span>&nbsp; SVG + PNG @1x/2x/3x</li>
+                <li><span className="text-lacre">·</span>&nbsp; Tokens CSS + tipografía documentada</li>
+              </ul>
+            </div>
+            <div className="lg:col-span-7 order-1 lg:order-2">
+              <figure className="relative aspect-[16/9] overflow-hidden bg-arena border border-negro/10 shadow-[0_40px_80px_-30px_rgba(12,12,12,0.3)]">
+                <Image
+                  src="/hero-v5/home-system-flatlay.jpg"
+                  alt="Sistema de marca Tramarca completo — libro encuadernado, manual abierto, papelería y tarjetas con acento lacre"
+                  fill
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+                <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/70 via-negro/20 to-transparent p-5">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">
+                    Fig. 02 · Entregable completo
+                  </p>
+                  <p className="mt-1 text-papel font-black text-sm md:text-base leading-tight">
+                    Manual + aplicaciones + papelería + Figma<span className="text-lacre">.</span>
+                  </p>
+                </figcaption>
+              </figure>
+            </div>
           </div>
         </div>
       </section>

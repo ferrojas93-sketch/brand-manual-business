@@ -171,6 +171,40 @@ export default function SobrePage() {
         </div>
       </section>
 
+      {/* Estudio editorial — bloque atmosférico sobre el entorno de producción */}
+      <section className="bg-arena border-y border-negro/15">
+        <div className="mx-auto max-w-[1720px] px-6 md:px-10 py-20 md:py-28">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="lg:col-span-7">
+              <figure className="relative aspect-[16/9] overflow-hidden bg-papel border border-negro/10 shadow-[0_40px_80px_-30px_rgba(12,12,12,0.25)]">
+                <Image
+                  src="/hero-v5/sobre-studio.jpg"
+                  alt="Estudio editorial Tramarca — stack de manuales impresos, libro abierto con retícula y pieza cerámica lacre sobre concreto"
+                  fill
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </figure>
+            </div>
+            <div className="lg:col-span-5">
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+                Estudio editorial
+              </p>
+              <h2 className="mt-6 text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
+                Categoría antes que adjetivo<span className="text-lacre">.</span>
+              </h2>
+              <p className="mt-8 text-lg text-piedra leading-[1.6]">
+                Tramarca es un estudio editorial, no una agencia creativa. El
+                producto es el libro — impreso, encuadernado, defendible — y
+                todo lo que lo rodea se ordena alrededor de ese objeto. La
+                disciplina editorial ES la propuesta de valor<span className="text-lacre">.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Qué creemos — manifesto dark */}
       <section className="section-dark">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-24 md:py-32">

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ButtonLink } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { AnatomiaIcon } from "@/components/AnatomiaIcon";
@@ -132,6 +133,39 @@ export default function AnatomiaPage() {
               </div>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* Editorial anchor — el sistema impreso, no solo iconografiado */}
+      <section className="bg-negro">
+        <div className="mx-auto max-w-[1720px] px-6 md:px-10 py-20 md:py-28">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="lg:col-span-5">
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+                Impreso, no maquetado
+              </p>
+              <h2 className="mt-6 text-4xl md:text-5xl font-black tracking-tight leading-[1.05] text-papel">
+                Así se ve un manual Tramarca cuando sale de imprenta<span className="text-lacre">.</span>
+              </h2>
+              <p className="mt-8 text-base md:text-lg text-ceniza leading-[1.6]">
+                Construcción del logotipo a la izquierda, paleta documentada a
+                la derecha, hex a pie de página. Cada decisión con su razón en
+                la misma página. Si no se puede imprimir, no se entrega<span className="text-lacre">.</span>
+              </p>
+            </div>
+            <div className="lg:col-span-7">
+              <figure className="relative aspect-[16/9] overflow-hidden bg-arena border border-papel/10 shadow-[0_40px_80px_-30px_rgba(0,0,0,0.5)]">
+                <Image
+                  src="/hero-v5/anatomia-spread.jpg"
+                  alt="Doble página del manual Tramarca — sistema de construcción del logo a la izquierda y paleta de color a la derecha"
+                  fill
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </figure>
+            </div>
+          </div>
         </div>
       </section>
 
