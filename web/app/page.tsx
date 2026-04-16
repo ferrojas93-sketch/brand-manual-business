@@ -588,7 +588,7 @@ export default function HomePage() {
 
           <div className="mt-12">
             <ButtonLink href="/manuales" variant="ghost" size="lg">
-              Ver los cuatro manuales completos →
+              Ver el portfolio completo →
             </ButtonLink>
           </div>
         </div>
