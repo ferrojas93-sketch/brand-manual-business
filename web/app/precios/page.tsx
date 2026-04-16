@@ -100,69 +100,7 @@ export default function PreciosPage() {
         </div>
       </section>
 
-      {/* Ancla comparativa — qué cuesta esto en otros sitios */}
-      <section className="bg-papel border-b border-negro/10">
-        <div className="mx-auto max-w-7xl px-6 py-14 md:py-20">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
-            Qué cuesta esto en otros sitios
-          </p>
-          <h2 className="mt-5 text-3xl md:text-4xl font-black tracking-tight leading-[1.1] max-w-3xl">
-            Para que tengas la referencia antes de elegir<span className="text-lacre">.</span>
-          </h2>
-          <div className="mt-12 grid md:grid-cols-4 gap-px bg-negro/10 border border-negro/10">
-            <div className="bg-papel p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
-                Agencia tradicional
-              </p>
-              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
-                6.000€–18.000€
-              </p>
-              <p className="mt-2 text-sm text-piedra leading-relaxed">
-                + IVA aparte. Discovery 6–12 semanas. 3–4 reuniones obligatorias.
-                Pricing custom en cada propuesta.
-              </p>
-            </div>
-            <div className="bg-papel p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
-                Freelance generalista
-              </p>
-              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
-                800€–3.500€
-              </p>
-              <p className="mt-2 text-sm text-piedra leading-relaxed">
-                Plazo variable. Alcance negociado cada vez. Calidad
-                dependiente de quién coja tu proyecto.
-              </p>
-            </div>
-            <div className="bg-papel p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
-                Canva + logo barato
-              </p>
-              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
-                ~80€
-              </p>
-              <p className="mt-2 text-sm text-piedra leading-relaxed">
-                Plantilla + un archivo. Sin sistema, sin documentación,
-                sin soporte, sin aplicaciones.
-              </p>
-            </div>
-            <div className="bg-negro text-papel p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
-                Tramarca
-              </p>
-              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
-                490€–1.990€
-              </p>
-              <p className="mt-2 text-sm text-ceniza leading-relaxed">
-                IVA incluido. 5 a 10 días laborables. Todo async por email.
-                Precio cerrado publicado.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Price cards */}
+      {/* Price cards — arriba para que los precios estén a mano */}
       <section className="bg-arena">
         <div className="mx-auto max-w-7xl px-6 py-14 md:py-20">
           <PricingCards />
@@ -261,7 +199,7 @@ export default function PreciosPage() {
             <ul className="mt-8 space-y-3 text-base md:text-lg text-negro/85">
               {[
                 "Brief inicial (cuestionario estructurado)",
-                "Kickoff por email (async, sin reuniones)",
+                "Kickoff por email tras confirmar brief",
                 "Entrega en PDF final (A4 landscape) + Figma editable",
                 "Alineación de revisiones por email con deadlines claras",
                 "Soporte post-entrega durante 30 días (dudas de uso)",
@@ -297,6 +235,68 @@ export default function PreciosPage() {
               Si tu proyecto necesita algo que no entra en el tier, lo cotizamos aparte.
               Sin problema<span className="text-lacre">.</span>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Ancla comparativa — referencia de mercado, al final para no tapar tiers */}
+      <section className="bg-papel border-y border-negro/10">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+            Referencia de mercado
+          </p>
+          <h2 className="mt-5 text-3xl md:text-4xl font-black tracking-tight leading-[1.1] max-w-3xl">
+            Para que tengas contexto de lo que cuesta un manual fuera de aquí<span className="text-lacre">.</span>
+          </h2>
+          <div className="mt-12 grid md:grid-cols-4 gap-px bg-negro/10 border border-negro/10">
+            <div className="bg-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
+                Agencia tradicional
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                6.000€–18.000€
+              </p>
+              <p className="mt-2 text-sm text-piedra leading-relaxed">
+                + IVA aparte. Discovery de semanas antes de empezar.
+                Pricing custom en cada propuesta.
+              </p>
+            </div>
+            <div className="bg-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
+                Freelance generalista
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                800€–3.500€
+              </p>
+              <p className="mt-2 text-sm text-piedra leading-relaxed">
+                Plazo variable. Alcance negociado cada vez. Calidad
+                dependiente de quién coja tu proyecto.
+              </p>
+            </div>
+            <div className="bg-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
+                Canva + logo barato
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                ~80€
+              </p>
+              <p className="mt-2 text-sm text-piedra leading-relaxed">
+                Plantilla + un archivo. Sin sistema, sin documentación,
+                sin soporte, sin aplicaciones.
+              </p>
+            </div>
+            <div className="bg-negro text-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                Tramarca
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                490€–1.990€
+              </p>
+              <p className="mt-2 text-sm text-ceniza leading-relaxed">
+                IVA incluido. 5 a 10 días laborables. Precio cerrado publicado.
+                Lo que ves es lo que pagas.
+              </p>
+            </div>
           </div>
         </div>
       </section>

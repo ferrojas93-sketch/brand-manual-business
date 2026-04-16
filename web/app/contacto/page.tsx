@@ -53,7 +53,7 @@ export default async function ContactoPage({
           </span>
         </div>
 
-        <div className="mx-auto max-w-[1720px] px-6 md:px-10 pt-8 md:pt-14 pb-20 md:pb-28">
+        <div className="mx-auto max-w-[1720px] px-6 md:px-10 pt-8 md:pt-14 pb-10 md:pb-14">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-7">
               <div className="flex items-start gap-6">
@@ -117,7 +117,7 @@ export default async function ContactoPage({
 
       {/* Formulario — fondo contrastado editorial */}
       <section className="bg-arena">
-        <div className="mx-auto max-w-3xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-3xl px-6 py-10 md:py-14">
           <div className="bg-papel border border-negro/15 shadow-[0_30px_80px_-30px_rgba(12,12,12,0.25)] p-8 md:p-12 lg:p-16">
             <div className="mb-10 pb-8 border-b border-negro/15">
               <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">

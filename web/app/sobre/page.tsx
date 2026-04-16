@@ -35,8 +35,8 @@ export default function SobrePage() {
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-4 md:pt-6 pb-16 md:pb-24">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-2 md:pt-4 pb-16 md:pb-24">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             <div className="lg:col-span-7">
               <div className="flex items-start gap-6">
                 <span aria-hidden className="mt-2 block w-[3px] h-24 bg-lacre shrink-0" />
@@ -85,7 +85,7 @@ export default function SobrePage() {
 
       {/* Manifiesto narrativo — ventajas competitivas reales */}
       <section className="bg-papel">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-20 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-14 md:py-20">
           {/* Header full-width editorial */}
           <div className="grid md:grid-cols-12 gap-8 md:gap-12 mb-16 md:mb-20 pb-10 border-b border-negro/15">
             <div className="md:col-span-5">
@@ -138,23 +138,24 @@ export default function SobrePage() {
                 Productizado, no consultivo<span className="text-lacre">.</span>
               </p>
               <p className="mt-5">
-                Una agencia tradicional hace discovery de seis semanas, propuesta a medida
-                y timeline &ldquo;a definir&rdquo;. Aquí el scope está cerrado antes de empezar:
-                tres tiers con entregables documentados, plazo publicado de 5/7/10 días, y
-                dos rondas de revisión acotadas. Menos reuniones, menos fricción, más
-                delivery. Tu tiempo no se va en workshops.
+                Aquí el scope está cerrado antes de empezar: tres tiers con entregables
+                documentados, plazo publicado de 5/7/10 días laborables, y dos rondas
+                de revisión acotadas. Brief, kickoff, reviews y entrega por escrito —
+                lo que entregamos es un documento y el proceso para fabricarlo también
+                lo es. El precio y el plazo los sabes antes de firmar<span className="text-lacre">.</span>
               </p>
             </Reveal>
 
             <Reveal>
               <p className="text-2xl md:text-3xl font-black leading-[1.15] border-l-4 border-lacre pl-6 py-2 text-negro">
-                Async por email, no reuniones<span className="text-lacre">.</span>
+                Garantía honesta: 50% si no convence<span className="text-lacre">.</span>
               </p>
               <p className="mt-5">
-                Brief, kickoff, reviews y entrega por escrito. Nada de videollamadas
-                obligatorias ni reuniones semanales. Lo que entregamos es un documento;
-                el proceso para fabricarlo también lo es. Ganas tiempo para tu equipo y
-                evitas el bucle de &ldquo;vamos a agendar una call para verlo&rdquo;<span className="text-lacre">.</span>
+                Si tras la primera entrega el manual no resuelve lo que firmamos en
+                el brief, devolvemos el 50% del pago de kickoff dentro de los 14 días
+                siguientes. O sale el manual completo, o devolvemos: no entregamos a
+                medias. Queda por escrito en el contrato. La mayoría no la usa, pero
+                existe para que no tengas que confiar a ciegas<span className="text-lacre">.</span>
               </p>
             </Reveal>
 
