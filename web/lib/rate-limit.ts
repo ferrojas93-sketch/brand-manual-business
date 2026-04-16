@@ -13,10 +13,11 @@ function getRedis(): Redis | null {
   if (!url) return null;
   try {
     redisClient = new Redis(url, {
-      enableOfflineQueue: false,
-      maxRetriesPerRequest: 1,
-      lazyConnect: true,
-      connectTimeout: 3000,
+      enableOfflineQueue: true,
+      maxRetriesPerRequest: 2,
+      connectTimeout: 5000,
+      commandTimeout: 3000,
+      retryStrategy: (times) => (times > 3 ? null : Math.min(times * 200, 1000)),
     });
     redisClient.on("error", (err) => {
       console.warn("redis_error", { message: err.message });
