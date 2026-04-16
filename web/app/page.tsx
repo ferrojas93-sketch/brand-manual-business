@@ -144,7 +144,7 @@ export default function HomePage() {
           <span>Madrid <span className="text-lacre">·</span> 2026</span>
         </div>
 
-        <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-10 md:pt-14">
+        <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-4 md:pt-6">
           {/* Diagonal Lacre line cutting across (manual signature) */}
           <svg
             aria-hidden
@@ -157,15 +157,15 @@ export default function HomePage() {
 
           <div className="relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start pb-24 md:pb-32">
             {/* Left column — typography block, manual-faithful */}
-            <div className="lg:col-span-7 pt-8 md:pt-14">
+            <div className="lg:col-span-7 pt-2 md:pt-6">
               {/* Vertical Lacre tick (from manual pages 3,5) */}
               <div className="flex items-start gap-6">
                 <span aria-hidden className="mt-2 block w-[3px] h-28 bg-lacre shrink-0" />
                 <div>
                   <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.35em] text-piedra">
-                    Estudio editorial · Madrid · 2026
+                    Manuales de marca <span className="text-lacre">·</span> Por escrito
                   </p>
-                  <h1 className="mt-8 font-sans font-black tracking-[-0.045em] leading-[0.88] text-negro"
+                  <h1 className="mt-6 font-sans font-black tracking-[-0.045em] leading-[0.88] text-negro"
                       style={{ fontSize: "clamp(3.5rem, 10.5vw, 10rem)" }}>
                     Tu marca,
                     <br />
@@ -302,30 +302,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Prueba radical */}
-      <section className="section-dark">
+      {/* Prueba radical — fondo claro para respetar contraste con cover */}
+      <section className="bg-arena border-y border-negro/15">
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 grid md:grid-cols-2 gap-16 items-center">
           <div>
             <p className="font-mono text-xs uppercase tracking-widest text-lacre">
-              Prueba radical
+              Nuestro manual
             </p>
             <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
-              Este es nuestro manual.
+              Este es el nuestro.
               <br />
-              <span className="text-ceniza">Por si no te fías del tuyo.</span>
+              <span className="text-piedra">Para que veas cómo trabajamos.</span>
             </h2>
-            <p className="mt-8 text-lg text-ceniza leading-relaxed max-w-xl">
-              Treinta y cuatro páginas. Tipografía Satoshi. Voz provocativa. Sistema de color
-              con Lacre como acento. Hecho por nosotros, para nosotros. Si no te convence el
-              nuestro, no vas a querer el que te hagamos.
+            <p className="mt-8 text-lg text-piedra leading-relaxed max-w-xl">
+              Treinta y cuatro páginas. Tipografía Satoshi, sistema editorial
+              con lacre como acento, voz documentada capítulo a capítulo. Hecho
+              por nosotros para nosotros, bajo el mismo estándar que entregamos
+              a cliente.
             </p>
             <div className="mt-10">
-              <ButtonLink href="/manuales/tramarca" variant="invert" size="lg">
+              <ButtonLink href="/manuales/tramarca" variant="primary" size="lg">
                 Ver manual Tramarca (34pp) →
               </ButtonLink>
             </div>
           </div>
-          <div className="relative aspect-[1756/1242] bg-carbon border border-papel/10 overflow-hidden">
+          <div className="relative aspect-[1756/1242] bg-papel border border-negro/15 overflow-hidden shadow-[0_30px_60px_-20px_rgba(12,12,12,0.3)]">
             <Image
               src="/portfolio/tramarca-cover.jpg"
               alt="Tramarca — portada del manual propio 34 páginas — manual de marca Lacre sobre Papel"
@@ -492,27 +493,6 @@ export default function HomePage() {
             Tier Esencial: capítulos 01-03 + aplicaciones básicas · Profesional: 01-07 · Premium:
             01-08 extendido + formación al equipo.
           </p>
-
-          <div className="mt-12 flex flex-col md:flex-row md:items-center gap-5 p-6 md:p-8 bg-negro text-papel">
-            <div className="flex-1">
-              <p className="font-mono text-[10px] uppercase tracking-widest text-lacre">
-                Mira el nuestro
-              </p>
-              <p className="mt-2 text-lg md:text-xl font-black tracking-tight">
-                Descarga el manual de marca de Tramarca completo.
-              </p>
-              <p className="mt-2 text-sm text-ceniza">
-                34 páginas, PDF A4 landscape, 29 MB. Lo que entregamos, enseñado en carne propia.
-              </p>
-            </div>
-            <a
-              href="/manual-tramarca.pdf"
-              download
-              className="shrink-0 inline-flex items-center gap-2 bg-lacre text-papel px-5 py-3 font-mono text-xs uppercase tracking-widest hover:bg-lacre-hover transition-colors"
-            >
-              Descargar PDF →
-            </a>
-          </div>
         </div>
       </section>
 
@@ -522,10 +502,10 @@ export default function HomePage() {
           <div className="max-w-3xl">
             <p className="font-mono text-xs uppercase tracking-widest text-lacre">Portfolio</p>
             <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
-              Tres manuales. Tres marcas reales. Cero mockups.
+              Manuales reales. Páginas reales. Cero mockups.
             </h2>
             <p className="mt-6 text-lg text-piedra leading-relaxed">
-              Trabajo publicado. Páginas reales. Clientes reales. Antes de hablar de precio,
+              Trabajo publicado para clientes reales. Antes de hablar de precio,
               mira lo que sale por la puerta.
             </p>
           </div>
