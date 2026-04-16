@@ -5,6 +5,12 @@ import { notFound } from "next/navigation";
 import { MANUALES, getManual } from "@/lib/manuales";
 import { ButtonLink } from "@/components/Button";
 import { SITE_URL } from "@/lib/tiers";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  jsonLdGraph,
+  breadcrumbListSchema,
+  creativeWorkSchema,
+} from "@/lib/schema";
 
 export function generateStaticParams() {
   return MANUALES.map((m) => ({ slug: m.slug }));
@@ -39,8 +45,27 @@ export default async function ManualDetailPage({
     typeof m.tier === "string" && m.tier !== "Propio" ? `/precios#${m.tier}` : "/precios";
   const tierLabel = typeof m.tier === "string" ? m.tier : "Propio";
 
+  const manualUrl = `${SITE_URL}/manuales/${m.slug}`;
+  const schemaGraph = jsonLdGraph(
+    breadcrumbListSchema([
+      { name: "Inicio", url: SITE_URL },
+      { name: "Manuales", url: `${SITE_URL}/manuales` },
+      { name: m.name, url: manualUrl },
+    ]),
+    creativeWorkSchema({
+      url: manualUrl,
+      name: `${m.name} — manual de marca ${m.pages} páginas`,
+      description: `Manual de marca ${m.pages} páginas entregado por Tramarca para ${m.name}. Sistema, paleta, tipografía y guidelines de aplicación.`,
+      image: `${SITE_URL}/portfolio/${m.slug}-cover.jpg`,
+      client: m.name,
+      tier: tierLabel,
+      pages: m.pages,
+    })
+  );
+
   return (
     <>
+      <JsonLd data={schemaGraph} />
       <section>
         <div className="mx-auto max-w-7xl px-6 pt-20 md:pt-28 pb-8">
           <Link

@@ -3,13 +3,29 @@ import { ButtonLink } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { AnatomiaIcon } from "@/components/AnatomiaIcon";
 import { ANATOMIA, TIER_LABEL, type Tier } from "@/lib/anatomia";
+import { JsonLd } from "@/components/JsonLd";
+import { jsonLdGraph, breadcrumbListSchema, techArticleSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Anatomía de un manual de marca — 48 componentes · Tramarca",
+  title: "Anatomía de un manual de marca — 12 capítulos, 48 componentes",
   description:
-    "Qué hay dentro de un manual de marca Tramarca, desglosado por capítulo y tier. 12 capítulos, 48 componentes, sin esoterismo.",
-  alternates: { canonical: "https://tramarca.es/anatomia" },
+    "Qué hay dentro de un manual de marca Tramarca: 12 capítulos, 48 componentes documentados, desglosados por tier — Esencial 490€, Profesional 990€, Premium 1.990€ IVA incl.",
+  alternates: { canonical: `${SITE_URL}/anatomia` },
 };
+
+const schemaGraph = jsonLdGraph(
+  breadcrumbListSchema([
+    { name: "Inicio", url: SITE_URL },
+    { name: "Anatomía del manual", url: `${SITE_URL}/anatomia` },
+  ]),
+  techArticleSchema({
+    url: `${SITE_URL}/anatomia`,
+    name: "Anatomía de un manual de marca — 12 capítulos, 48 componentes",
+    description:
+      "Documentación técnica de qué hay dentro de un manual de marca Tramarca. 12 capítulos y 48 componentes explicados por tier (Esencial, Profesional, Premium).",
+    image: `${SITE_URL}/og-tramarca.jpg`,
+  })
+);
 
 const TIERS: Tier[] = ["E", "P", "M"];
 
@@ -30,6 +46,7 @@ export default function AnatomiaPage() {
   const total = ANATOMIA.reduce((s, c) => s + c.items.length, 0);
   return (
     <>
+      <JsonLd data={schemaGraph} />
       {/* Hero — editorial index */}
       <section className="relative section-dark noise border-b border-papel/10 overflow-hidden">
         <div

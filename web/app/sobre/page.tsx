@@ -3,17 +3,28 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SITE_URL } from "@/lib/tiers";
+import { JsonLd } from "@/components/JsonLd";
+import { jsonLdGraph, breadcrumbListSchema, aboutPageSchema } from "@/lib/schema";
+import { MANUALES } from "@/lib/manuales";
 
 export const metadata: Metadata = {
-  title: "Nosotros · Un estudio que solo hace manuales · Tramarca",
-  description:
-    "Un estudio español que solo hace manuales de marca. Precio público, IVA incluido, plazo publicado. Cuatro manuales entregados. Trabajamos por escrito.",
+  title: "Nosotros · Un estudio que solo hace manuales de marca",
+  description: `Un estudio español que solo hace manuales de marca. Precio público, IVA incluido, plazo publicado. ${MANUALES.length} manuales entregados. Trabajamos por escrito.`,
   alternates: { canonical: `${SITE_URL}/sobre` },
 };
+
+const schemaGraph = jsonLdGraph(
+  breadcrumbListSchema([
+    { name: "Inicio", url: SITE_URL },
+    { name: "Nosotros", url: `${SITE_URL}/sobre` },
+  ]),
+  aboutPageSchema()
+);
 
 export default function SobrePage() {
   return (
     <>
+      <JsonLd data={schemaGraph} />
       {/* Hero editorial — papel con retrato del estudio */}
       <section className="relative bg-papel border-b border-negro/15 overflow-hidden">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 pt-6 md:pt-8 pb-6 md:pb-8">

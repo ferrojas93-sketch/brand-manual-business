@@ -5,7 +5,7 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { ButtonLink } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { FOUNDING_SLOTS_REMAINING, FOUNDING_SLOTS_TOTAL, SITE_URL } from "@/lib/tiers";
-import { jsonLdGraph, serviceSchema } from "@/lib/schema";
+import { jsonLdGraph, serviceSchema, breadcrumbListSchema } from "@/lib/schema";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -295,7 +295,15 @@ export default function PreciosPage() {
         </div>
       </section>
 
-      <JsonLd data={jsonLdGraph(serviceSchema)} />
+      <JsonLd
+        data={jsonLdGraph(
+          serviceSchema,
+          breadcrumbListSchema([
+            { name: "Inicio", url: SITE_URL },
+            { name: "Precios", url: `${SITE_URL}/precios` },
+          ])
+        )}
+      />
     </>
   );
 }

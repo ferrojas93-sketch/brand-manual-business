@@ -2,13 +2,23 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { ContactForm } from "@/components/ContactForm";
 import { SITE_URL } from "@/lib/tiers";
+import { JsonLd } from "@/components/JsonLd";
+import { jsonLdGraph, breadcrumbListSchema, contactPageSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Contacto",
+  title: "Contacto · Pide tu manual de marca",
   description:
-    "Rellena el formulario o escríbenos a hola@tramarca.es. Respondemos en menos de 24 horas laborables con propuesta y link de pago seguro.",
+    "Rellena el formulario o escríbenos a hola@tramarca.es. Respondemos en menos de 24 horas laborables con propuesta y link de pago seguro via Stripe.",
   alternates: { canonical: `${SITE_URL}/contacto` },
 };
+
+const schemaGraph = jsonLdGraph(
+  breadcrumbListSchema([
+    { name: "Inicio", url: SITE_URL },
+    { name: "Contacto", url: `${SITE_URL}/contacto` },
+  ]),
+  contactPageSchema()
+);
 
 function ContactFormWithParams({
   searchParams,
@@ -32,6 +42,7 @@ export default async function ContactoPage({
 
   return (
     <>
+      <JsonLd data={schemaGraph} />
       <section>
         <div className="mx-auto max-w-5xl px-6 pt-20 md:pt-28 pb-12">
           <p className="font-mono text-xs uppercase tracking-widest text-lacre">Contacto</p>
