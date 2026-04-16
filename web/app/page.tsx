@@ -155,26 +155,27 @@ export default function HomePage() {
                 <span aria-hidden className="mt-2 block w-[3px] h-28 bg-lacre shrink-0" />
                 <div>
                   <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.35em] text-piedra">
-                    Manual de marca · Por escrito
+                    Estudio editorial · Madrid · 2026
                   </p>
                   <h1 className="mt-8 font-sans font-black tracking-[-0.045em] leading-[0.88] text-negro"
                       style={{ fontSize: "clamp(3.5rem, 10.5vw, 10rem)" }}>
-                    ¿Qué hay tras
+                    Tu marca,
                     <br />
-                    tu marca<span className="text-lacre">.</span>
+                    por escrito<span className="text-lacre">.</span>
                   </h1>
                 </div>
               </div>
 
               <div className="mt-14 max-w-2xl">
                 <p className="text-2xl md:text-[1.75rem] text-negro leading-[1.25] font-black tracking-tight">
-                  Lo que no se documenta,
+                  Manuales de marca
                   <br />
-                  <span className="text-piedra">se improvisa</span><span className="text-lacre">.</span>
+                  <span className="text-piedra">en 5, 7 o 10 días</span><span className="text-lacre">.</span>
                 </p>
                 <p className="mt-6 max-w-xl text-base md:text-lg text-piedra leading-[1.6]">
-                  La mayoría de marcas existen solo en la cabeza de quien las creó.
-                  No en un documento. No por escrito. Nosotros las ponemos por escrito.
+                  Documentamos tu marca capítulo a capítulo: identidad visual,
+                  aplicaciones, tono verbal y guidelines. Precio cerrado, plazo
+                  publicado. Lo que no se documenta, se improvisa.
                 </p>
               </div>
 
