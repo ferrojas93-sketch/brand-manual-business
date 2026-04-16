@@ -73,7 +73,7 @@ export async function notifyNewLead(lead: LeadNotification): Promise<void> {
   <p style="margin-top:24px;font-size:12px;color:#7A7672">Responder en &lt;24h. Disponible en Supabase → leads.</p>
 </div>`.trim();
 
-    const { error } = await resend.emails.send({
+    const result = await resend.emails.send({
       from: NOTIFY_FROM,
       to: NOTIFY_TO,
       replyTo: lead.email,
@@ -82,8 +82,17 @@ export async function notifyNewLead(lead: LeadNotification): Promise<void> {
       html,
     });
 
-    if (error) {
-      console.error("notify_send_failed", { message: error.message });
+    if (result.error) {
+      console.error("notify_send_failed", {
+        name: result.error.name,
+        message: result.error.message,
+      });
+    } else {
+      console.log("notify_sent", {
+        id: result.data?.id,
+        to: NOTIFY_TO,
+        from: NOTIFY_FROM,
+      });
     }
   } catch (err) {
     console.error("notify_exception", { message: err instanceof Error ? err.message : "unknown" });
