@@ -226,22 +226,22 @@ export default function HomePage() {
                   </figcaption>
                 </figure>
 
-                {/* Image 2 — manual físico Tramarca (objeto resultado) */}
+                {/* Image 2 — wax seal (lacre literal) */}
                 <figure className="col-span-3 row-span-2 relative overflow-hidden bg-arena">
                   <Image
-                    src="/hero-v5/home-hero-book.jpg"
-                    alt="Manual de marca Tramarca encuadernado — tapa crema con letra T y hairline lacre"
+                    src="/hero/02-wax-seal.jpg"
+                    alt="Sello de lacre imprimiéndose sobre papel crema"
                     fill
                     sizes="(min-width: 1024px) 21vw, 50vw"
                     className="object-cover"
                   />
                 </figure>
 
-                {/* Image 3 — type specimen (sistema tipográfico visible) */}
+                {/* Image 3 — desk flat-lay */}
                 <figure className="col-span-3 row-span-2 relative overflow-hidden bg-arena">
                   <Image
-                    src="/hero-v5/home-hero-specimen.jpg"
-                    alt="Specimen tipográfico A-Z sobre concreto pulido con detalle en lacre"
+                    src="/hero/03-desk-flatlay.jpg"
+                    alt="Mesa de estudio editorial con pruebas tipográficas y muestras de color"
                     fill
                     sizes="(min-width: 1024px) 21vw, 50vw"
                     className="object-cover"
