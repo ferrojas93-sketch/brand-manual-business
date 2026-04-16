@@ -53,15 +53,16 @@ const pricingFaqs = [
 const comparisonRows = [
   { label: "Precio (IVA incl.)", esencial: "490€", profesional: "990€", premium: "1.990€" },
   { label: "Páginas", esencial: "20-25", profesional: "30-40", premium: "40-50" },
-  { label: "Plazo", esencial: "5 días", profesional: "7 días", premium: "10 días" },
-  { label: "Revisiones", esencial: "1", profesional: "2", premium: "2" },
-  { label: "Estrategia de marca", esencial: "—", profesional: "Básica", premium: "Completa" },
-  { label: "Identidad verbal", esencial: "—", profesional: "✓", premium: "✓ extendida" },
-  { label: "Sistema visual", esencial: "Logo + paleta + tipo", profesional: "Completo", premium: "Exhaustivo" },
-  { label: "Guidelines aplicación", esencial: "3 (papelería, social, firma)", profesional: "Extendidas (+web)", premium: "Totales (+merch)" },
-  { label: "Plantillas Figma", esencial: "—", profesional: "✓", premium: "✓" },
-  { label: "Formación equipo (90min)", esencial: "—", profesional: "—", premium: "✓" },
-  { label: "Entrega", esencial: "PDF + Figma", profesional: "PDF + Figma", premium: "PDF + Figma + assets sueltos" },
+  { label: "Plazo laborable", esencial: "5 días", profesional: "7 días", premium: "10 días" },
+  { label: "Rondas de revisión", esencial: "1", profesional: "2", premium: "2" },
+  { label: "Estrategia de marca", esencial: "—", profesional: "Básica", premium: "Completa (arquetipo + posicionamiento)" },
+  { label: "Identidad verbal", esencial: "—", profesional: "Tono + vocabulario", premium: "Extendida + naming + tagline" },
+  { label: "Sistema visual", esencial: "Logo + paleta + tipografía", profesional: "Completo + jerarquías", premium: "Exhaustivo + don'ts + variable fonts" },
+  { label: "Aplicaciones", esencial: "3 (papelería, social, firma)", profesional: "Extendidas (+ web + email)", premium: "Totales (+ merch + signage)" },
+  { label: "Plantillas Figma", esencial: "—", profesional: "Base editable", premium: "Biblioteca extendida" },
+  { label: "Dirección fotográfica", esencial: "—", profesional: "—", premium: "✓ incluida" },
+  { label: "Copia impresa hecha libro", esencial: "—", profesional: "—", premium: "✓ edición única enviada" },
+  { label: "Archivos fuente", esencial: "SVG + PNG + PDF", profesional: "+ Figma editable", premium: "+ assets empaquetados" },
 ];
 
 export default function PreciosPage() {

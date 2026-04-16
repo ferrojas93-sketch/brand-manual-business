@@ -85,21 +85,28 @@ export default function SobrePage() {
 
       {/* Manifiesto narrativo — ventajas competitivas reales */}
       <section className="bg-papel">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-20 md:py-28 grid lg:grid-cols-12 gap-10 lg:gap-16">
-          <aside className="lg:col-span-4 lg:sticky lg:top-24 lg:self-start">
-            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
-              Por qué Tramarca
-            </p>
-            <h2 className="mt-5 font-sans font-black tracking-tight leading-[1.02] text-4xl md:text-5xl">
-              Cuatro decisiones que nos hacen distintos<span className="text-lacre">.</span>
-            </h2>
-            <p className="mt-5 text-piedra text-base leading-relaxed max-w-sm">
-              No son trucos de marketing. Son la manera en la que trabajamos y lo que
-              deja un manual Tramarca frente a cualquier alternativa del mercado<span className="text-lacre">.</span>
-            </p>
-          </aside>
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-20 md:py-28">
+          {/* Header full-width editorial */}
+          <div className="grid md:grid-cols-12 gap-8 md:gap-12 mb-16 md:mb-20 pb-10 border-b border-negro/15">
+            <div className="md:col-span-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                Por qué Tramarca
+              </p>
+              <h2 className="mt-5 font-sans font-black tracking-tight leading-[1.02] text-4xl md:text-5xl">
+                Cuatro decisiones<br />que nos hacen distintos<span className="text-lacre">.</span>
+              </h2>
+            </div>
+            <div className="md:col-span-7 md:pt-6">
+              <p className="text-piedra text-lg leading-relaxed">
+                No son trucos de marketing. Son la manera en que trabajamos y lo que
+                deja un manual Tramarca frente a cualquier alternativa del mercado.
+                Las consecuencias visibles — precio cerrado, plazo publicado,
+                garantía — salen de aquí, no al revés<span className="text-lacre">.</span>
+              </p>
+            </div>
+          </div>
 
-          <div className="lg:col-span-8 space-y-10 text-lg md:text-xl leading-[1.65] text-negro/85">
+          <div className="max-w-3xl mx-auto space-y-14 text-lg md:text-xl leading-[1.65] text-negro/85">
             <Reveal>
               <p className="text-2xl md:text-3xl font-black leading-[1.15] border-l-4 border-lacre pl-6 py-2 text-negro">
                 Un estudio especializado solo en manuales de marca<span className="text-lacre">.</span>

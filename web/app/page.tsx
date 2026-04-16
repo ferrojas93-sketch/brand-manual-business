@@ -138,10 +138,16 @@ export default function HomePage() {
       {/* Hero — PAPEL split, manual-native composition (01 chapter cover + spread) */}
       <section className="relative bg-papel border-b border-negro/15 overflow-hidden">
         {/* Masthead — dateline editorial (no manual cosmetics) */}
-        <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-6 md:pt-8 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-piedra border-b border-negro/15 pb-4">
-          <span>Tramarca <span className="text-lacre">·</span> Estudio editorial</span>
-          <span className="hidden md:inline">Manuales de marca por escrito</span>
-          <span>Madrid <span className="text-lacre">·</span> 2026</span>
+        <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-5 md:pt-6 flex items-center justify-between gap-4 font-mono text-[10px] md:text-[11px] uppercase tracking-[0.28em] text-piedra border-b border-negro/15 pb-3 md:pb-4">
+          <span className="font-bold text-negro">
+            Tramarca<span className="text-lacre">.</span>
+          </span>
+          <span className="hidden md:inline text-center">
+            Manuales de marca <span className="text-lacre">·</span> Por escrito <span className="text-lacre">·</span> Desde 2026
+          </span>
+          <span>
+            Madrid <span className="text-lacre">·</span> Edición 1
+          </span>
         </div>
 
         <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-4 md:pt-6">
@@ -157,21 +163,16 @@ export default function HomePage() {
 
           <div className="relative z-10 grid lg:grid-cols-12 gap-10 lg:gap-14 items-start pb-24 md:pb-32">
             {/* Left column — typography block, manual-faithful */}
-            <div className="lg:col-span-7 pt-2 md:pt-6">
-              {/* Vertical Lacre tick (from manual pages 3,5) */}
+            <div className="lg:col-span-7 pt-2 md:pt-4">
+              {/* Vertical Lacre tick aligned with H1 baseline (manual pages 3,5) */}
               <div className="flex items-start gap-6">
-                <span aria-hidden className="mt-2 block w-[3px] h-28 bg-lacre shrink-0" />
-                <div>
-                  <p className="font-mono text-[10px] md:text-xs uppercase tracking-[0.35em] text-piedra">
-                    Manuales de marca <span className="text-lacre">·</span> Por escrito
-                  </p>
-                  <h1 className="mt-6 font-sans font-black tracking-[-0.045em] leading-[0.88] text-negro"
-                      style={{ fontSize: "clamp(3.5rem, 10.5vw, 10rem)" }}>
-                    Tu marca,
-                    <br />
-                    por escrito<span className="text-lacre">.</span>
-                  </h1>
-                </div>
+                <span aria-hidden className="mt-[0.18em] block w-[3px] h-[0.72em] bg-lacre shrink-0" style={{ fontSize: "clamp(3.5rem, 10.5vw, 10rem)" }} />
+                <h1 className="font-sans font-black tracking-[-0.045em] leading-[0.88] text-negro"
+                    style={{ fontSize: "clamp(3.5rem, 10.5vw, 10rem)" }}>
+                  Tu marca,
+                  <br />
+                  por escrito<span className="text-lacre">.</span>
+                </h1>
               </div>
 
               <div className="mt-14 max-w-2xl">

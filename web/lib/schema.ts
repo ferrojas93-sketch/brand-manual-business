@@ -106,7 +106,7 @@ export const serviceSchema = {
         "@type": "Offer",
         name: "Premium",
         description:
-          "Manual de marca 40-50 páginas. Estrategia + identidad verbal + guidelines exhaustivas. 2 revisiones. Entrega 10 días laborables.",
+          "Manual de marca 40-50 páginas. Estrategia + identidad verbal + guidelines exhaustivas + copia impresa encuadernada como libro de edición única. 2 revisiones. Entrega 10 días laborables.",
         price: "1990",
         priceCurrency: "EUR",
         priceSpecification: {
