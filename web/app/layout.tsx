@@ -23,21 +23,41 @@ const plexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Manual de marca. 490€-1990€ IVA incluido. Tramarca.",
+    default: "Tu marca, por escrito. Manuales de marca 490€–1.990€ IVA incluido · Tramarca",
     template: "%s · Tramarca",
   },
   description:
-    "Tu marca, sin improvisar. Sistemas de marca documentados. Tres tiers: 490€, 990€, 1.990€ IVA incluido. Plazos 5-10 días. Para pymes españolas.",
+    "Estudio editorial de manuales de marca. Sistemas documentados capítulo a capítulo en 5, 7 o 10 días laborables. Tres tiers con precio cerrado e IVA incluido: 490€, 990€, 1.990€.",
   openGraph: {
     type: "website",
     locale: "es_ES",
     url: SITE_URL,
     siteName: "Tramarca",
+    images: [
+      {
+        url: "/og-tramarca.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Tramarca — estudio editorial de manuales de marca. Tres tiers con precio cerrado e IVA incluido.",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tu marca, por escrito · Tramarca",
+    description:
+      "Estudio editorial de manuales de marca. 490€–1.990€ IVA incl., entrega en 5–10 días laborables.",
     images: ["/og-tramarca.jpg"],
   },
-  twitter: { card: "summary_large_image" },
-  alternates: { canonical: SITE_URL },
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      "es-ES": SITE_URL,
+      es: SITE_URL,
+    },
+  },
   robots: { index: true, follow: true },
+  category: "design",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

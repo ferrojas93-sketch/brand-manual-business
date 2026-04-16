@@ -3,29 +3,54 @@ import Link from "next/link";
 import Image from "next/image";
 import { MANUALES } from "@/lib/manuales";
 import { SITE_URL } from "@/lib/tiers";
+import { JsonLd } from "@/components/JsonLd";
+import {
+  jsonLdGraph,
+  breadcrumbListSchema,
+  collectionPageSchema,
+} from "@/lib/schema";
+
+const TOTAL_PAGES = MANUALES.reduce((sum, m) => sum + m.pages, 0);
 
 export const metadata: Metadata = {
   title: "Manuales entregados · Portfolio",
-  description:
-    "Cuatro manuales reales: Anfisbena, Claramel, Matraz Innova y el nuestro propio. Páginas, spreads y sistemas. Sin mockups. Trabajo publicado.",
+  description: `${MANUALES.length} manuales de marca reales entregados por Tramarca: ${MANUALES.map((m) => m.name).join(", ")}. ${TOTAL_PAGES} páginas publicadas. Sin mockups, trabajo real.`,
   alternates: { canonical: `${SITE_URL}/manuales` },
 };
+
+const schemaGraph = jsonLdGraph(
+  breadcrumbListSchema([
+    { name: "Inicio", url: SITE_URL },
+    { name: "Manuales", url: `${SITE_URL}/manuales` },
+  ]),
+  collectionPageSchema({
+    url: `${SITE_URL}/manuales`,
+    name: "Portfolio de manuales de marca Tramarca",
+    description: `${MANUALES.length} manuales de marca entregados por Tramarca, con sistema tipográfico, paleta y guidelines documentados capítulo a capítulo.`,
+    items: MANUALES.map((m) => ({
+      name: `${m.name} — manual de marca ${m.pages}pp`,
+      url: `${SITE_URL}/manuales/${m.slug}`,
+      image: `${SITE_URL}/portfolio/${m.slug}-cover.jpg`,
+    })),
+  })
+);
 
 export default function ManualesPage() {
   return (
     <>
+      <JsonLd data={schemaGraph} />
       <section>
         <div className="mx-auto max-w-7xl px-6 pt-20 md:pt-28 pb-12">
           <p className="font-mono text-xs uppercase tracking-widest text-lacre">Portfolio</p>
           <h1 className="mt-6 text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9]">
-            Cuatro manuales<span className="text-lacre">.</span>
+            {MANUALES.length} manuales<span className="text-lacre">.</span>
             <br />
             <span className="text-piedra">Cero mockups<span className="text-lacre">.</span></span>
           </h1>
           <p className="mt-10 max-w-3xl text-lg md:text-xl text-piedra leading-relaxed">
-            Tres clientes reales. Un manual propio. Ciento treinta y nueve páginas publicadas
-            en total. Mira los spreads, los sistemas tipográficos, las paletas. Antes de
-            contratar, mira lo que sale por la puerta.
+            Cuatro clientes reales. Un manual propio. {TOTAL_PAGES} páginas publicadas.
+            Mira los spreads, los sistemas tipográficos, las paletas. Antes de contratar,
+            mira lo que sale por la puerta.
           </p>
         </div>
       </section>

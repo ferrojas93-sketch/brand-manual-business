@@ -9,7 +9,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Logo invert />
             <p className="mt-4 text-sm text-ceniza leading-relaxed">
-              Tu marca, sin improvisar. Producimos sistemas de marca documentados. Lo que no se escribe, se improvisa.
+              Estudio editorial de manuales de marca. Precio cerrado, plazo publicado, sistema documentado.
             </p>
           </div>
 
@@ -57,7 +57,7 @@ export function Footer() {
 
         <div className="mt-16 pt-8 border-t border-papel/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="font-mono text-xs text-piedra">
-            Tramarca · Tu marca, sin improvisar · España
+            Tramarca · Estudio editorial de manuales de marca · Madrid
           </p>
           <p className="font-mono text-xs text-piedra">© 2026 Tramarca. Todos los derechos reservados.</p>
         </div>
