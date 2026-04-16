@@ -8,7 +8,6 @@ import { JsonLd } from "@/components/JsonLd";
 import { SpreadFrame } from "@/components/SpreadFrame";
 import { Reveal } from "@/components/Reveal";
 import { MANUALES } from "@/lib/manuales";
-import { FOUNDING_SLOTS_REMAINING, FOUNDING_SLOTS_TOTAL } from "@/lib/tiers";
 import { jsonLdGraph, serviceSchema, faqSchema } from "@/lib/schema";
 
 const portfolioHome = MANUALES.filter((m) => m.slug !== "tramarca").slice(0, 3);
@@ -117,10 +116,6 @@ const homeFaqs = [
   {
     q: "¿El IVA va incluido? ¿Hay costes ocultos?",
     a: "Sí, el IVA 21% está incluido en los precios publicados (490€, 990€, 1.990€). No hay fees de discovery ni tarifas por revisión adicional dentro del scope acordado. Emitimos factura electrónica española con IVA desglosado para tu contabilidad. El precio que ves es el precio final.",
-  },
-  {
-    q: "¿Qué es el Programa Fundador?",
-    a: "Los primeros cinco clientes de Tramarca pagan precio full (490€, 990€ o 1.990€ según tier) y reciben extras: +10 páginas sobre el tier elegido, sesión de estrategia adicional de 60 minutos, case study co-producido y prioridad de entrega. A cambio pedimos case study público, testimonial en vídeo y dos referidos cualificados. Tras los cinco, los precios se revisan al alza.",
   },
   {
     q: "¿Trabajáis con autónomos, PYMES o solo empresas grandes?",
@@ -676,101 +671,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* Founding */}
-      <section className="section-dark relative overflow-hidden">
-        <div
-          className="absolute inset-0 opacity-[0.08] pointer-events-none"
-          style={{
-            backgroundImage:
-              "repeating-linear-gradient(45deg, var(--color-lacre) 0, var(--color-lacre) 1px, transparent 1px, transparent 28px)",
-          }}
-        />
-        <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-40">
-          <p className="font-mono text-xs uppercase tracking-widest text-lacre">
-            Programa Fundador
-          </p>
-
-          {/* Mega counter */}
-          <div className="mt-10 flex items-baseline gap-4 md:gap-8 flex-wrap">
-            <span className="font-black text-lacre leading-[0.8] tabular-nums" style={{ fontSize: "clamp(6rem, 18vw, 14rem)" }}>
-              {FOUNDING_SLOTS_REMAINING}
-            </span>
-            <span className="font-black text-ceniza/75 leading-[0.8] tabular-nums" style={{ fontSize: "clamp(3rem, 9vw, 7rem)" }}>
-              /{FOUNDING_SLOTS_TOTAL}
-            </span>
-            <span className="font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-ceniza pb-3 md:pb-6">
-              plazas
-              <br />
-              disponibles
-            </span>
-          </div>
-
-          {/* Slot dots visualizer */}
-          <div className="mt-10 flex gap-3 md:gap-4">
-            {Array.from({ length: FOUNDING_SLOTS_TOTAL }).map((_, i) => {
-              const taken = i < FOUNDING_SLOTS_TOTAL - FOUNDING_SLOTS_REMAINING;
-              return (
-                <div
-                  key={i}
-                  className={`h-4 md:h-5 flex-1 max-w-[160px] transition-colors ${
-                    taken ? "bg-lacre" : "bg-papel/60 border border-papel"
-                  }`}
-                  aria-label={taken ? "Plaza ocupada" : "Plaza disponible"}
-                />
-              );
-            })}
-          </div>
-
-          <div className="mt-16 grid md:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <div className="md:col-span-7">
-              <h2 className="text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
-                Precio full. Extras que no se vuelven a publicar.
-              </h2>
-              <p className="mt-6 text-lg text-ceniza leading-relaxed">
-                Los primeros cinco clientes entran al Programa Fundador. Pagan su tier al
-                precio completo. Reciben extras que luego no se vuelven a ofrecer: más
-                páginas, identidad verbal ampliada, formación extendida. A cambio: un case
-                study público, un testimonial en vídeo, dos referidos cualificados. Se
-                cierra cuando se cierra. No es urgency de marketing, es matemática.
-              </p>
-              <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                <ButtonLink
-                  href={{ pathname: "/contacto", query: { founding: "true" } }}
-                  variant="invert"
-                  size="lg"
-                >
-                  Reservar plaza fundadora →
-                </ButtonLink>
-                <ButtonLink href="/precios" variant="ghost" size="lg">
-                  Ver tiers primero
-                </ButtonLink>
-              </div>
-              <p className="mt-4 font-mono text-xs text-piedra">
-                Te respondemos en &lt;24h laborables. Si ya no hay plaza, te lo decimos.
-              </p>
-            </div>
-
-            <ul className="md:col-span-5 space-y-0 divide-y divide-papel/10 border-y border-papel/10">
-              {[
-                { k: "+10pp", v: "páginas sobre el tier elegido" },
-                { k: "60′", v: "sesión de estrategia adicional" },
-                { k: "1×", v: "case study co-producido" },
-                { k: "½", v: "plazo prioritario (si hay hueco)" },
-              ].map((x) => (
-                <li key={x.k} className="flex items-baseline gap-5 py-4">
-                  <span className="font-black text-2xl md:text-3xl text-lacre tracking-tight shrink-0 min-w-[64px]">
-                    {x.k}
-                  </span>
-                  <span className="text-base md:text-lg text-papel">{x.v}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Proceso — movido arriba, 5 pasos, iconos, sin videollamada */}
 
       {/* Cómo trabajamos — afirmación, no negación */}
       <section className="bg-arena">

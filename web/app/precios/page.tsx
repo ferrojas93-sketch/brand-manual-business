@@ -4,7 +4,7 @@ import { PricingCards } from "@/components/PricingCards";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ButtonLink } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
-import { FOUNDING_SLOTS_REMAINING, FOUNDING_SLOTS_TOTAL, SITE_URL } from "@/lib/tiers";
+import { SITE_URL } from "@/lib/tiers";
 import { jsonLdGraph, serviceSchema, breadcrumbListSchema } from "@/lib/schema";
 import { cn } from "@/lib/utils";
 
@@ -38,7 +38,7 @@ const pricingFaqs = [
   },
   {
     q: "¿Subirán los precios?",
-    a: "Sí. Tras los cinco Founding o tras los primeros diez clientes (lo que ocurra antes), revisamos tarifas. Si te interesa, el precio actual se cierra con tu kickoff.",
+    a: "Sí. Tras los primeros diez clientes revisamos tarifas al alza. El precio que se queda cerrado es el del kickoff: una vez firmas brief, tu tier está amarrado a su precio actual.",
   },
   {
     q: "¿Hay garantía si no me convence?",
@@ -297,36 +297,6 @@ export default function PreciosPage() {
               Si tu proyecto necesita algo que no entra en el tier, lo cotizamos aparte.
               Sin problema<span className="text-lacre">.</span>
             </p>
-          </div>
-        </div>
-      </section>
-
-      <section className="section-dark">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <p className="font-mono text-xs uppercase tracking-widest text-lacre">
-            Programa Fundador
-          </p>
-          <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05] max-w-4xl">
-            Quedan{" "}
-            <span className="text-lacre">
-              {FOUNDING_SLOTS_REMAINING} de {FOUNDING_SLOTS_TOTAL}
-            </span>{" "}
-            plazas.
-          </h2>
-          <p className="mt-8 text-lg text-ceniza max-w-3xl leading-relaxed">
-            Los primeros cinco clientes pagan precio full y reciben extras: +10 páginas
-            sobre el tier elegido, sesión de estrategia adicional (60min), case study
-            co-producido, prioridad de entrega. A cambio: case study público, testimonial
-            en vídeo, dos referidos. Se cierra cuando se cierra.
-          </p>
-          <div className="mt-10">
-            <ButtonLink
-              href={{ pathname: "/contacto", query: { founding: "true" } }}
-              variant="invert"
-              size="lg"
-            >
-              Hablamos →
-            </ButtonLink>
           </div>
         </div>
       </section>

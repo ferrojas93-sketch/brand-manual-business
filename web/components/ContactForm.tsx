@@ -37,7 +37,6 @@ const schema = z.object({
   email: z.string().email("Email inválido").max(200),
   company: z.string().min(2, "¿Cómo se llama lo tuyo?").max(150),
   tier: z.enum(["esencial", "profesional", "premium", "no-lo-se"]),
-  founding: z.boolean().optional(),
   message: z.string().min(10, "Tres líneas mínimo").max(3000),
   brand_maturity: z.enum(["new_brand", "existing", "rebrand", "refresh", "update_manual", ""]).optional(),
   company_website: urlField,
@@ -101,7 +100,7 @@ async function uploadOne(file: File): Promise<Attachment> {
   return { filename: file.name, path, size: file.size, type: file.type };
 }
 
-export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: string; defaultFounding?: boolean }) {
+export function ContactForm({ defaultTier }: { defaultTier?: string }) {
   const [status, setStatus] = useState<Status>("idle");
   const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
   const turnstileRef = useRef<TurnstileInstance | null>(null);
@@ -121,7 +120,6 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
       tier: (["esencial", "profesional", "premium"].includes(defaultTier ?? "")
         ? defaultTier
         : "no-lo-se") as FormValues["tier"],
-      founding: !!defaultFounding,
     },
   });
 
@@ -214,7 +212,6 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
       email: data.email,
       company: data.company,
       tier: data.tier,
-      founding: data.founding,
       message: data.message,
       consent: data.consent,
       honeypot: data.honeypot,
@@ -343,11 +340,6 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
             </select>
           </div>
         </div>
-
-        <label className="flex items-start gap-3 cursor-pointer">
-          <input type="checkbox" {...register("founding")} className="mt-1 accent-lacre w-4 h-4" />
-          <span className="text-sm text-piedra">¿Eres candidato al Programa Fundador?</span>
-        </label>
 
         <div>
           <label className={labelCls} htmlFor="message">Cuéntanos el contexto</label>

@@ -216,14 +216,6 @@ export const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "¿Qué es el Programa Fundador?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Los primeros cinco clientes de Tramarca pagan precio full y reciben extras: +10 páginas sobre el tier, sesión de estrategia adicional, case study co-producido y prioridad de entrega. A cambio piden case study público, testimonial en vídeo y dos referidos. Tras los cinco, precios al alza.",
-      },
-    },
-    {
-      "@type": "Question",
       name: "¿Hay garantía de devolución?",
       acceptedAnswer: {
         "@type": "Answer",

@@ -22,7 +22,6 @@ type LeadPayload = {
   email?: string;
   company?: string;
   tier?: Tier;
-  founding?: boolean;
   message?: string;
   consent?: boolean;
   website?: string;
@@ -173,7 +172,6 @@ export async function POST(req: Request) {
       team_size: teamSize,
       brand_maturity: brandMaturity,
       tier_interest: tierInterest,
-      founding: !!body.founding,
       attachments,
     });
 
@@ -187,7 +185,6 @@ export async function POST(req: Request) {
     email,
     company,
     tier: body.tier ?? "no-lo-se",
-    founding: !!body.founding,
     message,
     ip,
     website: companyWebsite,
