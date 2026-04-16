@@ -127,22 +127,22 @@ export default function PreciosPage() {
                   Comparativa
                 </div>
                 <div className="px-5 py-5 border-l border-papel/15">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-piedra">Tier 1</p>
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-ceniza">Tier 1</p>
                   <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Esencial</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza">490€ <span className="text-piedra">· IVA incl.</span></p>
+                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">490€ <span className="text-ceniza/70">· IVA incl.</span></p>
                 </div>
                 <div className="relative px-5 py-5 border-l border-papel/15 bg-lacre/15">
-                  <span className="absolute -top-2.5 left-5 bg-lacre text-papel font-mono text-[9px] uppercase tracking-[0.25em] px-2 py-0.5">
+                  <span className="absolute -top-2.5 left-5 bg-negro text-lacre border border-lacre font-mono text-[9px] uppercase tracking-[0.2em] px-2 py-0.5 font-bold">
                     Recomendado
                   </span>
                   <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">Tier 2</p>
                   <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Profesional</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza">990€ <span className="text-piedra">· IVA incl.</span></p>
+                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">990€ <span className="text-ceniza/70">· IVA incl.</span></p>
                 </div>
                 <div className="px-5 py-5 border-l border-papel/15">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-piedra">Tier 3</p>
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-ceniza">Tier 3</p>
                   <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Premium</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza">1.990€ <span className="text-piedra">· IVA incl.</span></p>
+                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">1.990€ <span className="text-ceniza/70">· IVA incl.</span></p>
                 </div>
               </div>
 

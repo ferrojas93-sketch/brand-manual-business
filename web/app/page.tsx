@@ -203,15 +203,15 @@ export default function HomePage() {
               <div className="mt-14 grid grid-cols-3 gap-4 max-w-xl border-t-2 border-negro pt-5">
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-widest text-piedra">Esencial</p>
-                  <p className="mt-2 text-3xl font-black text-negro tracking-tight">490€</p>
+                  <p className="mt-2 text-3xl font-black text-negro tracking-tight tabular-nums">490€</p>
                 </div>
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-widest text-lacre">Profesional</p>
-                  <p className="mt-2 text-3xl font-black text-negro tracking-tight">990€<span className="text-lacre">.</span></p>
+                  <p className="mt-2 text-3xl font-black text-negro tracking-tight tabular-nums">990€<span className="text-lacre">.</span></p>
                 </div>
                 <div>
                   <p className="font-mono text-[10px] uppercase tracking-widest text-piedra">Premium</p>
-                  <p className="mt-2 text-3xl font-black text-negro tracking-tight">1.990€</p>
+                  <p className="mt-2 text-3xl font-black text-negro tracking-tight tabular-nums">1.990€</p>
                 </div>
               </div>
               <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-piedra">
@@ -695,10 +695,10 @@ export default function HomePage() {
 
           {/* Mega counter */}
           <div className="mt-10 flex items-baseline gap-4 md:gap-8 flex-wrap">
-            <span className="text-[28vw] md:text-[18vw] lg:text-[16rem] font-black text-lacre tracking-[-0.05em] leading-[0.8]">
+            <span className="font-black text-lacre leading-[0.8] tabular-nums" style={{ fontSize: "clamp(6rem, 18vw, 14rem)" }}>
               {FOUNDING_SLOTS_REMAINING}
             </span>
-            <span className="text-[14vw] md:text-[9vw] lg:text-[8rem] font-black text-ceniza/40 tracking-[-0.05em] leading-[0.8]">
+            <span className="font-black text-ceniza/75 leading-[0.8] tabular-nums" style={{ fontSize: "clamp(3rem, 9vw, 7rem)" }}>
               /{FOUNDING_SLOTS_TOTAL}
             </span>
             <span className="font-mono text-xs md:text-sm uppercase tracking-[0.3em] text-ceniza pb-3 md:pb-6">
@@ -828,7 +828,7 @@ export default function HomePage() {
       {/* Cierre */}
       <section className="section-dark">
         <div className="mx-auto max-w-7xl px-6 py-32 md:py-48 text-center">
-          <h2 className="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9]">
+          <h2 className="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[1.02] md:leading-[0.95] lg:leading-[0.88]">
             ¿Tu marca
             <br />
             está por escrito<span className="text-lacre">?</span>

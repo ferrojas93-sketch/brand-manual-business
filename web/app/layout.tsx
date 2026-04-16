@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import Script from "next/script";
 import { Nav } from "@/components/Nav";
@@ -18,6 +19,21 @@ const plexMono = IBM_Plex_Mono({
   variable: "--font-plex-mono",
   subsets: ["latin"],
   weight: ["400", "500", "700"],
+  display: "swap",
+});
+
+const satoshi = localFont({
+  variable: "--font-satoshi",
+  display: "swap",
+  preload: true,
+  adjustFontFallback: "Arial",
+  fallback: ["ui-sans-serif", "system-ui", "-apple-system", "sans-serif"],
+  src: [
+    { path: "../public/fonts/Satoshi-400.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/Satoshi-500.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/Satoshi-700.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/Satoshi-900.woff2", weight: "900", style: "normal" },
+  ],
 });
 
 export const metadata: Metadata = {
@@ -62,7 +78,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${plexMono.variable} antialiased`}>
+    <html lang="es" className={`${plexMono.variable} ${satoshi.variable} antialiased`}>
       <body className="min-h-screen flex flex-col bg-papel text-negro font-sans">
         <Nav />
         <main className="flex-1">{children}</main>

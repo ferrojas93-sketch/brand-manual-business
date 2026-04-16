@@ -21,7 +21,7 @@ export function PricingCards({ compact = false }: { compact?: boolean }) {
             )}
           >
             {isFeatured && (
-              <span className="absolute -top-3 left-8 bg-lacre text-papel text-[10px] tracking-widest uppercase px-3 py-1 font-mono font-medium">
+              <span className="absolute -top-3 left-8 bg-negro text-lacre text-[10px] tracking-[0.2em] uppercase px-3 py-1 font-mono font-bold border border-lacre">
                 Recomendado
               </span>
             )}
@@ -41,7 +41,7 @@ export function PricingCards({ compact = false }: { compact?: boolean }) {
 
             {/* Price — first and loud */}
             <div className="mt-3 flex items-baseline gap-2">
-              <span className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-none">
+              <span className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-none tabular-nums">
                 {tier.priceDisplay}
               </span>
             </div>
