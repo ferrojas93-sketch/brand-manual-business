@@ -39,8 +39,9 @@ export default async function ContactoPage({
             Hablamos<span className="text-lacre">.</span>
           </h1>
           <p className="mt-10 max-w-2xl text-lg md:text-xl text-piedra leading-relaxed">
-            Rellena cuatro campos. Respondemos en menos de 24 horas laborables. Si encaja,
-            pasamos a kickoff. Si no, también te lo decimos. Tu tiempo también cuenta.
+            Rellena cuatro campos. Respondemos por email en menos de 24 horas laborables.
+            Si encaja, pasamos a kickoff async. Si no, también te lo decimos. Tu tiempo también
+            cuenta<span className="text-lacre">.</span>
           </p>
         </div>
       </section>

@@ -18,9 +18,9 @@ export default function ManualesPage() {
         <div className="mx-auto max-w-7xl px-6 pt-20 md:pt-28 pb-12">
           <p className="font-mono text-xs uppercase tracking-widest text-lacre">Portfolio</p>
           <h1 className="mt-6 text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9]">
-            Cuatro manuales.
+            Cuatro manuales<span className="text-lacre">.</span>
             <br />
-            <span className="text-lacre">Cero mockups.</span>
+            <span className="text-piedra">Cero mockups<span className="text-lacre">.</span></span>
           </h1>
           <p className="mt-10 max-w-3xl text-lg md:text-xl text-piedra leading-relaxed">
             Tres clientes reales. Un manual propio. Ciento treinta y nueve páginas publicadas

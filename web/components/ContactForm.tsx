@@ -3,10 +3,13 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 import { Button } from "./Button";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 const schema = z.object({
   name: z.string().min(2, "Necesitamos tu nombre. Breve."),
@@ -23,8 +26,12 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>;
 
+type Status = "idle" | "sending" | "sent" | "error" | "awaiting-turnstile";
+
 export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: string; defaultFounding?: boolean }) {
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [status, setStatus] = useState<Status>("idle");
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance | null>(null);
 
   const {
     register,
@@ -42,20 +49,28 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
   });
 
   async function onSubmit(data: FormValues) {
+    if (TURNSTILE_SITE_KEY && !turnstileToken) {
+      setStatus("awaiting-turnstile");
+      return;
+    }
     setStatus("sending");
     trackEvent("form_submit", { form: "contact", tier: data.tier });
 
     const res = await fetch("/api/lead", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
+      body: JSON.stringify({ ...data, turnstileToken }),
     });
 
     if (res.ok) {
       setStatus("sent");
       reset();
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
     } else {
       setStatus("error");
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
     }
   }
 
@@ -138,6 +153,26 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
         </span>
       </label>
       {errors.consent && <p className={errorCls}>{errors.consent.message}</p>}
+
+      {TURNSTILE_SITE_KEY && (
+        <Turnstile
+          ref={turnstileRef}
+          siteKey={TURNSTILE_SITE_KEY}
+          onSuccess={(token) => {
+            setTurnstileToken(token);
+            if (status === "awaiting-turnstile") setStatus("idle");
+          }}
+          onExpire={() => setTurnstileToken(null)}
+          onError={() => setTurnstileToken(null)}
+          options={{ theme: "light", size: "flexible" }}
+        />
+      )}
+
+      {status === "awaiting-turnstile" && (
+        <p className="text-sm text-piedra font-mono">
+          Espera un segundo — verificando que no eres un robot. Vuelve a pulsar Enviar cuando veas el check verde.
+        </p>
+      )}
 
       <Button type="submit" variant="primary" size="lg" disabled={status === "sending"}>
         {status === "sending" ? "Enviando…" : "Enviar →"}

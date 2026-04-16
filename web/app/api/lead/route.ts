@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase";
+import { limitByEmail, limitByIp } from "@/lib/rate-limit";
+import { verifyTurnstile } from "@/lib/turnstile";
+import { notifyNewLead } from "@/lib/notify";
 
 export const runtime = "nodejs";
 
@@ -12,13 +15,10 @@ type LeadPayload = {
   message?: string;
   consent?: boolean;
   website?: string;
+  turnstileToken?: string;
 };
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
-
-const rateLimit = new Map<string, { count: number; resetAt: number }>();
-const RATE_WINDOW_MS = 60_000;
-const RATE_MAX = 5;
 
 function getIp(req: Request): string {
   const xff = req.headers.get("x-forwarded-for");
@@ -26,21 +26,11 @@ function getIp(req: Request): string {
   return req.headers.get("x-real-ip") ?? "unknown";
 }
 
-function hit(ip: string): boolean {
-  const now = Date.now();
-  const entry = rateLimit.get(ip);
-  if (!entry || entry.resetAt < now) {
-    rateLimit.set(ip, { count: 1, resetAt: now + RATE_WINDOW_MS });
-    return true;
-  }
-  if (entry.count >= RATE_MAX) return false;
-  entry.count += 1;
-  return true;
-}
-
 export async function POST(req: Request) {
   const ip = getIp(req);
-  if (!hit(ip)) {
+
+  const ipCheck = await limitByIp(ip);
+  if (!ipCheck.success) {
     return NextResponse.json({ error: "Demasiadas solicitudes" }, { status: 429 });
   }
 
@@ -54,6 +44,11 @@ export async function POST(req: Request) {
   // Honeypot: bots rellenan todos los campos. Si `website` llega con valor, ignoramos silenciosamente.
   if (body.website && body.website.trim().length > 0) {
     return NextResponse.json({ ok: true });
+  }
+
+  const turnstileOk = await verifyTurnstile(body.turnstileToken, ip);
+  if (!turnstileOk) {
+    return NextResponse.json({ error: "Verificación anti-bot fallida" }, { status: 403 });
   }
 
   const name = body.name?.trim() ?? "";
@@ -77,6 +72,11 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Falta consentimiento" }, { status: 400 });
   }
 
+  const emailCheck = await limitByEmail(email);
+  if (!emailCheck.success) {
+    return NextResponse.json({ error: "Demasiadas solicitudes" }, { status: 429 });
+  }
+
   const notes = [
     message,
     body.founding ? "[Founding Customer Program candidate]" : null,
@@ -96,9 +96,19 @@ export async function POST(req: Request) {
   });
 
   if (error) {
-    console.error("Supabase insert error:", error);
+    console.error("lead_insert_error", { code: error.code, message: error.message });
     return NextResponse.json({ error: "Database error" }, { status: 500 });
   }
+
+  await notifyNewLead({
+    name,
+    email,
+    company,
+    tier: body.tier ?? "no-lo-se",
+    founding: !!body.founding,
+    message,
+    ip,
+  });
 
   return NextResponse.json({ ok: true });
 }

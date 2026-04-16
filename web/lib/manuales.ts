@@ -71,6 +71,23 @@ export const MANUALES: Manual[] = [
     },
   },
   {
+    slug: "shamusic",
+    name: "Shamusic",
+    tier: "premium",
+    pages: 46,
+    year: 2026,
+    sector: "Music-tech",
+    brief: "Plataforma blockchain de registro de copyright musical para artistas independientes. Comunicación con fuerza estratégica pero sin sistema documentado: tres tipografías, cuatro morados sin rol, Instagram inconsistente.",
+    direction:
+      "Axis Bold. Archetype Rebel + Creator. Paleta racionalizada midnight + signal magenta con regla 60/30/10. Sistema tipográfico Fraunces + Host Grotesk + JetBrains Mono. Mantra verbal «Tu música. Tu copyright. Tu dinero.» codificado en Fraunces 900 opsz 144. Cuarenta y seis páginas, tier Premium.",
+    altCover: "Shamusic — manual de marca premium 46 páginas entregado por Tramarca",
+    testimonial: {
+      quote: "Teníamos la voz, teníamos la comunidad, pero cada post era una marca distinta. Tramarca codificó reels, posters, Sessions y certificado en un sistema que aguanta el scroll sin que tengamos que improvisar cada jueves.",
+      author: "Dirección de marca",
+      role: "Shamusic",
+    },
+  },
+  {
     slug: "tramarca",
     name: "Tramarca",
     tier: "Propio",

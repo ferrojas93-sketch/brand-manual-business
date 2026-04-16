@@ -6,6 +6,7 @@ import { ButtonLink } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { FOUNDING_SLOTS_REMAINING, FOUNDING_SLOTS_TOTAL, SITE_URL } from "@/lib/tiers";
 import { jsonLdGraph, serviceSchema } from "@/lib/schema";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Precios manual de marca. IVA incluido.",
@@ -66,115 +67,127 @@ const comparisonRows = [
 export default function PreciosPage() {
   return (
     <>
-      <section>
-        <div className="mx-auto max-w-7xl px-6 pt-20 md:pt-28 pb-16">
-          <p className="font-mono text-xs uppercase tracking-widest text-lacre">Precios</p>
-          <h1 className="mt-6 text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.95]">
-            Cuánto cuesta un manual de marca con Tramarca.
-          </h1>
-          <div className="mt-10 max-w-3xl space-y-5 text-lg md:text-xl text-negro/80 leading-relaxed">
-            <p>
-              Un manual de marca con Tramarca cuesta <strong>490€, 990€ o 1.990€, IVA incluido</strong>. Tres tiers productizados. Entregamos en 5, 7 o 10 días laborables. Páginas reales: 20-25 en Esencial, 30-40 en Profesional, 40-50 en Premium. Revisiones incluidas: 1 en Esencial, 2 en los otros dos.
-            </p>
-            <p className="text-piedra">
-              Una agencia tradicional española te pide entre 5.000€ y 50.000€ con custom pricing. Un freelance, entre 800€ y 1.500€ sin plazo garantizado. Canva, 12€/mes pero lo haces tú. Tramarca ocupa el hueco: productizado, precio público, plazo publicado, IVA incluido.
-            </p>
-            <p>
-              Lo que ves aquí es el precio final. Sin discovery de pago, sin propuesta a medida, sin sorpresas en la factura.
-            </p>
+      {/* Hero compacto + price cards arriba, horizontal en desktop */}
+      <section className="bg-papel border-b border-negro/10">
+        <div className="mx-auto max-w-7xl px-6 pt-16 md:pt-20 pb-10 md:pb-14">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
+            <div className="lg:col-span-7">
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+                Precios <span className="text-piedra">·</span> IVA incluido
+              </p>
+              <h1 className="mt-5 text-5xl md:text-6xl lg:text-7xl font-black tracking-tighter leading-[0.95]">
+                Cuánto cuesta un manual
+                <br className="hidden sm:block" /> de marca con Tramarca
+                <span className="text-lacre">.</span>
+              </h1>
+            </div>
+            <div className="lg:col-span-5">
+              <p className="text-base md:text-lg text-piedra leading-[1.55]">
+                Tres tiers productizados: <strong className="text-negro">490€, 990€ o 1.990€, IVA incluido</strong>.
+                Entrega en 5, 7 o 10 días laborables. Páginas reales, revisiones incluidas,
+                precio final<span className="text-lacre">.</span>
+              </p>
+              <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[11px] uppercase tracking-widest text-piedra">
+                <span>Precio publicado</span>
+                <span className="text-lacre">·</span>
+                <span>Plazo garantizado</span>
+                <span className="text-lacre">·</span>
+                <span>Sin sorpresas</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Price cards primero */}
       <section className="bg-arena">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6 py-14 md:py-20">
           <PricingCards />
         </div>
       </section>
 
-      <section>
-        <div className="mx-auto max-w-[1400px] px-6 py-24 md:py-32">
+      <section className="bg-papel">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
-              Los tres tiers al detalle.
-            </h2>
-            <p className="font-mono text-xs uppercase tracking-widest text-piedra">
-              Scroll horizontal en móvil →
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">Comparativa</p>
+              <h2 className="mt-5 text-3xl md:text-5xl font-black tracking-tight leading-[1.05]">
+                Los tres tiers al detalle<span className="text-lacre">.</span>
+              </h2>
+            </div>
+            <p className="font-mono text-[10px] uppercase tracking-widest text-piedra md:max-w-[14rem] md:text-right">
+              Misma base. Distinto alcance<span className="text-lacre">.</span>
             </p>
           </div>
 
-          <div className="mt-14 overflow-x-auto -mx-6 px-6">
-            <table className="w-full min-w-[860px] border-collapse text-left">
-              <thead>
-                <tr>
-                  <th className="py-6 pr-6 align-bottom font-mono text-xs uppercase tracking-widest text-piedra w-[28%]">
-                    Comparativa
-                  </th>
-                  <th className="align-bottom p-0 w-[24%]">
-                    <div className="border-t-2 border-negro pt-6 pr-6">
-                      <p className="font-mono text-[10px] uppercase tracking-widest text-piedra">Tier 1</p>
-                      <p className="mt-2 text-3xl md:text-4xl font-black tracking-tight">Esencial</p>
-                      <p className="mt-1 text-2xl font-black">490€</p>
-                      <p className="font-mono text-[10px] text-piedra uppercase tracking-widest">IVA incluido</p>
-                    </div>
-                  </th>
-                  <th className="align-bottom p-0 w-[24%] relative">
-                    <div className="absolute -top-4 left-0 right-4 bg-lacre text-papel font-mono text-[10px] uppercase tracking-widest px-3 py-1.5 text-center">
-                      Recomendado
-                    </div>
-                    <div className="border-t-2 border-lacre pt-6 pr-6 bg-lacre/5">
-                      <p className="font-mono text-[10px] uppercase tracking-widest text-lacre">Tier 2</p>
-                      <p className="mt-2 text-3xl md:text-4xl font-black tracking-tight">Profesional</p>
-                      <p className="mt-1 text-2xl font-black">990€</p>
-                      <p className="font-mono text-[10px] text-piedra uppercase tracking-widest">IVA incluido</p>
-                    </div>
-                  </th>
-                  <th className="align-bottom p-0 w-[24%]">
-                    <div className="border-t-2 border-negro pt-6 pr-2">
-                      <p className="font-mono text-[10px] uppercase tracking-widest text-piedra">Tier 3</p>
-                      <p className="mt-2 text-3xl md:text-4xl font-black tracking-tight">Premium</p>
-                      <p className="mt-1 text-2xl font-black">1.990€</p>
-                      <p className="font-mono text-[10px] text-piedra uppercase tracking-widest">IVA incluido</p>
-                    </div>
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonRows.slice(1).map((r) => (
-                  <tr key={r.label} className="border-b border-negro/10 hover:bg-arena/40 transition-colors">
-                    <td className="py-5 pr-6 font-mono text-[11px] text-piedra uppercase tracking-widest">
-                      {r.label}
-                    </td>
-                    <td className="py-5 pr-6 text-base">{r.esencial}</td>
-                    <td className="py-5 pr-6 text-base bg-lacre/5 font-semibold">
-                      {r.profesional}
-                    </td>
-                    <td className="py-5 pr-2 text-base">{r.premium}</td>
-                  </tr>
-                ))}
-                <tr>
-                  <td className="py-8 pr-6" />
-                  <td className="py-8 pr-6">
-                    <ButtonLink href="/contacto" variant="ghost" size="md">
-                      Empezar el Esencial →
-                    </ButtonLink>
-                  </td>
-                  <td className="py-8 pr-6 bg-lacre/5">
-                    <ButtonLink href="/contacto" variant="primary" size="md">
-                      Reservar Profesional →
-                    </ButtonLink>
-                  </td>
-                  <td className="py-8 pr-2">
-                    <ButtonLink href="/contacto" variant="ghost" size="md">
-                      Abrir Premium →
-                    </ButtonLink>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+          <div className="mt-12 overflow-x-auto">
+            <div className="min-w-[780px] border border-negro/15">
+              <div className="grid grid-cols-[1.1fr_1fr_1fr_1fr] bg-negro text-papel">
+                <div className="px-5 py-5 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
+                  Comparativa
+                </div>
+                <div className="px-5 py-5 border-l border-papel/15">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-piedra">Tier 1</p>
+                  <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Esencial</p>
+                  <p className="mt-1 text-sm font-mono text-ceniza">490€ <span className="text-piedra">· IVA incl.</span></p>
+                </div>
+                <div className="relative px-5 py-5 border-l border-papel/15 bg-lacre/15">
+                  <span className="absolute -top-2.5 left-5 bg-lacre text-papel font-mono text-[9px] uppercase tracking-[0.25em] px-2 py-0.5">
+                    Recomendado
+                  </span>
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">Tier 2</p>
+                  <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Profesional</p>
+                  <p className="mt-1 text-sm font-mono text-ceniza">990€ <span className="text-piedra">· IVA incl.</span></p>
+                </div>
+                <div className="px-5 py-5 border-l border-papel/15">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-piedra">Tier 3</p>
+                  <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Premium</p>
+                  <p className="mt-1 text-sm font-mono text-ceniza">1.990€ <span className="text-piedra">· IVA incl.</span></p>
+                </div>
+              </div>
+
+              {comparisonRows.slice(1).map((r, idx) => (
+                <div
+                  key={r.label}
+                  className={cn(
+                    "grid grid-cols-[1.1fr_1fr_1fr_1fr] border-t border-negro/10 text-[13px] md:text-sm",
+                    idx % 2 === 1 && "bg-arena/35",
+                  )}
+                >
+                  <div className="px-5 py-3.5 font-mono text-[10px] uppercase tracking-[0.2em] text-piedra">
+                    {r.label}
+                  </div>
+                  <div className="px-5 py-3.5 border-l border-negro/10 text-negro">{r.esencial}</div>
+                  <div className="px-5 py-3.5 border-l border-negro/10 text-negro bg-lacre/[0.06] font-medium">
+                    {r.profesional}
+                  </div>
+                  <div className="px-5 py-3.5 border-l border-negro/10 text-negro">{r.premium}</div>
+                </div>
+              ))}
+
+              <div className="grid grid-cols-[1.1fr_1fr_1fr_1fr] border-t-2 border-negro">
+                <div className="px-5 py-5" />
+                <div className="px-5 py-5 border-l border-negro/10">
+                  <ButtonLink href="/contacto" variant="ghost" size="md" className="w-full">
+                    Esencial →
+                  </ButtonLink>
+                </div>
+                <div className="px-5 py-5 border-l border-negro/10 bg-lacre/[0.06]">
+                  <ButtonLink href="/contacto" variant="primary" size="md" className="w-full">
+                    Profesional →
+                  </ButtonLink>
+                </div>
+                <div className="px-5 py-5 border-l border-negro/10">
+                  <ButtonLink href="/contacto" variant="ghost" size="md" className="w-full">
+                    Premium →
+                  </ButtonLink>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
 
       <section className="bg-arena">
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 grid md:grid-cols-2 gap-12">
@@ -185,7 +198,7 @@ export default function PreciosPage() {
             <ul className="mt-8 space-y-3 text-base md:text-lg text-negro/85">
               {[
                 "Brief inicial (cuestionario estructurado)",
-                "Kickoff por videollamada (30min)",
+                "Kickoff por email (async, sin reuniones)",
                 "Entrega en PDF final (A4 landscape) + Figma editable",
                 "Alineación de revisiones por email con deadlines claras",
                 "Soporte post-entrega durante 30 días (dudas de uso)",
@@ -200,12 +213,12 @@ export default function PreciosPage() {
           </div>
           <div>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
-              Lo que no hacemos. Por honestidad.
+              Lo que queda fuera del tier<span className="text-lacre">.</span>
             </h2>
             <ul className="mt-8 space-y-3 text-base md:text-lg text-negro/85">
               {[
                 "Copywriting extenso (web, campañas, slogans comerciales)",
-                "Naming / verbal identity para marca nueva (cotización específica)",
+                "Naming / verbal identity para marca nueva",
                 "Diseño web, landing pages, ecommerce",
                 "Packaging, ilustración, motion, fotografía",
                 "Marketing ads, SEO, estrategia digital",
@@ -217,9 +230,9 @@ export default function PreciosPage() {
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-base text-piedra italic">
-              No somos una agencia full-service. Somos un estudio que hace un producto
-              concreto muy bien.
+            <p className="mt-8 text-base text-piedra">
+              Si tu proyecto necesita algo que no entra en el tier, lo cotizamos aparte.
+              Sin problema<span className="text-lacre">.</span>
             </p>
           </div>
         </div>
