@@ -346,7 +346,7 @@ export function ContactForm({ defaultTier, defaultFounding }: { defaultTier?: st
 
         <label className="flex items-start gap-3 cursor-pointer">
           <input type="checkbox" {...register("founding")} className="mt-1 accent-lacre w-4 h-4" />
-          <span className="text-sm text-piedra">¿Eres candidato al Founding Customer Program?</span>
+          <span className="text-sm text-piedra">¿Eres candidato al Programa Fundador?</span>
         </label>
 
         <div>

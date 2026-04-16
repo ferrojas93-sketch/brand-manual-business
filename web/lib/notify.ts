@@ -105,7 +105,7 @@ export async function notifyNewLead(lead: LeadNotification): Promise<void> {
       `Nombre: ${lead.name}`,
       `Email: ${lead.email}`,
       `Empresa: ${lead.company}`,
-      `Tier: ${tierLabel}${lead.founding ? " · Candidato Founding Customer" : ""}`,
+      `Tier: ${tierLabel}${lead.founding ? " · Candidato Programa Fundador" : ""}`,
     ];
     if (lead.role) textLines.push(`Rol: ${lead.role}`);
     if (lead.sector) textLines.push(`Sector: ${lead.sector}`);

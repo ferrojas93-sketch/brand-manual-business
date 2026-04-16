@@ -75,16 +75,32 @@ const anatomia = [
 
 const homeFaqs = [
   {
+    q: "¿Qué diferencia a Tramarca de una agencia de branding?",
+    a: "Tramarca es un estudio productizado: scope cerrado, precio público, plazo publicado, entregables documentados. Una agencia tradicional hace discovery workshops, propuesta personalizada, pricing custom y timelines de 6-12 semanas. Ambos modelos son válidos según el caso. Tramarca encaja mejor para equipos que ya tienen claro el proyecto y prefieren claridad operativa. Para proyectos que necesitan un discovery profundo, una agencia tradicional puede ser mejor elección.",
+  },
+  {
+    q: "¿Hay garantía de devolución?",
+    a: "Sí. Si tras la primera entrega consideras que el manual no resuelve el brief firmado, devolvemos el 50% del pago de kickoff dentro de los 14 días siguientes a la entrega. O sale el manual completo, o devolvemos: no entregamos a medias. Queda por escrito en el contrato.",
+  },
+  {
+    q: "¿Qué pasa si necesito más revisiones de las incluidas?",
+    a: "Si tras las revisiones incluidas quieres una ronda adicional, te pasamos presupuesto acotado antes de empezar: tarifa por horas o fija según el alcance. Lo decides tú. También puedes ampliar a un tier superior en cualquier momento pagando solo la diferencia (490→990→1.990€). Nunca aparece un extra sin que lo hayas aprobado antes por escrito.",
+  },
+  {
     q: "¿Cuánto cuesta un manual de marca en España?",
     a: "En agencias tradicionales un manual de marca profesional suele costar entre 1.500€ y 8.000€ más IVA, tras un proceso de discovery y propuesta personalizada. En Tramarca publicamos tres tiers con precio cerrado e IVA incluido: Esencial 490€ (20-25 páginas, 5 días), Profesional 990€ (30-40 páginas, 7 días) y Premium 1.990€ (40-50 páginas, 10 días). Lo que ves en la web es el precio final.",
   },
   {
-    q: "¿Qué incluye un manual de marca?",
-    a: "Un manual de marca Tramarca incluye sistema de identidad visual (logo, paleta, tipografía, grid), aplicaciones (papelería, firma de email, RRSS), guidelines de uso y, según el tier, estrategia de marca, identidad verbal y plantillas Figma editables. Entregamos PDF A4 landscape y archivos fuente. Todo documentado capítulo a capítulo: 48 componentes repartidos en 12 capítulos. Puedes ver el índice completo en /anatomia.",
+    q: "¿Sirve Tramarca para rebrand o solo para marca nueva?",
+    a: "Ambos. Los tiers Profesional y Premium funcionan especialmente bien para rebrand: partimos del activo existente, auditamos qué funciona y qué no, y reconstruimos desde sistema. Para marca nueva sin naming ni posicionamiento previo, recomendamos Premium (incluye estrategia completa e identidad verbal). Mismo precio, mismo plazo.",
   },
   {
-    q: "¿El IVA va incluido? ¿Hay costes ocultos?",
-    a: "Sí, el IVA 21% está incluido en los precios publicados (490€, 990€, 1.990€). No hay fees de discovery ni tarifas por revisión adicional dentro del scope acordado. Emitimos factura electrónica española con IVA desglosado para tu contabilidad. El precio que ves es el precio final.",
+    q: "¿Puedo pagar en dos veces?",
+    a: "Sí. Los tiers Profesional y Premium se pagan en dos plazos: 50% al kickoff (con brief firmado) y 50% en la entrega final. El tier Esencial se paga íntegro al kickoff. Aceptamos transferencia SEPA o Stripe (tarjeta, Apple Pay, Google Pay). Emitimos factura electrónica en cada pago.",
+  },
+  {
+    q: "¿Qué incluye un manual de marca?",
+    a: "Un manual de marca Tramarca incluye sistema de identidad visual (logo, paleta, tipografía, grid), aplicaciones (papelería, firma de email, RRSS), guidelines de uso y, según el tier, estrategia de marca, identidad verbal y plantillas Figma editables. Entregamos PDF A4 landscape y archivos fuente. Todo documentado capítulo a capítulo: 48 componentes repartidos en 12 capítulos. Puedes ver el índice completo en /anatomia.",
   },
   {
     q: "¿Cuánto tarda en entregarse un manual de marca?",
@@ -95,32 +111,16 @@ const homeFaqs = [
     a: "Esencial incluye 1 ronda de revisión. Profesional y Premium incluyen 2 rondas. Cada ronda cubre cambios acotados sobre la dirección ya aprobada en el brief. Los cambios de scope (añadir capítulos, rebrand total, entregables nuevos) se presupuestan aparte con precio transparente. Preferimos revisiones acotadas a revisiones ilimitadas porque protege el plazo y el foco del proyecto.",
   },
   {
-    q: "¿Qué pasa si necesito más revisiones de las incluidas?",
-    a: "Si tras las revisiones incluidas quieres una ronda adicional, te pasamos presupuesto acotado antes de empezar: tarifa por horas o fija según el alcance. Lo decides tú. También puedes ampliar a un tier superior en cualquier momento pagando solo la diferencia (490→990→1.990€). Nunca aparece un extra sin que lo hayas aprobado antes por escrito.",
-  },
-  {
-    q: "¿Puedo pagar en dos veces?",
-    a: "Sí. Los tiers Profesional y Premium se pagan en dos plazos: 50% al kickoff (con brief firmado) y 50% en la entrega final. El tier Esencial se paga íntegro al kickoff. Aceptamos transferencia SEPA o Stripe (tarjeta, Apple Pay, Google Pay). Emitimos factura electrónica en cada pago.",
-  },
-  {
     q: "¿Cuál es la diferencia entre un manual de marca y un logo?",
     a: "Un logo es un archivo. Un manual de marca es un sistema documentado: cómo se usa ese logo, con qué colores, en qué tipografías, en qué aplicaciones, con qué tono verbal y qué evitar. Un manual Tramarca te da un documento operativo de 20-50 páginas que cualquiera en tu equipo puede aplicar sin tener que preguntar cada vez. Si solo necesitas un logo aislado, hay estudios especializados que lo hacen muy bien.",
   },
   {
-    q: "¿Qué diferencia a Tramarca de una agencia de branding?",
-    a: "Tramarca es un estudio productizado: scope cerrado, precio público, plazo publicado, entregables documentados. Una agencia tradicional hace discovery workshops, propuesta personalizada, pricing custom y timelines de 6-12 semanas. Ambos modelos son válidos según el caso. Tramarca encaja mejor para equipos que ya tienen claro el proyecto y prefieren claridad operativa. Para proyectos que necesitan un discovery profundo, una agencia tradicional puede ser mejor elección.",
+    q: "¿El IVA va incluido? ¿Hay costes ocultos?",
+    a: "Sí, el IVA 21% está incluido en los precios publicados (490€, 990€, 1.990€). No hay fees de discovery ni tarifas por revisión adicional dentro del scope acordado. Emitimos factura electrónica española con IVA desglosado para tu contabilidad. El precio que ves es el precio final.",
   },
   {
-    q: "¿Sirve Tramarca para rebrand o solo para marca nueva?",
-    a: "Ambos. Los tiers Profesional y Premium funcionan especialmente bien para rebrand: partimos del activo existente, auditamos qué funciona y qué no, y reconstruimos desde sistema. Para marca nueva sin naming ni posicionamiento previo, recomendamos Premium (incluye estrategia completa e identidad verbal). Mismo precio, mismo plazo.",
-  },
-  {
-    q: "¿Qué es el Founding Customer Program?",
+    q: "¿Qué es el Programa Fundador?",
     a: "Los primeros cinco clientes de Tramarca pagan precio full (490€, 990€ o 1.990€ según tier) y reciben extras: +10 páginas sobre el tier elegido, sesión de estrategia adicional de 60 minutos, case study co-producido y prioridad de entrega. A cambio pedimos case study público, testimonial en vídeo y dos referidos cualificados. Tras los cinco, los precios se revisan al alza.",
-  },
-  {
-    q: "¿Hay garantía de devolución?",
-    a: "Sí. Si tras la primera entrega consideras que el manual no resuelve el brief firmado, devolvemos el 50% del pago de kickoff dentro de los 14 días siguientes a la entrega. O sale el manual completo, o devolvemos: no entregamos a medias. Queda por escrito en el contrato.",
   },
   {
     q: "¿Trabajáis con autónomos, PYMES o solo empresas grandes?",
@@ -176,27 +176,28 @@ export default function HomePage() {
 
               <div className="mt-14 max-w-2xl">
                 <p className="text-2xl md:text-[1.75rem] text-negro leading-[1.25] font-black tracking-tight">
-                  Manuales de marca
+                  Un manual de marca documentado,
                   <br />
-                  <span className="text-piedra">en 5, 7 o 10 días</span><span className="text-lacre">.</span>
+                  <span className="text-piedra">desde <span className="tabular-nums">490€</span></span><span className="text-lacre">.</span>
                 </p>
                 <p className="mt-6 max-w-xl text-base md:text-lg text-piedra leading-[1.6]">
-                  Documentamos tu marca capítulo a capítulo: identidad visual,
-                  aplicaciones, tono verbal y guidelines. Precio cerrado, plazo
-                  publicado. Lo que no se documenta, se improvisa.
+                  Logo, colores, tipografía, tono de voz y aplicaciones — todo
+                  en un PDF editorial de 20-50 páginas. Precio cerrado. Entrega
+                  en 5, 7 o 10 días laborables. Lo que no se documenta, se
+                  improvisa.
                 </p>
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <ButtonLink href="/contacto" variant="primary" size="lg">
-                  Hablemos de tu marca →
+                  Pedir propuesta en 24h →
                 </ButtonLink>
                 <ButtonLink
-                  href="/anatomia"
+                  href="/manuales"
                   variant="ghost"
                   size="lg"
                 >
-                  Qué hay dentro →
+                  Ver 5 manuales publicados →
                 </ButtonLink>
               </div>
 
@@ -574,17 +575,22 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonios */}
+      {/* Notas del proyecto — voz editorial del estudio sobre cada caso */}
       <section className="section-dark">
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
           <p className="font-mono text-xs uppercase tracking-widest text-lacre">
-            Lo que dicen
+            Notas del proyecto
           </p>
           <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05] max-w-4xl">
-            Tres clientes. Tres sectores.
+            Lo que entró por el brief.
             <br />
-            <span className="text-ceniza">Una misma frase: dejamos de improvisar.</span>
+            <span className="text-ceniza">Lo que salió documentado.</span>
           </h2>
+          <p className="mt-8 max-w-2xl text-base md:text-lg text-ceniza leading-relaxed">
+            Extractos del brief recibido en cada proyecto, registrados antes de
+            empezar. Los testimonios firmados por clientes llegarán cuando
+            entreguen su autorización — no antes.
+          </p>
 
           <div className="mt-16 grid md:grid-cols-3 gap-6 md:gap-8">
             {testimonials
@@ -600,29 +606,20 @@ export default function HomePage() {
                   <blockquote className="mt-4 text-lg md:text-xl text-papel leading-[1.4] flex-1">
                     {m.testimonial!.quote}
                   </blockquote>
-                  <figcaption className="mt-8 pt-6 border-t border-papel/10 flex items-center gap-4">
-                    <div className="relative w-14 h-14 shrink-0 overflow-hidden rounded-full bg-negro border border-papel/10">
-                      <Image
-                        src={`/ilustraciones/retrato-${m.slug}.jpeg`}
-                        alt={`Retrato de ${m.testimonial!.author}`}
-                        fill
-                        sizes="56px"
-                        className="object-cover"
-                      />
-                    </div>
+                  <figcaption className="mt-8 pt-6 border-t border-papel/10 flex items-center justify-between gap-4">
                     <div className="min-w-0">
-                      <p className="font-black text-papel tracking-tight truncate">
-                        {m.testimonial!.author}
+                      <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                        Caso · {m.name}
                       </p>
-                      <p className="font-mono text-[11px] uppercase tracking-widest text-piedra truncate">
-                        {m.testimonial!.role} · {m.sector}
+                      <p className="mt-2 font-mono text-[11px] uppercase tracking-widest text-ceniza">
+                        {m.sector} · {m.pages}pp
                       </p>
                     </div>
                     <Link
                       href={`/manuales/${m.slug}`}
-                      className="ml-auto font-mono text-[11px] uppercase tracking-widest text-lacre hover:text-papel transition-colors shrink-0"
+                      className="font-mono text-[11px] uppercase tracking-widest text-lacre hover:text-papel transition-colors shrink-0"
                     >
-                      Caso →
+                      Ver caso →
                     </Link>
                   </figcaption>
                 </figure>
@@ -630,7 +627,7 @@ export default function HomePage() {
           </div>
 
           <p className="mt-12 font-mono text-xs text-piedra">
-            Case studies completos con dirección de arte, páginas y plazo en{" "}
+            Dirección de arte, páginas y plazo de cada caso en{" "}
             <Link
               href="/manuales"
               className="text-lacre underline underline-offset-4 hover:text-papel"
@@ -690,7 +687,7 @@ export default function HomePage() {
         />
         <div className="relative mx-auto max-w-7xl px-6 py-28 md:py-40">
           <p className="font-mono text-xs uppercase tracking-widest text-lacre">
-            Founding Customer Program
+            Programa Fundador
           </p>
 
           {/* Mega counter */}
@@ -730,11 +727,11 @@ export default function HomePage() {
                 Precio full. Extras que no se vuelven a publicar.
               </h2>
               <p className="mt-6 text-lg text-ceniza leading-relaxed">
-                Los primeros cinco clientes entran al Founding Program. Pagan su tier al
-                precio full. Reciben extras que luego no se vuelven a ofrecer: más páginas,
-                identidad verbal ampliada, formación extendida. A cambio: un case study
-                público, un testimonial en vídeo, dos referidos. Esto se cierra cuando se
-                cierra. No es urgency de marketing. Es matemática.
+                Los primeros cinco clientes entran al Programa Fundador. Pagan su tier al
+                precio completo. Reciben extras que luego no se vuelven a ofrecer: más
+                páginas, identidad verbal ampliada, formación extendida. A cambio: un case
+                study público, un testimonial en vídeo, dos referidos cualificados. Se
+                cierra cuando se cierra. No es urgency de marketing, es matemática.
               </p>
               <div className="mt-10 flex flex-col sm:flex-row gap-4">
                 <ButtonLink
@@ -742,7 +739,7 @@ export default function HomePage() {
                   variant="invert"
                   size="lg"
                 >
-                  Reservar plaza Founding →
+                  Reservar plaza fundadora →
                 </ButtonLink>
                 <ButtonLink href="/precios" variant="ghost" size="lg">
                   Ver tiers primero
