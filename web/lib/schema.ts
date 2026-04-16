@@ -235,7 +235,7 @@ export const faqSchema = {
       name: "¿Atendéis fuera de Madrid? ¿Trabajáis en remoto?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí. Trabajamos 100% en remoto desde Madrid para toda España y Europa. Todo el proceso es asíncrono y por escrito: brief online, kickoff por email, reviews por email, entrega en PDF y Figma.",
+        text: "Sí. Trabajamos 100% en remoto desde Madrid para toda España y Europa. Brief estructurado online, kickoff por email, reviews por email con deadlines claras, entrega en PDF y Figma.",
       },
     },
   ],

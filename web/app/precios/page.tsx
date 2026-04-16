@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { PricingCards } from "@/components/PricingCards";
 import { FaqAccordion } from "@/components/FaqAccordion";
@@ -100,69 +101,7 @@ export default function PreciosPage() {
         </div>
       </section>
 
-      {/* Ancla comparativa — qué cuesta esto en otros sitios */}
-      <section className="bg-papel border-b border-negro/10">
-        <div className="mx-auto max-w-7xl px-6 py-14 md:py-20">
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
-            Qué cuesta esto en otros sitios
-          </p>
-          <h2 className="mt-5 text-3xl md:text-4xl font-black tracking-tight leading-[1.1] max-w-3xl">
-            Para que tengas la referencia antes de elegir<span className="text-lacre">.</span>
-          </h2>
-          <div className="mt-12 grid md:grid-cols-4 gap-px bg-negro/10 border border-negro/10">
-            <div className="bg-papel p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
-                Agencia tradicional
-              </p>
-              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
-                6.000€–18.000€
-              </p>
-              <p className="mt-2 text-sm text-piedra leading-relaxed">
-                + IVA aparte. Discovery 6–12 semanas. 3–4 reuniones obligatorias.
-                Pricing custom en cada propuesta.
-              </p>
-            </div>
-            <div className="bg-papel p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
-                Freelance generalista
-              </p>
-              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
-                800€–3.500€
-              </p>
-              <p className="mt-2 text-sm text-piedra leading-relaxed">
-                Plazo variable. Alcance negociado cada vez. Calidad
-                dependiente de quién coja tu proyecto.
-              </p>
-            </div>
-            <div className="bg-papel p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
-                Canva + logo barato
-              </p>
-              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
-                ~80€
-              </p>
-              <p className="mt-2 text-sm text-piedra leading-relaxed">
-                Plantilla + un archivo. Sin sistema, sin documentación,
-                sin soporte, sin aplicaciones.
-              </p>
-            </div>
-            <div className="bg-negro text-papel p-6 md:p-8">
-              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
-                Tramarca
-              </p>
-              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
-                490€–1.990€
-              </p>
-              <p className="mt-2 text-sm text-ceniza leading-relaxed">
-                IVA incluido. 5 a 10 días laborables. Todo async por email.
-                Precio cerrado publicado.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Price cards */}
+      {/* Price cards — arriba para que los precios estén a mano */}
       <section className="bg-arena">
         <div className="mx-auto max-w-7xl px-6 py-14 md:py-20">
           <PricingCards />
@@ -186,26 +125,29 @@ export default function PreciosPage() {
           <div className="mt-12 overflow-x-auto">
             <div className="min-w-[780px] border border-negro/15">
               <div className="grid grid-cols-[1.1fr_1fr_1fr_1fr] bg-negro text-papel">
-                <div className="px-5 py-5 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
+                <div className="px-5 py-6 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra self-end">
                   Comparativa
                 </div>
-                <div className="px-5 py-5 border-l border-papel/15">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-ceniza">Tier 1</p>
-                  <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Esencial</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">490€ <span className="text-ceniza/70">· IVA incl.</span></p>
+                <div className="px-5 py-6 border-l border-papel/15">
+                  <p className="text-xl md:text-2xl font-black tracking-tight">Esencial</p>
+                  <p className="mt-2 text-base md:text-lg font-black tracking-tight tabular-nums">
+                    490€ <span className="font-mono text-[10px] font-normal text-ceniza/70">IVA incl.</span>
+                  </p>
                 </div>
-                <div className="relative px-5 py-5 border-l border-papel/15 bg-lacre/15">
+                <div className="relative px-5 py-6 border-l border-papel/15 bg-lacre/15">
                   <span className="absolute -top-2.5 left-5 bg-negro text-lacre border border-lacre font-mono text-[9px] uppercase tracking-[0.2em] px-2 py-0.5 font-bold">
                     Recomendado
                   </span>
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">Tier 2</p>
-                  <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Profesional</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">990€ <span className="text-ceniza/70">· IVA incl.</span></p>
+                  <p className="text-xl md:text-2xl font-black tracking-tight">Profesional</p>
+                  <p className="mt-2 text-base md:text-lg font-black tracking-tight tabular-nums text-lacre">
+                    990€ <span className="font-mono text-[10px] font-normal text-ceniza/70">IVA incl.</span>
+                  </p>
                 </div>
-                <div className="px-5 py-5 border-l border-papel/15">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-ceniza">Tier 3</p>
-                  <p className="mt-1 text-lg md:text-xl font-black tracking-tight">Premium</p>
-                  <p className="mt-1 text-sm font-mono text-ceniza tabular-nums">1.990€ <span className="text-ceniza/70">· IVA incl.</span></p>
+                <div className="px-5 py-6 border-l border-papel/15">
+                  <p className="text-xl md:text-2xl font-black tracking-tight">Premium</p>
+                  <p className="mt-2 text-base md:text-lg font-black tracking-tight tabular-nums">
+                    1.990€ <span className="font-mono text-[10px] font-normal text-ceniza/70">IVA incl.</span>
+                  </p>
                 </div>
               </div>
 
@@ -261,7 +203,7 @@ export default function PreciosPage() {
             <ul className="mt-8 space-y-3 text-base md:text-lg text-negro/85">
               {[
                 "Brief inicial (cuestionario estructurado)",
-                "Kickoff por email (async, sin reuniones)",
+                "Kickoff por email tras confirmar brief",
                 "Entrega en PDF final (A4 landscape) + Figma editable",
                 "Alineación de revisiones por email con deadlines claras",
                 "Soporte post-entrega durante 30 días (dudas de uso)",
@@ -297,6 +239,97 @@ export default function PreciosPage() {
               Si tu proyecto necesita algo que no entra en el tier, lo cotizamos aparte.
               Sin problema<span className="text-lacre">.</span>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Ancla comparativa — referencia de mercado, al final para no tapar tiers */}
+      <section className="bg-papel border-y border-negro/10">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+            Referencia de mercado
+          </p>
+          <h2 className="mt-5 text-3xl md:text-4xl font-black tracking-tight leading-[1.1] max-w-3xl">
+            Para que tengas contexto de lo que cuesta un manual fuera de aquí<span className="text-lacre">.</span>
+          </h2>
+          <div className="mt-12 grid md:grid-cols-4 gap-px bg-negro/10 border border-negro/10">
+            <div className="bg-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
+                Agencia tradicional
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                6.000€–18.000€
+              </p>
+              <p className="mt-2 text-sm text-piedra leading-relaxed">
+                + IVA aparte. Discovery de semanas antes de empezar.
+                Pricing custom en cada propuesta.
+              </p>
+            </div>
+            <div className="bg-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
+                Freelance generalista
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                800€–3.500€
+              </p>
+              <p className="mt-2 text-sm text-piedra leading-relaxed">
+                Plazo variable. Alcance negociado cada vez. Calidad
+                dependiente de quién coja tu proyecto.
+              </p>
+            </div>
+            <div className="bg-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
+                Canva + logo barato
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                ~80€
+              </p>
+              <p className="mt-2 text-sm text-piedra leading-relaxed">
+                Plantilla + un archivo. Sin sistema, sin documentación,
+                sin soporte, sin aplicaciones.
+              </p>
+            </div>
+            <div className="bg-negro text-papel p-6 md:p-8">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                Tramarca
+              </p>
+              <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
+                490€–1.990€
+              </p>
+              <p className="mt-2 text-sm text-ceniza leading-relaxed">
+                IVA incluido. 5 a 10 días laborables. Precio cerrado publicado.
+                Lo que ves es lo que pagas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Signature moment — close-up del objeto, contenido no full-bleed */}
+      <section className="bg-negro">
+        <div className="mx-auto max-w-4xl px-6 py-16 md:py-20">
+          <div className="grid md:grid-cols-12 gap-8 md:gap-10 items-center">
+            <figure className="md:col-span-7 relative aspect-[4/3] overflow-hidden border border-papel/10">
+              <Image
+                src="/hero-v5/precios-binding.jpg"
+                alt="Detalle de encuadernación de un manual Tramarca — lomo con marcapáginas lacre"
+                fill
+                sizes="(min-width: 768px) 40vw, 100vw"
+                className="object-cover"
+              />
+            </figure>
+            <div className="md:col-span-5">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                Fig. 03 · Acabado
+              </p>
+              <p className="mt-3 text-papel font-black text-2xl md:text-3xl leading-tight">
+                Lo que pagas es un objeto defendible<span className="text-lacre">.</span>
+              </p>
+              <p className="mt-5 text-ceniza text-sm md:text-base leading-relaxed">
+                Tapa dura, encuadernación cosida, marcapáginas textil. No un PDF
+                con logo, un libro que tu equipo saca cuando alguien duda<span className="text-lacre">.</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>

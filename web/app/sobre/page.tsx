@@ -35,8 +35,8 @@ export default function SobrePage() {
           </div>
         </div>
 
-        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-4 md:pt-6 pb-16 md:pb-24">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-end">
+        <div className="relative mx-auto max-w-[1500px] px-6 md:px-10 pt-2 md:pt-4 pb-16 md:pb-24">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             <div className="lg:col-span-7">
               <div className="flex items-start gap-6">
                 <span aria-hidden className="mt-2 block w-[3px] h-24 bg-lacre shrink-0" />
@@ -85,7 +85,7 @@ export default function SobrePage() {
 
       {/* Manifiesto narrativo — ventajas competitivas reales */}
       <section className="bg-papel">
-        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-20 md:py-28">
+        <div className="mx-auto max-w-[1200px] px-6 md:px-10 py-14 md:py-20">
           {/* Header full-width editorial */}
           <div className="grid md:grid-cols-12 gap-8 md:gap-12 mb-16 md:mb-20 pb-10 border-b border-negro/15">
             <div className="md:col-span-5">
@@ -138,23 +138,24 @@ export default function SobrePage() {
                 Productizado, no consultivo<span className="text-lacre">.</span>
               </p>
               <p className="mt-5">
-                Una agencia tradicional hace discovery de seis semanas, propuesta a medida
-                y timeline &ldquo;a definir&rdquo;. Aquí el scope está cerrado antes de empezar:
-                tres tiers con entregables documentados, plazo publicado de 5/7/10 días, y
-                dos rondas de revisión acotadas. Menos reuniones, menos fricción, más
-                delivery. Tu tiempo no se va en workshops.
+                Aquí el scope está cerrado antes de empezar: tres tiers con entregables
+                documentados, plazo publicado de 5/7/10 días laborables, y dos rondas
+                de revisión acotadas. Brief, kickoff, reviews y entrega por escrito —
+                lo que entregamos es un documento y el proceso para fabricarlo también
+                lo es. El precio y el plazo los sabes antes de firmar<span className="text-lacre">.</span>
               </p>
             </Reveal>
 
             <Reveal>
               <p className="text-2xl md:text-3xl font-black leading-[1.15] border-l-4 border-lacre pl-6 py-2 text-negro">
-                Async por email, no reuniones<span className="text-lacre">.</span>
+                Garantía honesta: 50% si no convence<span className="text-lacre">.</span>
               </p>
               <p className="mt-5">
-                Brief, kickoff, reviews y entrega por escrito. Nada de videollamadas
-                obligatorias ni reuniones semanales. Lo que entregamos es un documento;
-                el proceso para fabricarlo también lo es. Ganas tiempo para tu equipo y
-                evitas el bucle de &ldquo;vamos a agendar una call para verlo&rdquo;<span className="text-lacre">.</span>
+                Si tras la primera entrega el manual no resuelve lo que firmamos en
+                el brief, devolvemos el 50% del pago de kickoff dentro de los 14 días
+                siguientes. O sale el manual completo, o devolvemos: no entregamos a
+                medias. Queda por escrito en el contrato. La mayoría no la usa, pero
+                existe para que no tengas que confiar a ciegas<span className="text-lacre">.</span>
               </p>
             </Reveal>
 
@@ -166,6 +167,40 @@ export default function SobrePage() {
                 desde el minuto uno.
               </p>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Estudio editorial — bloque atmosférico sobre el entorno de producción */}
+      <section className="bg-arena border-y border-negro/15">
+        <div className="mx-auto max-w-[1720px] px-6 md:px-10 py-20 md:py-28">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="lg:col-span-7">
+              <figure className="relative aspect-[16/9] overflow-hidden bg-papel border border-negro/10 shadow-[0_40px_80px_-30px_rgba(12,12,12,0.25)]">
+                <Image
+                  src="/hero-v5/sobre-studio.jpg"
+                  alt="Estudio editorial Tramarca — stack de manuales impresos, libro abierto con retícula y pieza cerámica lacre sobre concreto"
+                  fill
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </figure>
+            </div>
+            <div className="lg:col-span-5">
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+                Estudio editorial
+              </p>
+              <h2 className="mt-6 text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
+                Categoría antes que adjetivo<span className="text-lacre">.</span>
+              </h2>
+              <p className="mt-8 text-lg text-piedra leading-[1.6]">
+                Tramarca es un estudio editorial, no una agencia creativa. El
+                producto es el libro — impreso, encuadernado, defendible — y
+                todo lo que lo rodea se ordena alrededor de ese objeto. La
+                disciplina editorial ES la propuesta de valor<span className="text-lacre">.</span>
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -204,58 +239,6 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* Stats + portfolio */}
-      <section className="bg-papel border-t border-negro/10">
-        <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-20 md:py-28">
-          <Reveal>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
-              Qué hemos entregado
-            </p>
-            <h2 className="mt-6 font-sans font-black tracking-tight leading-[1.05] max-w-5xl text-4xl md:text-6xl lg:text-7xl">
-              Cuatro manuales.
-              <br />
-              <span className="text-piedra">Ciento treinta y nueve páginas.</span>
-              <br />
-              Tres sectores<span className="text-lacre">.</span>
-            </h2>
-          </Reveal>
-
-          <Reveal>
-            <div className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-negro/15 border border-negro/15">
-              {[
-                { n: "04", l: "Manuales entregados" },
-                { n: "139", l: "Páginas producidas" },
-                { n: "03", l: "Sectores" },
-                { n: "100%", l: "Con PDF público" },
-              ].map((s) => (
-                <div key={s.l} className="bg-papel p-6 md:p-8">
-                  <p className="font-sans font-black text-4xl md:text-6xl text-negro tracking-[-0.03em]">
-                    {s.n}
-                  </p>
-                  <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
-                    {s.l}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-
-          <Reveal>
-            <p className="mt-12 max-w-3xl text-lg md:text-xl text-piedra leading-relaxed">
-              Cultural (Anfisbena), artesanal (Claramel), deeptech (Matraz Innova) más
-              el nuestro propio. Portfolio público, PDFs descargables, sin mockups.
-            </p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <ButtonLink href="/precios" variant="primary" size="lg">
-                Ver precios →
-              </ButtonLink>
-              <ButtonLink href="/manuales" variant="ghost" size="lg">
-                Ver manuales publicados
-              </ButtonLink>
-            </div>
-          </Reveal>
-        </div>
-      </section>
     </>
   );
 }

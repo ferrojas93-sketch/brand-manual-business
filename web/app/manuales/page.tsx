@@ -39,19 +39,35 @@ export default function ManualesPage() {
   return (
     <>
       <JsonLd data={schemaGraph} />
-      <section>
-        <div className="mx-auto max-w-7xl px-6 pt-20 md:pt-28 pb-12">
-          <p className="font-mono text-xs uppercase tracking-widest text-lacre">Portfolio</p>
-          <h1 className="mt-6 text-6xl md:text-8xl lg:text-9xl font-black tracking-tighter leading-[0.9]">
-            {MANUALES.length} manuales<span className="text-lacre">.</span>
-            <br />
-            <span className="text-piedra">Cero mockups<span className="text-lacre">.</span></span>
-          </h1>
-          <p className="mt-10 max-w-3xl text-lg md:text-xl text-piedra leading-relaxed">
-            Cuatro clientes reales. Un manual propio. {TOTAL_PAGES} páginas publicadas.
-            Mira los spreads, los sistemas tipográficos, las paletas. Antes de contratar,
-            mira lo que sale por la puerta.
-          </p>
+      <section className="bg-papel border-b border-negro/15">
+        <div className="mx-auto max-w-7xl px-6 pt-16 md:pt-20 pb-16 md:pb-20">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            <div className="lg:col-span-7">
+              <p className="font-mono text-xs uppercase tracking-widest text-lacre">Portfolio</p>
+              <h1 className="mt-6 text-6xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9]">
+                {MANUALES.length} manuales<span className="text-lacre">.</span>
+                <br />
+                <span className="text-piedra">Cero mockups<span className="text-lacre">.</span></span>
+              </h1>
+              <p className="mt-10 max-w-2xl text-lg md:text-xl text-piedra leading-relaxed">
+                Cuatro clientes reales. Un manual propio. {TOTAL_PAGES} páginas publicadas.
+                Mira los spreads, los sistemas tipográficos, las paletas. Antes de contratar,
+                mira lo que sale por la puerta.
+              </p>
+            </div>
+            <div className="lg:col-span-5">
+              <figure className="relative aspect-square overflow-hidden bg-arena border border-negro/10 shadow-[0_40px_80px_-30px_rgba(12,12,12,0.3)]">
+                <Image
+                  src="/hero-v5/manuales-stack.jpg"
+                  alt="Stack de los cinco manuales Tramarca — Tramarca, Shamusic, Matraz Innova, Claramel y Anfisbena apilados con dots lacre"
+                  fill
+                  sizes="(min-width: 1024px) 40vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </figure>
+            </div>
+          </div>
         </div>
       </section>
 

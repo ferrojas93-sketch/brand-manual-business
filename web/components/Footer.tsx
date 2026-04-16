@@ -6,9 +6,9 @@ const YEAR = 2026;
 export function Footer() {
   return (
     <footer className="section-dark">
-      <div className="mx-auto max-w-7xl px-6 pt-20 pb-12">
+      <div className="mx-auto max-w-4xl px-6 pt-12 pb-6">
         {/* Colophon editorial — tipo masthead de revista */}
-        <div className="grid md:grid-cols-12 gap-10 md:gap-14 pb-16 border-b border-papel/10">
+        <div className="grid md:grid-cols-12 gap-6 md:gap-8 pb-8 border-b border-papel/10">
           <div className="md:col-span-5">
             <Logo invert />
             <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.3em] text-lacre">
@@ -118,37 +118,13 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Specimen sheet — typography + edition credit */}
-        <div className="mt-10 grid md:grid-cols-3 gap-8 font-mono text-[10px] uppercase tracking-[0.3em] text-piedra-light">
-          <div>
-            <p className="text-lacre mb-2">Edición</p>
-            <p className="text-ceniza">Madrid <span className="text-lacre">·</span> Edición 1 <span className="text-lacre">·</span> {YEAR}</p>
-          </div>
-          <div>
-            <p className="text-lacre mb-2">Tipografía</p>
-            <p className="text-ceniza">Satoshi (display) <span className="text-lacre">·</span> IBM Plex Mono (spec)</p>
-          </div>
-          <div>
-            <p className="text-lacre mb-2">Método</p>
-            <p className="text-ceniza">Diseñado y escrito <span className="text-lacre">·</span> 100% asíncrono</p>
-          </div>
-        </div>
-
         {/* Copyright line */}
-        <div className="mt-10 pt-6 border-t border-papel/10 flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+        <div className="mt-8 pt-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra-light">
             © {YEAR} Tramarca. Todos los derechos reservados.
           </p>
           <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra-light">
-            Impreso en{" "}
-            <a
-              href="https://vercel.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-lacre transition-colors"
-            >
-              Vercel
-            </a>
+            Madrid <span className="text-lacre">·</span> España
           </p>
         </div>
       </div>

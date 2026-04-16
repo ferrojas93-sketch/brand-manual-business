@@ -123,7 +123,7 @@ const homeFaqs = [
   },
   {
     q: "¿Atendéis fuera de Madrid? ¿Trabajáis en remoto?",
-    a: "Sí. Trabajamos 100% en remoto desde Madrid para toda España y Europa. Brief estructurado online, kickoff por email, reviews por email con deadlines claras, entrega en PDF y Figma. Todo el proceso es asíncrono y por escrito, precisamente porque lo que entregamos es un documento. Si hace falta aclarar algo puntual, un mensaje basta.",
+    a: "Sí. Trabajamos 100% en remoto desde Madrid para toda España y Europa. Brief estructurado online, kickoff por email, reviews por email con deadlines claras, entrega en PDF y Figma. Lo que entregamos es un documento; el proceso para fabricarlo también va por escrito.",
   },
 ];
 
@@ -132,20 +132,7 @@ export default function HomePage() {
     <>
       {/* Hero — PAPEL split, manual-native composition (01 chapter cover + spread) */}
       <section className="relative bg-papel border-b border-negro/15 overflow-hidden">
-        {/* Masthead — dateline editorial (no manual cosmetics) */}
-        <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-5 md:pt-6 flex items-center justify-between gap-4 font-mono text-[10px] md:text-[11px] uppercase tracking-[0.28em] text-piedra border-b border-negro/15 pb-3 md:pb-4">
-          <span className="font-bold text-negro">
-            Tramarca<span className="text-lacre">.</span>
-          </span>
-          <span className="hidden md:inline text-center">
-            Manuales de marca <span className="text-lacre">·</span> Por escrito <span className="text-lacre">·</span> Desde 2026
-          </span>
-          <span>
-            Madrid <span className="text-lacre">·</span> Edición 1
-          </span>
-        </div>
-
-        <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-4 md:pt-6">
+        <div className="relative mx-auto max-w-[1720px] px-6 md:px-10 pt-10 md:pt-14">
           {/* Diagonal Lacre line cutting across (manual signature) */}
           <svg
             aria-hidden
@@ -299,6 +286,53 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Qué entregamos — flatlay product shot editorial */}
+      <section className="bg-papel border-b border-negro/15">
+        <div className="mx-auto max-w-[1720px] px-6 md:px-10 py-24 md:py-32">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+            <div className="lg:col-span-5 order-2 lg:order-1">
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+                Qué entregamos
+              </p>
+              <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.05]">
+                Un sistema, no un PDF suelto<span className="text-lacre">.</span>
+              </h2>
+              <p className="mt-8 text-lg text-piedra leading-[1.6] max-w-xl">
+                Manual editorial + aplicaciones + retícula + papelería + assets
+                listos para Figma. Todo empaquetado, todo documentado, todo
+                usable desde el día uno<span className="text-lacre">.</span>
+              </p>
+              <ul className="mt-8 space-y-2 font-mono text-[11px] uppercase tracking-[0.25em] text-piedra">
+                <li><span className="text-lacre">·</span>&nbsp; PDF A4 landscape editable</li>
+                <li><span className="text-lacre">·</span>&nbsp; Biblioteca Figma con variables</li>
+                <li><span className="text-lacre">·</span>&nbsp; SVG + PNG @1x/2x/3x</li>
+                <li><span className="text-lacre">·</span>&nbsp; Tokens CSS + tipografía documentada</li>
+              </ul>
+            </div>
+            <div className="lg:col-span-7 order-1 lg:order-2">
+              <figure className="relative aspect-[16/9] overflow-hidden bg-arena border border-negro/10 shadow-[0_40px_80px_-30px_rgba(12,12,12,0.3)]">
+                <Image
+                  src="/hero-v5/home-system-flatlay.jpg"
+                  alt="Sistema de marca Tramarca completo — libro encuadernado, manual abierto, papelería y tarjetas con acento lacre"
+                  fill
+                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+                <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/70 via-negro/20 to-transparent p-5">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">
+                    Fig. 02 · Entregable completo
+                  </p>
+                  <p className="mt-1 text-papel font-black text-sm md:text-base leading-tight">
+                    Manual + aplicaciones + papelería + Figma<span className="text-lacre">.</span>
+                  </p>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Prueba radical — fondo claro para respetar contraste con cover */}
       <section className="bg-arena border-y border-negro/15">
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32 grid md:grid-cols-2 gap-16 items-center">
@@ -352,8 +386,8 @@ export default function HomePage() {
                 </h2>
               </div>
               <p className="max-w-md text-base md:text-lg text-piedra leading-[1.55]">
-                Brief estructurado, confirmación async, producción, revisiones, entrega.
-                Sin workshops de seis semanas. Sin videollamadas obligatorias<span className="text-lacre">.</span>
+                Brief estructurado, confirmación, producción, revisiones, entrega.
+                Plazo contado desde el kickoff, no desde la primera conversación<span className="text-lacre">.</span>
               </p>
             </div>
           </Reveal>
@@ -371,7 +405,7 @@ export default function HomePage() {
                 {
                   n: "02",
                   t: "Confirmación",
-                  d: "Revisamos tu brief, devolvemos notas por email y firmamos la dirección. Async: tú decides cuándo respondes.",
+                  d: "Revisamos tu brief, devolvemos notas por email y firmamos la dirección. Tú decides cuándo respondes.",
                   Icon: ClipboardCheck,
                   dur: "Día 1",
                 },
@@ -660,7 +694,7 @@ export default function HomePage() {
           <div className="mt-16 max-w-3xl">
             <p className="text-base text-negro/80">
               Todos los tiers incluyen brief estructurado, kickoff por email y entrega en
-              PDF + Figma. Proceso async por escrito. Lo que no incluyen, lo decimos abajo<span className="text-lacre">.</span>
+              PDF + Figma. Lo que no incluyen, lo decimos abajo<span className="text-lacre">.</span>
             </p>
             <Link
               href="/precios"
