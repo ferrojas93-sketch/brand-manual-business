@@ -100,39 +100,6 @@ export default async function ManualDetailPage({
         </div>
       </section>
 
-      {slug === "claramel" && (
-        <section className="bg-papel border-y border-negro/10">
-          <div className="mx-auto max-w-7xl px-6 py-16 md:py-20">
-            <h2 className="font-mono text-xs uppercase tracking-widest text-lacre">
-              Marca
-            </h2>
-            <p className="mt-4 text-2xl md:text-3xl font-black tracking-tight leading-snug">
-              Logo en contexto claro y oscuro<span className="text-lacre">.</span>
-            </p>
-            <div className="mt-10 grid md:grid-cols-2 gap-4 md:gap-6">
-              <div className="relative aspect-[16/9] bg-arena border border-negro/10 overflow-hidden">
-                <Image
-                  src="/portfolio/claramel/logo-color.jpg"
-                  alt="Logo Claramel en color dorado sobre fondo crema — variante primaria"
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-              <div className="relative aspect-[16/9] bg-negro border border-negro/10 overflow-hidden">
-                <Image
-                  src="/portfolio/claramel/logo-dark.jpg"
-                  alt="Logo Claramel sobre fondo chocolate oscuro — variante dark"
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
       <section>
         <div className="mx-auto max-w-4xl px-6 py-16 md:py-24 space-y-12">
           <div>
