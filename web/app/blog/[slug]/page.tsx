@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import dynamic from "next/dynamic";
 import { POSTS, getPost, CATEGORY_LABEL } from "@/lib/blog";
+import { getPostBody } from "@/content/blog";
 import { ButtonLink } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/tiers";
@@ -15,6 +15,7 @@ import {
 } from "@/lib/schema";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { BlogScrollTracker } from "@/components/BlogScrollTracker";
+import { ReadingProgressBar } from "@/components/ReadingProgressBar";
 
 export function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }));
@@ -59,8 +60,9 @@ export default async function BlogPostPage({
   const post = getPost(slug);
   if (!post) notFound();
 
-  // Dynamic import del body editorial. Cada post tiene su propio componente TSX en content/blog/.
-  const Body = dynamic<object>(() => import(`@/content/blog/${post.slug}`));
+  // Body editorial desde registry estático (Turbopack-safe).
+  const Body = getPostBody(post.slug);
+  if (!Body) notFound();
 
   const articleUrl = `${SITE_URL}/blog/${post.slug}`;
   const schemaGraph = jsonLdGraph(
@@ -88,9 +90,15 @@ export default async function BlogPostPage({
     year: "numeric",
   }).format(new Date(post.publishedAt));
 
+  // Posts relacionados · misma categoría, excluyendo el actual
+  const related = POSTS.filter(
+    (p) => p.slug !== post.slug && p.category === post.category
+  ).slice(0, 2);
+
   return (
     <>
       <JsonLd data={schemaGraph} />
+      <ReadingProgressBar />
 
       {/* Hero editorial */}
       <article>
@@ -147,6 +155,37 @@ export default async function BlogPostPage({
             <BlogScrollTracker slug={post.slug} />
           </div>
         </section>
+
+        {/* Related posts · misma categoría */}
+        {related.length > 0 && (
+          <section className="bg-papel border-t border-negro/10">
+            <div className="mx-auto max-w-3xl px-6 py-14 md:py-20">
+              <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+                También en {CATEGORY_LABEL[post.category]}
+              </p>
+              <h2 className="mt-4 text-2xl md:text-3xl font-black tracking-tight leading-[1.1]">
+                Sigue leyendo<span className="text-lacre">.</span>
+              </h2>
+              <ul className="mt-8 space-y-6">
+                {related.map((r) => (
+                  <li key={r.slug} className="border-b border-negro/10 pb-6 last:border-b-0">
+                    <Link href={`/blog/${r.slug}`} className="group block">
+                      <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-piedra-light">
+                        {r.readingMinutes} min lectura
+                      </p>
+                      <h3 className="mt-2 text-xl md:text-2xl font-black tracking-tight leading-[1.15] group-hover:text-lacre transition-colors">
+                        {r.title}<span className="text-lacre">.</span>
+                      </h3>
+                      <p className="mt-2 text-sm md:text-base text-piedra leading-[1.55]">
+                        {r.excerpt}
+                      </p>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
 
         {/* FAQs */}
         {post.faqs && post.faqs.length > 0 && (

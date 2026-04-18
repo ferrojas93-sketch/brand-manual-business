@@ -320,3 +320,81 @@ Prioridad por SEO score (volumen × intent-match × dificultad-inversa):
 ---
 
 _Documento creado 2026-04-18. Actualizar estado al cierre de cada fase._
+
+---
+
+## Addendum · sesión 2 (continuación 2026-04-18 tarde)
+
+### FASE 6 ejecutada · 6 piezas blog pilar publicadas
+
+| # | Pieza | Slug | Words | Categoría |
+|---|---|---|---|---|
+| 01 | Cuánto cuesta un manual de marca en España 2026 | cuanto-cuesta-manual-de-marca-espana-2026 | ~3.000 | Guías |
+| 02 | Qué es un manual de marca | que-es-un-manual-de-marca | ~2.200 | Guías |
+| 03 | Manual de marca vs Brand Book | manual-marca-vs-brand-book | ~2.000 | Guías |
+| 04 | Cómo hacer un manual de marca paso a paso | como-hacer-manual-de-marca-paso-a-paso | ~2.800 | Proceso |
+| 05 | NASA Graphics Standards Manual (1976) | nasa-graphics-standards-manual-1976 | ~3.000 | Análisis |
+| 07 | 15 manuales de marca que hicieron historia | mejores-manuales-de-marca-historia | ~3.800 | Análisis (pilar) |
+
+**Total publicado**: ~16.800 palabras editoriales + 29 FAQ entries con schema FAQPage.
+**Task #13** (Sección "Mejores prácticas") cubierta por piezas 05 + 07 en categoría Análisis.
+
+### Blog UX/UI redesign
+
+- Rediseño blog index: featured first (full-bleed dark) + grid asymmetric (4º item large) + category chips visuales
+- `/blog/categoria/[slug]` ruta de filtro por categoría (4 categorías, 4 páginas estáticas)
+- `ReadingProgressBar` client component: barra Lacre 3px top, calculada via scroll %
+- Related posts bloque al final de cada post (filtrado por misma categoría)
+- Heros distintos asignados por post (6 imágenes diferenciadas del stock existente)
+- Schema Article + FAQPage + BreadcrumbList en todos los posts
+
+### Bugs críticos encontrados y corregidos
+
+1. **`/logo-tramarca.png` no existía** — schema `Organization.logo` apuntaba a un archivo inexistente. Knowledge Panel de Google usaba fallback random. Corregido: generado PNG 512×512 con wordmark TRAMARCA + lacre dot (#C4553A) sobre papel crema (#F4F0EB).
+2. **Turbopack no soporta `dynamic()` con template literal** — `dynamic(() => import(\`@/content/blog/${slug}\`))` rompía con "require is not defined". Corregido: registry estático en `content/blog/index.ts` con `POST_BODIES` Record<slug, Component>.
+
+### Nueva capacidad: editorial-writer agent
+
+Creado en `agents/editorial-writer.md` + instalado en `~/.claude/agents/`.
+Especialista blog long-form (1500-3500w) con SEO + visual direction + internal linking.
+Voz Tramarca codificada (manual v4 p35: Claro · Directo · Concreto · Nombra lo exacto).
+Formato entrega `.mdx` con frontmatter completo + nano-banana prompts.
+
+### Google SERP cache (no es bug, timing)
+
+Favicon Tm. y nueva OG están correctos en producción (verificado curl). Google cache
+agresivamente favicons (1-4 semanas). Fernando debe:
+1. Search Console → Inspeccionar URL tramarca.es → Solicitar indexación
+2. Repetir para /precios, /blog, /manuales principales
+3. Esperar 1-2 semanas para refresh SERP
+4. Mientras tanto: LinkedIn Post Inspector (`linkedin.com/post-inspector`) para
+   forzar re-scrape al compartir. WhatsApp cachea ~7 días.
+
+### Lista de pendientes restantes (siguiente sesión)
+
+**P0 · SEO externo** (Fernando directo):
+- Google Business Profile setup + verificación postal
+- Search Console: Request indexing de 6 URLs principales
+- Submit sitemap nuevo (tras último deploy)
+
+**P1 · Contenido nano-banana**:
+- Generar heros reales para las 6 piezas usando prompts en `docs/blog-image-prompts.md`
+- Sustituir placeholders actuales (que reutilizan assets existentes)
+
+**P2 · Content expansion** (siguiente trimestre):
+- Piezas 06 (FedEx flecha oculta), 08-13 del calendar SEO
+- LinkedIn content semanal (decisión LinkedIn-only firme)
+
+**P3 · Hardening** (no bloquea):
+- CSP enforce (Finding 1/3 /cso)
+- DMARC p=quarantine
+- Prompt injection hardening cuando se genere primera propuesta real
+
+### Estado final al cierre
+
+- **6 piezas blog en producción** · `tramarca.es/blog` con featured + grid editorial
+- **Stats publicadas**: 16.800 palabras · 29 FAQ entries · 6 categorías × 4 posts visibles
+- **Schemas live**: Organization + LocalBusiness + WebSite + Service + Product + AggregateOffer + Article + FAQPage + BreadcrumbList + CollectionPage
+- **Analytics Plausible**: 8 custom events wired (manual_request_sent, cta_pedir_propuesta, cta_descargar_manual, cta_ver_precios, cta_ver_manuales, cta_ver_tier, cta_ver_manual_tramarca, blog_read_end)
+- **Smoke test**: 11/11 páginas en tramarca.es respondiendo 200
+

@@ -54,6 +54,109 @@ export type BlogPost = {
  */
 export const POSTS: BlogPost[] = [
   {
+    slug: "mejores-manuales-de-marca-historia",
+    category: "analisis",
+    title: "15 manuales de marca que hicieron historia",
+    excerpt:
+      "De NASA 1976 a Stripe Press 2019: quince manuales editoriales que cambiaron cómo se documenta una identidad visual. El canon contemporáneo en orden cronológico.",
+    heroImage: {
+      src: "/blog/mejores-manuales-de-marca-historia/hero.jpg",
+      alt: "Stack editorial de cinco manuales Tramarca apilados con dots Lacre — canon del documentation design, fig. 01",
+      caption: "Fig. 01 · El canon editorial del documentation design.",
+    },
+    publishedAt: "2026-06-12",
+    readingMinutes: 18,
+    primaryKeyword: "mejores manuales de marca famosos",
+    secondaryKeywords: [
+      "manuales de marca históricos",
+      "manuales de marca icónicos",
+      "ejemplos manual de marca históricos",
+      "manuales de marca famosos",
+      "mejores brand guidelines historia",
+    ],
+    metaTitle: "15 manuales de marca que hicieron historia · Canon editorial",
+    metaDescription:
+      "De NASA 1976 a Stripe Press 2019: quince manuales editoriales analizados con detalle. El canon del documentation design que sigue siendo referencia.",
+    author: "Tramarca",
+    tags: ["canon", "historia", "análisis", "NASA", "IBM", "Pentagram"],
+    contentPath: "content/blog/mejores-manuales-de-marca-historia.tsx",
+    faqs: [
+      {
+        q: "¿Cuál es el manual de marca más influyente de la historia?",
+        a: "Depende del criterio. Por influencia en documentation design, el NASA Graphics Standards Manual (1976) de Danne y Blackburn. Por longevidad, el British Rail Corporate Identity Manual (1965) que sigue usándose en parte. Por democratización de la voz verbal, el Mailchimp Voice & Tone Guide (2012). No hay un único ganador — hay un canon de quince obras que forman el oficio.",
+      },
+      {
+        q: "¿Por qué casi todos los manuales clásicos usan Helvetica?",
+        a: "Tres razones operativas: (1) disponibilidad técnica — Helvetica era la tipografía estándar en sistemas fotográficos y luego digitales, garantizando reproducibilidad; (2) neutralidad visual — no añade connotación emocional, permitiendo que la marca hable por sí misma; (3) escalabilidad — funciona de 6pt a 60m de altura sin perder legibilidad. Para manuales contemporáneos han aparecido alternativas (Inter, Satoshi, custom typefaces como Apple San Francisco), pero el principio de restricción tipográfica sigue vigente.",
+      },
+      {
+        q: "¿Puedo descargar estos manuales?",
+        a: "Algunos sí, otros no. El NASA Graphics Standards Manual está en dominio público (Archive.org). El British Rail Manual también. MoMA, Mexico 68, Apple son documentos internos no publicados al público, aunque existen reproducciones académicas. Mailchimp Voice & Tone es public por diseño (voiceandtone.com). El Standards Manual Books de Reed y Smyth reeditaron facsímiles de NASA y British Rail accesibles en segunda mano.",
+      },
+      {
+        q: "¿Qué tienen en común todos estos manuales?",
+        a: "Cinco patrones: (1) restricción tipográfica radical — 1-2 familias máximo; (2) sistema antes que logo — arquitectura visual antes que marca gráfica; (3) aplicaciones con casos extremos documentados; (4) versionado y evolución previstas; (5) endorsement ejecutivo explícito que convierte el manual en norma obligatoria, no sugerencia.",
+      },
+      {
+        q: "¿Un manual de marca contemporáneo puede alcanzar este nivel?",
+        a: "Técnicamente sí — los estándares editoriales son transferibles. Oatly, Stripe Press y algunos manuales Pentagram contemporáneos demuestran que la disciplina sigue viva. En Tramarca producimos manuales siguiendo esa tradición editorial con precio cerrado (490€/990€/1.990€) y plazos publicados. El manual Tramarca v4 propio (58pp) aplica los mismos principios a sí misma.",
+      },
+    ],
+  },
+  {
+    slug: "como-hacer-manual-de-marca-paso-a-paso",
+    category: "proceso",
+    title: "Cómo hacer un manual de marca paso a paso",
+    excerpt:
+      "Proceso real de producción editorial en 8 pasos: brief, auditoría, fundamentos, sistema visual, voz, aplicaciones, guidelines y empaquetado. Con tiempos honestos por modelo.",
+    heroImage: {
+      src: "/blog/como-hacer-manual-de-marca-paso-a-paso/hero.jpg",
+      alt: "Manos revisando una página de manual de marca en el estudio — proceso editorial en 8 pasos, fig. 01",
+      caption: "Fig. 01 · Ocho pasos, tiempos documentados.",
+    },
+    publishedAt: "2026-05-22",
+    readingMinutes: 13,
+    primaryKeyword: "cómo hacer un manual de marca",
+    secondaryKeywords: [
+      "manual de marca paso a paso",
+      "crear manual identidad corporativa",
+      "proceso creación manual marca",
+      "hacer manual de marca",
+    ],
+    metaTitle: "Cómo hacer un manual de marca paso a paso · Proceso editorial",
+    metaDescription:
+      "Proceso real de hacer un manual de marca profesional: brief, auditoría, sistema visual, voz, aplicaciones, validación. 8 pasos con tiempos honestos y plantillas.",
+    author: "Tramarca",
+    tags: ["proceso", "paso a paso", "HowTo", "manual de marca"],
+    contentPath: "content/blog/como-hacer-manual-de-marca-paso-a-paso.tsx",
+    faqs: [
+      {
+        q: "¿Cuánto tiempo lleva hacer un manual de marca profesional?",
+        a: "Tiempo de trabajo efectivo: 3-8 días en estudios productizados (Tramarca entrega en 5-10 días laborables), 6-10 días con freelance senior (pero plazo calendario 3-6 semanas por carga paralela), 15-25 días con agencia tradicional (plazo 6-12 semanas con discovery). Si se hace internamente con equipo de diseño, 20-40 días fragmentados durante 2-4 meses calendario.",
+      },
+      {
+        q: "¿Cuáles son los pasos mínimos de un proceso profesional?",
+        a: "Ocho pasos cerrados: (1) brief estructurado, (2) auditoría de activos existentes, (3) fundamentos (propósito, visión, valores), (4) sistema visual base (logo, paleta, tipografía, iconografía), (5) voz y tono verbal, (6) aplicaciones reales (papelería, digital, merch), (7) guidelines y governance, (8) empaquetado y entrega. Cada paso con entregable documentado y criterio de aprobación.",
+      },
+      {
+        q: "¿Puedo saltarme el brief y empezar directo?",
+        a: "No deberías. Sin brief firmado, el proceso se convierte en ingeniería especulativa que acaba en iteración infinita. El brief fija scope, audiencia, proveedores externos involucrados y casos de uso. Invertir 2h en brief bien hecho ahorra 2 semanas de producción después. En Tramarca es regla dura: sin brief firmado no empezamos.",
+      },
+      {
+        q: "¿Qué pasa si necesito más revisiones de las incluidas?",
+        a: "En tiers productizados con scope cerrado (Tramarca Profesional y Premium incluyen 2 rondas), cualquier revisión adicional se presupuesta aparte con transparencia — tarifa por horas o fija según alcance. Nunca aparece un extra sin aprobación previa. Preferimos revisiones acotadas a revisiones ilimitadas porque protege plazo y foco del proyecto.",
+      },
+      {
+        q: "¿Qué archivos debe entregar el estudio al final?",
+        a: "PDF A4 landscape del manual, archivos fuente del logo (SVG + PNG @1x/@2x/@3x + PDF + EPS), Figma editable con componentes, tokens CSS/JSON de color y tipografía, plantillas editables de papelería (Adobe + Canva), y guía de onboarding del equipo. En tier Premium se añade copia física del manual encuadernada como libro de edición única enviada a oficina.",
+      },
+      {
+        q: "¿Hago el manual yo mismo o lo encargo?",
+        a: "Hacerlo internamente tiene sentido si hay equipo de diseño senior que puede dedicar 4-8 semanas exclusivas. Encargarlo tiene sentido si no hay ese equipo disponible. Los tres tiers Tramarca (490€/990€/1.990€ IVA incluido) productizan el proceso para entregar en 5-10 días laborables con precio cerrado.",
+      },
+    ],
+  },
+  {
     slug: "nasa-graphics-standards-manual-1976",
     category: "analisis",
     title: "NASA Graphics Standards Manual (1976)",
@@ -61,7 +164,7 @@ export const POSTS: BlogPost[] = [
       "El manual editorial que redefinió la documentación de identidad visual. Danne y Blackburn documentaron NASA en 90 páginas publicadas en 1976. Análisis completo.",
     heroImage: {
       src: "/blog/nasa-graphics-standards-manual-1976/hero.jpg",
-      alt: "Manual NASA Graphics Standards 1976 — edición facsímil Reed y Smyth sobre mesa editorial, fig. 01",
+      alt: "Hero editorial dark con detalle de anatomía — referencia archivística del manual NASA 1976, fig. 01",
       caption: "Fig. 01 · El manual que definió el canon editorial.",
     },
     publishedAt: "2026-05-15",
@@ -111,7 +214,7 @@ export const POSTS: BlogPost[] = [
       "Brand book es aspiracional, manual de marca es operativo. Tabla comparativa con 15 dimensiones, árbol de decisión en 60 segundos y 4 escenarios según tu caso.",
     heroImage: {
       src: "/blog/manual-marca-vs-brand-book/hero.jpg",
-      alt: "Comparativa visual entre brand book aspiracional y manual de marca operativo sobre mesa editorial, fig. 01",
+      alt: "Spread editorial de manual de marca abierto con retícula y construcción tipográfica — brand book vs manual, fig. 01",
       caption: "Fig. 01 · Dos documentos, dos propósitos.",
     },
     publishedAt: "2026-05-08",
@@ -164,7 +267,7 @@ export const POSTS: BlogPost[] = [
       "Un manual de marca es un documento operativo de 20-50 páginas que fija por escrito cómo se aplica una identidad visual y verbal. Qué incluye, qué no, cuándo lo necesitas.",
     heroImage: {
       src: "/blog/que-es-un-manual-de-marca/hero.jpg",
-      alt: "Manual de marca editorial abierto sobre mesa con retícula y componentes técnicos, fig. 01",
+      alt: "Anatomía de un manual de marca — spread editorial con retícula, 48 componentes documentados, fig. 01",
       caption: "Fig. 01 · Documento operativo, no decoración.",
     },
     publishedAt: "2026-05-02",
@@ -218,8 +321,8 @@ export const POSTS: BlogPost[] = [
       "Rangos reales 2026 de agencia tradicional, freelance, plantilla y estudio productizado. Qué incluye cada precio, qué deberías evitar, cómo elegir.",
     heroImage: {
       src: "/blog/cuanto-cuesta-manual-de-marca-espana-2026/hero.jpg",
-      alt: "Pila de manuales de marca publicados en diferentes tamaños sobre superficie de concreto editorial — comparativa de precios 2026 España",
-      caption: "Fig. 01 · Rangos reales de mercado 2026.",
+      alt: "Detalle de encuadernación editorial de manual de marca — el objeto tangible que se paga, fig. 01",
+      caption: "Fig. 01 · Lo que pagas es un objeto defendible.",
     },
     publishedAt: "2026-05-01",
     readingMinutes: 9,
