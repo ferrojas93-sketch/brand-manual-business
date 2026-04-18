@@ -6,6 +6,7 @@ import ManualVsBrandBook from "./manual-marca-vs-brand-book";
 import NasaManual from "./nasa-graphics-standards-manual-1976";
 import ComoHacer from "./como-hacer-manual-de-marca-paso-a-paso";
 import MejoresManuales from "./mejores-manuales-de-marca-historia";
+import FedexFlecha from "./fedex-flecha-oculta";
 
 /**
  * Registry estático de bodies por slug.
@@ -18,6 +19,7 @@ export const POST_BODIES: Record<string, ComponentType> = {
   "nasa-graphics-standards-manual-1976": NasaManual,
   "como-hacer-manual-de-marca-paso-a-paso": ComoHacer,
   "mejores-manuales-de-marca-historia": MejoresManuales,
+  "fedex-flecha-oculta": FedexFlecha,
 };
 
 export function getPostBody(slug: string): ComponentType | null {

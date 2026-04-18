@@ -54,6 +54,60 @@ export type BlogPost = {
  */
 export const POSTS: BlogPost[] = [
   {
+    slug: "fedex-flecha-oculta",
+    category: "analisis",
+    title: "La flecha oculta del logo FedEx",
+    excerpt:
+      "Lindon Leader descubrió por accidente la flecha entre la E y la X en 1994. 40 premios después es el ejemplo canónico de espacio negativo. Historia completa del rebrand.",
+    heroImage: {
+      src: "/blog/fedex-flecha-oculta/hero.jpg",
+      alt: "FedEx logo flecha oculta — composición tipográfica entre E y X revela la flecha canónica del espacio negativo diseñada por Lindon Leader en Landor 1994",
+      caption: "Fig. 01 · El espacio negativo más famoso del diseño.",
+    },
+    publishedAt: "2026-06-05",
+    readingMinutes: 12,
+    primaryKeyword: "logo FedEx flecha oculta",
+    secondaryKeywords: [
+      "FedEx flecha escondida",
+      "Lindon Leader FedEx",
+      "logos con mensajes ocultos",
+      "espacio negativo FedEx",
+      "Landor FedEx rebrand",
+    ],
+    metaTitle: "La flecha oculta del logo FedEx · Historia del rediseño 1994",
+    metaDescription:
+      "Lindon Leader descubrió por accidente la flecha entre E y X en 1994. 40 premios después es el espacio negativo más famoso del diseño. Análisis editorial.",
+    author: "Tramarca",
+    tags: ["FedEx", "Landor", "espacio negativo", "análisis", "1994"],
+    contentPath: "content/blog/fedex-flecha-oculta.tsx",
+    faqs: [
+      {
+        q: "¿Dónde está exactamente la flecha oculta del logo FedEx?",
+        a: "Entre la letra 'E' mayúscula y la letra 'x' minúscula del wordmark FedEx. El espacio blanco formado por el trazo vertical derecho de la E y la diagonal inferior izquierda de la x forma una silueta de flecha apuntando a la derecha. Una vez que la ves, no se puede no ver.",
+      },
+      {
+        q: "¿Quién diseñó el logo FedEx?",
+        a: "Lindon Leader en Landor Associates en 1994. Leader llevaba 12 años en Landor cuando recibió el proyecto del rebrand, como respuesta al cambio oficial de nombre de Federal Express a FedEx. Pasó varias semanas ajustando una letterform custom basada en Univers 67 y Futura Bold antes de descubrir la flecha por accidente.",
+      },
+      {
+        q: "¿La flecha fue intencional desde el inicio o un accidente?",
+        a: "Accidente geométrico del kerning agresivo que Leader luego refinó a propósito. Leader ha contado en entrevistas que al reducir el tracking entre E y X la flecha 'simplemente apareció'. Después invirtió tres semanas ajustando los ángulos de la X para que la flecha fuera perfecta geométricamente sin que la letra perdiera legibilidad.",
+      },
+      {
+        q: "¿Qué es el espacio negativo en diseño?",
+        a: "El espacio negativo es el área vacía alrededor o dentro de un elemento visual que forma a su vez una figura significativa. Es un principio Gestalt llamado 'figura-fondo reversible'. En el logo FedEx, el espacio blanco entre E y x forma la flecha. Otros ejemplos clásicos: el pavo real NBC, el 31 en el logo Baskin-Robbins, el oso de Berna en Toblerone.",
+      },
+      {
+        q: "¿Cuántos premios ha ganado el logo FedEx?",
+        a: "Más de 40 premios internacionales de diseño desde 1994. Seleccionado en 'Best Logos of All Time' de Business Week (2011), incluido en retrospectiva del MoMA sobre diseño corporativo americano, y reconocido como uno de los 15 logos más influyentes del siglo XX por Rolling Stone (2019). Leader ganó personalmente el American Graphic Design Award en 1995.",
+      },
+      {
+        q: "¿Cómo se aplica esta disciplina en un manual de marca moderno?",
+        a: "Dos lecciones operativas: primero, empezar el sistema visual por tipografía (no por iconografía) y dejar que elementos gráficos emerjan del letterform. Segundo, documentar la construcción geométrica con retícula exacta para que el logo pueda reproducirse sin deformarse. En Tramarca codificamos ambos principios en el capítulo IV Sistema de logo de cada manual que producimos.",
+      },
+    ],
+  },
+  {
     slug: "mejores-manuales-de-marca-historia",
     category: "analisis",
     title: "15 manuales de marca que hicieron historia",
