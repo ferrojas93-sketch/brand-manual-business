@@ -14,6 +14,7 @@ import {
   faqPageSchema,
 } from "@/lib/schema";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { BlogScrollTracker } from "@/components/BlogScrollTracker";
 
 export function generateStaticParams() {
   return POSTS.map((p) => ({ slug: p.slug }));
@@ -143,6 +144,7 @@ export default async function BlogPostPage({
         <section className="bg-papel">
           <div className="mx-auto max-w-3xl px-6 py-12 md:py-20 post-body">
             <Body />
+            <BlogScrollTracker slug={post.slug} />
           </div>
         </section>
 
@@ -171,10 +173,22 @@ export default async function BlogPostPage({
               Tres tiers · 490€ / 990€ / 1.990€ · IVA incluido · plazos publicados<span className="text-lacre">.</span>
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <ButtonLink href="/contacto" variant="invert" size="lg">
+              <ButtonLink
+                href="/contacto"
+                variant="invert"
+                size="lg"
+                trackAs="cta_pedir_propuesta"
+                trackProps={{ location: "blog_cierre", slug: post.slug }}
+              >
                 Pedir propuesta en 24h →
               </ButtonLink>
-              <ButtonLink href="/precios" variant="ghost" size="lg">
+              <ButtonLink
+                href="/precios"
+                variant="ghost"
+                size="lg"
+                trackAs="cta_ver_precios"
+                trackProps={{ location: "blog_cierre", slug: post.slug }}
+              >
                 Ver precios
               </ButtonLink>
             </div>

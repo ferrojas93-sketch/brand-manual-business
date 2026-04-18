@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { ComponentProps } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type Variant = "primary" | "secondary" | "ghost" | "invert";
 type Size = "md" | "lg";
@@ -54,12 +57,28 @@ export function ButtonLink({
   size = "md",
   className,
   children,
+  trackAs,
+  trackProps,
+  onClick,
   ...rest
-}: BaseProps & Omit<ComponentProps<typeof Link>, "className" | "children">) {
+}: BaseProps &
+  Omit<ComponentProps<typeof Link>, "className" | "children"> & {
+    /** Event name for Plausible custom tracking. Se dispara onClick. */
+    trackAs?: string;
+    trackProps?: Record<string, string | number | boolean>;
+  }) {
+  const handleClick = trackAs
+    ? (e: React.MouseEvent<HTMLAnchorElement>) => {
+        trackEvent(trackAs, trackProps);
+        onClick?.(e);
+      }
+    : onClick;
+
   return (
     <Link
       href={href}
       {...rest}
+      onClick={handleClick}
       className={cn(baseStyles, variantStyles[variant], sizeStyles[size], className)}
     >
       {children}

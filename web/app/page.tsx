@@ -170,13 +170,21 @@ export default function HomePage() {
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-                <ButtonLink href="/contacto" variant="primary" size="lg">
+                <ButtonLink
+                  href="/contacto"
+                  variant="primary"
+                  size="lg"
+                  trackAs="cta_pedir_propuesta"
+                  trackProps={{ location: "home_hero" }}
+                >
                   Pedir propuesta en 24h →
                 </ButtonLink>
                 <ButtonLink
                   href="/manuales"
                   variant="ghost"
                   size="lg"
+                  trackAs="cta_ver_manuales"
+                  trackProps={{ location: "home_hero" }}
                 >
                   Ver 5 manuales publicados →
                 </ButtonLink>
@@ -350,10 +358,22 @@ export default function HomePage() {
               a cliente.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <ButtonLink href="/manuales/tramarca" variant="primary" size="lg">
+              <ButtonLink
+                href="/manuales/tramarca"
+                variant="primary"
+                size="lg"
+                trackAs="cta_ver_manual_tramarca"
+                trackProps={{ location: "home_manual_section" }}
+              >
                 Ver manual Tramarca (58pp) →
               </ButtonLink>
-              <ButtonLink href="#pedir-manual" variant="ghost" size="lg">
+              <ButtonLink
+                href="#pedir-manual"
+                variant="ghost"
+                size="lg"
+                trackAs="cta_descargar_manual"
+                trackProps={{ location: "home_manual_section" }}
+              >
                 Descargar PDF
               </ButtonLink>
             </div>
@@ -491,7 +511,13 @@ export default function HomePage() {
 
           <Reveal>
             <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-              <ButtonLink href="/contacto" variant="primary" size="lg">
+              <ButtonLink
+                href="/contacto"
+                variant="primary"
+                size="lg"
+                trackAs="cta_pedir_propuesta"
+                trackProps={{ location: "home_proceso" }}
+              >
                 Empezar el brief →
               </ButtonLink>
               <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
@@ -756,8 +782,14 @@ export default function HomePage() {
             Si encaja, lo cerramos hoy.
           </p>
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ButtonLink href="/contacto" variant="invert" size="lg">
-              Hablemos de tu marca →
+            <ButtonLink
+              href="/contacto"
+              variant="invert"
+              size="lg"
+              trackAs="cta_pedir_propuesta"
+              trackProps={{ location: "home_cierre" }}
+            >
+              Pedir propuesta en 24h →
             </ButtonLink>
             <a
               href="mailto:hola@tramarca.es"

@@ -355,6 +355,92 @@ export function techArticleSchema(args: {
   };
 }
 
+/**
+ * Schema Product + AggregateOffer para /precios.
+ * Google muestra rich result de rango de precio en SERP cuando el patrón está bien formado.
+ * Acompaña al `serviceSchema` (que queda como clasificación) — son complementarios, no duplicados.
+ */
+export const productSchema = {
+  "@type": "Product",
+  "@id": `${SITE_URL}/precios#product`,
+  name: "Manual de marca Tramarca",
+  description:
+    "Manual de marca productizado en 3 tiers con pricing público IVA incluido, plazos publicados y entregables cerrados. Esencial 490€ · Profesional 990€ · Premium 1.990€.",
+  image: `${SITE_URL}/og-tramarca.jpg`,
+  brand: { "@id": `${SITE_URL}/#organization` },
+  category: "Servicios profesionales · Diseño editorial · Manual de marca",
+  sku: "TRAMARCA-MANUAL-MARCA",
+  url: `${SITE_URL}/precios`,
+  offers: {
+    "@type": "AggregateOffer",
+    "@id": `${SITE_URL}/precios#aggregateoffer`,
+    priceCurrency: "EUR",
+    lowPrice: "490",
+    highPrice: "1990",
+    offerCount: 3,
+    availability: "https://schema.org/InStock",
+    url: `${SITE_URL}/precios`,
+    seller: { "@id": `${SITE_URL}/#organization` },
+    areaServed: { "@type": "Country", name: "España" },
+    offers: [
+      {
+        "@type": "Offer",
+        "@id": `${SITE_URL}/precios#offer-esencial`,
+        name: "Manual de marca Esencial",
+        description:
+          "Manual 20-25 páginas. Logo, paleta, tipografía y aplicaciones básicas. 1 revisión. Entrega 5 días laborables.",
+        price: "490",
+        priceCurrency: "EUR",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          price: "490",
+          priceCurrency: "EUR",
+          valueAddedTaxIncluded: true,
+        },
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/precios#esencial`,
+        eligibleRegion: { "@type": "Country", name: "España" },
+      },
+      {
+        "@type": "Offer",
+        "@id": `${SITE_URL}/precios#offer-profesional`,
+        name: "Manual de marca Profesional",
+        description:
+          "Manual 30-40 páginas. Sistema completo, tono de voz, guidelines extendidas. 2 revisiones. Entrega 7 días laborables.",
+        price: "990",
+        priceCurrency: "EUR",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          price: "990",
+          priceCurrency: "EUR",
+          valueAddedTaxIncluded: true,
+        },
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/precios#profesional`,
+        eligibleRegion: { "@type": "Country", name: "España" },
+      },
+      {
+        "@type": "Offer",
+        "@id": `${SITE_URL}/precios#offer-premium`,
+        name: "Manual de marca Premium",
+        description:
+          "Manual 40-50 páginas con libro físico encuadernado de edición única. Estrategia + identidad verbal + guidelines exhaustivas. 2 revisiones. Entrega 10 días laborables.",
+        price: "1990",
+        priceCurrency: "EUR",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          price: "1990",
+          priceCurrency: "EUR",
+          valueAddedTaxIncluded: true,
+        },
+        availability: "https://schema.org/InStock",
+        url: `${SITE_URL}/precios#premium`,
+        eligibleRegion: { "@type": "Country", name: "España" },
+      },
+    ],
+  },
+};
+
 export function articleSchema(args: {
   url: string;
   headline: string;

@@ -6,7 +6,7 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { ButtonLink } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/tiers";
-import { jsonLdGraph, serviceSchema, breadcrumbListSchema } from "@/lib/schema";
+import { jsonLdGraph, serviceSchema, breadcrumbListSchema, productSchema } from "@/lib/schema";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -351,8 +351,14 @@ export default function PreciosPage() {
             Tres tiers. Precios cerrados.
           </h2>
           <div className="mt-10">
-            <ButtonLink href="/contacto" variant="invert" size="lg">
-              Hablamos →
+            <ButtonLink
+              href="/contacto"
+              variant="invert"
+              size="lg"
+              trackAs="cta_pedir_propuesta"
+              trackProps={{ location: "precios_cierre" }}
+            >
+              Pedir propuesta en 24h →
             </ButtonLink>
           </div>
           <p className="mt-6 font-mono text-xs text-piedra">
@@ -363,6 +369,7 @@ export default function PreciosPage() {
 
       <JsonLd
         data={jsonLdGraph(
+          productSchema,
           serviceSchema,
           breadcrumbListSchema([
             { name: "Inicio", url: SITE_URL },

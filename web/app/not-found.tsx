@@ -13,7 +13,7 @@ export default function NotFound() {
         </p>
         <div className="mt-12 flex flex-col sm:flex-row gap-4">
           <ButtonLink href="/contacto" variant="primary" size="lg">
-            Hablemos de tu marca →
+            Pedir propuesta →
           </ButtonLink>
           <ButtonLink href="/precios" variant="ghost" size="lg">
             Ver precios

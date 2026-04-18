@@ -243,11 +243,23 @@ export default async function ManualDetailPage({
             ¿Te encaja este tier?
           </h2>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ButtonLink href={tierPath} variant="invert" size="lg">
+            <ButtonLink
+              href={tierPath}
+              variant="invert"
+              size="lg"
+              trackAs="cta_ver_tier"
+              trackProps={{ tier: tierLabel }}
+            >
               Ver el tier {tierLabel} →
             </ButtonLink>
-            <ButtonLink href="/contacto" variant="ghost" size="lg">
-              Hablamos
+            <ButtonLink
+              href="/contacto"
+              variant="ghost"
+              size="lg"
+              trackAs="cta_pedir_propuesta"
+              trackProps={{ location: "manual_detail_cierre" }}
+            >
+              Pedir propuesta
             </ButtonLink>
           </div>
         </div>

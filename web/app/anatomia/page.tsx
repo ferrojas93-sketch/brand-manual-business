@@ -278,10 +278,23 @@ export default function AnatomiaPage() {
             </h2>
           </div>
           <div className="md:col-span-5 flex flex-col sm:flex-row md:justify-end gap-4">
-            <ButtonLink href="/contacto" variant="primary" size="lg">
-              Hablemos →
+            <ButtonLink
+              href="/contacto"
+              variant="primary"
+              size="lg"
+              trackAs="cta_pedir_propuesta"
+              trackProps={{ location: "anatomia_cierre" }}
+            >
+              Pedir propuesta →
             </ButtonLink>
-            <ButtonLink href="/precios" variant="ghost" size="lg" className="text-papel/80 hover:text-papel hover:bg-papel/5">
+            <ButtonLink
+              href="/precios"
+              variant="ghost"
+              size="lg"
+              className="text-papel/80 hover:text-papel hover:bg-papel/5"
+              trackAs="cta_ver_precios"
+              trackProps={{ location: "anatomia_cierre" }}
+            >
               Ver precios
             </ButtonLink>
           </div>
