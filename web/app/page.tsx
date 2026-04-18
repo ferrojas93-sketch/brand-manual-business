@@ -7,11 +7,9 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { JsonLd } from "@/components/JsonLd";
 import { SpreadFrame } from "@/components/SpreadFrame";
 import { Reveal } from "@/components/Reveal";
+import { ManualRequestForm } from "@/components/ManualRequestForm";
 import { MANUALES } from "@/lib/manuales";
 import { jsonLdGraph, serviceSchema, faqSchema } from "@/lib/schema";
-
-const portfolioHome = MANUALES.filter((m) => m.slug !== "tramarca").slice(0, 3);
-const testimonials = MANUALES.filter((m) => m.testimonial);
 
 const anatomia = [
   {
@@ -199,7 +197,7 @@ export default function HomePage() {
                 </div>
               </div>
               <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-piedra">
-                IVA incluido · Plazo publicado · Sin discovery
+                IVA incluido · Plazo publicado · Scope cerrado
               </p>
             </div>
 
@@ -346,26 +344,60 @@ export default function HomePage() {
               <span className="text-piedra">Para que veas cómo trabajamos.</span>
             </h2>
             <p className="mt-8 text-lg text-piedra leading-relaxed max-w-xl">
-              Treinta y cuatro páginas. Tipografía Satoshi, sistema editorial
+              Cincuenta y ocho páginas. Tipografía Satoshi, sistema editorial
               con lacre como acento, voz documentada capítulo a capítulo. Hecho
               por nosotros para nosotros, bajo el mismo estándar que entregamos
               a cliente.
             </p>
-            <div className="mt-10">
+            <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <ButtonLink href="/manuales/tramarca" variant="primary" size="lg">
-                Ver manual Tramarca (34pp) →
+                Ver manual Tramarca (58pp) →
+              </ButtonLink>
+              <ButtonLink href="#pedir-manual" variant="ghost" size="lg">
+                Descargar PDF
               </ButtonLink>
             </div>
           </div>
           <div className="relative aspect-[1756/1242] bg-papel border border-negro/15 overflow-hidden shadow-[0_30px_60px_-20px_rgba(12,12,12,0.3)]">
             <Image
               src="/portfolio/tramarca-cover.jpg"
-              alt="Tramarca — portada del manual propio 34 páginas — manual de marca Lacre sobre Papel"
+              alt="Tramarca — portada del manual propio 58 páginas — matte black con punto lacre"
               fill
               sizes="(min-width: 768px) 50vw, 100vw"
               className="object-cover"
               priority
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Pedir manual — gated PDF */}
+      <section id="pedir-manual" className="bg-papel border-b border-negro/10 scroll-mt-20">
+        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+            <div className="lg:col-span-6">
+              <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+                El manual, en tu bandeja
+              </p>
+              <h2 className="mt-5 text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
+                Pide el manual<span className="text-lacre">.</span>
+                <br />
+                <span className="text-piedra">Te lo mandamos ahora<span className="text-lacre">.</span></span>
+              </h2>
+              <p className="mt-6 max-w-lg text-lg text-piedra leading-[1.6]">
+                Cincuenta y ocho páginas, PDF editorial. Déjanos tu email y te
+                llega al momento — lo abres, lo hojeas y decides si encaja<span className="text-lacre">.</span>
+              </p>
+              <ul className="mt-8 space-y-2 font-mono text-[11px] uppercase tracking-[0.25em] text-piedra">
+                <li><span className="text-lacre">·</span>&nbsp; 58 páginas <span className="text-lacre">·</span> 16 capítulos <span className="text-lacre">·</span> 48 componentes</li>
+                <li><span className="text-lacre">·</span>&nbsp; Tipografía Satoshi + IBM Plex Mono</li>
+                <li><span className="text-lacre">·</span>&nbsp; Paleta, voz, aplicaciones reales</li>
+                <li><span className="text-lacre">·</span>&nbsp; Enlace válido 24h · respuesta en &lt;1 min</li>
+              </ul>
+            </div>
+            <div className="lg:col-span-6">
+              <ManualRequestForm />
+            </div>
           </div>
         </div>
       </section>
@@ -463,7 +495,7 @@ export default function HomePage() {
                 Empezar el brief →
               </ButtonLink>
               <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
-                Respuesta en &lt;24h laborables <span className="text-lacre">·</span> Sin llamada obligatoria
+                Respuesta en &lt;24h laborables <span className="text-lacre">·</span> Todo por escrito
               </p>
             </div>
           </Reveal>
@@ -521,151 +553,101 @@ export default function HomePage() {
           </div>
 
           <p className="mt-12 font-mono text-xs text-piedra max-w-2xl">
-            Tier Esencial: capítulos 01-03 + aplicaciones básicas · Profesional: 01-07 · Premium:
-            01-08 extendido + formación al equipo.
+            Ocho de los dieciséis capítulos publicados en <Link href="/anatomia" className="text-lacre underline underline-offset-4 hover:text-lacre-hover">/anatomia</Link>.
+            Scope por tier: Esencial 20-25pp · Profesional 30-40pp · Premium 40-50pp + libro físico.
           </p>
         </div>
       </section>
 
-      {/* Portfolio */}
-      <section>
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <div className="max-w-3xl">
-            <p className="font-mono text-xs uppercase tracking-widest text-lacre">Portfolio</p>
-            <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
-              Manuales reales. Páginas reales. Cero mockups.
-            </h2>
-            <p className="mt-6 text-lg text-piedra leading-relaxed">
-              Trabajo publicado para clientes reales. Antes de hablar de precio,
-              mira lo que sale por la puerta.
-            </p>
-          </div>
+      {/* Portfolio — lista editorial minimal estilo p56 manual v4 */}
+      <section className="bg-papel border-y border-negro/10">
+        <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-24 md:py-32">
+          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14">
+            <div className="lg:col-span-5">
+              <p className="font-mono text-xs uppercase tracking-widest text-lacre">
+                Portfolio
+              </p>
+              <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
+                Hemos trabajado con<span className="text-lacre">.</span>
+              </h2>
+              <p className="mt-6 max-w-md text-base md:text-lg text-piedra leading-relaxed">
+                Cinco manuales publicados. Solo el nuestro está abierto al
+                público — los casos de cliente permanecen privados hasta
+                autorización explícita<span className="text-lacre">.</span>
+              </p>
+              <div className="mt-10">
+                <ButtonLink href="/manuales" variant="ghost" size="lg">
+                  Ver portfolio completo →
+                </ButtonLink>
+              </div>
+            </div>
 
-          <div className="mt-16 grid md:grid-cols-12 gap-5 md:gap-6">
-            {portfolioHome.map((m, i) => {
-              const span =
-                i === 0
-                  ? "md:col-span-7"
-                  : i === 1
-                  ? "md:col-span-5"
-                  : "md:col-span-12";
-              const featured = i === 0;
-              return (
-                <Link
-                  key={m.slug}
-                  href={`/manuales/${m.slug}`}
-                  className={`group block relative overflow-hidden ${span}`}
-                >
-                  <div
-                    className={`relative ${
-                      featured ? "aspect-[1756/1100]" : "aspect-[1756/1242]"
-                    } bg-arena overflow-hidden`}
-                  >
-                    <Image
-                      src={`/portfolio/${m.slug}-cover.jpg`}
-                      alt={m.altCover}
-                      fill
-                      sizes={
-                        featured
-                          ? "(min-width: 768px) 58vw, 100vw"
-                          : "(min-width: 768px) 42vw, 100vw"
-                      }
-                      className="object-cover group-hover:scale-[1.03] transition-transform duration-[800ms] ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-negro/80 via-negro/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8 text-papel translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                      <p className="font-mono text-xs text-lacre uppercase tracking-widest">
-                        Ver caso completo →
-                      </p>
+            <div className="lg:col-span-7">
+              <ul className="border-t border-negro/15">
+                {MANUALES.map((m) => {
+                  const tierUpper =
+                    typeof m.tier === "string" ? m.tier.toUpperCase() : "PROPIO";
+                  const isTramarca = m.showDetail;
+                  const logoBg =
+                    m.logoBg === "dark"
+                      ? "bg-negro"
+                      : m.logoBg === "lacre"
+                      ? "bg-lacre"
+                      : "bg-arena border border-negro/10";
+
+                  const Body = (
+                    <div className="grid grid-cols-[80px_1fr] sm:grid-cols-[96px_1fr] gap-4 sm:gap-6 py-5">
+                      <div
+                        className={`relative aspect-[3/1] overflow-hidden ${logoBg} flex items-center justify-center`}
+                      >
+                        <Image
+                          src={m.logo}
+                          alt={`Logo de ${m.name}`}
+                          fill
+                          sizes="96px"
+                          className="object-contain p-2.5"
+                        />
+                      </div>
+                      <div>
+                        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-4">
+                          <h3 className="text-lg md:text-xl font-black tracking-tight leading-none">
+                            {m.name}<span className="text-lacre">.</span>
+                          </h3>
+                          <span className="font-mono text-[10px] uppercase tracking-[0.28em] text-piedra-light shrink-0">
+                            {tierUpper === "PROPIO" ? "META" : tierUpper} <span className="text-lacre">·</span> {m.pages}PP
+                          </span>
+                        </div>
+                        <p className="mt-1.5 font-mono text-[10px] uppercase tracking-[0.28em] text-lacre">
+                          {m.sector}
+                        </p>
+                        <p className="mt-2 text-[13px] text-negro/75 leading-[1.55]">
+                          {m.companyDetail}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                  <div className="pt-5 flex items-baseline justify-between">
-                    <h3
-                      className={`font-black tracking-tight ${
-                        featured ? "text-3xl md:text-4xl" : "text-2xl md:text-3xl"
-                      }`}
-                    >
-                      {m.name}
-                    </h3>
-                    <p className="font-mono text-xs text-piedra uppercase tracking-widest shrink-0 pl-4">
-                      {typeof m.tier === "string" ? m.tier : ""} · {m.pages}pp
-                    </p>
-                  </div>
-                  <p className="mt-2 text-sm text-negro/75 max-w-2xl">{m.brief}</p>
-                </Link>
-              );
-            })}
+                  );
+
+                  return (
+                    <li key={m.slug} className="border-b border-negro/15">
+                      {isTramarca ? (
+                        <Link
+                          href={`/manuales/${m.slug}`}
+                          className="block hover:bg-arena/40 transition-colors px-2 -mx-2"
+                        >
+                          {Body}
+                        </Link>
+                      ) : (
+                        <div className="px-2 -mx-2">{Body}</div>
+                      )}
+                    </li>
+                  );
+                })}
+              </ul>
+              <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
+                Datos verificables en tramarca.es/manuales
+              </p>
+            </div>
           </div>
-
-          <div className="mt-12">
-            <ButtonLink href="/manuales" variant="ghost" size="lg">
-              Ver el portfolio completo →
-            </ButtonLink>
-          </div>
-        </div>
-      </section>
-
-      {/* Notas del proyecto — voz editorial del estudio sobre cada caso */}
-      <section className="section-dark">
-        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
-          <p className="font-mono text-xs uppercase tracking-widest text-lacre">
-            Notas del proyecto
-          </p>
-          <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05] max-w-4xl">
-            Lo que entró por el brief.
-            <br />
-            <span className="text-ceniza">Lo que salió documentado.</span>
-          </h2>
-          <p className="mt-8 max-w-2xl text-base md:text-lg text-ceniza leading-relaxed">
-            Extractos del brief recibido en cada proyecto, registrados antes de
-            empezar. Los testimonios firmados por clientes llegarán cuando
-            entreguen su autorización — no antes.
-          </p>
-
-          <div className="mt-16 grid md:grid-cols-3 gap-6 md:gap-8">
-            {testimonials
-              .filter((m) => m.testimonial)
-              .map((m) => (
-                <figure
-                  key={m.slug}
-                  className="flex flex-col border border-papel/10 bg-carbon p-8 md:p-10"
-                >
-                  <span aria-hidden className="font-black text-6xl text-lacre leading-none">
-                    “
-                  </span>
-                  <blockquote className="mt-4 text-lg md:text-xl text-papel leading-[1.4] flex-1">
-                    {m.testimonial!.quote}
-                  </blockquote>
-                  <figcaption className="mt-8 pt-6 border-t border-papel/10 flex items-center justify-between gap-4">
-                    <div className="min-w-0">
-                      <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
-                        Caso · {m.name}
-                      </p>
-                      <p className="mt-2 font-mono text-[11px] uppercase tracking-widest text-ceniza">
-                        {m.sector} · {m.pages}pp
-                      </p>
-                    </div>
-                    <Link
-                      href={`/manuales/${m.slug}`}
-                      className="font-mono text-[11px] uppercase tracking-widest text-lacre hover:text-papel transition-colors shrink-0"
-                    >
-                      Ver caso →
-                    </Link>
-                  </figcaption>
-                </figure>
-              ))}
-          </div>
-
-          <p className="mt-12 font-mono text-xs text-piedra">
-            Dirección de arte, páginas y plazo de cada caso en{" "}
-            <Link
-              href="/manuales"
-              className="text-lacre underline underline-offset-4 hover:text-papel"
-            >
-              /manuales
-            </Link>
-            .
-          </p>
         </div>
       </section>
 
@@ -714,19 +696,23 @@ export default function HomePage() {
             Estudio productizado<span className="text-lacre">.</span>
             {" "}Manuales completos<span className="text-lacre">.</span>
           </h2>
-          <div className="mt-16 grid md:grid-cols-3 gap-10 max-w-6xl">
+          <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-6xl">
             {[
               {
-                t: "Scope cerrado",
-                d: "Lo que entregamos está publicado capítulo a capítulo en /anatomia. 48 componentes, 12 secciones. Ningún trabajo empieza sin brief firmado.",
+                t: "Precio cerrado",
+                d: "490€, 990€ o 1.990€ con IVA. Publicado desde el minuto cero. Lo que lees en la web es lo que pagas.",
               },
               {
                 t: "Plazo publicado",
-                d: "5, 7 o 10 días laborables desde kickoff, según tier. No son plazos estimativos. Se incumplen pocas veces y cuando ocurre, lo avisamos antes.",
+                d: "5, 7 o 10 días laborables desde kickoff, según tier. Días laborables, no estimados.",
               },
               {
-                t: "Precio cerrado",
-                d: "490€, 990€ o 1.990€ con IVA. Sin discovery previo, sin propuesta personalizada, sin extras imprevistos. Lo que lees en la web es lo que pagas.",
+                t: "Proceso cerrado",
+                d: "Dos rondas de revisión incluidas. Brief firmado antes del kickoff — todo por escrito, deadlines claras.",
+              },
+              {
+                t: "Entrega editorial",
+                d: "PDF A4 landscape + Figma + assets. Premium añade libro físico encuadernado de edición única.",
               },
             ].map((x) => (
               <div key={x.t} className="border-l-2 border-lacre pl-6">

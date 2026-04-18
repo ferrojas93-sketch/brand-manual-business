@@ -22,3 +22,6 @@ __pycache__/
 # Generated PDFs (large)
 proposals/*.pdf
 .audit-v5/
+# Claude Code session state (agent-memory stays, session data doesn't)
+.claude/settings.local.json
+

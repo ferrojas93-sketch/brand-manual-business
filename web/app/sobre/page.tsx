@@ -140,9 +140,10 @@ export default function SobrePage() {
               <p className="mt-5">
                 Aquí el scope está cerrado antes de empezar: tres tiers con entregables
                 documentados, plazo publicado de 5/7/10 días laborables, y dos rondas
-                de revisión acotadas. Brief, kickoff, reviews y entrega por escrito —
-                lo que entregamos es un documento y el proceso para fabricarlo también
-                lo es. El precio y el plazo los sabes antes de firmar<span className="text-lacre">.</span>
+                de revisión incluidas dentro del proceso. Brief, kickoff, reviews y
+                entrega por escrito — lo que entregamos es un documento y el proceso
+                para fabricarlo también lo es. El precio y el plazo los sabes antes
+                de firmar<span className="text-lacre">.</span>
               </p>
             </Reveal>
 

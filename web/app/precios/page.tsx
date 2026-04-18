@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Precios manual de marca. IVA incluido.",
   description:
-    "Cuánto cuesta un manual de marca. Tres tiers: 490€, 990€, 1.990€. IVA incluido. Plazos 5-10 días. Sin discovery ni sorpresas. Aquí los números.",
+    "Cuánto cuesta un manual de marca. Tres tiers: 490€, 990€, 1.990€. IVA incluido. Plazos 5-10 días. Precio cerrado publicado. Aquí los números.",
   alternates: { canonical: `${SITE_URL}/precios` },
 };
 

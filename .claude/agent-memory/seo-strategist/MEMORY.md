@@ -1,0 +1,1 @@
+- [Tramarca SEO strategy 2026-04](project_tramarca_seo_strategy_2026_04.md) — auditoría estratégica post-score 97: 5 BLOCKERs, 3 pillars, calendar 90 días, entity naming canónico

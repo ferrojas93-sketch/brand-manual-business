@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { MANUALES, getManual } from "@/lib/manuales";
 import { ButtonLink } from "@/components/Button";
+import { ManualRequestForm } from "@/components/ManualRequestForm";
 import { SITE_URL } from "@/lib/tiers";
 import { JsonLd } from "@/components/JsonLd";
 import {
@@ -13,7 +14,8 @@ import {
 } from "@/lib/schema";
 
 export function generateStaticParams() {
-  return MANUALES.map((m) => ({ slug: m.slug }));
+  // Solo Tramarca tiene detail page — el resto redirige a /manuales
+  return MANUALES.filter((m) => m.showDetail).map((m) => ({ slug: m.slug }));
 }
 
 export async function generateMetadata({
@@ -23,7 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const m = getManual(slug);
-  if (!m) return {};
+  if (!m || !m.showDetail) return {};
   const tierLabel = typeof m.tier === "string" ? m.tier : "Propio";
   return {
     title: `${m.name} — manual de marca ${m.pages}pp`,
@@ -40,6 +42,7 @@ export default async function ManualDetailPage({
   const { slug } = await params;
   const m = getManual(slug);
   if (!m) notFound();
+  if (!m.showDetail) redirect("/manuales");
 
   const tierPath =
     typeof m.tier === "string" && m.tier !== "Propio" ? `/precios#${m.tier}` : "/precios";
@@ -206,6 +209,30 @@ export default async function ManualDetailPage({
             <p className="mt-8 font-mono text-xs text-piedra uppercase tracking-widest">
               — {m.name}
             </p>
+          </div>
+        </section>
+      )}
+
+      {slug === "tramarca" && (
+        <section id="pedir-manual" className="bg-papel border-y border-negro/10 scroll-mt-20">
+          <div className="mx-auto max-w-6xl px-6 py-20 md:py-28">
+            <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+              <div className="lg:col-span-6">
+                <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
+                  PDF completo
+                </p>
+                <h2 className="mt-5 text-4xl md:text-5xl font-black tracking-tight leading-[1.05]">
+                  Llévatelo en PDF<span className="text-lacre">.</span>
+                </h2>
+                <p className="mt-5 max-w-md text-base md:text-lg text-piedra leading-[1.6]">
+                  Las cincuenta y ocho páginas completas, tal cual las hemos
+                  impreso. Déjanos tu email y te llega en menos de un minuto<span className="text-lacre">.</span>
+                </p>
+              </div>
+              <div className="lg:col-span-6">
+                <ManualRequestForm />
+              </div>
+            </div>
           </div>
         </section>
       )}

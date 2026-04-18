@@ -23,7 +23,7 @@ export default function CondicionesPage() {
         <section>
           <h2 className="text-2xl font-black tracking-tight mb-3">1. Partes y aceptación</h2>
           <p>
-            Estas condiciones regulan la relación entre Tramarca (Fernando Rojas, titular
+            Estas condiciones regulan la relación entre Tramarca (Fernando Rojas Pacheco, titular
             de la marca comercial, contacto{" "}
             <a href="mailto:hola@tramarca.es" className="underline hover:text-lacre">
               hola@tramarca.es

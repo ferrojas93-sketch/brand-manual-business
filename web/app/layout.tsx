@@ -74,6 +74,9 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   category: "design",
+  other: {
+    "alternate:rss": `${SITE_URL}/feed.xml`,
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

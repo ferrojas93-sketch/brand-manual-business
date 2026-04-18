@@ -22,7 +22,7 @@ export default function AvisoLegalPage() {
           <p>
             En cumplimiento de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad
             de la Información y Comercio Electrónico (LSSI-CE), se informa de que el titular
-            de este sitio web es Fernando Rojas, en nombre de la marca comercial
+            de este sitio web es Fernando Rojas Pacheco, en nombre de la marca comercial
             &ldquo;Tramarca&rdquo;, con domicilio a efectos de notificaciones en Madrid
             (España) y dirección de contacto electrónico:{" "}
             <a href="mailto:hola@tramarca.es" className="underline hover:text-lacre">

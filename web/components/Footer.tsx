@@ -3,128 +3,73 @@ import { Logo } from "./Logo";
 
 const YEAR = 2026;
 
+const navLinks = [
+  { href: "/anatomia", label: "Anatomía" },
+  { href: "/precios", label: "Precios" },
+  { href: "/manuales", label: "Manuales" },
+  { href: "/blog", label: "Blog" },
+  { href: "/sobre", label: "Nosotros" },
+  { href: "/contacto", label: "Contacto" },
+];
+
+const legalLinks = [
+  { href: "/aviso-legal", label: "Aviso legal" },
+  { href: "/privacidad", label: "Privacidad" },
+  { href: "/cookies", label: "Cookies" },
+  { href: "/condiciones", label: "Condiciones" },
+];
+
 export function Footer() {
   return (
-    <footer className="section-dark">
-      <div className="mx-auto max-w-4xl px-6 pt-12 pb-6">
-        {/* Colophon editorial — tipo masthead de revista */}
-        <div className="grid md:grid-cols-12 gap-6 md:gap-8 pb-8 border-b border-papel/10">
-          <div className="md:col-span-5">
+    <footer className="section-dark border-t border-papel/10">
+      <div className="mx-auto max-w-5xl px-6 py-8 md:py-10">
+        {/* Top row: brand + email inline masthead */}
+        <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-3 sm:gap-6">
+          <div className="flex items-baseline gap-4 flex-wrap">
             <Logo invert />
-            <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.3em] text-lacre">
-              Colofón
-            </p>
-            <p className="mt-4 text-base text-ceniza leading-relaxed">
-              Tramarca. Estudio editorial de manuales de marca.
-              <br />
-              Precio cerrado, plazo publicado, sistema documentado.
-              <br />
-              Si necesitas verlos antes de creerte nada, están{" "}
-              <Link
-                href="/manuales"
-                className="text-papel underline decoration-lacre decoration-2 underline-offset-4 hover:text-lacre transition-colors"
-              >
-                aquí
-              </Link>
-              <span className="text-lacre">.</span>
+            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-piedra-light">
+              Estudio editorial <span className="text-lacre">·</span> Madrid
             </p>
           </div>
-
-          <div className="md:col-span-3">
-            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-lacre mb-4">
-              Índice
-            </p>
-            <ul className="space-y-2.5 text-sm">
-              <li>
-                <Link href="/manuales" className="text-ceniza hover:text-lacre transition-colors">
-                  Manuales
-                </Link>
-              </li>
-              <li>
-                <Link href="/anatomia" className="text-ceniza hover:text-lacre transition-colors">
-                  Anatomía
-                </Link>
-              </li>
-              <li>
-                <Link href="/precios" className="text-ceniza hover:text-lacre transition-colors">
-                  Precios
-                </Link>
-              </li>
-              <li>
-                <Link href="/sobre" className="text-ceniza hover:text-lacre transition-colors">
-                  Nosotros
-                </Link>
-              </li>
-              <li>
-                <Link href="/contacto" className="text-ceniza hover:text-lacre transition-colors">
-                  Contacto
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="md:col-span-2">
-            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-lacre mb-4">
-              Legal
-            </p>
-            <ul className="space-y-2.5 text-sm">
-              <li>
-                <Link href="/aviso-legal" className="text-ceniza hover:text-lacre transition-colors">
-                  Aviso legal
-                </Link>
-              </li>
-              <li>
-                <Link href="/privacidad" className="text-ceniza hover:text-lacre transition-colors">
-                  Privacidad
-                </Link>
-              </li>
-              <li>
-                <Link href="/cookies" className="text-ceniza hover:text-lacre transition-colors">
-                  Cookies
-                </Link>
-              </li>
-              <li>
-                <Link href="/condiciones" className="text-ceniza hover:text-lacre transition-colors">
-                  Condiciones
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <div className="md:col-span-2">
-            <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-lacre mb-4">
-              Contacto
-            </p>
-            <ul className="space-y-2.5 text-sm">
-              <li>
-                <a
-                  href="mailto:hola@tramarca.es"
-                  className="text-ceniza hover:text-lacre transition-colors break-words"
-                >
-                  hola@tramarca.es
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://www.linkedin.com/company/tramarca"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-ceniza hover:text-lacre transition-colors"
-                >
-                  LinkedIn ↗
-                </a>
-              </li>
-            </ul>
-          </div>
+          <a
+            href="mailto:hola@tramarca.es"
+            className="font-black text-base md:text-lg text-papel hover:text-lacre transition-colors tracking-tight shrink-0"
+          >
+            hola@tramarca.es<span className="text-lacre">.</span>
+          </a>
         </div>
 
-        {/* Copyright line */}
-        <div className="mt-8 pt-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra-light">
-            © {YEAR} Tramarca. Todos los derechos reservados.
-          </p>
-          <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-piedra-light">
-            Madrid <span className="text-lacre">·</span> España
+        {/* Middle row: nav + legal inline flex-wrap */}
+        <nav
+          aria-label="Navegación del pie"
+          className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-ceniza"
+        >
+          {navLinks.map((l) => (
+            <Link key={l.href} href={l.href} className="hover:text-lacre transition-colors">
+              {l.label}
+            </Link>
+          ))}
+          <a
+            href="https://www.linkedin.com/company/tramarca"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-lacre transition-colors"
+          >
+            LinkedIn <span aria-hidden>↗</span>
+          </a>
+        </nav>
+
+        {/* Bottom: legal inline + copyright strip */}
+        <div className="mt-5 pt-5 border-t border-papel/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra-light">
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            {legalLinks.map((l) => (
+              <Link key={l.href} href={l.href} className="hover:text-lacre transition-colors">
+                {l.label}
+              </Link>
+            ))}
+          </div>
+          <p className="shrink-0">
+            © {YEAR} Tramarca<span className="text-lacre">.</span> Madrid <span className="text-lacre">·</span> Edición 1
           </p>
         </div>
       </div>

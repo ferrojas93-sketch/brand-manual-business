@@ -8,9 +8,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { jsonLdGraph, breadcrumbListSchema, techArticleSchema, SITE_URL } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Anatomía de un manual de marca — 12 capítulos, 48 componentes",
+  title: "Anatomía de un manual de marca — 16 capítulos, 48 componentes",
   description:
-    "Qué hay dentro de un manual de marca Tramarca: 12 capítulos, 48 componentes documentados, desglosados por tier — Esencial 490€, Profesional 990€, Premium 1.990€ IVA incl.",
+    "Qué hay dentro de un manual de marca Tramarca: 16 capítulos, 48 componentes documentados, desglosados por tier — Esencial 490€, Profesional 990€, Premium 1.990€ IVA incl.",
   alternates: { canonical: `${SITE_URL}/anatomia` },
 };
 
@@ -21,9 +21,9 @@ const schemaGraph = jsonLdGraph(
   ]),
   techArticleSchema({
     url: `${SITE_URL}/anatomia`,
-    name: "Anatomía de un manual de marca — 12 capítulos, 48 componentes",
+    name: "Anatomía de un manual de marca — 16 capítulos, 48 componentes",
     description:
-      "Documentación técnica de qué hay dentro de un manual de marca Tramarca. 12 capítulos y 48 componentes explicados por tier (Esencial, Profesional, Premium).",
+      "Documentación técnica de qué hay dentro de un manual de marca Tramarca. 16 capítulos y 48 componentes explicados por tier (Esencial, Profesional, Premium), alineados con el manual de marca propio publicado.",
     image: `${SITE_URL}/og-tramarca.jpg`,
   })
 );
@@ -67,7 +67,7 @@ export default function AnatomiaPage() {
                 Qué hay dentro de un manual<span className="text-lacre">.</span>
               </h1>
               <p className="mt-8 max-w-2xl text-lg md:text-xl text-ceniza leading-[1.55]">
-                Doce capítulos. {total} componentes. Ni uno de adorno<span className="text-lacre">.</span>
+                Dieciséis capítulos. {total} componentes. Ni uno de adorno<span className="text-lacre">.</span>
               </p>
               <div className="mt-10 grid grid-cols-3 gap-6 max-w-xl border-t border-papel/15 pt-6">
                 {TIERS.map((t, i) => (

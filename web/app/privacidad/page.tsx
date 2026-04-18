@@ -24,7 +24,7 @@ export default function PrivacidadPage() {
         <section>
           <h2 className="text-2xl font-black tracking-tight mb-3">1. Responsable del tratamiento</h2>
           <p>
-            Responsable: Fernando Rojas, titular de la marca comercial Tramarca. Contacto:{" "}
+            Responsable: Fernando Rojas Pacheco, titular de la marca comercial Tramarca. Contacto:{" "}
             <a href="mailto:hola@tramarca.es" className="underline hover:text-lacre">
               hola@tramarca.es
             </a>

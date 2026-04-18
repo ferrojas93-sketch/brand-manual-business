@@ -355,6 +355,49 @@ export function techArticleSchema(args: {
   };
 }
 
+export function articleSchema(args: {
+  url: string;
+  headline: string;
+  description: string;
+  image: string;
+  datePublished: string;
+  dateModified?: string;
+  author?: string;
+  keywords?: string[];
+  section?: string;
+}) {
+  return {
+    "@type": "Article",
+    "@id": `${args.url}#article`,
+    url: args.url,
+    headline: args.headline,
+    description: args.description,
+    image: args.image,
+    author:
+      args.author !== undefined
+        ? { "@type": "Organization", name: args.author }
+        : { "@id": `${SITE_URL}/#organization` },
+    publisher: { "@id": `${SITE_URL}/#organization` },
+    inLanguage: "es-ES",
+    datePublished: args.datePublished,
+    dateModified: args.dateModified ?? args.datePublished,
+    ...(args.keywords?.length ? { keywords: args.keywords.join(", ") } : {}),
+    ...(args.section ? { articleSection: args.section } : {}),
+    mainEntityOfPage: args.url,
+  };
+}
+
+export function faqPageSchema(items: Array<{ q: string; a: string }>) {
+  return {
+    "@type": "FAQPage",
+    mainEntity: items.map((it) => ({
+      "@type": "Question",
+      name: it.q,
+      acceptedAnswer: { "@type": "Answer", text: it.a },
+    })),
+  };
+}
+
 export function jsonLdGraph(...nodes: object[]) {
   return {
     "@context": "https://schema.org",

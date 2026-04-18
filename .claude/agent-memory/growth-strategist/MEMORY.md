@@ -1,0 +1,2 @@
+- [Tramarca pricing triggers (2026-04-16)](project_tramarca_pricing_triggers.md) — mantener 490/990/1990 hasta triggers de proof; NO subir Premium a 2490 ahora
+- [Tramarca growth loop #1 (2026-04-16)](project_tramarca_growth_loop_priority.md) — lead magnet manual gated + LinkedIn; kill a 8 semanas sin Founding cerrados

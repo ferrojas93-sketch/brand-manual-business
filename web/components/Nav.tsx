@@ -4,9 +4,10 @@ import { ButtonLink } from "./Button";
 import { MobileMenu } from "./MobileMenu";
 
 const LINKS = [
-  { href: "/manuales", label: "Manuales" },
   { href: "/anatomia", label: "Anatomía" },
   { href: "/precios", label: "Precios" },
+  { href: "/manuales", label: "Manuales" },
+  { href: "/blog", label: "Blog" },
   { href: "/sobre", label: "Nosotros" },
 ];
 
