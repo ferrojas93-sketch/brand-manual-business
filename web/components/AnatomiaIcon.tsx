@@ -5,8 +5,9 @@ const lacre = "#C4553A";
 const sw = 1.25;
 
 /**
- * 40 editorial SVG icons for /anatomia. Pentagram-meets-Swiss: thin black line + Lacre accent.
- * Slugs map 1:1 to the content array.
+ * 48 editorial SVG icons para /anatomia (16 capítulos alineados con manual Tramarca v4).
+ * Pentagram-meets-Swiss: thin black line + Lacre accent. Cada icono mapea 1:1 al slug del
+ * componente en `lib/anatomia.ts`.
  */
 export function AnatomiaIcon({ id, className = "" }: Props) {
   const common = {
@@ -20,8 +21,74 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
     "aria-hidden": true,
   };
   switch (id) {
-    // 01 FUNDAMENTOS
-    case "01-proposito":
+    // ═══ I · PROVOCACIÓN ═══
+    case "01-tesis":
+      return (
+        <svg {...common}>
+          <text x="60" y="40" fontFamily="Georgia" fontSize="30" fontWeight="900" textAnchor="middle" stroke="none" fill={stroke}>&ldquo;</text>
+          <line x1="24" y1="56" x2="96" y2="56" strokeWidth={2} />
+          <circle cx="100" cy="56" r="3.5" fill={lacre} stroke="none" />
+        </svg>
+      );
+    case "01-respuesta":
+      return (
+        <svg {...common}>
+          {[0, 1, 2, 3].map((i) => (
+            <g key={i} transform={`translate(${10 + i * 26} 20)`}>
+              <rect x="0" y="0" width="22" height="50" />
+              <rect x="4" y="6" width="14" height="4" fill={i === 1 ? lacre : stroke} stroke="none" />
+              <line x1="4" y1="18" x2="18" y2="18" strokeWidth={0.8} />
+              <line x1="4" y1="24" x2="14" y2="24" strokeWidth={0.8} />
+            </g>
+          ))}
+        </svg>
+      );
+    case "01-mercado":
+      return (
+        <svg {...common}>
+          <line x1="12" y1="78" x2="108" y2="78" />
+          {[0, 1, 2, 3].map((i) => {
+            const heights = [60, 30, 14, 42];
+            const x = 18 + i * 24;
+            const h = heights[i];
+            return <rect key={i} x={x} y={78 - h} width="16" height={h} fill={i === 3 ? lacre : stroke} stroke="none" />;
+          })}
+          <text x="88" y="12" fontFamily="monospace" fontSize="7" stroke="none" fill={lacre}>TM</text>
+        </svg>
+      );
+
+    // ═══ II · PERSONAS ═══
+    case "02-audiencia-interna":
+      return (
+        <svg {...common}>
+          <circle cx="60" cy="30" r="10" />
+          <path d="M42 72 Q60 50 78 72 Z" />
+          <circle cx="60" cy="30" r="3" fill={lacre} stroke="none" />
+          <line x1="12" y1="82" x2="108" y2="82" strokeWidth={0.8} strokeDasharray="2 2" />
+        </svg>
+      );
+    case "02-audiencia-externa":
+      return (
+        <svg {...common}>
+          <circle cx="30" cy="45" r="10" />
+          <circle cx="60" cy="45" r="10" fill={lacre} stroke="none" />
+          <circle cx="90" cy="45" r="10" />
+          <line x1="40" y1="45" x2="50" y2="45" strokeWidth={0.8} />
+          <line x1="70" y1="45" x2="80" y2="45" strokeWidth={0.8} />
+        </svg>
+      );
+    case "02-friccion":
+      return (
+        <svg {...common}>
+          <path d="M12 70 Q 30 30 60 60 Q 90 90 108 40" strokeWidth={1.6} />
+          <circle cx="60" cy="60" r="4" fill={lacre} stroke="none" />
+          <line x1="56" y1="56" x2="64" y2="64" stroke={lacre} strokeWidth={1.8} />
+          <line x1="64" y1="56" x2="56" y2="64" stroke={lacre} strokeWidth={1.8} />
+        </svg>
+      );
+
+    // ═══ III · FUNDAMENTOS ═══
+    case "03-proposito":
       return (
         <svg {...common}>
           <circle cx="60" cy="72" r="3" fill={lacre} stroke="none" />
@@ -29,7 +96,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <path d="M56 28 L60 22 L64 28" />
         </svg>
       );
-    case "01-vision":
+    case "03-vision":
       return (
         <svg {...common}>
           <path d="M15 45 Q60 10 105 45 Q60 80 15 45 Z" />
@@ -37,7 +104,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <circle cx="60" cy="45" r="4" fill="#F4F0EB" stroke="none" />
         </svg>
       );
-    case "01-valores":
+    case "03-valores":
       return (
         <svg {...common}>
           <ellipse cx="60" cy="20" rx="24" ry="5" />
@@ -46,7 +113,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <ellipse cx="60" cy="78" rx="26" ry="5.5" />
         </svg>
       );
-    case "01-personalidad":
+    case "03-personalidad":
       return (
         <svg {...common}>
           <path d="M60 10 L60 80" />
@@ -55,8 +122,8 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
         </svg>
       );
 
-    // 02 LOGO SYSTEM
-    case "02-marca-principal":
+    // ═══ IV · SISTEMA DE LOGO ═══
+    case "04-marca-principal":
       return (
         <svg {...common}>
           {[18, 36, 54, 72, 90, 108].map((x) => (
@@ -69,7 +136,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <circle cx="78" cy="56" r="2.5" fill={lacre} stroke="none" />
         </svg>
       );
-    case "02-variantes":
+    case "04-variantes":
       return (
         <svg {...common}>
           <rect x="8" y="30" width="30" height="30" />
@@ -81,7 +148,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <circle cx="100" cy="45" r="5" fill={lacre} stroke="none" />
         </svg>
       );
-    case "02-zona-exclusion":
+    case "04-zona-exclusion":
       return (
         <svg {...common}>
           <rect x="40" y="25" width="40" height="40" />
@@ -92,7 +159,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <line x1="82" y1="45" x2="88" y2="45" />
         </svg>
       );
-    case "02-usos-incorrectos":
+    case "04-usos-incorrectos":
       return (
         <svg {...common}>
           {[
@@ -112,15 +179,15 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
         </svg>
       );
 
-    // 03 TIPOGRAFÍA
-    case "03-display":
+    // ═══ V · TIPOGRAFÍA ═══
+    case "05-display":
       return (
         <svg {...common}>
           <text x="-8" y="80" fontFamily="Georgia, serif" fontSize="110" fontWeight="900" stroke="none" fill={stroke}>A</text>
           <circle cx="95" cy="72" r="3.5" fill={lacre} stroke="none" />
         </svg>
       );
-    case "03-texto":
+    case "05-texto":
       return (
         <svg {...common}>
           {[20, 32, 44, 56, 68].map((y, i) => (
@@ -128,7 +195,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           ))}
         </svg>
       );
-    case "03-jerarquia":
+    case "05-jerarquia":
       return (
         <svg {...common}>
           <rect x="15" y="12" width="90" height="9" fill={lacre} stroke="none" />
@@ -138,21 +205,9 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <rect x="15" y="70" width="28" height="3" fill={stroke} stroke="none" />
         </svg>
       );
-    case "03-escalas":
-      return (
-        <svg {...common}>
-          <line x1="25" y1="10" x2="25" y2="80" />
-          {[14, 22, 32, 44, 58, 74].map((y, i) => (
-            <g key={y}>
-              <line x1="25" y1={y} x2={25 + 6 + i * 2} y2={y} />
-              <line x1={40 + i * 4} y1={y} x2={70 + i * 6} y2={y} strokeWidth={1 + i * 0.4} stroke={i === 0 ? lacre : stroke} />
-            </g>
-          ))}
-        </svg>
-      );
 
-    // 04 COLOR
-    case "04-primarios":
+    // ═══ VI · COLOR ═══
+    case "06-primarios":
       return (
         <svg {...common}>
           <rect x="15" y="12" width="28" height="66" fill={stroke} stroke="none" />
@@ -161,20 +216,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <path d="M29 78 L29 83 M60 78 L60 82 M91 78 L91 84" stroke={stroke} />
         </svg>
       );
-    case "04-secundarios":
-      return (
-        <svg {...common}>
-          {[0, 1, 2].map((c) =>
-            [0, 1].map((r) => (
-              <g key={`${c}${r}`}>
-                <rect x={15 + c * 30} y={12 + r * 34} width="24" height="20" fill={r === 0 && c === 1 ? lacre : "none"} />
-                <line x1={15 + c * 30} y1={35 + r * 34} x2={39 + c * 30} y2={35 + r * 34} strokeWidth={0.8} />
-              </g>
-            )),
-          )}
-        </svg>
-      );
-    case "04-usos-jerarquia":
+    case "06-secundarios":
       return (
         <svg {...common}>
           <circle cx="60" cy="45" r="32" />
@@ -182,7 +224,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <path d="M60 45 L90 55 A 32 32 0 0 1 76 74 Z" fill={lacre} stroke="none" />
         </svg>
       );
-    case "04-valores-pantone":
+    case "06-valores-pantone":
       return (
         <svg {...common}>
           <rect x="28" y="12" width="64" height="66" fill={lacre} stroke="none" />
@@ -193,8 +235,8 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
         </svg>
       );
 
-    // 05 ICONOGRAFÍA
-    case "05-trazo":
+    // ═══ VII · ICONOGRAFÍA ═══
+    case "07-trazo":
       return (
         <svg {...common}>
           <path d="M30 65 L50 35 L70 55 L90 25" strokeWidth={2} />
@@ -202,18 +244,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <circle cx="90" cy="25" r="3" fill={lacre} stroke="none" />
         </svg>
       );
-    case "05-tamanos":
-      return (
-        <svg {...common}>
-          {[{ s: 6, x: 18 }, { s: 10, x: 38 }, { s: 14, x: 62 }, { s: 20, x: 92 }].map((c) => (
-            <circle key={c.x} cx={c.x} cy="40" r={c.s} />
-          ))}
-          {[18, 38, 62, 92].map((x) => (
-            <line key={x} x1={x} y1="72" x2={x} y2="76" />
-          ))}
-        </svg>
-      );
-    case "05-coleccion":
+    case "07-coleccion":
       return (
         <svg {...common}>
           {Array.from({ length: 9 }).map((_, i) => {
@@ -235,24 +266,9 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           })}
         </svg>
       );
-    case "05-icono-donts":
-      return (
-        <svg {...common}>
-          {[0, 1, 2, 3].map((i) => {
-            const x = 12 + (i % 4) * 26;
-            return (
-              <g key={i} transform={`translate(${x} 28)`}>
-                <rect x="0" y="0" width="22" height="22" />
-                <circle cx="11" cy="11" r="6" />
-                {i > 0 && <line x1="0" y1="0" x2="22" y2="22" stroke={lacre} strokeWidth={1.8} />}
-              </g>
-            );
-          })}
-        </svg>
-      );
 
-    // 06 FOTOGRAFÍA
-    case "06-direccion":
+    // ═══ VIII · FOTOGRAFÍA ═══
+    case "08-direccion":
       return (
         <svg {...common}>
           <rect x="18" y="12" width="84" height="66" />
@@ -262,7 +278,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <path d="M18 12 L26 12 L26 18 M112 6 L112 18 L102 18" transform="translate(-10 0)" />
         </svg>
       );
-    case "06-tratamiento":
+    case "08-tratamiento":
       return (
         <svg {...common}>
           <rect x="10" y="22" width="100" height="46" />
@@ -274,18 +290,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <rect x="76" y="28" width="28" height="34" />
         </svg>
       );
-    case "06-composicion":
-      return (
-        <svg {...common}>
-          <rect x="10" y="10" width="100" height="70" />
-          <line x1="43" y1="10" x2="43" y2="80" strokeDasharray="2 3" />
-          <line x1="76" y1="10" x2="76" y2="80" strokeDasharray="2 3" />
-          <line x1="10" y1="33" x2="110" y2="33" strokeDasharray="2 3" />
-          <line x1="10" y1="57" x2="110" y2="57" strokeDasharray="2 3" />
-          <circle cx="76" cy="33" r="4" fill={lacre} stroke="none" />
-        </svg>
-      );
-    case "06-moodboard":
+    case "08-moodboard":
       return (
         <svg {...common}>
           {Array.from({ length: 12 }).map((_, i) => {
@@ -297,15 +302,15 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
         </svg>
       );
 
-    // 07 VOZ
-    case "07-principios":
+    // ═══ IX · VOZ Y TONO ═══
+    case "09-principios":
       return (
         <svg {...common}>
           <text x="20" y="68" fontFamily="Georgia" fontSize="80" fontWeight="900" stroke="none" fill={stroke}>&ldquo;</text>
           <text x="62" y="68" fontFamily="Georgia" fontSize="80" fontWeight="900" stroke="none" fill={lacre}>&rdquo;</text>
         </svg>
       );
-    case "07-registro":
+    case "09-registro":
       return (
         <svg {...common}>
           <path d="M50 12 L50 60 C 50 70 55 78 60 78 C 65 78 70 70 70 60 L70 12" />
@@ -313,7 +318,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <circle cx="60" cy="40" r="3.5" fill={lacre} stroke="none" />
         </svg>
       );
-    case "07-glosario":
+    case "09-glosario":
       return (
         <svg {...common}>
           <path d="M18 20 L60 14 L102 20 L102 72 L60 68 L18 72 Z" />
@@ -321,7 +326,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <path d="M70 14 L70 38 L76 34 L82 38 L82 14" fill={lacre} stroke={lacre} />
         </svg>
       );
-    case "07-prohibidas":
+    case "09-prohibidas":
       return (
         <svg {...common}>
           {[22, 40, 58].map((y, i) => (
@@ -333,8 +338,8 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
         </svg>
       );
 
-    // 08 APLICACIONES
-    case "08-papeleria":
+    // ═══ X · APLICACIONES ═══
+    case "10-papeleria":
       return (
         <svg {...common}>
           <rect x="14" y="50" width="70" height="28" transform="rotate(-4 14 50)" />
@@ -345,7 +350,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <line x1="38" y1="54" x2="64" y2="54" strokeWidth={0.8} />
         </svg>
       );
-    case "08-digital":
+    case "10-digital":
       return (
         <svg {...common}>
           <rect x="10" y="18" width="60" height="44" rx="2" />
@@ -359,7 +364,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <line x1="84" y1="28" x2="94" y2="28" strokeWidth={0.8} />
         </svg>
       );
-    case "08-merch":
+    case "10-merch":
       return (
         <svg {...common}>
           <path d="M44 18 Q60 6 76 18" />
@@ -367,7 +372,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <circle cx="60" cy="48" r="6" fill={lacre} stroke="none" />
         </svg>
       );
-    case "08-senaletica":
+    case "10-senaletica":
       return (
         <svg {...common}>
           <line x1="40" y1="80" x2="40" y2="20" />
@@ -378,8 +383,8 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
         </svg>
       );
 
-    // 09 ARCHITECTURE
-    case "09-marca-producto":
+    // ═══ XI · ARQUITECTURA ═══
+    case "11-marca-producto":
       return (
         <svg {...common}>
           <circle cx="60" cy="18" r="8" fill={lacre} stroke="none" />
@@ -393,7 +398,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <circle cx="90" cy="62" r="6" />
         </svg>
       );
-    case "09-co-branding":
+    case "11-co-branding":
       return (
         <svg {...common}>
           <circle cx="46" cy="45" r="26" />
@@ -401,32 +406,9 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <path d="M60 22 A 26 26 0 0 1 60 68 A 26 26 0 0 1 60 22 Z" fill={lacre} fillOpacity="0.18" stroke="none" />
         </svg>
       );
-    case "09-submarcas":
-      return (
-        <svg {...common}>
-          <rect x="10" y="28" width="28" height="34" />
-          <text x="24" y="52" fontFamily="Georgia" fontSize="16" fontWeight="900" textAnchor="middle" stroke="none" fill={stroke}>T</text>
-          <line x1="38" y1="45" x2="54" y2="45" />
-          {[0, 1, 2].map((i) => (
-            <g key={i} transform={`translate(${54 + i * 20} 34)`}>
-              <rect x="0" y="0" width="16" height="22" />
-              <circle cx="8" cy="11" r="3" fill={i === 1 ? lacre : stroke} stroke="none" />
-            </g>
-          ))}
-        </svg>
-      );
-    case "09-endorsement":
-      return (
-        <svg {...common}>
-          <rect x="25" y="18" width="70" height="44" />
-          <text x="60" y="50" fontFamily="Georgia" fontSize="26" fontWeight="900" textAnchor="middle" stroke="none" fill={stroke}>T</text>
-          <line x1="35" y1="72" x2="85" y2="72" stroke={lacre} strokeWidth={2.5} />
-          <text x="60" y="82" fontFamily="monospace" fontSize="5" textAnchor="middle" stroke="none" fill={lacre}>BY TRAMARCA</text>
-        </svg>
-      );
 
-    // 10 GOVERNANCE
-    case "10-checklist":
+    // ═══ XII · GOVERNANCE ═══
+    case "12-checklist":
       return (
         <svg {...common}>
           <rect x="22" y="10" width="76" height="70" />
@@ -441,7 +423,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           ))}
         </svg>
       );
-    case "10-aprobacion":
+    case "12-aprobacion":
       return (
         <svg {...common}>
           <path d="M40 12 L40 36 L32 40 L32 50 L88 50 L88 40 L80 36 L80 12" />
@@ -449,7 +431,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <text x="60" y="72" fontFamily="monospace" fontSize="6" textAnchor="middle" stroke="none" fill="#F4F0EB">OK</text>
         </svg>
       );
-    case "10-versionado":
+    case "12-versionado":
       return (
         <svg {...common}>
           <rect x="14" y="50" width="36" height="30" />
@@ -459,19 +441,9 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <path d="M24 48 L28 44 L32 48 M52 32 L56 28 L60 32 M84 16 L88 12 L92 16" />
         </svg>
       );
-    case "10-formacion":
-      return (
-        <svg {...common}>
-          <rect x="52" y="18" width="16" height="18" fill={lacre} stroke="none" />
-          <line x1="60" y1="36" x2="60" y2="44" />
-          <line x1="20" y1="44" x2="100" y2="44" />
-          {[30, 46, 62, 78, 94].map((x) => (
-            <circle key={x} cx={x} cy="60" r="5" />
-          ))}
-        </svg>
-      );
-    // 11 MOVIMIENTO
-    case "11-motion-logo":
+
+    // ═══ XIII · MARCA EN MOVIMIENTO ═══
+    case "13-motion-logo":
       return (
         <svg {...common}>
           <circle cx="32" cy="45" r="10" strokeDasharray="1 3" opacity="0.4" />
@@ -481,7 +453,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <path d="M98 42 L104 45 L98 48" strokeWidth={1} />
         </svg>
       );
-    case "11-microinteracciones":
+    case "13-microinteracciones":
       return (
         <svg {...common}>
           <rect x="22" y="30" width="76" height="30" rx="3" />
@@ -491,7 +463,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <line x1="60" y1="45" x2="90" y2="45" strokeWidth={1} />
         </svg>
       );
-    case "11-video":
+    case "13-video":
       return (
         <svg {...common}>
           <rect x="14" y="20" width="92" height="50" />
@@ -502,20 +474,9 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <rect x="102" y="20" width="4" height="50" fill={stroke} stroke="none" opacity="0.4" />
         </svg>
       );
-    case "11-audio":
-      return (
-        <svg {...common}>
-          {[20, 32, 44, 56, 68, 80, 92, 104].map((x, i) => {
-            const heights = [18, 34, 52, 26, 44, 62, 30, 20];
-            const h = heights[i];
-            const y = 45 - h / 2;
-            return <rect key={x} x={x - 2} y={y} width="3" height={h} fill={i === 5 ? lacre : stroke} stroke="none" />;
-          })}
-        </svg>
-      );
 
-    // 12 EXTENSIONES
-    case "12-accesibilidad":
+    // ═══ XIV · EXTENSIONES ═══
+    case "14-accesibilidad":
       return (
         <svg {...common}>
           <circle cx="60" cy="45" r="30" />
@@ -525,7 +486,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <path d="M90 40 A 30 30 0 0 1 90 60" stroke={lacre} strokeWidth={1.8} />
         </svg>
       );
-    case "12-digital-ui":
+    case "14-digital-ui":
       return (
         <svg {...common}>
           <rect x="10" y="14" width="100" height="62" rx="2" />
@@ -539,7 +500,7 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <line x1="60" y1="64" x2="88" y2="64" strokeWidth={0.8} />
         </svg>
       );
-    case "12-territorial":
+    case "14-territorial":
       return (
         <svg {...common}>
           <circle cx="60" cy="45" r="30" />
@@ -550,11 +511,55 @@ export function AnatomiaIcon({ id, className = "" }: Props) {
           <circle cx="60" cy="45" r="3" fill={lacre} stroke="none" />
         </svg>
       );
-    case "12-legal":
+
+    // ═══ XV · SERVICIO ═══
+    case "15-proceso":
       return (
         <svg {...common}>
-          <path d="M60 10 L88 22 L88 44 Q 88 68 60 80 Q 32 68 32 44 L32 22 Z" />
-          <text x="60" y="54" fontFamily="Georgia" fontSize="26" fontWeight="900" textAnchor="middle" stroke="none" fill={lacre}>®</text>
+          {[0, 1, 2, 3, 4].map((i) => {
+            const x = 16 + i * 22;
+            return (
+              <g key={i}>
+                <circle cx={x} cy="45" r="6" fill={i === 4 ? lacre : "none"} stroke={stroke} />
+                <text x={x} y="47" fontFamily="monospace" fontSize="4.5" textAnchor="middle" stroke="none" fill={i === 4 ? "#F4F0EB" : stroke}>0{i + 1}</text>
+                {i < 4 && <line x1={x + 6} y1="45" x2={x + 16} y2="45" strokeWidth={0.8} />}
+              </g>
+            );
+          })}
+        </svg>
+      );
+    case "15-entrega":
+      return (
+        <svg {...common}>
+          <path d="M60 16 L96 30 L96 62 L60 78 L24 62 L24 30 Z" />
+          <path d="M24 30 L60 46 L96 30" strokeWidth={0.8} />
+          <line x1="60" y1="46" x2="60" y2="78" strokeWidth={0.8} />
+          <circle cx="60" cy="46" r="3" fill={lacre} stroke="none" />
+        </svg>
+      );
+    case "15-post-entrega":
+      return (
+        <svg {...common}>
+          <circle cx="60" cy="45" r="28" />
+          <path d="M60 17 A 28 28 0 0 1 88 45" stroke={lacre} strokeWidth={2.5} />
+          <path d="M82 38 L88 45 L95 38" stroke={lacre} strokeWidth={1.8} />
+          <text x="60" y="52" fontFamily="monospace" fontSize="10" fontWeight="700" textAnchor="middle" stroke="none" fill={stroke}>30d</text>
+        </svg>
+      );
+
+    // ═══ XVI · PORTFOLIO ═══
+    case "16-casos":
+      return (
+        <svg {...common}>
+          {[0, 1, 2, 3, 4].map((i) => {
+            const y = 12 + i * 14;
+            return (
+              <g key={i}>
+                <rect x="20" y={y} width="16" height="10" fill={i === 4 ? lacre : "none"} stroke={stroke} />
+                <line x1="40" y1={y + 5} x2="92" y2={y + 5} strokeWidth={0.8} />
+              </g>
+            );
+          })}
         </svg>
       );
 

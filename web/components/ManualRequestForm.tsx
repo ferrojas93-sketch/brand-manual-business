@@ -35,19 +35,46 @@ export function ManualRequestForm({ compact = false }: { compact?: boolean }) {
   const [turnstileToken, setTurnstileToken] = useState<string>("");
   const turnstileRef = useRef<TurnstileInstance | null>(null);
 
+  async function waitForTurnstileToken(timeoutMs = 10000): Promise<string> {
+    if (turnstileToken) return turnstileToken;
+    // Fuerza ejecución del challenge (invisible mode no se auto-ejecuta en todos los browsers)
+    turnstileRef.current?.execute();
+    return new Promise<string>((resolve, reject) => {
+      const start = Date.now();
+      const interval = setInterval(() => {
+        if (turnstileToken) {
+          clearInterval(interval);
+          resolve(turnstileToken);
+        } else if (Date.now() - start > timeoutMs) {
+          clearInterval(interval);
+          reject(new Error("turnstile_timeout"));
+        }
+      }, 200);
+    });
+  }
+
   async function onSubmit(data: FormValues) {
     if (data.honeypot) {
       setStatus("sent");
       return;
     }
-    if (TURNSTILE_SITE_KEY && !turnstileToken) {
-      setStatus("awaiting-turnstile");
-      setErrorMsg("Verificación anti-bot en curso — inténtalo en 1-2 segundos.");
-      return;
-    }
 
     setStatus("sending");
     setErrorMsg("");
+
+    let token = turnstileToken;
+    if (TURNSTILE_SITE_KEY && !token) {
+      try {
+        setStatus("awaiting-turnstile");
+        token = await waitForTurnstileToken();
+        setStatus("sending");
+      } catch {
+        setStatus("error");
+        setErrorMsg("Verificación anti-bot fallida. Recarga la página e inténtalo de nuevo.");
+        return;
+      }
+    }
+
     try {
       const res = await fetch("/api/lead/manual-request", {
         method: "POST",
@@ -55,7 +82,7 @@ export function ManualRequestForm({ compact = false }: { compact?: boolean }) {
         body: JSON.stringify({
           email: data.email,
           consent: data.consent,
-          turnstileToken,
+          turnstileToken: token,
           honeypot: data.honeypot,
         }),
       });
@@ -193,8 +220,14 @@ export function ManualRequestForm({ compact = false }: { compact?: boolean }) {
                 setErrorMsg("");
               }
             }}
-            onExpire={() => setTurnstileToken("")}
-            options={{ size: "invisible", theme: "light" }}
+            onError={() => {
+              setTurnstileToken("");
+            }}
+            onExpire={() => {
+              setTurnstileToken("");
+              turnstileRef.current?.reset();
+            }}
+            options={{ theme: "light", appearance: "interaction-only" }}
           />
         )}
 
