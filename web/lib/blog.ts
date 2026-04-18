@@ -61,7 +61,7 @@ export const POSTS: BlogPost[] = [
       "De NASA 1976 a Stripe Press 2019: quince manuales editoriales que cambiaron cómo se documenta una identidad visual. El canon contemporáneo en orden cronológico.",
     heroImage: {
       src: "/blog/mejores-manuales-de-marca-historia/hero.jpg",
-      alt: "Stack editorial de cinco manuales Tramarca apilados con dots Lacre — canon del documentation design, fig. 01",
+      alt: "Timeline editorial de los mejores manuales de marca famosos desde 1956 hasta 2026 — IBM, Lufthansa, NASA, FedEx, Apple, Mailchimp, Stripe Press y Tramarca v4",
       caption: "Fig. 01 · El canon editorial del documentation design.",
     },
     publishedAt: "2026-06-12",
@@ -111,7 +111,7 @@ export const POSTS: BlogPost[] = [
       "Proceso real de producción editorial en 8 pasos: brief, auditoría, fundamentos, sistema visual, voz, aplicaciones, guidelines y empaquetado. Con tiempos honestos por modelo.",
     heroImage: {
       src: "/blog/como-hacer-manual-de-marca-paso-a-paso/hero.jpg",
-      alt: "Manos revisando una página de manual de marca en el estudio — proceso editorial en 8 pasos, fig. 01",
+      alt: "Cómo hacer un manual de marca paso a paso — ocho pasos editoriales numerados 01 → 08 con tiempos y entregables documentados",
       caption: "Fig. 01 · Ocho pasos, tiempos documentados.",
     },
     publishedAt: "2026-05-22",
@@ -164,7 +164,7 @@ export const POSTS: BlogPost[] = [
       "El manual editorial que redefinió la documentación de identidad visual. Danne y Blackburn documentaron NASA en 90 páginas publicadas en 1976. Análisis completo.",
     heroImage: {
       src: "/blog/nasa-graphics-standards-manual-1976/hero.jpg",
-      alt: "Hero editorial dark con detalle de anatomía — referencia archivística del manual NASA 1976, fig. 01",
+      alt: "NASA Graphics Standards Manual 1976 — homenaje al logotipo Worm rojo lacre diseñado por Danne y Blackburn, canon editorial del documentation design",
       caption: "Fig. 01 · El manual que definió el canon editorial.",
     },
     publishedAt: "2026-05-15",
@@ -214,7 +214,7 @@ export const POSTS: BlogPost[] = [
       "Brand book es aspiracional, manual de marca es operativo. Tabla comparativa con 15 dimensiones, árbol de decisión en 60 segundos y 4 escenarios según tu caso.",
     heroImage: {
       src: "/blog/manual-marca-vs-brand-book/hero.jpg",
-      alt: "Spread editorial de manual de marca abierto con retícula y construcción tipográfica — brand book vs manual, fig. 01",
+      alt: "Manual de marca vs brand book — comparativa editorial split: brand book inspiracional (40-120pp) vs manual de marca operativo (20-50pp)",
       caption: "Fig. 01 · Dos documentos, dos propósitos.",
     },
     publishedAt: "2026-05-08",
@@ -267,7 +267,7 @@ export const POSTS: BlogPost[] = [
       "Un manual de marca es un documento operativo de 20-50 páginas que fija por escrito cómo se aplica una identidad visual y verbal. Qué incluye, qué no, cuándo lo necesitas.",
     heroImage: {
       src: "/blog/que-es-un-manual-de-marca/hero.jpg",
-      alt: "Anatomía de un manual de marca — spread editorial con retícula, 48 componentes documentados, fig. 01",
+      alt: "Qué es un manual de marca — definición operativa como sistema documentado de identidad visual y verbal, 20-50 páginas con 48 componentes",
       caption: "Fig. 01 · Documento operativo, no decoración.",
     },
     publishedAt: "2026-05-02",
@@ -321,7 +321,7 @@ export const POSTS: BlogPost[] = [
       "Rangos reales 2026 de agencia tradicional, freelance, plantilla y estudio productizado. Qué incluye cada precio, qué deberías evitar, cómo elegir.",
     heroImage: {
       src: "/blog/cuanto-cuesta-manual-de-marca-espana-2026/hero.jpg",
-      alt: "Detalle de encuadernación editorial de manual de marca — el objeto tangible que se paga, fig. 01",
+      alt: "Cuánto cuesta un manual de marca en España 2026 — rangos reales 490€ Esencial a 1.990€ Premium IVA incluido con plazo publicado",
       caption: "Fig. 01 · Lo que pagas es un objeto defendible.",
     },
     publishedAt: "2026-05-01",
