@@ -120,8 +120,11 @@ export default function CondicionesPage() {
         <section>
           <h2 className="text-2xl font-black tracking-tight mb-3">7. Cancelación y desistimiento</h2>
           <p>
-            <strong>Antes del kickoff:</strong> el cliente puede cancelar sin penalización y
-            se devuelve el 100% del primer pago.
+            <strong>Antes del kickoff:</strong> una vez recibido el primer pago y firmado
+            el brief, el cliente puede cancelar el encargo sin obligación de afrontar el
+            segundo pago. El primer pago cubre los trabajos preparatorios ya iniciados
+            (revisión del brief, planificación de producción y bloqueo de calendario) y
+            no es reembolsable.
           </p>
           <p className="mt-3">
             <strong>Tras el kickoff:</strong> Tramarca retiene el 50% ya abonado en concepto
