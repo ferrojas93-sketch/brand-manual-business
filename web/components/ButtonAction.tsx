@@ -1,6 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { ComponentProps } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type Variant = "primary" | "secondary" | "ghost" | "invert";
 type Size = "md" | "lg";
@@ -29,33 +32,56 @@ type BaseProps = {
   children: React.ReactNode;
 };
 
-/**
- * ButtonLink — Server Component puro. Usar para CTAs sin tracking Plausible.
- * Para tracking onClick, usar `ButtonLinkTracked` desde `./ButtonAction`.
- *
- * API compat: acepta `trackAs` y `trackProps` como props opcionales pero los ignora.
- * Si el build detecta `trackAs` en consumo, re-export desde ButtonAction asume que
- * el consumer moverá la import a `ButtonLinkTracked` (recomendado para eliminar
- * client boundary donde no haga falta).
- */
-export function ButtonLink({
-  href,
+/** Native HTML button. Requires client boundary porque `<button onClick>` lo exige. */
+export function Button({
   variant = "primary",
   size = "md",
   className,
   children,
   ...rest
-}: BaseProps & Omit<ComponentProps<typeof Link>, "className" | "children">) {
+}: BaseProps & ComponentProps<"button">) {
+  return (
+    <button
+      {...rest}
+      className={cn(baseStyles, variantStyles[variant], sizeStyles[size], className)}
+    >
+      {children}
+    </button>
+  );
+}
+
+/** ButtonLink con Plausible tracking onClick. Solo usar cuando hay `trackAs`. */
+export function ButtonLinkTracked({
+  href,
+  variant = "primary",
+  size = "md",
+  className,
+  children,
+  trackAs,
+  trackProps,
+  onClick,
+  ...rest
+}: BaseProps &
+  Omit<ComponentProps<typeof Link>, "className" | "children"> & {
+    /** Event name for Plausible custom tracking. Se dispara onClick. */
+    trackAs?: string;
+    trackProps?: Record<string, string | number | boolean>;
+  }) {
+  const handleClick = trackAs
+    ? (e: React.MouseEvent<HTMLAnchorElement>) => {
+        trackEvent(trackAs, trackProps);
+        onClick?.(e);
+      }
+    : onClick;
+
   return (
     <Link
       href={href}
       {...rest}
+      onClick={handleClick}
       className={cn(baseStyles, variantStyles[variant], sizeStyles[size], className)}
     >
       {children}
     </Link>
   );
 }
-
-// Re-exports para consumidores que necesitan interactividad (client boundary)
-export { Button, ButtonLinkTracked } from "./ButtonAction";

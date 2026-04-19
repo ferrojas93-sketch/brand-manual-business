@@ -3,11 +3,19 @@
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
+import dynamic from "next/dynamic";
 import { useRef, useState } from "react";
-import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import type { TurnstileInstance } from "@marsidev/react-turnstile";
 import { Button } from "./Button";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+
+// Turnstile solo se carga cuando el usuario interactúa con el form (focus email).
+// Ahorra ~30-50KB + challenge JS del bundle crítico en el initial paint.
+const Turnstile = dynamic(
+  () => import("@marsidev/react-turnstile").then((m) => m.Turnstile),
+  { ssr: false }
+);
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
@@ -33,6 +41,7 @@ export function ManualRequestForm({ compact = false }: { compact?: boolean }) {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
   const [turnstileToken, setTurnstileToken] = useState<string>("");
+  const [turnstileMounted, setTurnstileMounted] = useState<boolean>(false);
   const turnstileRef = useRef<TurnstileInstance | null>(null);
 
   async function waitForTurnstileToken(timeoutMs = 15000): Promise<string> {
@@ -74,6 +83,12 @@ export function ManualRequestForm({ compact = false }: { compact?: boolean }) {
 
     setStatus("sending");
     setErrorMsg("");
+
+    // Safety net: si el usuario pega email y submit sin focus previo,
+    // garantizamos que Turnstile se monta antes de pedirle token.
+    if (TURNSTILE_SITE_KEY && !turnstileMounted) {
+      setTurnstileMounted(true);
+    }
 
     let token = turnstileToken;
     if (TURNSTILE_SITE_KEY && !token) {
@@ -184,6 +199,7 @@ export function ManualRequestForm({ compact = false }: { compact?: boolean }) {
             autoComplete="email"
             placeholder="tu@empresa.com"
             {...register("email")}
+            onFocus={() => setTurnstileMounted(true)}
             className="w-full bg-arena/40 border border-negro/15 px-4 py-3 text-base text-negro placeholder:text-piedra-light focus:outline-none focus:border-lacre"
           />
           {errors.email && (
@@ -227,7 +243,7 @@ export function ManualRequestForm({ compact = false }: { compact?: boolean }) {
           aria-hidden="true"
         />
 
-        {TURNSTILE_SITE_KEY && (
+        {TURNSTILE_SITE_KEY && turnstileMounted && (
           <Turnstile
             ref={turnstileRef}
             siteKey={TURNSTILE_SITE_KEY}

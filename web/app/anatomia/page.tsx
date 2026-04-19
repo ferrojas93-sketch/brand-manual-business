@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ButtonLink } from "@/components/Button";
+import { ButtonLink, ButtonLinkTracked } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { AnatomiaIcon } from "@/components/AnatomiaIcon";
 import { ANATOMIA, TIER_LABEL, type Tier } from "@/lib/anatomia";
@@ -278,7 +278,7 @@ export default function AnatomiaPage() {
             </h2>
           </div>
           <div className="md:col-span-5 flex flex-col sm:flex-row md:justify-end gap-4">
-            <ButtonLink
+            <ButtonLinkTracked
               href="/contacto"
               variant="primary"
               size="lg"
@@ -286,8 +286,8 @@ export default function AnatomiaPage() {
               trackProps={{ location: "anatomia_cierre" }}
             >
               Pedir propuesta →
-            </ButtonLink>
-            <ButtonLink
+            </ButtonLinkTracked>
+            <ButtonLinkTracked
               href="/precios"
               variant="ghost"
               size="lg"
@@ -296,7 +296,7 @@ export default function AnatomiaPage() {
               trackProps={{ location: "anatomia_cierre" }}
             >
               Ver precios
-            </ButtonLink>
+            </ButtonLinkTracked>
           </div>
         </div>
       </section>

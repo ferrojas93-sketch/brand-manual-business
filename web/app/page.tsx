@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { FileText, ClipboardCheck, PenTool, MessagesSquare, PackageCheck } from "lucide-react";
-import { ButtonLink } from "@/components/Button";
+import { ButtonLink, ButtonLinkTracked } from "@/components/Button";
 import { PricingCards } from "@/components/PricingCards";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { JsonLd } from "@/components/JsonLd";
@@ -170,7 +170,7 @@ export default function HomePage() {
               </div>
 
               <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                <ButtonLink
+                <ButtonLinkTracked
                   href="/contacto"
                   variant="primary"
                   size="lg"
@@ -179,8 +179,8 @@ export default function HomePage() {
                   trackProps={{ location: "home_hero" }}
                 >
                   Pedir propuesta en 24h →
-                </ButtonLink>
-                <ButtonLink
+                </ButtonLinkTracked>
+                <ButtonLinkTracked
                   href="/trabajos"
                   variant="ghost"
                   size="lg"
@@ -189,7 +189,7 @@ export default function HomePage() {
                   trackProps={{ location: "home_hero" }}
                 >
                   Ver 5 manuales publicados →
-                </ButtonLink>
+                </ButtonLinkTracked>
               </div>
 
               <div className="mt-14 grid grid-cols-3 gap-4 max-w-xl border-t-2 border-negro pt-5">
@@ -214,8 +214,8 @@ export default function HomePage() {
             {/* Right column — editorial collage of 3 images (what we are) */}
             <div className="lg:col-span-5 relative">
               <div className="relative grid grid-cols-6 grid-rows-6 gap-3 md:gap-4 min-h-[520px] lg:min-h-[720px]">
-                {/* Image 1 — manual spread (retícula + M) */}
-                <figure className="col-span-6 row-span-4 relative overflow-hidden bg-arena">
+                {/* Image 1 — manual spread (retícula + M) · única en mobile para reducir LCP */}
+                <figure className="col-span-6 row-span-6 lg:row-span-4 relative overflow-hidden bg-arena">
                   <Image
                     src="/hero/01-manual-spread.jpg"
                     alt="Manual de marca abierto — retícula modular y construcción tipográfica"
@@ -234,24 +234,24 @@ export default function HomePage() {
                   </figcaption>
                 </figure>
 
-                {/* Image 2 — wax seal (lacre literal) */}
-                <figure className="col-span-3 row-span-2 relative overflow-hidden bg-arena">
+                {/* Image 2 — wax seal (lacre literal) · ≥lg para ahorrar bandwidth mobile */}
+                <figure className="hidden lg:block lg:col-span-3 lg:row-span-2 relative overflow-hidden bg-arena">
                   <Image
                     src="/hero/02-wax-seal.jpg"
                     alt="Sello de lacre imprimiéndose sobre papel crema"
                     fill
-                    sizes="(min-width: 1024px) 21vw, 50vw"
+                    sizes="21vw"
                     className="object-cover"
                   />
                 </figure>
 
-                {/* Image 3 — desk flat-lay */}
-                <figure className="col-span-3 row-span-2 relative overflow-hidden bg-arena">
+                {/* Image 3 — desk flat-lay · ≥lg para ahorrar bandwidth mobile */}
+                <figure className="hidden lg:block lg:col-span-3 lg:row-span-2 relative overflow-hidden bg-arena">
                   <Image
                     src="/hero/03-desk-flatlay.jpg"
                     alt="Mesa de estudio editorial con pruebas tipográficas y muestras de color"
                     fill
-                    sizes="(min-width: 1024px) 21vw, 50vw"
+                    sizes="21vw"
                     className="object-cover"
                   />
                 </figure>
@@ -360,7 +360,7 @@ export default function HomePage() {
               a cliente.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <ButtonLink
+              <ButtonLinkTracked
                 href="/trabajos/tramarca"
                 variant="primary"
                 size="lg"
@@ -368,8 +368,8 @@ export default function HomePage() {
                 trackProps={{ location: "home_manual_section" }}
               >
                 Ver manual Tramarca (58pp) →
-              </ButtonLink>
-              <ButtonLink
+              </ButtonLinkTracked>
+              <ButtonLinkTracked
                 href="#pedir-manual"
                 variant="ghost"
                 size="lg"
@@ -377,7 +377,7 @@ export default function HomePage() {
                 trackProps={{ location: "home_manual_section" }}
               >
                 Descargar PDF
-              </ButtonLink>
+              </ButtonLinkTracked>
             </div>
           </div>
           <div className="relative aspect-[1756/1242] bg-papel border border-negro/15 overflow-hidden shadow-[0_30px_60px_-20px_rgba(12,12,12,0.3)]">
@@ -513,7 +513,7 @@ export default function HomePage() {
 
           <Reveal>
             <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-5">
-              <ButtonLink
+              <ButtonLinkTracked
                 href="/contacto"
                 variant="primary"
                 size="lg"
@@ -521,7 +521,7 @@ export default function HomePage() {
                 trackProps={{ location: "home_proceso" }}
               >
                 Empezar el brief →
-              </ButtonLink>
+              </ButtonLinkTracked>
               <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
                 Respuesta en &lt;24h laborables <span className="text-lacre">·</span> Todo por escrito
               </p>
@@ -784,7 +784,7 @@ export default function HomePage() {
             Si encaja, lo cerramos hoy.
           </p>
           <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ButtonLink
+            <ButtonLinkTracked
               href="/contacto"
               variant="invert"
               size="lg"
@@ -792,7 +792,7 @@ export default function HomePage() {
               trackProps={{ location: "home_cierre" }}
             >
               Pedir propuesta en 24h →
-            </ButtonLink>
+            </ButtonLinkTracked>
             <a
               href="mailto:hola@tramarca.es"
               className="font-mono text-sm text-ceniza hover:text-lacre transition-colors underline underline-offset-4"

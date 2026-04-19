@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { notFound, redirect } from "next/navigation";
 import { MANUALES, getManual } from "@/lib/manuales";
-import { ButtonLink } from "@/components/Button";
+import { ButtonLink, ButtonLinkTracked } from "@/components/Button";
 import { ManualRequestForm } from "@/components/ManualRequestForm";
 import { SITE_URL } from "@/lib/tiers";
 import { JsonLd } from "@/components/JsonLd";
@@ -280,7 +280,7 @@ export default async function ManualDetailPage({
             ¿Te encaja este tier?
           </h2>
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <ButtonLink
+            <ButtonLinkTracked
               href={tierPath}
               variant="invert"
               size="lg"
@@ -288,8 +288,8 @@ export default async function ManualDetailPage({
               trackProps={{ tier: tierLabel }}
             >
               Ver el tier {tierLabel} →
-            </ButtonLink>
-            <ButtonLink
+            </ButtonLinkTracked>
+            <ButtonLinkTracked
               href="/contacto"
               variant="ghost"
               size="lg"
@@ -297,7 +297,7 @@ export default async function ManualDetailPage({
               trackProps={{ location: "manual_detail_cierre" }}
             >
               Pedir propuesta
-            </ButtonLink>
+            </ButtonLinkTracked>
           </div>
         </div>
       </section>

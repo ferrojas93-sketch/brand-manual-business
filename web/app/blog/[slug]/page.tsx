@@ -4,7 +4,7 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { POSTS, getPost, CATEGORY_LABEL } from "@/lib/blog";
 import { getPostBody } from "@/content/blog";
-import { ButtonLink } from "@/components/Button";
+import { ButtonLink, ButtonLinkTracked } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/tiers";
 import {
@@ -212,7 +212,7 @@ export default async function BlogPostPage({
               Tres tiers · 490€ / 990€ / 1.990€ · IVA incluido · plazos publicados<span className="text-lacre">.</span>
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <ButtonLink
+              <ButtonLinkTracked
                 href="/contacto"
                 variant="invert"
                 size="lg"
@@ -220,8 +220,8 @@ export default async function BlogPostPage({
                 trackProps={{ location: "blog_cierre", slug: post.slug }}
               >
                 Pedir propuesta en 24h →
-              </ButtonLink>
-              <ButtonLink
+              </ButtonLinkTracked>
+              <ButtonLinkTracked
                 href="/precios"
                 variant="ghost"
                 size="lg"
@@ -229,7 +229,7 @@ export default async function BlogPostPage({
                 trackProps={{ location: "blog_cierre", slug: post.slug }}
               >
                 Ver precios
-              </ButtonLink>
+              </ButtonLinkTracked>
             </div>
           </div>
         </section>

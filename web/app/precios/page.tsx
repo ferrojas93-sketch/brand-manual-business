@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PricingCards } from "@/components/PricingCards";
 import { FaqAccordion } from "@/components/FaqAccordion";
-import { ButtonLink } from "@/components/Button";
+import { ButtonLink, ButtonLinkTracked } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/tiers";
 import { jsonLdGraph, serviceSchema, breadcrumbListSchema, productSchema } from "@/lib/schema";
@@ -419,7 +419,7 @@ export default function PreciosPage() {
             Tres tiers. Precios cerrados.
           </h2>
           <div className="mt-10">
-            <ButtonLink
+            <ButtonLinkTracked
               href="/contacto"
               variant="invert"
               size="lg"
@@ -427,7 +427,7 @@ export default function PreciosPage() {
               trackProps={{ location: "precios_cierre" }}
             >
               Pedir propuesta en 24h →
-            </ButtonLink>
+            </ButtonLinkTracked>
           </div>
           <p className="mt-6 font-mono text-xs text-piedra">
             Respondemos en menos de 24 horas laborables. Sí o no.
