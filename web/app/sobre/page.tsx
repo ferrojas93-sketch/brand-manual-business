@@ -101,7 +101,7 @@ export default function SobrePage() {
                 No son trucos de marketing. Son la manera en que trabajamos y lo que
                 deja un manual Tramarca frente a cualquier alternativa del mercado.
                 Las consecuencias visibles — precio cerrado, plazo publicado,
-                garantía — salen de aquí, no al revés<span className="text-lacre">.</span>
+                manual propio publicado — salen de aquí, no al revés<span className="text-lacre">.</span>
               </p>
             </div>
           </div>
@@ -149,22 +149,22 @@ export default function SobrePage() {
 
             <Reveal>
               <p className="text-2xl md:text-3xl font-black leading-[1.15] border-l-4 border-lacre pl-6 py-2 text-negro">
-                Garantía honesta: 50% si no convence<span className="text-lacre">.</span>
+                Manual propio publicado · transparencia editorial<span className="text-lacre">.</span>
               </p>
               <p className="mt-5">
-                Si tras la primera entrega el manual no resuelve lo que firmamos en
-                el brief, devolvemos el 50% del pago de kickoff dentro de los 14 días
-                siguientes. O sale el manual completo, o devolvemos: no entregamos a
-                medias. Queda por escrito en el contrato. La mayoría no la usa, pero
-                existe para que no tengas que confiar a ciegas<span className="text-lacre">.</span>
+                Aplicamos a nosotros mismos el mismo estándar que vendemos. Nuestro
+                manual de marca de 58 páginas es público — descargable tras dejar
+                tu email. Es el único caso del portfolio que puedes hojear antes
+                de hablar con nosotros. Si no nos lo aplicamos, no tenemos
+                autoridad moral para producirlo<span className="text-lacre">.</span>
               </p>
             </Reveal>
 
             <Reveal>
               <p className="text-base md:text-lg text-piedra italic border-t border-negro/15 pt-8">
-                El precio público con IVA incluido, los 5/7/10 días y la garantía del 50%
-                son consecuencia de estas cuatro decisiones — no la ventaja en sí. Si
-                entregamos deprisa y documentado, podemos permitirnos decirte el precio
+                El precio público con IVA incluido y los 5/7/10 días son consecuencia
+                de estas cuatro decisiones — no la ventaja en sí. Si entregamos
+                deprisa y documentado, podemos permitirnos decirte el precio
                 desde el minuto uno.
               </p>
             </Reveal>

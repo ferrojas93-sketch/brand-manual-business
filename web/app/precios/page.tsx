@@ -42,8 +42,8 @@ const pricingFaqs = [
     a: "Sí. Tras los primeros diez clientes revisamos tarifas al alza. El precio que se queda cerrado es el del kickoff: una vez firmas brief, tu tier está amarrado a su precio actual.",
   },
   {
-    q: "¿Hay garantía si no me convence?",
-    a: "Sí. Si tras la primera entrega consideras que el manual no resuelve lo que acordamos en el brief, reembolsamos el 50% del pago de kickoff dentro de los 14 días siguientes a la entrega. O sale el manual completo, o devolvemos: no entregamos a medias. Queda por escrito en el contrato.",
+    q: "¿Cómo aseguráis que el manual encaja con lo que necesito?",
+    a: "El brief firmado antes del kickoff define exactamente el scope acordado: 23 preguntas estructuradas en 5 bloques (negocio, audiencia, activos existentes, proveedores y casos de uso, tono y restricciones). Cualquier ajuste durante las 2 rondas de revisión incluidas se acota contra ese brief. Si quieres ver el cuestionario antes de contratar, escríbenos y te lo enviamos.",
   },
   {
     q: "¿Dónde se paga?",

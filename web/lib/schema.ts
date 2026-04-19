@@ -216,10 +216,10 @@ export const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "¿Hay garantía de devolución?",
+      name: "¿Cómo aseguráis que el manual encaja con lo que necesito?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí. Si tras la primera entrega el manual no resuelve el brief firmado, devolvemos el 50% del pago de kickoff dentro de los 14 días. O sale el manual completo, o devolvemos: no entregamos a medias.",
+        text: "El brief firmado antes del kickoff define el scope acordado · 23 preguntas en 5 bloques. Cualquier ajuste durante las 2 rondas de revisión incluidas se acota contra ese brief. Si quieres ver el cuestionario antes de contratar, escríbenos y te lo enviamos.",
       },
     },
     {

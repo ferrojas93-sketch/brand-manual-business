@@ -54,6 +54,107 @@ export type BlogPost = {
  */
 export const POSTS: BlogPost[] = [
   {
+    slug: "logos-secretos-tipograficos",
+    category: "curiosidades",
+    title: "Logos famosos con secretos tipográficos",
+    excerpt:
+      "Diez logos famosos esconden detalles visuales que la mayoría no nota: la flecha Amazon de A a Z, el oso de Berna en Toblerone, el 31 en Baskin-Robbins, el ciclista en Tour de France y seis más.",
+    heroImage: {
+      src: "/blog/logos-secretos-tipograficos/hero.jpg",
+      alt: "Logos famosos con secretos tipográficos ocultos — composición visual abstracta de letterforms y espacios negativos sugiriendo significados ocultos sobre concreto editorial",
+      caption: "Fig. 01 · Una vez vistos, no se pueden no ver.",
+    },
+    publishedAt: "2026-06-26",
+    readingMinutes: 14,
+    primaryKeyword: "logos con mensajes ocultos",
+    secondaryKeywords: [
+      "logos famosos secretos",
+      "FedEx flecha oculta",
+      "Amazon flecha A a Z",
+      "Toblerone oso Berna",
+      "Baskin Robbins 31",
+      "logos secretos tipograficos",
+    ],
+    metaTitle: "10 logos famosos con secretos tipográficos · Análisis editorial",
+    metaDescription:
+      "Diez logos famosos esconden detalles visuales: Amazon, Toblerone, Baskin-Robbins, Tour de France, NBC, LG, Hyundai, Carrefour, Beats, Wendy's. Análisis completo.",
+    author: "Tramarca",
+    tags: ["logos", "secretos", "espacio negativo", "curiosidades", "Pentagram"],
+    contentPath: "content/blog/logos-secretos-tipograficos.tsx",
+    faqs: [
+      {
+        q: "¿Qué logo famoso tiene la flecha más conocida escondida?",
+        a: "FedEx, diseñado por Lindon Leader en Landor Associates en 1994. La flecha aparece en el espacio negativo entre la letra E mayúscula y la x minúscula del wordmark. Es ejemplo canónico en escuelas de diseño del mundo. Lo cubrimos al detalle en nuestra pieza dedicada al logo FedEx.",
+      },
+      {
+        q: "¿Por qué Amazon tiene una sonrisa debajo del wordmark?",
+        a: "Anthony Biles en Turner Duckworth Londres diseñó el logo en 2000 con flecha curva que va de la 'a' a la 'z' del wordmark. Significado dual: literalmente conecta a-z (todo el alfabeto, todo el catálogo) mientras simultáneamente forma una sonrisa de satisfacción del cliente.",
+      },
+      {
+        q: "¿Hay un oso escondido en el logo Toblerone?",
+        a: "Sí. La silueta del Matterhorn (montaña suiza) que aparece en el logo Toblerone esconde un oso erguido sobre las patas traseras en el espacio negativo. Es referencia a Berna, ciudad de origen del chocolate (Bern significa 'oso' en alemán antiguo). Se añadió en el rediseño de 1970, no estaba en el logo original de 1908.",
+      },
+      {
+        q: "¿Es deliberado que los secretos aparezcan en logos famosos?",
+        a: "A veces sí, a veces no. La flecha FedEx fue accidente geométrico que Lindon Leader refinó deliberadamente al notarlo. El 31 de Baskin-Robbins fue intencional desde el rediseño 2005 de Lippincott. El 'mom' del logo Wendy's no fue intencional pero la marca lo capitalizó retrospectivamente. La regla: ojos entrenados reconocen secretos productivos cuando aparecen.",
+      },
+      {
+        q: "¿Debería mi logo tener un secret escondido?",
+        a: "No necesariamente. La mayoría de logos icónicos (Apple, Microsoft, IBM, Coca-Cola) funcionan perfectamente sin doble lectura visual. Los secretos integrados son herramienta opcional, no requisito. Y son contraproducentes si se fuerzan — los buenos secretos emergen del proceso de diseño riguroso, no se añaden como feature decorativa.",
+      },
+    ],
+  },
+  {
+    slug: "brief-manual-marca-cuestionario",
+    category: "proceso",
+    title: "El brief que firmamos antes de empezar",
+    excerpt:
+      "Las 23 preguntas reales del cuestionario Tramarca, agrupadas en cinco bloques. Por qué cada bloque importa, qué pasa con un brief débil, ejemplos brief sólido vs débil, y plantilla descargable.",
+    heroImage: {
+      src: "/blog/brief-manual-marca-cuestionario/hero.jpg",
+      alt: "Brief estructurado de manual de marca Tramarca con 23 preguntas en 5 bloques sobre concreto editorial — el documento operativo más importante del proceso",
+      caption: "Fig. 01 · 23 preguntas, 5 bloques, 30-50 minutos.",
+    },
+    publishedAt: "2026-06-19",
+    readingMinutes: 12,
+    primaryKeyword: "brief manual de marca",
+    secondaryKeywords: [
+      "cuestionario manual de marca",
+      "brief diseño marca",
+      "brief brand book",
+      "cuestionario brand brief",
+      "como hacer un brief de marca",
+    ],
+    metaTitle: "El brief que firmamos · 23 preguntas para tu manual de marca",
+    metaDescription:
+      "Las 23 preguntas reales del cuestionario brief de Tramarca, agrupadas en 5 bloques operativos. Por qué firmar brief antes del kickoff es regla no negociable.",
+    author: "Tramarca",
+    tags: ["brief", "proceso", "cuestionario", "metodología"],
+    contentPath: "content/blog/brief-manual-marca-cuestionario.tsx",
+    faqs: [
+      {
+        q: "¿Por qué hay que firmar el brief antes de empezar el proyecto?",
+        a: "Tres razones operativas: (1) impide la ingeniería especulativa basada en intuiciones de conversaciones informales — la conversación pasa de subjetiva a objetiva; (2) protege ambos lados ante scope creep — referencia escrita para decidir qué entra en el proyecto y qué se cotiza aparte; (3) obliga al cliente a articular sus requisitos antes de comprar, lo que produce claridad interna independientemente del manual posterior.",
+      },
+      {
+        q: "¿Cuántas preguntas debe tener un brief profesional?",
+        a: "Sweet spot: 20-30 preguntas estructuradas en 4-6 bloques temáticos. El cuestionario Tramarca tiene 23 preguntas en 5 bloques (negocio, audiencia, activos existentes, proveedores y casos de uso, tono y restricciones). Por debajo de 15 preguntas el brief es decorativo. Por encima de 50 está overengineered.",
+      },
+      {
+        q: "¿Qué pasa si no respondo bien el brief?",
+        a: "Tres consecuencias predecibles: iteración infinita en la dirección visual (sin referencias positivas/negativas claras), aplicaciones documentadas que no se usan (capítulos extensos sobre uso retail si no tienes presencia retail física), y plazo desbordado por scope mal acotado (restricciones legales/sectoriales que aparecen tarde).",
+      },
+      {
+        q: "¿Puedo usar este brief con otros proveedores?",
+        a: "Sí, lo distribuimos como plantilla pública gratuita. Escríbenos a hola@tramarca.es y te enviamos el link a la plantilla Notion completa. Creemos que mejorar el estándar de brief en el sector beneficia al mercado completo, independientemente de quién ejecute el manual posteriormente.",
+      },
+      {
+        q: "¿Cuánto tiempo lleva rellenar el brief?",
+        a: "Entre 30 y 50 minutos para clientes que tienen claridad sobre su negocio. Hasta 90 minutos para clientes que están articulando por primera vez algunos de los aspectos preguntados (audiencia operativa, proveedores externos planeados, restricciones sectoriales). El proceso mismo de rellenar produce claridad interna.",
+      },
+    ],
+  },
+  {
     slug: "fedex-flecha-oculta",
     category: "analisis",
     title: "La flecha oculta del logo FedEx",

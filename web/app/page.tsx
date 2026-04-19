@@ -76,8 +76,8 @@ const homeFaqs = [
     a: "Tramarca es un estudio productizado: scope cerrado, precio público, plazo publicado, entregables documentados. Una agencia tradicional hace discovery workshops, propuesta personalizada, pricing custom y timelines de 6-12 semanas. Ambos modelos son válidos según el caso. Tramarca encaja mejor para equipos que ya tienen claro el proyecto y prefieren claridad operativa. Para proyectos que necesitan un discovery profundo, una agencia tradicional puede ser mejor elección.",
   },
   {
-    q: "¿Hay garantía de devolución?",
-    a: "Sí. Si tras la primera entrega consideras que el manual no resuelve el brief firmado, devolvemos el 50% del pago de kickoff dentro de los 14 días siguientes a la entrega. O sale el manual completo, o devolvemos: no entregamos a medias. Queda por escrito en el contrato.",
+    q: "¿Cómo aseguráis que el manual encaja con lo que necesito?",
+    a: "El brief firmado antes del kickoff define exactamente el scope acordado: 23 preguntas estructuradas en 5 bloques. Cualquier ajuste durante las 2 rondas de revisión incluidas se acota contra ese brief. Si quieres ver el cuestionario antes de contratar, escríbenos y te lo enviamos.",
   },
   {
     q: "¿Qué pasa si necesito más revisiones de las incluidas?",
