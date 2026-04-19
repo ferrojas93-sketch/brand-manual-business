@@ -1,11 +1,36 @@
-import Image from "next/image";
 import Link from "next/link";
 
 /**
  * Pieza 08 · Curiosidades · Pilar nuevo · target ~3.500 palabras.
- * 10 logos con secretos visuales + 3 figs editoriales.
- * Categoría Curiosidades vacía hasta ahora.
+ * 10 logos con secretos visuales + análisis editorial por logo.
+ * Cada sección lleva LogoBlock con SVG oficial (fair use editorial).
  */
+function LogoBlock({
+  src,
+  brand,
+  fileType = "svg",
+}: {
+  src: string;
+  brand: string;
+  fileType?: "svg" | "png";
+}) {
+  return (
+    <figure className="not-prose my-10 md:my-14">
+      <div className="bg-arena/60 border border-negro/10 px-8 py-12 md:px-16 md:py-16 flex items-center justify-center min-h-[200px] md:min-h-[260px]">
+        <img
+          src={src}
+          alt={`Logo ${brand}`}
+          className="max-h-[140px] md:max-h-[180px] w-auto object-contain"
+          loading="lazy"
+        />
+      </div>
+      <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
+        Logo · {brand} <span className="text-lacre">·</span> propiedad de su titular · uso editorial
+      </figcaption>
+    </figure>
+  );
+}
+
 export default function PostBody() {
   return (
     <div className="prose-editorial">
@@ -36,7 +61,10 @@ export default function PostBody() {
         + uno extra inesperado.
       </p>
 
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/fedex.svg" brand="FedEx Corporation (Lindon Leader, 1994)" />
+
       <h2>01 · Amazon · la flecha que va de A a Z</h2>
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/amazon.svg" brand="Amazon (Anthony Biles, Turner Duckworth, 2000)" />
       <p>
         Diseñador: Anthony Biles en Turner Duckworth Londres · Año: 2000.
       </p>
@@ -69,6 +97,7 @@ export default function PostBody() {
       </p>
 
       <h2>02 · Toblerone · el oso de Berna escondido en la montaña</h2>
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/toblerone.svg" brand="Toblerone (Theodor Tobler, 1908 · oso integrado 1970)" />
       <p>
         Diseñador original: Theodor Tobler · Año: 1908 · Rediseño con oso
         explícito: 1970.
@@ -100,6 +129,7 @@ export default function PostBody() {
       </p>
 
       <h2>03 · Baskin-Robbins · el 31 escondido entre las letras</h2>
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/baskin-robbins.svg" brand="Baskin-Robbins (Lippincott, rediseño 2005)" />
       <p>
         Diseñador: Carol H. Williams Advertising · Año del rebrand con
         secret integrado: 2005 (versión Lippincott).
@@ -124,21 +154,8 @@ export default function PostBody() {
         iniciales. La integración es total.
       </p>
 
-      <figure className="hero-fig">
-        <Image
-          src="/blog/logos-secretos-tipograficos/fig-02-tres-clasicos.jpg"
-          alt="Tres logotipos clásicos con secretos tipográficos editorialmente — composición visual abstracta inspirada en Amazon Toblerone Baskin-Robbins sobre concreto"
-          width={1600}
-          height={900}
-          sizes="(min-width: 768px) 720px, 100vw"
-        />
-        <figcaption>
-          Fig. 02 · Tres clásicos con secretos integrados · una vez
-          vistos, no se pueden no ver<span className="text-lacre">.</span>
-        </figcaption>
-      </figure>
-
       <h2>04 · Tour de France · el ciclista escondido en la R amarilla</h2>
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/tour-de-france.svg" brand="Tour de France (Joël Guenoun, 2002)" />
       <p>
         Diseñador: Joël Guenoun · Año: 2002.
       </p>
@@ -168,6 +185,7 @@ export default function PostBody() {
       </blockquote>
 
       <h2>05 · NBC · el pavo real de siete colores</h2>
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/nbc.svg" brand="NBC (John Graham 1956 · rediseño Steff Geissbuhler 1986)" />
       <p>
         Diseñador: John Graham · Año: 1956 (versión moderna: Steff Geissbuhler 1986).
       </p>
@@ -193,6 +211,7 @@ export default function PostBody() {
       </p>
 
       <h2>06 · LG · la cara escondida en el wordmark</h2>
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/lg.svg" brand="LG Electronics (equipo interno, 1995)" />
       <p>
         Diseñador: equipo interno LG · Año: 1995 (rebrand de Goldstar a
         LG).
@@ -219,6 +238,7 @@ export default function PostBody() {
       </p>
 
       <h2>07 · Hyundai · la H estilizada como apretón de manos</h2>
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/hyundai.svg" brand="Hyundai Motor Company (equipo interno, 1990)" />
       <p>
         Diseñador: equipo interno Hyundai · Año: 1990 (rediseño actual:
         2017).
@@ -244,6 +264,7 @@ export default function PostBody() {
       </p>
 
       <h2>08 · Carrefour · la C escondida en el espacio negativo</h2>
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/carrefour.svg" brand="Carrefour (Wolff Olins, 1972)" />
       <p>
         Diseñador: agencia Wolff Olins · Año: 1972.
       </p>
@@ -272,6 +293,7 @@ export default function PostBody() {
       </p>
 
       <h2>09 · Beats · la B con auricular</h2>
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/beats.svg" brand="Beats Electronics (Ammunition Group LA, 2008)" />
       <p>
         Diseñador: Ammunition Group LA · Año: 2008.
       </p>
@@ -298,6 +320,7 @@ export default function PostBody() {
       </p>
 
       <h2>10 · Wendy&apos;s · &quot;mom&quot; escondido en el cuello</h2>
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/wendys.svg" brand="Wendy's (Tesser, rediseño 2012)" />
       <p>
         Diseñador: equipo interno Wendy&apos;s · Año del re-descubrimiento:
         2013.
@@ -325,21 +348,8 @@ export default function PostBody() {
         esperado.
       </p>
 
-      <figure>
-        <Image
-          src="/blog/logos-secretos-tipograficos/fig-03-recientes.jpg"
-          alt="Tres logos contemporáneos editoriales con detalles ocultos — composición visual abstracta sobre concreto representando Beats LG Hyundai sin reproducir trademarks"
-          width={1600}
-          height={900}
-          sizes="(min-width: 768px) 720px, 100vw"
-        />
-        <figcaption>
-          Fig. 03 · Tres logos contemporáneos · cada uno comunica más de
-          lo que parece<span className="text-lacre">.</span>
-        </figcaption>
-      </figure>
-
       <h2>El extra inesperado · Cisco · el puente Golden Gate como ondas WiFi</h2>
+      <LogoBlock src="/blog/logos-secretos-tipograficos/logos/cisco.svg" brand="Cisco Systems (Bill Cahan, 1984)" />
       <p>
         Diseñador: Bill Cahan en Cahan &amp; Associates · Año: 1984.
       </p>
