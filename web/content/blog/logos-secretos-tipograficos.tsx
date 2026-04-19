@@ -20,8 +20,11 @@ function LogoBlock({
         <img
           src={src}
           alt={`Logo ${brand}`}
+          width={320}
+          height={140}
           className="max-h-[140px] md:max-h-[180px] w-auto object-contain"
           loading="lazy"
+          decoding="async"
         />
       </div>
       <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">

@@ -184,20 +184,31 @@ export default async function ManualDetailPage({
           <h2 className="font-mono text-xs uppercase tracking-widest text-lacre mb-12">
             Spreads
           </h2>
-          <div className="grid md:grid-cols-2 gap-4 md:gap-6">
-            {[3, 5, 7, 9, 11, 13].map((p, i) => (
-              <div
-                key={p}
-                className="relative aspect-[1756/1242] bg-papel border border-negro/10 overflow-hidden"
-              >
-                <Image
-                  src={`/portfolio/${m.slug}/spread-${String(p).padStart(2, "0")}.jpg`}
-                  alt={`${m.name} — spread ${i + 1} del manual de marca por Tramarca`}
-                  fill
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+            {(
+              [
+                { p: 3, tema: "Portada editorial" },
+                { p: 5, tema: "Sistema tipográfico" },
+                { p: 7, tema: "Paleta cromática" },
+                { p: 9, tema: "Aplicaciones del sistema" },
+                { p: 11, tema: "Voz y tono verbal" },
+                { p: 13, tema: "Governance del sistema" },
+              ] as const
+            ).map(({ p, tema }) => (
+              <figure key={p} className="group">
+                <div className="relative aspect-[1756/1242] bg-papel border border-negro/10 overflow-hidden">
+                  <Image
+                    src={`/portfolio/${m.slug}/spread-${String(p).padStart(2, "0")}.jpg`}
+                    alt={`${m.name} — ${tema} · spread del manual por Tramarca`}
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+                <figcaption className="mt-3 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra">
+                  Spread {String(p).padStart(2, "0")} <span className="text-lacre">·</span> {tema}
+                </figcaption>
+              </figure>
             ))}
           </div>
         </div>

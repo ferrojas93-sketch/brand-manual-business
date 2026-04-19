@@ -169,11 +169,12 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="mt-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+              <div className="mt-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <ButtonLink
                   href="/contacto"
                   variant="primary"
                   size="lg"
+                  className="w-full sm:w-auto"
                   trackAs="cta_pedir_propuesta"
                   trackProps={{ location: "home_hero" }}
                 >
@@ -183,6 +184,7 @@ export default function HomePage() {
                   href="/trabajos"
                   variant="ghost"
                   size="lg"
+                  className="w-full sm:w-auto"
                   trackAs="cta_ver_manuales"
                   trackProps={{ location: "home_hero" }}
                 >

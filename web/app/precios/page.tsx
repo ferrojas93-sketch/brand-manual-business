@@ -118,7 +118,79 @@ export default function PreciosPage() {
             </p>
           </div>
 
-          <div className="mt-12 overflow-x-auto">
+          {/* Mobile: card-stack con toda la info por tier — evita scroll horizontal que ocultaba Profesional/Premium */}
+          <div className="md:hidden mt-12 space-y-5">
+            {(
+              [
+                { key: "esencial", name: "Esencial", price: "490€", variant: "ghost", highlight: false },
+                { key: "profesional", name: "Profesional", price: "990€", variant: "primary", highlight: true },
+                { key: "premium", name: "Premium", price: "1.990€", variant: "ghost", highlight: false },
+              ] as const
+            ).map((tier) => (
+              <article
+                key={tier.name}
+                className={cn(
+                  "border border-negro/15 bg-papel",
+                  tier.highlight && "border-lacre/50"
+                )}
+              >
+                <header
+                  className={cn(
+                    "relative px-5 pt-6 pb-5 border-b border-negro/15",
+                    tier.highlight && "bg-lacre/[0.06] border-lacre/20"
+                  )}
+                >
+                  {tier.highlight && (
+                    <span className="absolute -top-2.5 left-5 bg-negro text-lacre border border-lacre font-mono text-[10px] uppercase tracking-[0.2em] px-2.5 py-0.5 font-bold">
+                      Recomendado
+                    </span>
+                  )}
+                  <div className="flex items-baseline justify-between gap-4">
+                    <h3 className="text-2xl font-black tracking-tight">{tier.name}</h3>
+                    <p
+                      className={cn(
+                        "text-2xl font-black tracking-tight tabular-nums",
+                        tier.highlight && "text-lacre"
+                      )}
+                    >
+                      {tier.price}
+                      <span className="ml-2 font-mono text-[10px] font-normal text-piedra">
+                        IVA incl.
+                      </span>
+                    </p>
+                  </div>
+                </header>
+                <dl className="divide-y divide-negro/10">
+                  {comparisonRows.slice(1).map((r) => (
+                    <div
+                      key={r.label}
+                      className="flex items-start justify-between gap-4 px-5 py-3"
+                    >
+                      <dt className="font-mono text-[10px] uppercase tracking-[0.2em] text-piedra w-[38%] shrink-0 pt-[2px]">
+                        {r.label}
+                      </dt>
+                      <dd className="text-sm text-negro text-right flex-1 leading-snug">
+                        {r[tier.key]}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+                <div className="px-5 py-5 border-t border-negro/15">
+                  <ButtonLink
+                    href="/contacto"
+                    variant={tier.variant}
+                    size="md"
+                    className="w-full"
+                  >
+                    {tier.name} →
+                  </ButtonLink>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* Desktop/tablet: tabla comparativa horizontal */}
+          <div className="hidden md:block mt-12 overflow-x-auto">
             <div className="min-w-[780px] border border-negro/15">
               <div className="grid grid-cols-[1.1fr_1fr_1fr_1fr] bg-negro text-papel">
                 <div className="px-5 py-6 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra self-end">

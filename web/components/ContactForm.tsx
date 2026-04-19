@@ -260,7 +260,7 @@ export function ContactForm({ defaultTier }: { defaultTier?: string }) {
   }
 
   const inputCls =
-    "w-full bg-transparent border-b border-negro/25 focus:border-lacre outline-none py-3 text-base transition-colors placeholder:text-piedra/60";
+    "w-full bg-papel border border-negro/20 focus:border-lacre focus:ring-1 focus:ring-lacre/30 outline-none px-3 py-3 text-base transition-colors placeholder:text-piedra/85";
   const labelCls = "block text-xs uppercase tracking-widest font-mono text-piedra mb-1";
   const errorCls = "mt-1.5 text-xs text-lacre font-mono";
   const sectionCls = "space-y-8";
