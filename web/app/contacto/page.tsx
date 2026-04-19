@@ -75,6 +75,15 @@ export default async function ContactoPage({
                 con propuesta y link de pago seguro. Si encaja, kickoff en 48h. Si
                 no, te lo decimos con honestidad<span className="text-lacre">.</span>
               </p>
+
+              <div className="mt-6 inline-flex items-baseline gap-3 border-l-2 border-lacre pl-4 max-w-xl">
+                <span className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre shrink-0">
+                  Plantilla
+                </span>
+                <p className="text-sm text-piedra leading-[1.55]">
+                  ¿Quieres preparar el brief antes? <a href="/recursos/brief-tramarca.pdf" download className="text-negro underline underline-offset-4 hover:text-lacre">Descarga el brief PDF (23 preguntas)</a> y mándanoslo cumplimentado a <a href="mailto:hola@tramarca.es" className="text-negro underline underline-offset-4 hover:text-lacre">hola@tramarca.es</a><span className="text-lacre">.</span>
+                </p>
+              </div>
             </div>
 
             {/* Lateral proceso 3 pasos — compacto */}

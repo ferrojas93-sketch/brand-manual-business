@@ -429,6 +429,36 @@ export default function PostBody() {
         diferencia entre contratar manual editorial y contratar
         archivo bonito.
       </p>
+
+      <aside className="not-prose my-12 md:my-16 bg-papel border border-negro/15 p-6 md:p-10">
+        <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+          Plantilla descargable · gratuita
+        </p>
+        <h3 className="mt-4 text-3xl md:text-4xl font-black tracking-tight leading-[1.1] text-negro">
+          Las 23 preguntas en PDF<span className="text-lacre">.</span>
+        </h3>
+        <p className="mt-4 max-w-xl text-base md:text-lg text-piedra leading-[1.6]">
+          La plantilla operativa que usamos en kickoff Tramarca. Cinco
+          bloques. Imprimible. Funciona contratándonos a nosotros o
+          contratando a otro estudio. Sin gate ni email — descarga
+          directa<span className="text-lacre">.</span>
+        </p>
+        <div className="mt-6 flex flex-col sm:flex-row gap-3">
+          <a
+            href="/recursos/brief-tramarca.pdf"
+            download
+            className="inline-flex items-center justify-center bg-negro text-papel px-6 py-3 font-bold hover:bg-lacre transition-colors"
+          >
+            Descargar brief PDF →
+          </a>
+          <Link
+            href="/contacto"
+            className="inline-flex items-center justify-center border border-negro text-negro px-6 py-3 font-bold hover:bg-negro hover:text-papel transition-colors"
+          >
+            Pedir propuesta directamente
+          </Link>
+        </div>
+      </aside>
       <p>
         Para ver cómo aplicamos el brief firmado a nuestro propio
         manual,{" "}
