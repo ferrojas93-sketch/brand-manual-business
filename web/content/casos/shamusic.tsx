@@ -226,7 +226,7 @@ export default function CasoShamusic() {
         trimestral del manual<span className="text-lacre">.</span>
       </p>
 
-      <h2>Después · feed consistente sin improvisación semanal</h2>
+      <h2>Después · feed con sistema semanal documentado</h2>
       <p>
         El manual entregado el viernes de la segunda semana se aplicó
         al feed de Instagram en el siguiente fin de semana. El

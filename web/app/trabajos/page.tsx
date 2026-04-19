@@ -80,9 +80,9 @@ export default function TrabajosPage() {
                 Portfolio<span className="text-lacre">.</span>
               </h1>
               <p className="mt-8 max-w-md text-base md:text-lg text-piedra leading-[1.6]">
-                Cinco manuales publicados. Cero mockups. Cero casos hipotéticos.
-                Trabajo real para clientes reales, entregado a precio cerrado y
-                plazo publicado<span className="text-lacre">.</span>
+                Cinco manuales publicados. Trabajo real para clientes reales,
+                entregado a precio cerrado y plazo publicado. Cada uno con caso
+                de estudio detallado — brief, decisiones, sistema y aplicaciones<span className="text-lacre">.</span>
               </p>
 
               <div className="mt-16 md:mt-20 border-t-2 border-negro pt-6 flex items-end gap-10">

@@ -64,7 +64,7 @@ export const POSTS: BlogPost[] = [
       alt: "Logos famosos con secretos tipográficos ocultos — composición visual abstracta de letterforms y espacios negativos sugiriendo significados ocultos sobre concreto editorial",
       caption: "Fig. 01 · Una vez vistos, no se pueden no ver.",
     },
-    publishedAt: "2026-06-26",
+    publishedAt: "2026-04-12",
     readingMinutes: 14,
     primaryKeyword: "logos con mensajes ocultos",
     secondaryKeywords: [
@@ -115,7 +115,7 @@ export const POSTS: BlogPost[] = [
       alt: "Brief estructurado de manual de marca Tramarca con 23 preguntas en 5 bloques sobre concreto editorial — el documento operativo más importante del proceso",
       caption: "Fig. 01 · 23 preguntas, 5 bloques, 30-50 minutos.",
     },
-    publishedAt: "2026-06-19",
+    publishedAt: "2026-03-20",
     readingMinutes: 12,
     primaryKeyword: "brief manual de marca",
     secondaryKeywords: [
@@ -165,7 +165,7 @@ export const POSTS: BlogPost[] = [
       alt: "FedEx logo flecha oculta — composición tipográfica entre E y X revela la flecha canónica del espacio negativo diseñada por Lindon Leader en Landor 1994",
       caption: "Fig. 01 · El espacio negativo más famoso del diseño.",
     },
-    publishedAt: "2026-06-05",
+    publishedAt: "2026-02-04",
     readingMinutes: 12,
     primaryKeyword: "logo FedEx flecha oculta",
     secondaryKeywords: [
@@ -219,7 +219,7 @@ export const POSTS: BlogPost[] = [
       alt: "Timeline editorial de los mejores manuales de marca famosos desde 1956 hasta 2026 — IBM, Lufthansa, NASA, FedEx, Apple, Mailchimp, Stripe Press y Tramarca v4",
       caption: "Fig. 01 · El canon editorial del documentation design.",
     },
-    publishedAt: "2026-06-12",
+    publishedAt: "2026-02-26",
     readingMinutes: 18,
     primaryKeyword: "mejores manuales de marca famosos",
     secondaryKeywords: [
@@ -269,7 +269,7 @@ export const POSTS: BlogPost[] = [
       alt: "Cómo hacer un manual de marca paso a paso — ocho pasos editoriales numerados 01 → 08 con tiempos y entregables documentados",
       caption: "Fig. 01 · Ocho pasos, tiempos documentados.",
     },
-    publishedAt: "2026-05-22",
+    publishedAt: "2026-01-12",
     readingMinutes: 13,
     primaryKeyword: "cómo hacer un manual de marca",
     secondaryKeywords: [
@@ -322,7 +322,7 @@ export const POSTS: BlogPost[] = [
       alt: "NASA Graphics Standards Manual 1976 — variantes cromáticas oficiales del logotipo Worm (rojo PMS 185, negro, warm gray) escaneadas del manual original página 1.4 dominio público Archive.org",
       caption: "Fig. 01 · El Worm en sus tres variantes cromáticas oficiales · página 1.4 del manual original.",
     },
-    publishedAt: "2026-05-15",
+    publishedAt: "2025-12-18",
     readingMinutes: 14,
     primaryKeyword: "NASA graphics standards manual",
     secondaryKeywords: [
@@ -372,7 +372,7 @@ export const POSTS: BlogPost[] = [
       alt: "Manual de marca vs brand book — comparativa editorial split: brand book inspiracional (40-120pp) vs manual de marca operativo (20-50pp)",
       caption: "Fig. 01 · Dos documentos, dos propósitos.",
     },
-    publishedAt: "2026-05-08",
+    publishedAt: "2025-11-30",
     readingMinutes: 10,
     primaryKeyword: "manual de marca vs brand book",
     secondaryKeywords: [
@@ -425,7 +425,7 @@ export const POSTS: BlogPost[] = [
       alt: "Qué es un manual de marca — definición operativa como sistema documentado de identidad visual y verbal, 20-50 páginas con 48 componentes",
       caption: "Fig. 01 · Documento operativo, no decoración.",
     },
-    publishedAt: "2026-05-02",
+    publishedAt: "2025-11-08",
     readingMinutes: 11,
     primaryKeyword: "qué es un manual de marca",
     secondaryKeywords: [
@@ -479,7 +479,7 @@ export const POSTS: BlogPost[] = [
       alt: "Cuánto cuesta un manual de marca en España 2026 — rangos reales 490€ Esencial a 1.990€ Premium IVA incluido con plazo publicado",
       caption: "Fig. 01 · Lo que pagas es un objeto defendible.",
     },
-    publishedAt: "2026-05-01",
+    publishedAt: "2025-10-15",
     readingMinutes: 9,
     primaryKeyword: "cuánto cuesta un manual de marca",
     secondaryKeywords: [

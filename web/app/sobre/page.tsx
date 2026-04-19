@@ -113,8 +113,8 @@ export default function SobrePage() {
               </p>
               <p className="mt-5">
                 No hacemos web, ni campañas, ni packaging, ni ads, ni ocho servicios más
-                diluidos. Hacemos una sola cosa y por eso la hacemos deprisa y la hacemos
-                bien. En un estudio generalista el manual es un entregable más; aquí es
+                diluidos. Hacemos una sola cosa y por eso la hacemos rápido y bien. En un
+                estudio generalista el manual es un entregable más; aquí es
                 <strong> el producto</strong>. Eso cambia cómo pensamos, cómo escribimos
                 y cómo producimos cada página.
               </p>

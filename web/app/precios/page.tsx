@@ -45,10 +45,6 @@ const pricingFaqs = [
     q: "¿Cómo aseguráis que el manual encaja con lo que necesito?",
     a: "El brief firmado antes del kickoff define exactamente el scope acordado: 23 preguntas estructuradas en 5 bloques (negocio, audiencia, activos existentes, proveedores y casos de uso, tono y restricciones). Cualquier ajuste durante las 2 rondas de revisión incluidas se acota contra ese brief. Si quieres ver el cuestionario antes de contratar, escríbenos y te lo enviamos.",
   },
-  {
-    q: "¿Dónde se paga?",
-    a: "Stripe (Link europeo, IVA incluido) o transferencia SEPA. Te mandamos payment link tras confirmar brief.",
-  },
 ];
 
 const comparisonRows = [
