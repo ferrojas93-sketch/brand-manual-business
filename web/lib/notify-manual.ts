@@ -33,9 +33,9 @@ export async function sendManualToRequester(params: {
   signedUrl: string;
 }): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.warn("manual_email_skipped_no_resend_key");
-    return;
+  if (!apiKey || apiKey.trim().length === 0) {
+    console.error("manual_email_send_failed", { reason: "missing_resend_api_key" });
+    throw new Error("manual_email_send_failed: RESEND_API_KEY is not configured");
   }
   const resend = new Resend(apiKey);
 
@@ -110,7 +110,10 @@ export async function notifyStudioOfManualRequest(params: {
   ip: string;
 }): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) return;
+  if (!apiKey || apiKey.trim().length === 0) {
+    console.error("manual_studio_notify_failed", { reason: "missing_resend_api_key" });
+    return;
+  }
   const resend = new Resend(apiKey);
 
   const subject = `Lead manual · ${params.email}`;
