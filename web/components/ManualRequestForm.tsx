@@ -35,7 +35,7 @@ export function ManualRequestForm({ compact = false }: { compact?: boolean }) {
   const [turnstileToken, setTurnstileToken] = useState<string>("");
   const turnstileRef = useRef<TurnstileInstance | null>(null);
 
-  async function waitForTurnstileToken(timeoutMs = 10000): Promise<string> {
+  async function waitForTurnstileToken(timeoutMs = 15000): Promise<string> {
     if (turnstileToken) return turnstileToken;
     // Fuerza ejecución del challenge (invisible mode no se auto-ejecuta en todos los browsers)
     turnstileRef.current?.execute();
@@ -50,6 +50,19 @@ export function ManualRequestForm({ compact = false }: { compact?: boolean }) {
           reject(new Error("turnstile_timeout"));
         }
       }, 200);
+    });
+  }
+
+  async function submitWithToken(data: FormValues, token: string): Promise<Response> {
+    return fetch("/api/lead/manual-request", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: data.email,
+        consent: data.consent,
+        turnstileToken: token,
+        honeypot: data.honeypot,
+      }),
     });
   }
 
@@ -70,22 +83,27 @@ export function ManualRequestForm({ compact = false }: { compact?: boolean }) {
         setStatus("sending");
       } catch {
         setStatus("error");
-        setErrorMsg("Verificación anti-bot fallida. Recarga la página e inténtalo de nuevo.");
+        setErrorMsg("Aún verificando… espera un momento y dale de nuevo a enviar.");
         return;
       }
     }
 
     try {
-      const res = await fetch("/api/lead/manual-request", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: data.email,
-          consent: data.consent,
-          turnstileToken: token,
-          honeypot: data.honeypot,
-        }),
-      });
+      let res = await submitWithToken(data, token);
+
+      // Retry automático si Turnstile rechaza por token ya consumido / expirado —
+      // generamos uno nuevo y reintentamos sin mostrar error al usuario.
+      if (res.status === 403 && TURNSTILE_SITE_KEY) {
+        turnstileRef.current?.reset();
+        setTurnstileToken("");
+        try {
+          const freshToken = await waitForTurnstileToken();
+          res = await submitWithToken(data, freshToken);
+        } catch {
+          throw new Error("No pudimos verificar. Intenta de nuevo en un momento.");
+        }
+      }
+
       if (!res.ok) {
         const body = (await res.json().catch(() => ({}))) as { error?: string };
         throw new Error(body.error ?? "Error desconocido");
