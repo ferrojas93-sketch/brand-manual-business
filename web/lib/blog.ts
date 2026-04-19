@@ -218,8 +218,8 @@ export const POSTS: BlogPost[] = [
       "El manual editorial que redefinió la documentación de identidad visual. Danne y Blackburn documentaron NASA en 90 páginas publicadas en 1976. Análisis completo.",
     heroImage: {
       src: "/blog/nasa-graphics-standards-manual-1976/hero.jpg",
-      alt: "NASA Graphics Standards Manual 1976 — homenaje al logotipo Worm rojo lacre diseñado por Danne y Blackburn, canon editorial del documentation design",
-      caption: "Fig. 01 · El manual que definió el canon editorial.",
+      alt: "NASA Graphics Standards Manual 1976 — variantes cromáticas oficiales del logotipo Worm (rojo PMS 185, negro, warm gray) escaneadas del manual original página 1.4 dominio público Archive.org",
+      caption: "Fig. 01 · El Worm en sus tres variantes cromáticas oficiales · página 1.4 del manual original.",
     },
     publishedAt: "2026-05-15",
     readingMinutes: 14,

@@ -306,3 +306,50 @@ input:focus-visible, textarea:focus-visible, select:focus-visible {
 .post-body .prose-editorial .rangos-tabla tr:last-child td {
   border-bottom: none;
 }
+
+/* Pullquotes editoriales (blockquote) */
+.post-body .prose-editorial blockquote {
+  margin: 2.4em 0;
+  padding-left: 1.6rem;
+  border-left: 3px solid var(--color-lacre);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.3em;
+  font-style: normal;
+  line-height: 1.4;
+  color: var(--color-negro);
+  letter-spacing: -0.005em;
+}
+.post-body .prose-editorial blockquote cite {
+  display: block;
+  margin-top: 0.8em;
+  font-family: var(--font-mono);
+  font-size: 0.65em;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--color-piedra);
+}
+
+/* Figuras inline editoriales */
+.post-body .prose-editorial figure {
+  margin: 2.6em 0;
+  position: relative;
+}
+.post-body .prose-editorial figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid rgba(12, 12, 12, 0.1);
+}
+.post-body .prose-editorial figure figcaption {
+  margin-top: 0.75em;
+  font-family: var(--font-mono);
+  font-size: 0.72em;
+  letter-spacing: 0.04em;
+  color: var(--color-piedra);
+  line-height: 1.5;
+}
+.post-body .prose-editorial figure.hero-fig img {
+  border: 1px solid rgba(12, 12, 12, 0.15);
+  box-shadow: 0 30px 60px -20px rgba(12, 12, 12, 0.15);
+}
