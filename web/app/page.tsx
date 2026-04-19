@@ -92,8 +92,8 @@ const homeFaqs = [
     a: "Ambos. Los tiers Profesional y Premium funcionan especialmente bien para rebrand: partimos del activo existente, auditamos qué funciona y qué no, y reconstruimos desde sistema. Para marca nueva sin naming ni posicionamiento previo, recomendamos Premium (incluye estrategia completa e identidad verbal). Mismo precio, mismo plazo.",
   },
   {
-    q: "¿Puedo pagar en dos veces?",
-    a: "Sí. Los tiers Profesional y Premium se pagan en dos plazos: 50% al kickoff (con brief firmado) y 50% en la entrega final. El tier Esencial se paga íntegro al kickoff. Aceptamos transferencia SEPA o Stripe (tarjeta, Apple Pay, Google Pay). Emitimos factura electrónica en cada pago.",
+    q: "¿Cómo y cuándo se paga?",
+    a: "Pago único al kickoff en los tres tiers (Esencial, Profesional, Premium). Una vez aceptas la propuesta y firmas el brief, recibes el link de pago Stripe (tarjeta, Apple Pay, Google Pay) o el número de cuenta para transferencia SEPA. El proyecto arranca cuando confirmamos el pago: a partir de ese momento corre el contador del plazo (5/7/10 días laborables). Factura electrónica con IVA 21% desglosado emitida automáticamente.",
   },
   {
     q: "¿Qué incluye un manual de marca?",

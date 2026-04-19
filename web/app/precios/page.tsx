@@ -22,8 +22,8 @@ const pricingFaqs = [
     a: "Porque esto no es un logo. Es un manual de 20-25 páginas con sistema, aplicaciones y guidelines. Un logo express a 149€ te da un archivo .ai. Aquí te llevas un documento operativo. Cosas distintas.",
   },
   {
-    q: "¿Puedo pagar en plazos?",
-    a: "Sí. 50% al kickoff, 50% a la entrega. Transferencia o Stripe. Lo que te venga mejor.",
+    q: "¿Cómo se paga?",
+    a: "Pago único al kickoff. Aceptas la propuesta, firmas el brief, recibes link de pago (Stripe — tarjeta, Apple Pay, Google Pay) o número de cuenta para SEPA. El proyecto arranca cuando confirmamos el pago. Factura electrónica con IVA desglosado al instante.",
   },
   {
     q: "¿Emitís factura con IVA detallado?",

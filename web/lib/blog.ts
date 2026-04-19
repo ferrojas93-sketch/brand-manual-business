@@ -512,8 +512,8 @@ export const POSTS: BlogPost[] = [
         a: "En España, los precios publicados pueden ser 'IVA incluido' (B2C estándar) o 'IVA aparte' (B2B común en agencias). Tramarca publica todos los precios con IVA 21% incluido. Siempre pregunta y pide factura electrónica con el desglose antes de firmar.",
       },
       {
-        q: "¿Puedo pagar en plazos?",
-        a: "Depende del estudio. En Tramarca los tiers Profesional y Premium se pagan al 50% al kickoff y 50% a la entrega final; el tier Esencial se paga íntegro al inicio. Aceptamos transferencia SEPA y Stripe. Emitimos factura electrónica en cada pago.",
+        q: "¿Cómo se paga un manual de marca?",
+        a: "Lo más común en estudios es 50/50 (mitad al inicio, mitad a la entrega). En Tramarca el pago es íntegro al kickoff: aceptas propuesta, firmas brief, abonas el importe (transferencia SEPA o Stripe) y el proyecto arranca. Plazos cortos (5-10 días laborables) hacen innecesario fraccionar. Factura electrónica con IVA 21% desglosado al instante. Pregunta siempre por la estructura de pago antes de firmar nada.",
       },
     ],
   },

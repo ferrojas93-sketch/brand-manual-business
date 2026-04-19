@@ -30,7 +30,8 @@ export default function CondicionesPage() {
             </a>
             ) y el cliente que formaliza la contratación de un servicio. La contratación
             efectiva se perfecciona cuando el cliente acepta por escrito (email suficiente)
-            la propuesta enviada por Tramarca y abona el primer pago.
+            la propuesta enviada por Tramarca y abona el importe íntegro del tier
+            contratado.
           </p>
         </section>
 
@@ -64,10 +65,12 @@ export default function CondicionesPage() {
         <section>
           <h2 className="text-2xl font-black tracking-tight mb-3">3. Pago</h2>
           <p>
-            El pago se estructura en dos hitos: <strong>50% al kickoff</strong> (inicio del
-            proyecto tras brief firmado) y <strong>50% a la entrega final</strong> (aceptación
-            de los archivos). Métodos disponibles: transferencia SEPA o tarjeta a través de
-            Stripe. Emitimos factura electrónica con IVA desglosado.
+            El pago es <strong>íntegro al kickoff</strong> (100% del importe del tier
+            contratado, IVA incluido). Una vez aceptada la propuesta y firmado el brief,
+            el cliente recibe el link de pago Stripe (tarjeta, Apple Pay, Google Pay) o
+            los datos bancarios para transferencia SEPA. El proyecto arranca cuando
+            Tramarca confirma la recepción del pago. La factura electrónica con IVA
+            21% desglosado se emite de forma automática en el momento del cobro.
           </p>
         </section>
 
@@ -80,7 +83,7 @@ export default function CondicionesPage() {
           </ul>
           <p className="mt-3">
             Se considera &ldquo;kickoff&rdquo; la fecha en que se cumplen dos condiciones:
-            brief firmado por el cliente y primer pago recibido. Las demoras imputables al
+            brief firmado por el cliente y pago íntegro recibido. Las demoras imputables al
             cliente (respuestas tardías, cambios de alcance, material no entregado)
             prorrogan el plazo en la misma cuantía.
           </p>
@@ -120,15 +123,16 @@ export default function CondicionesPage() {
         <section>
           <h2 className="text-2xl font-black tracking-tight mb-3">7. Cancelación y desistimiento</h2>
           <p>
-            <strong>Antes del kickoff:</strong> una vez recibido el primer pago y firmado
-            el brief, el cliente puede cancelar el encargo sin obligación de afrontar el
-            segundo pago. El primer pago cubre los trabajos preparatorios ya iniciados
-            (revisión del brief, planificación de producción y bloqueo de calendario) y
-            no es reembolsable.
+            <strong>Antes del pago:</strong> el cliente puede declinar la propuesta sin
+            coste. La contratación no se perfecciona hasta que se firma el brief y se
+            recibe el pago íntegro.
           </p>
           <p className="mt-3">
-            <strong>Tras el kickoff:</strong> Tramarca retiene el 50% ya abonado en concepto
-            de producción iniciada. No se facturará el segundo pago.
+            <strong>Tras el pago / kickoff:</strong> Tramarca compromete recursos y arranca
+            la producción dentro del plazo publicado (5/7/10 días laborables según tier).
+            El importe abonado no es reembolsable. Si el cliente decide no continuar
+            antes de la entrega, Tramarca completará igualmente el trabajo según brief
+            firmado y entregará los archivos en plazo.
           </p>
           <p className="mt-3">
             <strong>Consumidores (persona física sin fines profesionales):</strong> de

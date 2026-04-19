@@ -184,10 +184,10 @@ export const faqSchema = {
     },
     {
       "@type": "Question",
-      name: "¿Puedo pagar en dos veces?",
+      name: "¿Cómo y cuándo se paga?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sí. Profesional y Premium se pagan en dos plazos: 50% al kickoff y 50% en la entrega. Esencial se paga íntegro al kickoff. Transferencia SEPA o Stripe. Factura electrónica en cada pago.",
+        text: "Pago único al kickoff en los tres tiers. Aceptas propuesta, firmas brief, abonas el importe por transferencia SEPA o Stripe (tarjeta, Apple Pay, Google Pay). El proyecto arranca cuando confirmamos el pago: a partir de ahí corre el plazo (5/7/10 días laborables). Factura electrónica con IVA 21% desglosado al instante.",
       },
     },
     {
