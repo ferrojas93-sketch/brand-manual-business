@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "Tramarca",
     images: [
       {
-        url: "/og-tramarca.jpg",
+        url: "/og-tramarca-v2.jpg",
         width: 1200,
         height: 630,
         alt: "Tramarca — estudio editorial de manuales de marca. Tres tiers con precio cerrado e IVA incluido.",
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
     title: "Tu marca, por escrito · Tramarca",
     description:
       "Estudio editorial de manuales de marca. 490€–1.990€ IVA incl., entrega en 5–10 días laborables.",
-    images: ["/og-tramarca.jpg"],
+    images: ["/og-tramarca-v2.jpg"],
   },
   alternates: {
     canonical: SITE_URL,
