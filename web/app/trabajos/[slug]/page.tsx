@@ -12,6 +12,7 @@ import {
   breadcrumbListSchema,
   creativeWorkSchema,
 } from "@/lib/schema";
+import { getCasoBody } from "@/content/casos";
 
 export function generateStaticParams() {
   // Casos de estudio profundos publicados — todos los manuales visibles.
@@ -47,6 +48,7 @@ export default async function ManualDetailPage({
   const tierPath =
     typeof m.tier === "string" && m.tier !== "Propio" ? `/precios#${m.tier}` : "/precios";
   const tierLabel = typeof m.tier === "string" ? m.tier : "Propio";
+  const CasoBody = getCasoBody(slug);
 
   const manualUrl = `${SITE_URL}/trabajos/${m.slug}`;
   const schemaGraph = jsonLdGraph(
@@ -119,6 +121,30 @@ export default async function ManualDetailPage({
           </div>
         </div>
       </section>
+
+      {CasoBody && (
+        <section className="bg-papel border-y border-negro/10">
+          <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
+            <CasoBody />
+          </div>
+        </section>
+      )}
+
+      {m.testimonial && (
+        <section className="bg-arena border-b border-negro/10">
+          <div className="mx-auto max-w-4xl px-6 py-16 md:py-20">
+            <p className="font-mono text-[10px] uppercase tracking-[0.3em] text-lacre">
+              Testimonio
+            </p>
+            <blockquote className="mt-6 text-2xl md:text-3xl font-medium leading-snug text-negro">
+              &ldquo;{m.testimonial.quote}&rdquo;
+            </blockquote>
+            <p className="mt-6 font-mono text-[11px] uppercase tracking-[0.25em] text-piedra">
+              — {m.testimonial.author} <span className="text-lacre">·</span> {m.testimonial.role}
+            </p>
+          </div>
+        </section>
+      )}
 
       {slug === "tramarca" && (
         <section className="bg-papel border-y border-negro/10">
