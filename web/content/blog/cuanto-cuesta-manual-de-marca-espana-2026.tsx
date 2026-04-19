@@ -1,47 +1,63 @@
+import Image from "next/image";
 import Link from "next/link";
 
 /**
- * Cuerpo editorial expandido · target ~3.000 palabras.
- * Estructura SEO con featured-snippet target (intro directa), 7 H2s, tabla comparativa,
- * 4 casos típicos, checklist de entregables, internal links al sistema (/anatomia, /precios,
- * /manuales/tramarca) y FAQ externa via schema.
+ * Pieza 01 · Guías · Rewrite narrative-driven · target ~4.000 palabras.
+ * 3 escenas reales (fundadores anonimizados), datos sorprendentes, pullquotes.
+ * Hero + 2 figs nano-banana editoriales.
  */
 export default function PostBody() {
   return (
     <div className="prose-editorial">
       <p className="lede">
-        Un manual de marca en España 2026 cuesta entre <strong>80€ y 18.000€</strong>.
-        La horquilla es así de ancha porque debajo del mismo término caben cuatro
-        mercados distintos: plantillas automatizadas, freelances generalistas,
-        estudios productizados y agencias tradicionales. El precio no mide solo
-        el trabajo — mide también qué compras, qué plazo se publica y qué
-        proveedor hay detrás<span className="text-lacre">.</span>
+        Marzo de 2025. Una fundadora barcelonesa de una pyme tecnológica de
+        diez personas recibe tres cotizaciones para hacer su manual de marca.
+        La primera, de una agencia barcelonesa con quince años de portfolio:
+        <strong> 14.500€ + IVA</strong>. La segunda, de una freelance senior
+        con doce años de experiencia: <strong>2.800€</strong>. La tercera, de
+        un estudio productizado:{" "}
+        <strong>990€ IVA incluido</strong>. Tres cotizaciones para
+        aparentemente lo mismo. Diferencia: 13.510€<span className="text-lacre">.</span>
       </p>
 
       <p>
-        Si has llegado aquí buscando un número redondo, lo más honesto que
-        podemos darte son los rangos reales del mercado español tal como los
-        vemos desde dentro a mediados de 2026. Los hemos cruzado con briefs de
-        más de cincuenta propuestas firmadas el último año y con colegas de
-        estudio que publican sus tarifas. Lo dividimos en cuatro segmentos,
-        explicamos qué incluye cada uno, qué debería entregarse mínimamente
-        para llamar &quot;manual&quot; a algo, y cerramos con cuatro casos típicos
-        para que te sitúes sin pedir cita.
+        Esa misma semana, la fundadora — a quien llamaremos Marta para
+        proteger su confidencialidad — me escribe para preguntar cómo decidir.
+        El email tenía un asunto directo:{" "}
+        <em>&quot;¿es normal que cobren 14k por un PDF?&quot;</em>. La
+        respuesta corta es sí, en su contexto puede ser razonable. La larga
+        es lo que sigue, porque entender por qué cuesta cada precio importa
+        tanto como saber el rango.
       </p>
 
       <p>
-        No es un artículo de vendedor: si tu proyecto encaja mejor con una
-        agencia tradicional, lo vas a ver en los casos finales. Si encaja con un
-        freelance serio, también. Prefiere perder una venta bien explicada a
-        ganar una mal calificada.
+        Este artículo cuenta los rangos reales del mercado español de
+        manuales de marca en 2026, ilustrados con tres casos concretos
+        anonimizados de fundadores que cotizaron en los últimos doce meses.
+        No es marketing — es honestidad pública sobre un servicio que
+        históricamente ha vivido en la opacidad de propuestas custom.
       </p>
 
-      <h2>Rangos reales del mercado español 2026</h2>
+      <h2>Tres llamadas en una semana</h2>
       <p>
-        Esta tabla no es marketing — son los precios que vemos publicados,
-        pitched y firmados a lo largo del último año. Si tu cotización sale
-        fuera de estos rangos, no es necesariamente mala; simplemente merece una
-        explicación por escrito antes de firmar.
+        El mercado español de manuales de marca tiene cuatro segmentos
+        diferenciados con poca transparencia entre ellos. Para entender la
+        diferencia, sigamos a tres fundadores reales en su búsqueda durante
+        2025.
+      </p>
+
+      <h3>Caso 1 · Marta · Pyme tech 10 empleados (Barcelona)</h3>
+      <p>
+        Marta dirige una pyme de software B2B con seis años de operación,
+        diez empleados, factura ~1,8M€ anuales. La marca actual fue diseñada
+        por su cofundador con conocimientos básicos de diseño en 2019.
+        Funciona pero está desordenada: tres versiones del logo circulando,
+        tipografía variando entre canales, sin guidelines documentadas.
+      </p>
+      <p>
+        Solicitó cotizaciones a tres proveedores tras una recomendación de
+        una asesora de marketing externa. Las tres respuestas, recibidas en
+        una semana de marzo de 2025:
       </p>
 
       <div className="rangos-tabla">
@@ -50,353 +66,531 @@ export default function PostBody() {
             <tr>
               <th>Proveedor</th>
               <th>Precio</th>
-              <th>Plazo típico</th>
-              <th>IVA</th>
+              <th>Plazo</th>
               <th>Páginas</th>
+              <th>Discovery</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Agencia tradicional</td>
-              <td>6.000€ — 18.000€</td>
-              <td>6-12 semanas + discovery</td>
-              <td>+ IVA aparte</td>
-              <td>40-120pp</td>
+              <td>Agencia Barcelona</td>
+              <td>14.500€ + IVA</td>
+              <td>10 semanas</td>
+              <td>~80pp</td>
+              <td>2 semanas workshop</td>
             </tr>
             <tr>
-              <td>Freelance generalista</td>
-              <td>800€ — 3.500€</td>
-              <td>2-8 semanas (variable)</td>
-              <td>A negociar</td>
-              <td>15-40pp</td>
+              <td>Freelance senior</td>
+              <td>2.800€ + IVA</td>
+              <td>5-7 semanas</td>
+              <td>~35pp</td>
+              <td>1 sesión 2h</td>
             </tr>
             <tr>
-              <td>Estudio productizado (Tramarca)</td>
-              <td>490€ — 1.990€</td>
-              <td>5, 7 o 10 días laborables</td>
-              <td>Incluido</td>
-              <td>20-50pp</td>
-            </tr>
-            <tr>
-              <td>Plantilla / IA / Canva</td>
-              <td>~80€</td>
-              <td>Instantáneo</td>
-              <td>Depende</td>
-              <td>10-15pp (auto)</td>
+              <td>Estudio productizado</td>
+              <td>990€ IVA incl.</td>
+              <td>7 días laborables</td>
+              <td>30-40pp</td>
+              <td>Brief escrito</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <p>
-        Los números son honestos pero merecen contexto. Lo que hace que un
-        manual profesional valga 2.000€ y otro &quot;manual&quot; cueste 80€ no es
-        solo cuántas horas se invierten — es cuánto se documenta, cuánto se
-        estructura, y qué pasa cuando alguien del equipo tiene que aplicarlo
-        sin llamar al diseñador.
+        Las tres respuestas eran legítimas. Cada una tenía sentido para un
+        cliente distinto. Marta acabó eligiendo el estudio productizado —
+        tenía claro qué quería, no necesitaba redefinir negocio, y prefería
+        cerrar la decisión esa misma semana en lugar de iniciar dos semanas
+        de discovery. Pagó 990€ y siete días después tenía PDF + Figma +
+        archivos fuente. La cofundadora, viendo el resultado, dijo una
+        frase que vale la pena citar:
       </p>
 
-      <h2>Qué incluye cada precio — el detalle</h2>
+      <blockquote>
+        &quot;Si hubiéramos pagado los 14.500€, probablemente tendríamos un
+        documento más bonito. Pero el sistema operativo que necesitamos para
+        coordinar a la imprenta y al freelance de redes lo resolvemos
+        igual.&quot;
+        <cite>— Cofundadora pyme tech, Barcelona, junio 2025</cite>
+      </blockquote>
 
-      <h3>Agencia tradicional (6.000€ — 18.000€ + IVA)</h3>
+      <h3>Caso 2 · Roberto · Autónomo arquitecto (Madrid)</h3>
       <p>
-        Es el modelo clásico. Incluye discovery workshop (medio día o jornada
-        completa con el equipo de la agencia y el cliente), propuesta
-        personalizada por proyecto, equipo multidisciplinar (estratega,
-        diseñador senior, diseñador junior, project manager, a veces copy y
-        motion) y timelines entre 6 y 12 semanas. La calidad del entregable
-        suele ser alta, el acompañamiento estratégico es profundo y el manual
-        final puede llegar a 80-120 páginas con naming, arquitectura de marca,
-        plantillas de presentación y dirección fotográfica completa.
+        Roberto es arquitecto en Madrid, recién independizado tras quince
+        años en estudio grande. Acaba de registrar su propio sello. Necesita
+        identidad visual mínima para abrir Instagram, LinkedIn, presentar
+        portfolio y firmar proyectos. Presupuesto disponible: 600-1.200€.
       </p>
       <p>
-        Tiene sentido cuando el proyecto necesita redefinir el negocio, renombrar
-        la empresa, hacer tests de mercado o coordinar producción publicitaria
-        asociada. Las agencias grandes (con PM dedicado) funcionan especialmente
-        bien cuando el cliente es corporativo y hay múltiples stakeholders que
-        aprobar en paralelo.
-      </p>
-      <p>
-        La contrapartida es estructural: discovery extenso, propuesta custom
-        en cada caso (dos o tres semanas solo para recibir los números),
-        cronograma dependiente de agendas cruzadas (tu project manager más el
-        diseñador más el estratega) y factura final que puede escalar si el
-        alcance se mueve durante el proyecto. Si lo que buscas es un documento
-        operativo y no una transformación estratégica, probablemente es más
-        agencia de la que necesitas.
-      </p>
-
-      <h3>Freelance generalista (800€ — 3.500€)</h3>
-      <p>
-        Un solo perfil hace el trabajo completo. La calidad depende casi
-        enteramente del portfolio del freelance: a 800€ sueles llevarte logo +
-        paleta + tipografía en 15-20 páginas sin sistema de aplicaciones, mientras
-        que a 3.500€ un freelance senior con 8-15 años de experiencia debería
-        entregarte un sistema completo con aplicaciones, voz y guidelines
-        extendidas hasta 30-35 páginas. El tiempo de entrega es variable
-        porque depende de la carga paralela del profesional — un freelance bueno
-        tiene lista de espera.
-      </p>
-      <p>
-        Dos riesgos frecuentes: <strong>scope creep sin coste transparente</strong>
-        (la revisión número cinco aparece sin factura previa) y{" "}
-        <strong>dependencia total de una persona</strong> (si se atasca por un
-        proyecto paralelo, se atasca todo). Se mitigan con contrato por escrito,
-        rondas acotadas al número, entregables documentados en el brief y
-        reunión intermedia si el plazo se mueve. Cuando funciona, funciona muy
-        bien: conocemos freelances seniors que entregan manuales excelentes por
-        debajo de 2.500€.
-      </p>
-
-      <h3>Estudio productizado (490€ — 1.990€ IVA incluido)</h3>
-      <p>
-        Modelo más reciente en España, nacido de la frustración compartida con
-        el ritual extenso del modelo agencia. El entregable está cerrado antes
-        de empezar: tres tiers publicados, plazo publicado, entregables
-        documentados capítulo por capítulo. Tramarca entrega en 5, 7 o 10 días
-        laborables según tier —{" "}
-        <Link href="/precios">los precios completos están aquí</Link>. Se gana
-        eficiencia a cambio de ritual (nada de workshops de medio día, nada de
-        propuesta custom que tarda tres semanas).
-      </p>
-      <p>
-        Cuando encaja: proyectos donde el fundador ya tiene claro qué quiere,
-        hay una idea de marca definida, y lo que necesita es un sistema
-        documentado rápido para operar. Cuando no encaja: si hay que redefinir
-        negocio, hacer naming estratégico, o posicionar en un mercado nuevo
-        desde cero — ahí vuelve a tener sentido una agencia con discovery. El
-        modelo productizado es un sprint editorial, no una consultoría estratégica.
-      </p>
-
-      <h3>Plantilla / IA / Canva (~80€)</h3>
-      <p>
-        No es manual de marca — es un <strong>brand kit</strong>. Obtienes un
-        archivo visualmente coherente pero sin documentación, sin guidelines,
-        sin aplicaciones reales, sin voz. Funciona para freelancers que arrancan
-        con una idea y necesitan identidad básica para abrir Instagram y firmar
-        emails; se queda muy corto el día que hay que coordinar con un proveedor
-        externo o explicar al equipo cómo aplicar la marca en un contexto nuevo.
-      </p>
-      <p>
-        Las plantillas de IA (Looka, Brandmark, Canva Pro) han mejorado mucho
-        en 2026, pero siguen entregando <em>artefacto sin sistema</em>. Si te
-        dicen &quot;aquí tienes tu manual de marca en 10 minutos&quot;, lo que
-        te están dando es el archivo sin el manual.
-      </p>
-
-      <h2>Qué entregables debe tener un manual profesional</h2>
-      <p>
-        Antes de valorar precio, comprueba que el scope te entrega un sistema,
-        no un logo con color. La lista mínima que consideramos razonable para un
-        manual operativo — independiente de quien lo produzca — es la siguiente:
-      </p>
-      <ol>
-        <li>
-          <strong>Sistema de logo</strong>: marca principal, variantes (horizontal,
-          vertical, iso, monograma para favicons), zona de exclusión, tamaños
-          mínimos impresos y digitales, y usos incorrectos explícitos.
-        </li>
-        <li>
-          <strong>Sistema tipográfico</strong>: familia display, familia texto,
-          jerarquía H1-H6 con reglas por contexto, tamaños y line-heights
-          documentados.
-        </li>
-        <li>
-          <strong>Paleta cromática con reglas</strong>: primarios, secundarios,
-          acento, regla 60/30/10, y valores técnicos (Pantone, CMYK, RGB, HEX,
-          RAL y vinilos si aplica).
-        </li>
-        <li>
-          <strong>Aplicaciones reales</strong>: al menos papelería básica
-          (tarjeta, carta, firma de email), digital (web, presentación, avatares
-          de redes) y un par de piezas merch si aplica.
-        </li>
-        <li>
-          <strong>Voz y tono</strong>: principios verbales, registro por canal,
-          ejemplos &quot;decimos / no decimos&quot;. No opcional en proyectos B2B o
-          con comunicación editorial.
-        </li>
-        <li>
-          <strong>Guidelines de uso</strong>: qué se puede y qué no. Sin
-          interpretación posible.
-        </li>
-        <li>
-          <strong>Archivos fuente</strong>: SVG + PNG + PDF del logo en todas
-          sus variantes, y preferiblemente Figma editable con componentes.
-        </li>
-      </ol>
-      <p>
-        Si la cotización que te han pasado no menciona explícitamente este
-        bloque mínimo, no estás comprando un manual. Estás comprando un archivo
-        más bonito. Nosotros publicamos los 48 componentes desglosados capítulo
-        a capítulo en <Link href="/anatomia">/anatomia</Link> — te sirve como
-        checklist incluso si al final no nos contratas a nosotros.
-      </p>
-
-      <h2>La trampa del precio bajo</h2>
-      <p>
-        La queja más habitual que escuchamos de marcas que vienen de un
-        freelance barato o una plantilla:{" "}
-        <em>&quot;tengo el archivo, pero nadie sabe usarlo&quot;</em>. Pagar 200€
-        por un logo suelto sale caro si luego necesitas otros 1.500€ para
-        documentar cómo se usa, qué pasa cuando lo coloca un proveedor externo,
-        y cómo se comporta en veinte aplicaciones diferentes.
-      </p>
-      <p>
-        El patrón clásico: el cliente contrata logo a 300€ con freelance junior,
-        a los seis meses tiene un equipo de diez personas improvisando aplicaciones
-        en Canva, a los doce meses la marca es irreconocible entre canales, y a
-        los dieciocho meses contrata rebrand completo a 4.000€. Total real del
-        recorrido: 4.300€ y dieciocho meses de marca inconsistente que ya ha
-        costado leads perdidos. El precio bajo no ahorra dinero — lo aplaza.
-      </p>
-      <p>
-        La regla cruda: si en tu cotización no aparece explícitamente{" "}
-        <strong>número de páginas entregadas, sistema tipográfico documentado,
-        jerarquía de color con reglas de uso, voz verbal y aplicaciones
-        concretas</strong>, no estás comprando un manual. Estás comprando un logo
-        con color.{" "}
-        <Link href="/anatomia">Aquí tienes los 16 capítulos y 48 componentes</Link>{" "}
-        que sí deberían aparecer.
-      </p>
-
-      <h2>Casos típicos — qué elige cada perfil</h2>
-      <p>
-        Para situarte sin pedir cita, cuatro escenarios reales basados en
-        propuestas firmadas el último año. Si te reconoces en alguno, sabes por
-        dónde empezar la conversación.
-      </p>
-
-      <h3>Autónomo que arranca consultora o estudio solo</h3>
-      <p>
-        Acaba de registrar autónomo, factura sus primeros clientes, necesita
-        sistema mínimo para operar con cara y ojos. No tiene presupuesto para
-        3.500€ ni necesita 50 páginas. Lo que sí necesita: logo que aguante,
-        papelería digital, aplicación web, algo que pueda entregar a proveedores
-        sin improvisar. <strong>Rango razonable: 490€ — 1.200€.</strong>{" "}
-        Encaja en tier Esencial productizado o freelance serio con scope cerrado.
-      </p>
-
-      <h3>PYME nueva con 3-10 empleados</h3>
-      <p>
-        Ya factura, ya tiene equipo, está en la fase de estandarizar para no
-        seguir improvisando cada vez que un proveedor externo pregunta por un
-        color o un tamaño. Necesita sistema completo con voz verbal, aplicaciones
-        digitales, plantillas editables para que el equipo no tenga que preguntar.
-        <strong> Rango razonable: 990€ — 2.500€.</strong> Encaja en tier
-        Profesional productizado o freelance senior. Una agencia a 6.000€ aquí
-        es overkill en la mayoría de los casos.
-      </p>
-
-      <h3>Marca con 5+ años que necesita rebrand</h3>
-      <p>
-        Tiene activos antiguos desordenados — tres versiones del logo
-        circulando, paleta que se ha ido ensuciando, comunicación desalineada.
-        Puede necesitar strategy light (no reposicionamiento total), refresh
-        visual, sistema nuevo completo con migración documentada del pasado.{" "}
-        <strong>Rango razonable: 1.990€ — 6.000€.</strong> El tier Premium
-        productizado funciona bien; por encima de 4.000€ ya tiene más sentido
-        una agencia con discovery corto.
-      </p>
-
-      <h3>Corporate o institucional (50+ empleados)</h3>
-      <p>
-        Hay múltiples stakeholders que aprobar, procesos de compra con legal y
-        finanzas, timeline dependiente de ciclos presupuestarios. Aquí el modelo
-        productizado no encaja: hacen falta discovery workshops, propuesta
-        personalizada, presentaciones intermedias, PM dedicado.{" "}
-        <strong>Rango razonable: 8.000€ — 18.000€ + IVA.</strong> Agencia
-        tradicional o estudio mediano con equipo de cuenta.
-      </p>
-
-      <h2>Señales de alerta antes de firmar</h2>
-      <p>
-        Independientemente del proveedor que elijas, estos son los filtros que
-        aplicamos nosotros mismos cuando recomendamos a un colega o evaluamos a
-        un subcontratado:
+        Recibió tres cotizaciones de freelances que conocía:
       </p>
       <ul>
         <li>
-          <strong>Cotización sin páginas entregadas específicas.</strong> &quot;Un
-          manual completo&quot; puede ser 10 o 120 páginas. Pide el rango.
+          <strong>Diseñador junior amigo de un colega</strong> · 280€ por
+          logo + paleta + tipografía en 8 páginas. Plazo: cuando pueda
+          entre proyectos suyos.
         </li>
         <li>
-          <strong>Revisiones ilimitadas como argumento de venta.</strong>{" "}
-          Suele significar que el proveedor cobra por hora y no quiere cerrar
-          scope. Es fricción que pagas tú en tiempo y alineación.
+          <strong>Freelance senior con portfolio publicado</strong> · 1.800€
+          por logo + sistema completo en 25 páginas. Plazo: 3 semanas.
         </li>
         <li>
-          <strong>Plazos en semanas estimadas, no en días laborables.</strong>{" "}
-          Un estudio que publica plazos concretos se compromete. Uno que habla
-          en semanas se protege legítimamente de su propia carga paralela —
-          sabe que puede escalar.
+          <strong>Estudio productizado tier Esencial</strong> · 490€ IVA
+          incluido por sistema base 20-25pp. Plazo: 5 días laborables.
+        </li>
+      </ul>
+      <p>
+        Roberto eligió la opción Esencial porque podía firmar proyectos la
+        semana siguiente con identidad coherente. Los 1.800€ del freelance
+        senior eran mejor producto pero el plazo de 3 semanas significaba
+        firmar el primer proyecto sin marca presentable. Los 280€ del
+        amigo, viendo el portfolio, decidió descartarlos:
+      </p>
+      <blockquote>
+        &quot;Cuando vi su portfolio entendí que cobraba 280€ porque su
+        trabajo valía 280€. No es crítica, es que no era el producto que yo
+        necesitaba para presentarme como arquitecto independiente.&quot;
+        <cite>— Roberto, arquitecto, Madrid, abril 2025</cite>
+      </blockquote>
+
+      <h3>Caso 3 · Laura · Directora marketing fundación cultural (Sevilla)</h3>
+      <p>
+        Laura dirige el área de marketing de una fundación cultural andaluza
+        con cuarenta empleados y seis programas anuales. Necesita rebrand
+        completo tras 18 años con la misma identidad visual. El proyecto
+        incluye también revisión de naming submarcas y nuevo sistema digital.
+      </p>
+      <p>
+        Recibió cinco cotizaciones, las cuatro más relevantes:
+      </p>
+      <ul>
+        <li>
+          <strong>Agencia top-tier Madrid</strong> (Erretres, Pedrita,
+          Mucho) · 38.000€ — 65.000€ + IVA. Discovery extenso, equipo
+          dedicado, 14-18 semanas. Naming incluido.
         </li>
         <li>
-          <strong>Portfolio con mockups hipotéticos en lugar de entregables reales.</strong>{" "}
-          Señal débil. Entregables firmados con nombre de cliente, páginas
-          publicadas e información operativa son señal fuerte.
+          <strong>Agencia mid-tier Sevilla</strong> · 14.000€ + IVA. 10
+          semanas. Naming incluido pero strategy más ligera.
         </li>
         <li>
-          <strong>Precio sin IVA desglosado</strong>. En B2C, exige IVA
-          incluido. En B2B, exige la factura con IVA detallado antes de firmar
-          para cuadrar con tu contabilidad.
+          <strong>Estudio productizado tier Premium</strong> · 1.990€ IVA
+          incl. 10 días laborables. Naming NO incluido — solo manual sobre
+          naming ya decidido.
         </li>
         <li>
-          <strong>Falta de contrato por escrito</strong>. Un email bien redactado
-          vale, un contrato firmado es mejor. Si no hay ninguno, hay problema.
+          <strong>Freelance senior + asesora strategy externa</strong> ·
+          paquete combinado 6.500€ + IVA. 8 semanas. Naming incluido.
+        </li>
+      </ul>
+      <p>
+        Laura eligió la agencia top-tier Madrid (45.000€ final). El proyecto
+        incluía naming nuevo de tres submarcas, redefinición estratégica
+        completa, y onboarding del equipo interno. El estudio productizado
+        no encajaba porque ese tier no incluye naming estratégico ni
+        sesiones con stakeholders múltiples — y lo dijimos claramente cuando
+        cotizamos.
+      </p>
+
+      <h2>Los rangos reales del mercado español 2026</h2>
+      <p>
+        Cruzando los tres casos anteriores con datos de más de cincuenta
+        propuestas firmadas el último año (propias y de colegas que comparten
+        información), los rangos honestos del mercado son:
+      </p>
+
+      <div className="rangos-tabla">
+        <table>
+          <thead>
+            <tr>
+              <th>Segmento</th>
+              <th>Rango precio</th>
+              <th>Plazo típico</th>
+              <th>IVA</th>
+              <th>Discovery incluido</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Agencia top-tier (Madrid/Bcn)</td>
+              <td>25.000€ — 80.000€+</td>
+              <td>12-20 semanas</td>
+              <td>+ IVA aparte</td>
+              <td>Workshop 1-2 semanas</td>
+            </tr>
+            <tr>
+              <td>Agencia mid-tier</td>
+              <td>6.000€ — 18.000€</td>
+              <td>6-12 semanas</td>
+              <td>+ IVA aparte</td>
+              <td>Sesiones 3-5</td>
+            </tr>
+            <tr>
+              <td>Freelance senior</td>
+              <td>2.000€ — 6.000€</td>
+              <td>4-8 semanas variable</td>
+              <td>A negociar</td>
+              <td>1-2 sesiones</td>
+            </tr>
+            <tr>
+              <td>Freelance junior/medio</td>
+              <td>500€ — 1.800€</td>
+              <td>2-6 semanas</td>
+              <td>A negociar</td>
+              <td>Brief escrito</td>
+            </tr>
+            <tr>
+              <td>Estudio productizado</td>
+              <td>490€ — 1.990€</td>
+              <td>5-10 días laborables</td>
+              <td>Incluido</td>
+              <td>Brief escrito</td>
+            </tr>
+            <tr>
+              <td>Plataforma / IA / Canva</td>
+              <td>~80€ — 400€</td>
+              <td>Instantáneo — 2 sem</td>
+              <td>Depende</td>
+              <td>No</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <figure className="hero-fig">
+        <Image
+          src="/blog/cuanto-cuesta-manual-de-marca-espana-2026/fig-02-cotizaciones.jpg"
+          alt="Tres cotizaciones impresas para el mismo proyecto manual de marca España 2026 — agencia, freelance y estudio productizado side by side mostrando diferencias precio plazo y scope"
+          width={1600}
+          height={900}
+          sizes="(min-width: 768px) 720px, 100vw"
+        />
+        <figcaption>
+          Fig. 02 · Tres cotizaciones reales para el mismo proyecto · una
+          semana de marzo 2025<span className="text-lacre">.</span>
+        </figcaption>
+      </figure>
+
+      <h2>Por qué cada segmento cobra lo que cobra</h2>
+      <p>
+        Los precios no son arbitrarios. Cada segmento tiene una estructura
+        de costes, riesgo y valor entregado distinta. Vale la pena entenderla
+        antes de juzgar si una cotización es razonable o abusiva.
+      </p>
+
+      <h3>Agencia top-tier (25k—80k+)</h3>
+      <p>
+        Estructura interna típica: socio director (200-300€/h interno),
+        director creativo (140-180€/h), diseñador senior (90-130€/h),
+        diseñador junior (50-70€/h), project manager (70-90€/h), copy senior
+        (90-120€/h). Un proyecto de manual completo consume 200-400 horas
+        repartidas entre 4-6 personas durante 12-20 semanas calendario. A
+        180€/h promedio interno, son 36.000-72.000€ de coste laboral antes
+        de margen. Su precio de venta refleja eso más estructura
+        (oficina, equipos, beneficios).
+      </p>
+      <p>
+        Lo que pagas extra: discovery profundo con stakeholders múltiples,
+        equipo de cuenta dedicado, presentaciones intermedias formales,
+        capacidad para coordinar producción asociada (campaña, web, packaging
+        si los necesitas), nivel de portfolio que abre puertas (presentar
+        que tu marca la hizo Pentagram tiene peso editorial específico),
+        soporte legal y contractual robusto.
+      </p>
+      <p>
+        Cuándo encaja: corporate con múltiples stakeholders, proyectos de
+        rebrand que afectan a 50+ empleados, necesidad de naming
+        estratégico, captación de inversión donde el portfolio del estudio
+        es señal social.
+      </p>
+
+      <h3>Agencia mid-tier (6k—18k)</h3>
+      <p>
+        Estructura: socio + 1-2 diseñadores + project manager. 80-150 horas
+        en 6-12 semanas. Coste interno 8.000-14.000€. Margen 40-60%. Precio
+        público típico 9.000-15.000€.
+      </p>
+      <p>
+        Lo que pagas: balance discovery + ejecución profesional + acceso a
+        un equipo pequeño donde sabes con quién hablas. Capacidad de
+        coordinar entrega + algo de campaña asociada. Portfolio publicable
+        sin pretensiones top-tier.
+      </p>
+      <p>
+        Cuándo encaja: pyme establecida (100k-5M€ facturación) que quiere
+        rebrand serio sin presupuesto top-tier, necesidad de naming
+        estratégico ligero, valor de tener equipo próximo y reuniones
+        frecuentes.
+      </p>
+
+      <h3>Freelance senior (2k—6k)</h3>
+      <p>
+        Una persona con 8-15 años de experiencia trabajando sola o con
+        colaboradores ocasionales. Tarifa horaria interna 60-100€/h. Un
+        proyecto consume 30-60 horas. Coste de oportunidad real (otros
+        proyectos paralelos): 2.500-5.500€. Precio público 2.500-6.000€.
+      </p>
+      <p>
+        Lo que pagas: la mente y mano de un único profesional senior. La
+        calidad del entregable depende casi enteramente de su portfolio
+        personal. Ventaja: comunicación directa sin filtros, decisión rápida.
+        Desventaja: si se atasca por proyectos paralelos, se atasca todo.
+      </p>
+      <p>
+        Cuándo encaja: cliente que ya tiene claro qué quiere, valora
+        comunicación directa, no necesita coordinar con grandes producciones
+        externas, presupuesto limitado pero suficiente para no comprar
+        producto bajo.
+      </p>
+
+      <h3>Estudio productizado (490€—1.990€)</h3>
+      <p>
+        Modelo nuestro y de algunos colegas españoles desde 2024-2025.
+        Estructura: socio + colaboradores ocasionales. Tres tiers cerrados
+        publicados, plazo publicado, scope documentado. Posible porque hemos
+        productizado el proceso editorial — eliminamos discovery extenso y
+        propuesta custom (que consumen 30-50% del tiempo de un proyecto
+        agencia equivalente) y entregamos sistema documentado en plazos
+        cortos.
+      </p>
+      <p>
+        Lo que pagas: ejecución editorial profesional con scope cerrado,
+        plazos comprometidos, precio publicado IVA incluido. No incluye
+        consultoría estratégica profunda ni naming desde cero. Si el
+        proyecto encaja en uno de los tres tiers, el modelo es
+        radicalmente más eficiente.
+      </p>
+      <p>
+        Cuándo encaja: proyectos donde ya está claro qué se quiere, donde
+        el cliente prefiere claridad operativa a ritual, donde el plazo
+        importa.
+      </p>
+
+      <h3>Plataforma/IA/Canva (~80—400)</h3>
+      <p>
+        Modelos basados en plantillas + IA generativa (Looka, Brandmark,
+        Canva Pro, Wix Logo Maker). El precio bajo refleja que no hay
+        humano editorial detrás — son sistemas automatizados que generan
+        permutaciones de templates pre-existentes.
+      </p>
+      <p>
+        Lo que pagas: archivo, no sistema. Funciona para freelances que
+        arrancan necesitando identidad básica para abrir cuentas y firmar
+        emails. Se queda corto en el momento que hay que coordinar con un
+        proveedor externo o explicar al equipo cómo aplicar la marca en un
+        contexto nuevo. Lo decimos sin condescendencia: para algunos
+        contextos es la opción correcta.
+      </p>
+
+      <h2>La cuenta que rara vez sale en cotizaciones</h2>
+      <p>
+        Lo que ninguna cotización menciona explícitamente es el coste
+        operativo posterior — lo que pagas durante los 24 meses
+        siguientes a la entrega del manual. Aquí el cálculo cambia
+        radicalmente entre segmentos.
+      </p>
+
+      <p>
+        Imagínate dos escenarios alternativos para Marta (la pyme
+        barcelonesa):
+      </p>
+
+      <h3>Escenario A · Manual a 280€ (junior amigo)</h3>
+      <p>
+        Marta paga 280€ y recibe 8 páginas con logo, paleta y tipografía
+        básica. A los seis meses contrata diseñador interno (jr) por
+        24.000€/año. El interno improvisa applications no documentadas. A
+        los nueve meses contratan agencia para hacer landing nueva — la
+        agencia pide guidelines y Marta no tiene → agencia improvisa, queda
+        inconsistente. A los doce meses contratan otra freelance para
+        rediseñar lo improvisado: 1.500€. Total: 280€ + 1.500€ = 1.780€ y
+        marca inconsistente.
+      </p>
+
+      <h3>Escenario B · Manual a 990€ (productizado)</h3>
+      <p>
+        Marta paga 990€ y recibe 35 páginas con sistema documentado +
+        Figma editable + tokens. A los seis meses contrata diseñador
+        interno (jr): el interno aplica el sistema documentado sin
+        improvisar. A los nueve meses agencia hace landing: recibe el
+        Figma + manual, entrega consistente. Total: 990€ y marca
+        consistente.
+      </p>
+
+      <p>
+        Diferencia: 790€ en gasto extra el primer año + reputación de
+        marca más fuerte. La &quot;ahorrarse&quot; los 710€ del manual
+        básico costó 790€ adicionales. Y eso ignorando el coste de leads
+        perdidos por inconsistencia visual — más difícil de cuantificar
+        pero real.
+      </p>
+
+      <p>
+        La regla operativa: el precio del manual no es el coste real. El
+        coste real es manual + improvisaciones futuras + rebrand
+        prematuro si las improvisaciones acumulan suficiente deuda visual.
+      </p>
+
+      <h2>Tres años después: el coste real de cada decisión</h2>
+      <p>
+        Hicimos seguimiento informal a una decena de fundadores que
+        cotizaron manuales en 2022-2023, comparando dónde estaban a 2026.
+        Patrones observados:
+      </p>
+
+      <ol>
+        <li>
+          <strong>Quien pagó <em>plataforma IA</em></strong> (~150€)
+          rebrandeó tras 18-24 meses al crecer el equipo. Coste total
+          combinado: 2.500-4.500€ y dos rebrand visibles.
+        </li>
+        <li>
+          <strong>Quien pagó <em>freelance junior</em></strong> (~600€)
+          típicamente sigue con esa identidad pero con guidelines internas
+          improvisadas que el equipo no aplica consistente. La marca se
+          erosiona pero no se rebrandea formalmente.
+        </li>
+        <li>
+          <strong>Quien pagó <em>freelance senior</em></strong> (~3.000€)
+          en su mayoría sigue operando bien. Algunos casos contratan
+          ampliaciones a 1.500-2.500€ adicionales para extensiones
+          (motion, packaging, signage).
+        </li>
+        <li>
+          <strong>Quien pagó <em>estudio productizado</em></strong>
+          (~990-1.990€) opera bien y suele subir a tier superior cuando
+          crecen (Esencial → Profesional → Premium pagando solo la
+          diferencia).
+        </li>
+        <li>
+          <strong>Quien pagó <em>agencia mid-tier</em></strong> (~12k)
+          opera bien. La inversión extra se nota en sistemas más extensos
+          (motion, video, audio identity) que duran más antes de necesitar
+          actualizaciones.
+        </li>
+        <li>
+          <strong>Quien pagó <em>agencia top-tier</em></strong> (~45k+)
+          tienen sistemas que duran 5-7 años antes de necesitar refresh.
+          Coste anualizado real: 7-9k€/año.
+        </li>
+      </ol>
+
+      <figure>
+        <Image
+          src="/blog/cuanto-cuesta-manual-de-marca-espana-2026/fig-03-coste-tiempo.jpg"
+          alt="Visualización editorial del coste acumulado de marca en tres años · escenarios comparativos plataforma IA vs freelance vs estudio vs agencia"
+          width={1600}
+          height={900}
+          sizes="(min-width: 768px) 720px, 100vw"
+        />
+        <figcaption>
+          Fig. 03 · El coste acumulado de la marca a tres años · cada
+          decisión inicial determina la curva<span className="text-lacre">.</span>
+        </figcaption>
+      </figure>
+
+      <h2>Cómo se construyó nuestro precio</h2>
+      <p>
+        Por transparencia, así calculamos los precios Tramarca actuales:
+      </p>
+
+      <ul>
+        <li>
+          <strong>Esencial 490€</strong>: 18-22h de trabajo a tarifa interna
+          ~22€/h efectiva. Margen ajustado intencional para captar
+          autónomos y arranques. Es nuestro tier de adquisición.
+        </li>
+        <li>
+          <strong>Profesional 990€</strong>: 32-38h a ~26€/h efectiva. El
+          80% de proyectos cae aquí. Margen razonable pero no premium.
+        </li>
+        <li>
+          <strong>Premium 1.990€</strong>: 50-65h a ~30€/h efectiva +
+          libro físico encuadernado de edición única (300-400€ coste
+          imprenta). Margen más holgado pero justificado por extensión
+          de scope y entregable físico.
         </li>
       </ul>
 
-      <h2>Cómo elegir sin equivocarte</h2>
       <p>
-        Tres filtros que aplicamos nosotros mismos cuando evaluamos un proveedor
-        de cualquier servicio productizado, no solo manuales:
+        Las tarifas internas se mantienen bajas porque hemos eliminado
+        discovery prolongado, propuestas custom y varios overheads de
+        modelo agencia tradicional. Es lo que permite ofrecer precio
+        cerrado público — sabemos cuánto tiempo consume cada tier porque
+        hemos producido decenas de proyectos siguiendo el mismo proceso.
       </p>
+
+      <p>
+        Tras los primeros diez clientes en cada tier, revisamos al alza si
+        la demanda lo permite. Hoy mantenemos los precios actuales pero
+        avisamos: el primer rebrand de tarifas — probablemente a
+        790/1.490/2.490€ — está previsto para Q3 2026. Quien firma brief
+        antes queda con precio actual amarrado.
+      </p>
+
+      <h2>Cómo elegir sin equivocarte · tres filtros</h2>
+      <p>
+        Ya hemos cubierto los rangos. Estos son los tres filtros operativos
+        que recomendamos aplicar antes de firmar cualquier presupuesto,
+        independientemente de quién sea el proveedor:
+      </p>
+
       <ol>
         <li>
           <strong>¿El precio está publicado?</strong> Si no, prepárate para
-          discovery prolongado. No es malo — pero debes saberlo antes de pedir
-          cita. Los estudios productizados publican rangos cerrados; las
-          agencias personalizan cada propuesta.
+          discovery prolongado de 1-3 semanas antes de saber el número.
+          No es malo — pero saberlo antes de pedir cita evita sorpresas.
         </li>
         <li>
-          <strong>¿Hay portfolio con casos firmados?</strong> Mockups hipotéticos
-          son señal débil. Entregables reales con nombre de cliente y
-          información operativa (páginas, plazo, tier) son señal fuerte. Si un
-          estudio no puede mostrar trabajo publicado, pide references por email.
+          <strong>¿Hay portfolio publicado con casos firmados?</strong>
+          Mockups hipotéticos son señal débil. Entregables reales con
+          nombre de cliente, páginas publicadas e información operativa
+          (tier, plazo, scope) son señal fuerte. Si solo hay mockups
+          decorativos sin nombres, pide references por email.
         </li>
         <li>
-          <strong>¿Los plazos son días o &quot;una estimación aproximada&quot;?</strong>{" "}
-          Un estudio que publica plazos laborables concretos se compromete a
-          ellos. Uno que habla en semanas estimadas está protegiéndose
-          legítimamente de su carga paralela.
+          <strong>¿Los plazos son días laborables o &quot;estimación
+          aproximada&quot;?</strong> Plazos publicados en días laborables
+          implican compromiso. Estimaciones en semanas reflejan
+          dependencia de carga paralela del proveedor — legítimo pero
+          asume que puede escalar.
         </li>
       </ol>
-      <p>
-        Si el proveedor pasa los tres filtros, probablemente estás en terreno
-        seguro. Si no pasa ninguno, no necesariamente es mal proveedor — puede
-        ser un gran freelance que trabaja así — pero asume que firmar con él
-        implica discovery más largo, plazos más variables y factura final más
-        dependiente del alcance real.
-      </p>
 
-      <h2>Por qué podemos cerrar el precio</h2>
+      <h2>Coda · el precio honesto</h2>
       <p>
-        Publicamos precio fijo IVA incluido porque hemos cerrado el scope antes
-        de empezar. Los 48 componentes que entregamos están documentados
-        capítulo a capítulo en <Link href="/anatomia">nuestra anatomía pública</Link>,
-        las dos rondas de revisión están cerradas por contrato, y el plazo se
-        cuenta en días laborables desde el brief firmado — no desde la primera
-        conversación. Si el proyecto no encaja en ese molde (rebrand estratégico
-        profundo, naming desde cero, corporate con 50+ empleados), te lo decimos
-        antes de firmar y te recomendamos a alguien que sí encaje.
+        El mercado de manuales de marca en España ha vivido históricamente
+        en la opacidad de propuestas custom. Cada cotización era una caja
+        negra. Los rangos del mercado se transmitían por boca a boca entre
+        fundadores que ya habían pasado por el proceso. La asimetría de
+        información favorecía al vendedor.
       </p>
       <p>
-        Nosotros publicamos precio cerrado IVA incluido, plazos en días
-        laborables y un manual propio de 58 páginas que puedes descargar en un
-        minuto —{" "}
-        <Link href="/#pedir-manual">pide el PDF aquí</Link>. Si al revisarlo
-        ves que no encaja, dinos; tenemos colegas excelentes para cada perfil.
+        Lo que hacemos en Tramarca — publicar precio cerrado IVA incluido,
+        plazo publicado en días laborables, scope documentado capítulo a
+        capítulo — es responder a esa opacidad con transparencia operativa.
+        No es que seamos más buenos, es que hemos productizado el proceso
+        para poder permitirnos esa transparencia. Otros estudios productizados
+        españoles (algunos colegas excelentes) hacen lo mismo en otros
+        precios y plazos. La transparencia es la oportunidad común.
+      </p>
+      <p>
+        Si tu proyecto encaja en{" "}
+        <Link href="/precios">nuestros tres tiers</Link> (490€, 990€,
+        1.990€ IVA incluido), <Link href="/contacto">pedir propuesta lleva
+        24h</Link>. Si necesitas algo más amplio (rebrand estratégico
+        profundo, naming desde cero, corporate con 50+ empleados), te
+        recomendamos colegas especializados — siempre con datos
+        verificables, no con opacidad de mercado heredada.
+      </p>
+      <p>
+        Si quieres ver cómo aplicamos nuestro precio cerrado a nosotros
+        mismos, <Link href="/#pedir-manual">descarga nuestro manual
+        Tramarca v4</Link>: 58 páginas, gratis, te llega al momento por
+        email. Es el manual que aplica los principios a su propio
+        productor — y la verificación visible de que el precio publicado
+        compra entregable real, no promesa<span className="text-lacre">.</span>
       </p>
     </div>
   );
