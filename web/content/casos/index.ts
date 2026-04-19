@@ -1,4 +1,8 @@
 import type { ComponentType } from "react";
+import CasoAnfisbena from "./anfisbena";
+import CasoClaramel from "./claramel";
+import CasoMatrazInnova from "./matraz-innova";
+import CasoShamusic from "./shamusic";
 import CasoTramarca from "./tramarca";
 
 /**
@@ -6,6 +10,10 @@ import CasoTramarca from "./tramarca";
  * Solo manuales con caso completo escrito y permiso del cliente.
  */
 export const CASO_BODIES: Record<string, ComponentType> = {
+  anfisbena: CasoAnfisbena,
+  claramel: CasoClaramel,
+  "matraz-innova": CasoMatrazInnova,
+  shamusic: CasoShamusic,
   tramarca: CasoTramarca,
 };
 

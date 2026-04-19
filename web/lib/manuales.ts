@@ -22,7 +22,7 @@ export type Manual = {
   logo: string;
   /** Tile background para el logo · "dark" (negro) o "light" (papel) o "lacre" */
   logoBg: "dark" | "light" | "lacre";
-  /** Si false, /manuales/[slug] redirige a /manuales — trabajo hecho pero no mostrable aún */
+  /** Si false, /trabajos/[slug] redirige a /trabajos — trabajo hecho pero no mostrable aún */
   showDetail: boolean;
 };
 
@@ -46,7 +46,7 @@ export const MANUALES: Manual[] = [
     companyDetail: "Marca de ropa contemporánea. Sistema documentado con identidad visual, voz editorial y papelería comercial.",
     logo: "/portfolio/logos/anfisbena.png",
     logoBg: "dark",
-    showDetail: false,
+    showDetail: true,
   },
   {
     slug: "claramel",
@@ -67,7 +67,7 @@ export const MANUALES: Manual[] = [
     companyDetail: "Asistente de IA personalizada. Identidad base, paleta, tipografía y aplicaciones para producto y web.",
     logo: "/portfolio/logos/claramel.png",
     logoBg: "light",
-    showDetail: false,
+    showDetail: true,
   },
   {
     slug: "matraz-innova",
@@ -88,7 +88,7 @@ export const MANUALES: Manual[] = [
     companyDetail: "Laboratorio farmacéutico. Sistema visual y verbal para comunicar ciencia a cliente profesional y consumidor final.",
     logo: "/portfolio/logos/matraz.svg",
     logoBg: "light",
-    showDetail: false,
+    showDetail: true,
   },
   {
     slug: "shamusic",
@@ -109,7 +109,7 @@ export const MANUALES: Manual[] = [
     companyDetail: "Plataforma music-tech. Manual Premium completo — estrategia, voz, aplicaciones y governance.",
     logo: "/portfolio/logos/shamusic.png",
     logoBg: "dark",
-    showDetail: false,
+    showDetail: true,
   },
   {
     slug: "tramarca",
