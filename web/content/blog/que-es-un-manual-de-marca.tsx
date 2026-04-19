@@ -233,7 +233,7 @@ export default function PostBody() {
         documentados), dirección fotográfica y sistema de motion. Puedes
         ver la <Link href="/anatomia">anatomía completa con 16 capítulos
         y 48 componentes</Link> al detalle, o hojear el{" "}
-        <Link href="/manuales/tramarca">manual Tramarca v4 de 58
+        <Link href="/trabajos/tramarca">manual Tramarca v4 de 58
         páginas</Link> como referencia concreta.
       </p>
 

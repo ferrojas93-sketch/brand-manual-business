@@ -451,7 +451,7 @@ export default function PostBody() {
           Sin esa firma, los manuales se archivan. Con la firma, se
           aplican. Cincuenta años después seguimos aplicando este principio
           en cada{" "}
-          <Link href="/manuales/tramarca">manual que producimos</Link>.
+          <Link href="/trabajos/tramarca">manual que producimos</Link>.
         </li>
         <li>
           <strong>Documentar el caso extremo</strong>. Si el manual cubre

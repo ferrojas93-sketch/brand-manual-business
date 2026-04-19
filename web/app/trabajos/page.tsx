@@ -15,23 +15,23 @@ const TOTAL_PAGES = MANUALES.reduce((sum, m) => sum + m.pages, 0);
 const SECTORS = Array.from(new Set(MANUALES.map((m) => m.sector.split(" ")[0]))).length;
 
 export const metadata: Metadata = {
-  title: "Manuales entregados · Portfolio",
+  title: "Trabajos · Portfolio de manuales entregados",
   description: `${MANUALES.length} manuales de marca entregados por Tramarca — ${TOTAL_PAGES} páginas publicadas, ${SECTORS} sectores. Trabajo real, precio cerrado, plazo publicado.`,
-  alternates: { canonical: `${SITE_URL}/manuales` },
+  alternates: { canonical: `${SITE_URL}/trabajos` },
 };
 
 const schemaGraph = jsonLdGraph(
   breadcrumbListSchema([
     { name: "Inicio", url: SITE_URL },
-    { name: "Manuales", url: `${SITE_URL}/manuales` },
+    { name: "Trabajos", url: `${SITE_URL}/trabajos` },
   ]),
   collectionPageSchema({
-    url: `${SITE_URL}/manuales`,
+    url: `${SITE_URL}/trabajos`,
     name: "Portfolio de manuales de marca Tramarca",
     description: `${MANUALES.length} manuales de marca entregados por Tramarca.`,
     items: MANUALES.filter((m) => m.showDetail).map((m) => ({
       name: `${m.name} — manual de marca ${m.pages}pp`,
-      url: `${SITE_URL}/manuales/${m.slug}`,
+      url: `${SITE_URL}/trabajos/${m.slug}`,
       image: `${SITE_URL}/portfolio/${m.slug}-cover.jpg`,
     })),
   })
@@ -52,7 +52,7 @@ function TierLabel({ tier }: { tier: string }) {
   );
 }
 
-export default function ManualesPage() {
+export default function TrabajosPage() {
   return (
     <>
       <JsonLd data={schemaGraph} />
@@ -63,7 +63,7 @@ export default function ManualesPage() {
           <div className="flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.3em] text-piedra border-b border-negro/15 pb-4">
             <span>XVI <span className="text-lacre">·</span> Portfolio</span>
             <span className="hidden md:inline">Manuales entregados</span>
-            <span>Tramarca.es/manuales</span>
+            <span>Tramarca.es/trabajos</span>
           </div>
         </div>
 
@@ -152,7 +152,7 @@ export default function ManualesPage() {
                         {m.showDetail && (
                           <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-lacre">
                             <Link
-                              href={`/manuales/${m.slug}`}
+                              href={`/trabajos/${m.slug}`}
                               className="hover:text-lacre-hover underline underline-offset-4"
                             >
                               Ver caso completo →
@@ -175,7 +175,7 @@ export default function ManualesPage() {
               </ul>
 
               <p className="mt-6 font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
-                Datos verificables en tramarca.es/manuales
+                Datos verificables en tramarca.es/trabajos
               </p>
             </div>
           </div>
@@ -199,7 +199,7 @@ export default function ManualesPage() {
                 Es el único que puedes hojear antes de hablar con nosotros<span className="text-lacre">.</span>
               </p>
               <div className="mt-8 flex flex-col sm:flex-row items-start gap-4">
-                <ButtonLink href="/manuales/tramarca" variant="primary" size="lg">
+                <ButtonLink href="/trabajos/tramarca" variant="primary" size="lg">
                   Ver manual Tramarca (58pp) →
                 </ButtonLink>
               </div>

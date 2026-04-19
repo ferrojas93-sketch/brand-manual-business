@@ -18,8 +18,8 @@ export default function NotFound() {
           <ButtonLink href="/precios" variant="ghost" size="lg">
             Ver precios
           </ButtonLink>
-          <ButtonLink href="/manuales" variant="ghost" size="lg">
-            Ver manuales
+          <ButtonLink href="/trabajos" variant="ghost" size="lg">
+            Ver trabajos
           </ButtonLink>
         </div>
       </div>

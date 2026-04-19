@@ -6,7 +6,7 @@ const YEAR = 2026;
 const navLinks = [
   { href: "/anatomia", label: "Anatomía" },
   { href: "/precios", label: "Precios" },
-  { href: "/manuales", label: "Manuales" },
+  { href: "/trabajos", label: "Trabajos" },
   { href: "/blog", label: "Blog" },
   { href: "/sobre", label: "Nosotros" },
   { href: "/contacto", label: "Contacto" },

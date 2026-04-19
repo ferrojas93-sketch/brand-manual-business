@@ -59,6 +59,13 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  async redirects() {
+    return [
+      // Rename /manuales -> /trabajos (2026-04-19). 301 permanent para preservar SEO.
+      { source: "/manuales", destination: "/trabajos", permanent: true },
+      { source: "/manuales/:slug", destination: "/trabajos/:slug", permanent: true },
+    ];
+  },
 };
 
 export default nextConfig;

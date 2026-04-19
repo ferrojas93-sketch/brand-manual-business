@@ -14,7 +14,7 @@ import {
 } from "@/lib/schema";
 
 export function generateStaticParams() {
-  // Solo Tramarca tiene detail page — el resto redirige a /manuales
+  // Casos de estudio profundos publicados — todos los manuales visibles.
   return MANUALES.filter((m) => m.showDetail).map((m) => ({ slug: m.slug }));
 }
 
@@ -30,7 +30,7 @@ export async function generateMetadata({
   return {
     title: `${m.name} — manual de marca ${m.pages}pp`,
     description: `Caso: manual de marca ${m.pages} páginas entregado por Tramarca. Sistema, paleta, tipografía y guidelines de aplicación. Tier ${tierLabel}.`,
-    alternates: { canonical: `${SITE_URL}/manuales/${m.slug}` },
+    alternates: { canonical: `${SITE_URL}/trabajos/${m.slug}` },
   };
 }
 
@@ -42,17 +42,17 @@ export default async function ManualDetailPage({
   const { slug } = await params;
   const m = getManual(slug);
   if (!m) notFound();
-  if (!m.showDetail) redirect("/manuales");
+  if (!m.showDetail) redirect("/trabajos");
 
   const tierPath =
     typeof m.tier === "string" && m.tier !== "Propio" ? `/precios#${m.tier}` : "/precios";
   const tierLabel = typeof m.tier === "string" ? m.tier : "Propio";
 
-  const manualUrl = `${SITE_URL}/manuales/${m.slug}`;
+  const manualUrl = `${SITE_URL}/trabajos/${m.slug}`;
   const schemaGraph = jsonLdGraph(
     breadcrumbListSchema([
       { name: "Inicio", url: SITE_URL },
-      { name: "Manuales", url: `${SITE_URL}/manuales` },
+      { name: "Trabajos", url: `${SITE_URL}/trabajos` },
       { name: m.name, url: manualUrl },
     ]),
     creativeWorkSchema({
@@ -72,10 +72,10 @@ export default async function ManualDetailPage({
       <section>
         <div className="mx-auto max-w-7xl px-6 pt-20 md:pt-28 pb-8">
           <Link
-            href="/manuales"
+            href="/trabajos"
             className="font-mono text-xs uppercase tracking-widest text-piedra hover:text-lacre"
           >
-            ← Todos los manuales
+            ← Todos los trabajos
           </Link>
         </div>
 

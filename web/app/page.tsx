@@ -180,7 +180,7 @@ export default function HomePage() {
                   Pedir propuesta en 24h →
                 </ButtonLink>
                 <ButtonLink
-                  href="/manuales"
+                  href="/trabajos"
                   variant="ghost"
                   size="lg"
                   trackAs="cta_ver_manuales"
@@ -359,7 +359,7 @@ export default function HomePage() {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <ButtonLink
-                href="/manuales/tramarca"
+                href="/trabajos/tramarca"
                 variant="primary"
                 size="lg"
                 trackAs="cta_ver_manual_tramarca"
@@ -597,12 +597,12 @@ export default function HomePage() {
                 Hemos trabajado con<span className="text-lacre">.</span>
               </h2>
               <p className="mt-6 max-w-md text-base md:text-lg text-piedra leading-relaxed">
-                Cinco manuales publicados. Solo el nuestro está abierto al
-                público — los casos de cliente permanecen privados hasta
-                autorización explícita<span className="text-lacre">.</span>
+                Cinco manuales publicados con caso de estudio detallado —
+                brief, decisiones tipográficas, paleta, aplicaciones y
+                spreads internos del sistema<span className="text-lacre">.</span>
               </p>
               <div className="mt-10">
-                <ButtonLink href="/manuales" variant="ghost" size="lg">
+                <ButtonLink href="/trabajos" variant="ghost" size="lg">
                   Ver portfolio completo →
                 </ButtonLink>
               </div>
@@ -657,7 +657,7 @@ export default function HomePage() {
                     <li key={m.slug} className="border-b border-negro/15">
                       {isTramarca ? (
                         <Link
-                          href={`/manuales/${m.slug}`}
+                          href={`/trabajos/${m.slug}`}
                           className="block hover:bg-arena/40 transition-colors px-2 -mx-2"
                         >
                           {Body}
@@ -670,7 +670,7 @@ export default function HomePage() {
                 })}
               </ul>
               <p className="mt-5 font-mono text-[10px] uppercase tracking-[0.3em] text-piedra">
-                Datos verificables en tramarca.es/manuales
+                Datos verificables en tramarca.es/trabajos
               </p>
             </div>
           </div>
