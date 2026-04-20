@@ -73,7 +73,7 @@ Definidos en `app/globals.css` bajo `@theme`:
 - ✅ Métricas Lead/Proposal via MCP Supabase
 - ❌ NO invocar nano-banana para el logo del cliente (usar upscale ImageMagick del PNG original)
 - ❌ NO tocar `tiers.ts` sin coordinar con `/brand-manual-proposal/SKILL.md` — deben quedar alineados
-- ❌ NO promesas que la infra no puede cumplir (ej: "Formación equipo 90min" sin workflow Calendar configurado)
+- ❌ NO promesas que la infra no puede cumplir (si no hay workflow, no va en el tier)
 
 ## Workflow
 

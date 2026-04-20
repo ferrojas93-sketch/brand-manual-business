@@ -50,5 +50,4 @@ Antes de decir "listo":
 - [ ] DNS tramarca.es propagación completa
 - [ ] Google Search Console + sitemap submit
 - [ ] Merge `redesign/ui-ux-pro-max` → `main` cuando Fernando apruebe
-- [ ] Aplicar re-pricing Premium 1990 → 2490€ (recomendación growth audit Shamusic v4)
-- [ ] Documentar gap "Formación equipo 90min" del Premium (o eliminar de la promesa)
+- [ ] Aplicar re-pricing Premium 1990 → 2490€ (diferido hasta 2026-06-08 o 10 clientes pagados — growth audit Shamusic v4)

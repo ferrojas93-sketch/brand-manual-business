@@ -95,6 +95,3 @@ export { SITE_URL } from "./schema";
 
 export const TIERS_ORDER_DESKTOP: TierId[] = ["esencial", "profesional", "premium"];
 export const TIERS_ORDER_MOBILE: TierId[] = ["esencial", "profesional", "premium"];
-
-export const FOUNDING_SLOTS_REMAINING = 5;
-export const FOUNDING_SLOTS_TOTAL = 5;
