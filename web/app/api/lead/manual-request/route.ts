@@ -6,6 +6,7 @@ import {
   createManualSignedUrl,
   sendManualToRequester,
   notifyStudioOfManualRequest,
+  isUnsubscribed,
 } from "@/lib/notify-manual";
 
 export const runtime = "nodejs";
@@ -60,6 +61,13 @@ export async function POST(req: Request) {
   const emailCheck = await limitByEmail(email);
   if (!emailCheck.success) {
     return NextResponse.json({ error: "Demasiadas solicitudes" }, { status: 429 });
+  }
+
+  if (await isUnsubscribed(email)) {
+    return NextResponse.json(
+      { error: "Este email solicitó no recibir más correos. Escríbenos a hola@tramarca.es si fue un error." },
+      { status: 400 }
+    );
   }
 
   // `name` es NOT NULL en la tabla; cuando el gate es solo-email, usamos la parte local del email como placeholder legible.

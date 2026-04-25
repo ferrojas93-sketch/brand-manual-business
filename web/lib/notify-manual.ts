@@ -1,11 +1,27 @@
 import { Resend } from "resend";
 import { getSupabaseAdmin } from "./supabase";
+import { buildUnsubscribeUrl } from "./unsubscribe";
+import { SITE_URL } from "./schema";
 
 const FROM = process.env.LEAD_NOTIFY_FROM ?? "Tramarca <leads@tramarca.es>";
 const NOTIFY_TO = process.env.LEAD_NOTIFY_TO ?? "hola@tramarca.es";
 const BUCKET = "manuales";
 const PDF_PATH = "tramarca-v4.pdf";
 const SIGNED_URL_TTL_SECONDS = 60 * 60 * 24; // 24h
+
+export async function isUnsubscribed(email: string): Promise<boolean> {
+  const { data, error } = await getSupabaseAdmin()
+    .from("leads")
+    .select("unsubscribed_at")
+    .eq("email", email)
+    .not("unsubscribed_at", "is", null)
+    .limit(1);
+  if (error) {
+    console.error("unsubscribed_check_failed", { code: error.code });
+    return false;
+  }
+  return (data?.length ?? 0) > 0;
+}
 
 function escape(value: string): string {
   return value
@@ -38,8 +54,9 @@ export async function sendManualToRequester(params: {
     throw new Error("manual_email_send_failed: RESEND_API_KEY is not configured");
   }
   const resend = new Resend(apiKey);
+  const unsubscribeUrl = buildUnsubscribeUrl(params.email, SITE_URL);
 
-  const subject = "Tu manual Tramarca está aquí.";
+  const subject = "Tu manual Tramarca";
   const textLines = [
     "Aquí tienes el manual Tramarca v4 — 58 páginas, sistema completo.",
     "",
@@ -51,6 +68,8 @@ export async function sendManualToRequester(params: {
     "Tramarca. Estudio editorial de manuales de marca.",
     "Precio cerrado · plazo publicado · sistema documentado.",
     "https://tramarca.es/precios",
+    "",
+    `Darse de baja: ${unsubscribeUrl}`,
   ];
   const html = `
 <div style="font-family:'IBM Plex Mono',ui-monospace,monospace;max-width:560px;color:#0C0C0C;background:#F4F0EB;padding:40px 32px">
@@ -85,6 +104,11 @@ export async function sendManualToRequester(params: {
   <p style="margin-top:32px;font-size:11px;color:#7A7672;letter-spacing:0.2em;text-transform:uppercase">
     Tramarca <span style="color:#C4553A">·</span> Madrid <span style="color:#C4553A">·</span> Edición 1
   </p>
+  <p style="margin-top:16px;font-size:11px;color:#7A7672;line-height:1.5">
+    Recibiste este email porque solicitaste el manual desde tramarca.es.
+    Si no quieres recibir más:
+    <a href="${escape(unsubscribeUrl)}" style="color:#7A7672;text-decoration:underline">darse de baja en un clic</a>.
+  </p>
 </div>`.trim();
 
   const result = await resend.emails.send({
@@ -94,6 +118,11 @@ export async function sendManualToRequester(params: {
     subject,
     text: textLines.join("\n"),
     html,
+    headers: {
+      "List-Unsubscribe": `<${unsubscribeUrl}>, <mailto:${NOTIFY_TO}?subject=unsubscribe>`,
+      "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      "List-Id": "Tramarca manual <manual.tramarca.es>",
+    },
   });
   if (result.error) {
     console.error("manual_email_send_failed", {
