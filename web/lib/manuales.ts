@@ -94,13 +94,13 @@ export const MANUALES: Manual[] = [
     slug: "shamusic",
     name: "Shamusic",
     tier: "premium",
-    pages: 46,
+    pages: 58,
     year: 2026,
     sector: "Music-tech",
-    brief: "Plataforma blockchain de registro de copyright musical para artistas independientes. Comunicación con fuerza estratégica pero sin sistema documentado: tres tipografías, cuatro morados sin rol, Instagram inconsistente.",
+    brief: "Plataforma blockchain de registro de copyright musical para artistas independientes. Comunicación con fuerza estratégica pero sin sistema documentado: tipografía dispersa, paleta sin reglas de proporción, voz inconsistente entre canales.",
     direction:
-      "Axis Bold. Archetype Rebel + Creator. Paleta racionalizada midnight + signal magenta con regla 60/30/10. Sistema tipográfico Fraunces + Host Grotesk + JetBrains Mono. Mantra verbal «Tu música. Tu copyright. Tu dinero.» codificado en Fraunces 900 opsz 144. Cuarenta y seis páginas, tier Premium.",
-    altCover: "Shamusic — manual de marca premium 46 páginas entregado por Tramarca",
+      "Axis Bold. Paleta racionalizada midnight + magenta con regla 60-30-10. Sistema tipográfico Raleway display + Open Sans body + Libre Baskerville editorial + Roboto Mono para hash y datos verificables. Editorial punzante «Un hash vale más que mil pleitos» codificado como pieza tipográfica de capítulo. Cincuenta y ocho páginas, tier Premium.",
+    altCover: "Shamusic — manual de marca premium 58 páginas entregado por Tramarca",
     testimonial: {
       quote: "Teníamos la voz, teníamos la comunidad, pero cada post era una marca distinta. Tramarca codificó reels, posters, Sessions y certificado en un sistema que aguanta el scroll sin que tengamos que improvisar cada jueves.",
       author: "Dirección de marca",

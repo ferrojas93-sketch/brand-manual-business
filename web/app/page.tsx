@@ -215,8 +215,8 @@ export default function HomePage() {
             <div className="lg:col-span-5 relative">
               <figure className="relative overflow-hidden bg-arena aspect-square lg:aspect-[4/5]">
                 <Image
-                  src="/hero-v6/home-hero.jpg"
-                  alt="Manual de marca Tramarca v4 — libro físico matte black con punto Lacre sobre superficie de papel cream y concreto pulido"
+                  src="/hero-v7/home-hero.jpg"
+                  alt="Manual de marca abierto en spread editorial — tipografía a gran escala con punto Lacre en página izquierda, specimen tipográfico en página derecha, mano sosteniendo la página sobre concreto"
                   fill
                   sizes="(min-width: 1024px) 42vw, 100vw"
                   className="object-cover"
@@ -224,10 +224,10 @@ export default function HomePage() {
                 />
                 <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/75 via-negro/20 to-transparent p-5 md:p-6">
                   <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">
-                    Edición 1 · Tramarca v4
+                    Fig. 01 · Spread editorial
                   </p>
                   <p className="mt-1 text-papel font-black text-base md:text-lg leading-tight">
-                    El manual como objeto<span className="text-lacre">.</span>
+                    El manual por dentro<span className="text-lacre">.</span>
                   </p>
                 </figcaption>
               </figure>
@@ -370,7 +370,7 @@ export default function HomePage() {
 
       {/* Pedir manual — gated PDF */}
       <section id="pedir-manual" className="bg-papel border-b border-negro/10 scroll-mt-20">
-        <div className="mx-auto max-w-7xl px-6 py-20 md:py-28">
+        <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             <div className="lg:col-span-6">
               <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
@@ -400,23 +400,24 @@ export default function HomePage() {
       </section>
 
       {/* Cómo funciona — proceso en 5 pasos */}
-      <section className="bg-papel border-b border-negro/10">
+      <section className="bg-papel border-t-2 border-negro/15 border-b border-negro/10">
         <div className="mx-auto max-w-[1500px] px-6 md:px-10 py-24 md:py-32">
           <Reveal>
             <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 max-w-6xl">
               <div>
                 <p className="font-mono text-xs uppercase tracking-[0.3em] text-lacre">
-                  Cómo funciona
+                  Cómo trabajamos contigo
                 </p>
                 <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05]">
-                  Cinco pasos<span className="text-lacre">.</span>
+                  Del brief al manual<span className="text-lacre">.</span>
                   <br />
-                  <span className="text-piedra">Plazo publicado<span className="text-lacre">.</span></span>
+                  <span className="text-piedra">En cinco pasos<span className="text-lacre">.</span></span>
                 </h2>
               </div>
               <p className="max-w-md text-base md:text-lg text-piedra leading-[1.55]">
-                Brief estructurado, confirmación, producción, revisiones, entrega.
-                Plazo contado desde el kickoff, no desde la primera conversación<span className="text-lacre">.</span>
+                Recibes un cuestionario, lo respondes, confirmamos dirección y
+                producimos. El plazo arranca el día del kickoff —no de la primera
+                conversación— y se cumple<span className="text-lacre">.</span>
               </p>
             </div>
           </Reveal>
@@ -692,7 +693,7 @@ export default function HomePage() {
       </section>
 
       {/* Cómo trabajamos — afirmación, no negación */}
-      <section className="bg-arena">
+      <section className="bg-arena border-t-2 border-negro/15">
         <div className="mx-auto max-w-7xl px-6 py-24 md:py-32">
           <p className="font-mono text-xs uppercase tracking-widest text-lacre">Cómo trabajamos</p>
           <h2 className="mt-6 text-4xl md:text-6xl font-black tracking-tight leading-[1.05] max-w-4xl">
