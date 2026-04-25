@@ -3,237 +3,230 @@ import Link from "next/link";
 
 /**
  * Caso de estudio · Anfisbena · 43 páginas · Profesional · 2026
- * Marca de ropa contemporánea con sistema visual inconsistente.
+ * Arc editorial: tensión inicial → decisión → resultado tangible.
+ * Voz declarativa, frases cortas. Marca cuya estética nace en el taller,
+ * no en Figma — el reto es codificar criterio sin congelarlo.
  */
 export default function CasoAnfisbena() {
   return (
     <div className="prose-editorial">
-      <h2>El brief · siete años de marca operando sin red</h2>
+      <h2>Una marca que vive en la costura, no en el archivo</h2>
       <p className="lede">
-        Anfisbena llegó al estudio en febrero de 2026 con un problema
-        que reconocemos enseguida: marca con tracción comercial real,
-        siete años en el mercado de ropa contemporánea, ventas
-        creciendo, pero sistema visual reconstruido desde cero cada
-        vez que entraba un proveedor nuevo. La papelería no coincidía
-        con el web. Las fichas de producto en el ecommerce usaban una
-        tipografía. Las etiquetas físicas usaban otra. El feed de
-        Instagram improvisaba criterio cada lunes<span className="text-lacre">.</span>
+        Febrero de 2026. Anfisbena llevaba siete años cosiendo bien y
+        documentando mal. La marca tenía tracción comercial, dos showrooms,
+        una comunidad fiel. Y una contradicción: cada decisión estética
+        importante ocurría en una mesa de corte, en un fitting con
+        costureras, en una conversación con la fotógrafa de campaña. Casi
+        ninguna llegaba al archivo<span className="text-lacre">.</span>
       </p>
       <p>
-        El brief firmado el 4 de febrero contenía tres cosas
-        explícitas: <strong>(1)</strong> documentar el sistema actual
-        donde funcionaba (Instagram era el canal con mejor consistencia
-        — había que decodificar qué hacían bien y elevarlo a regla);
-        <strong> (2)</strong> resolver la inconsistencia tipográfica
-        de raíz proponiendo dos familias máximo; <strong>(3)</strong>
-        producir guidelines extendidas para papelería comercial y
-        editorial — tier Profesional completo, 30-40 páginas.
-      </p>
-      <p>
-        Plazo publicado: 7 días laborables desde kickoff. El brief
-        se firmó el martes; el manual se entregó el jueves de la
-        semana siguiente, 9 días después incluyendo el fin de semana
-        que no contó como laborable<span className="text-lacre">.</span>
+        El reto no era inventar una marca. Era documentar la que ya existía
+        sin matarla. Una identidad que vive en la mano del taller no se
+        captura escribiendo reglas: se captura observando dónde la mano
+        repite. Lo que repite es sistema. Lo que se improvisa cada vez es
+        ruido. El manual tenía que separar lo uno de lo otro.
       </p>
 
-      <h2>El sistema tipográfico · una sans contemporánea + una mono editorial</h2>
+      <h2>La pregunta que cambió el alcance</h2>
       <p>
-        Auditando el sistema actual encontramos cinco familias
-        distintas operando: Helvetica Neue en web, Futura en
-        etiquetas, Garamond en cartelería de tienda, una geométrica
-        sin nombrar en Instagram, y una display custom que nadie
-        recordaba haber comprado. La decisión: reducir a dos
-        familias con role asignado.
+        El brief inicial pedía un sistema visual nuevo. La primera reunión
+        de descubrimiento lo descartó. Anfisbena no necesitaba una marca
+        distinta; necesitaba reconocer la suya. La pregunta correcta era
+        otra: dónde tu equipo decide bien sin pensar, y dónde decide mal
+        cada vez que entra alguien nuevo.
       </p>
       <p>
-        Sans editorial contemporánea para títulos, body extenso y
-        wordmark. La elegimos por su <em>x-height generoso</em> que
-        mantiene legibilidad en el cuerpo de fichas de producto a
-        14pt y se vuelve declarativa a 72pt en headlines de campaña.
-        El contraste modulado entre trazos verticales y diagonales
-        produce wordmarks que aguantan la composición editorial agresiva
-        que define la nueva voz visual.
+        La respuesta apareció auditando dos años de feed de Instagram.
+        Había un patrón que ningún miembro del equipo habría podido
+        verbalizar y que el feed cumplía siete de cada diez veces:
+        composición axial, foto cenital sobre superficie neutra, una
+        prenda por cuadro, signature en mono al pie. Lo que el equipo
+        hacía bien era replicable. Solo nadie lo había escrito.
+      </p>
+
+      <h2>Tipografía como decisión, no como inventario</h2>
+      <p>
+        El sistema previo tenía cinco familias activas. Helvetica en web,
+        Futura en etiquetas, Garamond en cartelería, una geométrica sin
+        nombre en Instagram, una display que nadie recordaba haber
+        comprado. El manual cerró el inventario en dos: una sans editorial
+        contemporánea para narrativa y un mono para metadato.
       </p>
       <p>
-        Mono específica para metadatos: SKU, precio, talla, composición
-        de tejido, signature de campaña. Cada vez que el lector
-        encuentra mono sabe que está mirando dato técnico, no
-        narrativa. Esta dualidad — narrativa en sans, dato en mono
-        — se documentó en el capítulo 03 con ejemplos de cada
-        aplicación. La jerarquía final tiene cuatro niveles: H1 64pt
-        para campaña, H2 32pt para sección, body 16pt, mono 11pt
-        para metadatos<span className="text-lacre">.</span>
+        La regla mental quedó así. Cuando el lector ve sans, está leyendo
+        a la marca. Cuando ve mono, está leyendo un dato verificable —
+        SKU, talla, composición, gramaje, origen del tejido. La distinción
+        es invisible hasta que se rompe. En cuarenta y tres páginas no se
+        rompe nunca.
       </p>
 
       <figure>
         <Image
           src="/portfolio/anfisbena/spread-04.jpg"
-          alt="Anfisbena — spread tipografía: dos familias con jerarquía de cuatro niveles documentada"
+          alt="Anfisbena — spread tipografía: sans editorial para narrativa, mono para dato técnico"
           width={1756}
           height={1242}
           sizes="(min-width: 768px) 720px, 100vw"
         />
         <figcaption>
-          Capítulo tipográfico · sans contemporánea para narrativa,
-          mono para metadatos<span className="text-lacre">.</span>
+          Capítulo tipográfico · una familia para narrar la prenda, otra
+          para describirla con precisión<span className="text-lacre">.</span>
         </figcaption>
       </figure>
 
-      <h2>Paleta cromática · cuatro tonos con regla 60/30/10</h2>
+      <h2>Cuatro colores y una regla impopular</h2>
       <p>
-        La paleta final tiene cuatro colores documentados con role
-        operativo asignado. Reducimos desde once tonos detectados en
-        materiales actuales (incluidas dos versiones casi idénticas
-        del mismo gris cálido que nadie había advertido como duplicidad).
+        La paleta acabó en cuatro tonos. Tinta cálida para body, cream
+        papel para fondos editoriales, gris medio para texto secundario,
+        un acento saturado único como firma. Once tonos en uso previo —
+        incluidos dos grises casi idénticos que nadie había advertido —
+        quedaron reducidos a cuatro con función asignada.
       </p>
-      <ul>
-        <li><strong>Tinta principal</strong> · negro cálido para
-          fondos editoriales, body extenso y wordmark. No #000 puro
-          — un negro con base ligeramente cálida que produce contraste
-          orgánico con el cream papel.</li>
-        <li><strong>Cream papel</strong> · cream con base cálida que
-          funciona como fondo principal en aplicaciones impresas y
-          como neutro complementario en web.</li>
-        <li><strong>Acento de marca</strong> · color saturado único
-          aplicado exclusivamente en separadores editoriales,
-          highlights de signature y el período tipográfico que cierra
-          cada wordmark significativo. Regla 60/30/10: 60% papel, 30%
-          tinta, 10% acento.</li>
-        <li><strong>Gris medio</strong> · neutro para texto secundario,
-          captions, metadatos cuando aparecen sobre cream.</li>
-      </ul>
       <p>
-        La regla operativa codificada: <strong>el acento nunca debe
-        aparecer dos veces seguidas en la misma página</strong>.
-        Si el período &quot;.&quot; está en headline, el del cuerpo
-        se omite. Esta disciplina produce composiciones rítmicas que
-        el lector reconoce como propias de la marca sin identificar
-        la causa<span className="text-lacre">.</span>
+        La regla que peleamos varias veces: el acento aparece una sola vez
+        por composición. Si el punto final está en el headline, el del
+        cuerpo se omite. Cada vez que probamos usarlo dos veces seguidas,
+        el spread se volvía decorativo. La marca dejaba de sentirse precisa
+        y empezaba a sentirse adornada. Volvimos a la regla y la fijamos.
+      </p>
+      <p>
+        El resto del trabajo cromático es invisible. La tinta no es negro
+        puro porque vibra contra el papel cálido. El gris secundario tiene
+        la misma temperatura del papel para que las jerarquías respiren al
+        mismo pulso. Son decisiones que solo se notan cuando faltan.
       </p>
 
       <figure>
         <Image
-          src="/portfolio/anfisbena/spread-06.jpg"
-          alt="Anfisbena — spread paleta cromática con role operativo asignado a cada color"
+          src="/portfolio/anfisbena/atmosphere-01.jpg"
+          alt="Anfisbena — paleta editorial sobre superficie neutra"
           width={1756}
           height={1242}
           sizes="(min-width: 768px) 720px, 100vw"
         />
         <figcaption>
-          Sistema cromático · cuatro tonos con role asignado y regla
-          60/30/10 documentada<span className="text-lacre">.</span>
+          Paleta operativa · cuatro tonos, una regla, un acento que firma<span className="text-lacre">.</span>
         </figcaption>
       </figure>
 
-      <h2>Retícula · doce columnas, baseline 4pt</h2>
+      <h2>Catorce aplicaciones, una sola pregunta operativa</h2>
       <p>
-        El sistema editorial completo se asienta en una retícula de
-        doce columnas con gutters proporcionales y márgenes generosos
-        en formato A4. El baseline grid funciona a 4pt — todos los
-        elementos verticales se alinean a múltiplos de cuatro:
-        leading body 16pt, leading H2 48pt, margin sections 64pt.
+        La parte más útil del manual no es teoría. Son los catorce
+        capítulos de aplicación: lookbook editorial, ficha de producto
+        para ecommerce, etiquetas físicas con bleed para imprenta nacional,
+        carta y sobre, firma de email, packaging con pegatina signature,
+        social cards cuadradas, stories verticales, signage para showroom.
       </p>
       <p>
-        Esta disciplina de baseline es lo que produce la sensación
-        rítmica que el cliente notó inmediatamente al hojear el manual
-        terminado: cada spread tiene composición distinta pero todos
-        respiran al mismo pulso. El capítulo 04 documenta el sistema
-        con diagramas y tres reglas de excepción para casos donde
-        un wordmark grande necesita salirse del grid intencionalmente.
-      </p>
-
-      <h2>Aplicaciones · papelería comercial editorial</h2>
-      <p>
-        La parte más operativa del manual son los catorce capítulos
-        de aplicación: lookbook editorial, fichas de producto para
-        ecommerce con specs de imagen, etiquetas físicas con bleed
-        para imprenta nacional, papelería B2B (carta, sobre, firma
-        de email con regla anti-overflow), packaging con pegatina
-        signature, social cards Instagram cuadradas y stories
-        verticales, signage para showroom.
+        Cada aplicación responde una pregunta simple: qué hace alguien que
+        no estuvo en la decisión cuando tiene que producir esta pieza. La
+        respuesta ocupa una página y tiene tres partes. Cómo se construye.
+        Cómo se ve construida. Qué hacer cuando un proveedor externo
+        impone su propio template y solo cabe pegar el wordmark.
       </p>
       <p>
-        Cada aplicación tiene tres elementos en su capítulo:
-        <strong> (1)</strong> spec técnica (medidas, formato, color
-        space CMYK o RGB), <strong>(2)</strong> ejemplo en producción
-        real (tomado del feed actual de Anfisbena, con permiso),
-        <strong> (3)</strong> reglas de excepción — qué hacer cuando
-        un proveedor externo tiene template propio. Esta tercera
-        parte es la que más usa el equipo de Anfisbena en
-        práctica<span className="text-lacre">.</span>
+        Esta tercera parte es la que más usa el equipo. Y la que ningún
+        manual de marca incluye, porque admitir que el sistema convive
+        con sistemas ajenos parece una concesión. No lo es. Es lo que
+        separa un manual usable de un manual decorativo.
       </p>
 
       <figure>
         <Image
           src="/portfolio/anfisbena/spread-09.jpg"
-          alt="Anfisbena — spread aplicaciones papelería comercial con specs técnicas y reglas operativas"
+          alt="Anfisbena — capítulo de aplicaciones con piezas en producción real"
           width={1756}
           height={1242}
           sizes="(min-width: 768px) 720px, 100vw"
         />
         <figcaption>
-          Capítulo de aplicaciones · 14 piezas con specs técnicas y
-          reglas operativas para producción real<span className="text-lacre">.</span>
+          Aplicaciones · cada pieza con instrucción clara para alguien
+          que no estuvo en la decisión<span className="text-lacre">.</span>
         </figcaption>
       </figure>
 
-      <h2>La voz · directa, no aspiracional</h2>
+      <h2>La voz tardó más que la paleta</h2>
       <p>
-        El capítulo verbal del manual codifica una decisión que el
-        equipo de Anfisbena ya intuía pero no había formulado: la
-        voz Anfisbena es directa, no aspiracional. No prometemos
-        &quot;experiencias transformadoras&quot; ni &quot;nuevas
-        realidades&quot; — describimos la prenda con precisión técnica
-        (composición, gramaje, origen del tejido) y dejamos que el
-        cliente decida si encaja con su forma de vestir<span className="text-lacre">.</span>
+        El capítulo verbal lo reescribimos tres veces. Lo difícil no era
+        encontrar palabras que sonaran bien. Era encontrar la forma de
+        describir la prenda que coincidiera con cómo Anfisbena ya hablaba
+        cuando hablaba mejor — en fitting con clientas, no en briefing
+        con agencia.
       </p>
       <p>
-        Esta voz tiene cuatro reglas operativas documentadas:
-        <strong> (1) describe</strong> antes que sugiera,
-        <strong> (2) concreto</strong> antes que evocador,
-        <strong> (3) técnico cuando proceda</strong> antes que
-        publicitario, <strong>(4) trato directo</strong> antes que
-        impersonal. Cada copy publicado en cualquier canal pasa por
-        estas cuatro reglas antes de salir.
-      </p>
-
-      <h2>Después · cómo lo está usando el equipo</h2>
-      <p>
-        El manual entregado el jueves se aplicó al feed de Instagram
-        en el siguiente fin de semana. Para el lunes siguiente todas
-        las plantillas de comunicación (firma de email, signature de
-        campaña, ficha tipo de producto) ya estaban actualizadas. El
-        proveedor de etiquetas físicas recibió el capítulo
-        correspondiente como adjunto al siguiente pedido — la
-        nueva tirada de etiquetas ya respeta el sistema completo.
+        La conclusión, después de tres intentos, fue que la voz Anfisbena
+        es descriptiva. No promete experiencias transformadoras. No invoca
+        nuevas realidades. Nombra el tejido, el corte, el origen del paño,
+        la decisión técnica de la pieza. Y deja que la clienta termine la
+        frase.
       </p>
       <p>
-        El equipo de Anfisbena reportó tres semanas después que el
-        tiempo dedicado a decisiones de criterio visual en
-        comunicación bajó de unas 4 horas semanales a menos de
-        30 minutos. El manual no necesita defenderse: cada vez que
-        surge una duda, el equipo abre el capítulo correspondiente
-        y aplica la regla. El sistema funciona<span className="text-lacre">.</span>
+        Esa voz tiene cuatro filtros. Describir antes que sugerir. Concreto
+        antes que evocador. Técnico cuando proceda antes que publicitario.
+        Trato directo antes que impersonal. Cada copy publicado pasa por
+        los cuatro antes de salir. La mayoría no pasa al primer intento.
       </p>
 
-      <h2>Por qué este caso es relevante</h2>
+      <h2>Cuarenta y tres páginas, dos rondas</h2>
       <p>
-        Anfisbena ilustra el patrón típico de marca con tracción
-        comercial pero sistema visual no documentado: el negocio
-        funciona, la marca existe, pero cada nuevo proveedor o
-        responsable interno reinventa criterio. El manual no cambió
-        la marca — la <strong>codificó</strong>. Lo que la marca ya
-        hacía bien quedó documentado como regla; lo que hacía mal
-        quedó identificado como excepción a corregir.
+        El manual completo tomó siete días laborables. Las primeras catorce
+        horas fueron arquitectura editorial: qué capítulos, qué orden, qué
+        en derecha y qué en izquierda. Veintiséis horas de producción.
+        Doce horas de auditoría cruzada con dirección creativa, dirección
+        de arte, copy y UX.
       </p>
       <p>
-        Si tu marca opera con la misma sensación de improvisación
-        constante,{" "}
-        <Link href="/precios#profesional">el tier Profesional cubre
-        este caso al detalle</Link>: 30-40 páginas, 7 días laborables,
-        990€ IVA incluido. <Link href="/contacto">Pide propuesta sin
-        compromiso</Link> y te respondemos en 24h con scope cerrado y
-        plazo confirmado.
+        Las dos rondas no fueron cosméticas. La primera encontró cuatro
+        spreads donde la jerarquía contradecía la regla del propio capítulo.
+        La segunda encontró un caption en mono que estaba en sans, y dos
+        excepciones de aplicación que pedían contraejemplo. Si las rondas
+        no encuentran nada, el proceso no está haciendo su trabajo.
+      </p>
+
+      <h2>Lo que cambió el lunes siguiente</h2>
+      <p>
+        El manual entregado el jueves se aplicó al feed durante el fin de
+        semana. Para el lunes, la firma de email, la ficha tipo de producto
+        y la plantilla de campaña ya estaban actualizadas. El proveedor de
+        etiquetas físicas recibió el capítulo correspondiente como adjunto
+        del siguiente pedido. La tirada nueva ya respeta el sistema.
+      </p>
+      <p>
+        Tres semanas después, el equipo reportó la métrica que más importa.
+        El tiempo dedicado a decidir criterio visual cada semana bajó de
+        cuatro horas a media hora. El manual no necesita defenderse: cuando
+        surge una duda, alguien abre el capítulo y aplica la regla. La
+        decisión deja de pesar sobre la fundadora<span className="text-lacre">.</span>
+      </p>
+
+      <h2>Lo que nos llevamos al siguiente cliente</h2>
+      <p>
+        Anfisbena nos enseñó que las marcas con tracción real no necesitan
+        ser reinventadas. Necesitan ser leídas. El trabajo del manual fue
+        observar dónde la mano del taller ya repetía, codificar esa
+        repetición como regla y dar contraejemplos donde la marca solía
+        improvisar mal.
+      </p>
+      <p>
+        Lo que la marca ya hacía bien quedó documentado como sistema. Lo
+        que hacía mal quedó identificado como excepción a corregir. La
+        marca no cambió. Quedó codificada. Es una distinción más fina de
+        lo que parece, y es lo que diferencia un manual usable de un
+        rebrand innecesario.
+      </p>
+
+      <h2>Si tu marca está en este punto</h2>
+      <p>
+        Anfisbena describe un patrón frecuente: marca con años de operación,
+        criterio implícito que funciona, sistema explícito que no existe.
+        El tier Profesional cubre exactamente este caso.
+      </p>
+      <p>
+        Si quieres ver el alcance, plazo y precio cerrados,{" "}
+        <Link href="/precios#profesional">los tres tiers se ven en una
+        página</Link>. Si prefieres comparar con el resto del portfolio
+        antes de decidir, <Link href="/manuales">aquí están los cinco
+        casos</Link>.
       </p>
     </div>
   );

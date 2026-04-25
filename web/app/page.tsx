@@ -211,51 +211,26 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Right column — editorial collage of 3 images (what we are) */}
+            {/* Right column — single editorial hero (libro Tramarca cenital) */}
             <div className="lg:col-span-5 relative">
-              <div className="relative grid grid-cols-6 grid-rows-6 gap-3 md:gap-4 min-h-[520px] lg:min-h-[720px]">
-                {/* Image 1 — manual spread (retícula + M) · única en mobile para reducir LCP */}
-                <figure className="col-span-6 row-span-6 lg:row-span-4 relative overflow-hidden bg-arena">
-                  <Image
-                    src="/hero/01-manual-spread.jpg"
-                    alt="Manual de marca abierto — retícula modular y construcción tipográfica"
-                    fill
-                    sizes="(min-width: 1024px) 42vw, 100vw"
-                    className="object-cover"
-                    priority
-                  />
-                  <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/70 via-negro/20 to-transparent p-4 md:p-5">
-                    <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">
-                      Fig. 01
-                    </p>
-                    <p className="mt-1 text-papel font-black text-sm md:text-base leading-tight">
-                      Sistema antes que estilo<span className="text-lacre">.</span>
-                    </p>
-                  </figcaption>
-                </figure>
-
-                {/* Image 2 — wax seal (lacre literal) · ≥lg para ahorrar bandwidth mobile */}
-                <figure className="hidden lg:block lg:col-span-3 lg:row-span-2 relative overflow-hidden bg-arena">
-                  <Image
-                    src="/hero/02-wax-seal.jpg"
-                    alt="Sello de lacre imprimiéndose sobre papel crema"
-                    fill
-                    sizes="21vw"
-                    className="object-cover"
-                  />
-                </figure>
-
-                {/* Image 3 — desk flat-lay · ≥lg para ahorrar bandwidth mobile */}
-                <figure className="hidden lg:block lg:col-span-3 lg:row-span-2 relative overflow-hidden bg-arena">
-                  <Image
-                    src="/hero/03-desk-flatlay.jpg"
-                    alt="Mesa de estudio editorial con pruebas tipográficas y muestras de color"
-                    fill
-                    sizes="21vw"
-                    className="object-cover"
-                  />
-                </figure>
-              </div>
+              <figure className="relative overflow-hidden bg-arena aspect-square lg:aspect-[4/5]">
+                <Image
+                  src="/hero-v6/home-hero.jpg"
+                  alt="Manual de marca Tramarca v4 — libro físico matte black con punto Lacre sobre superficie de papel cream y concreto pulido"
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+                <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/75 via-negro/20 to-transparent p-5 md:p-6">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">
+                    Edición 1 · Tramarca v4
+                  </p>
+                  <p className="mt-1 text-papel font-black text-base md:text-lg leading-tight">
+                    El manual como objeto<span className="text-lacre">.</span>
+                  </p>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
