@@ -211,82 +211,78 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Right column — logo specimen (Pentagram-style construction page) */}
+            {/* Right column — portfolio real: 5 manuales entregados */}
             <div className="lg:col-span-5 relative">
-              <figure
-                className="relative overflow-hidden bg-negro aspect-square lg:aspect-[4/5]"
-                aria-label="Specimen del punto Lacre — el icónico de Tramarca con marcas de construcción"
+              <div
+                className="relative bg-negro aspect-square lg:aspect-[4/5] overflow-hidden"
+                aria-label="Cinco manuales entregados — portfolio real"
               >
-                {/* Background grid — very subtle */}
-                <div
-                  aria-hidden
-                  className="absolute inset-0 opacity-[0.05]"
-                  style={{
-                    backgroundImage:
-                      "linear-gradient(to right, #F4F0EB 1px, transparent 1px), linear-gradient(to bottom, #F4F0EB 1px, transparent 1px)",
-                    backgroundSize: "48px 48px",
-                  }}
-                />
-
-                {/* Top mono caption row */}
-                <div className="absolute top-5 left-5 right-5 md:top-7 md:left-7 md:right-7 flex items-start justify-between z-10">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/55">
-                    Cap. 02 · Identidad
+                {/* Top caption */}
+                <div className="absolute top-5 left-5 right-5 md:top-6 md:left-6 md:right-6 flex items-start justify-between z-20">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/65">
+                    Cinco manuales entregados
                   </p>
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/55">
-                    v4 · 2026
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/65">
+                    2026
                   </p>
                 </div>
 
-                {/* Centered specimen — Lacre dot with construction marks */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center gap-10 md:gap-12 z-10">
-                  <div className="relative">
-                    {/* Crosshair construction marks */}
-                    <span
-                      aria-hidden
-                      className="absolute left-1/2 -top-12 md:-top-14 -translate-x-1/2 h-8 md:h-10 w-px bg-papel/25"
-                    />
-                    <span
-                      aria-hidden
-                      className="absolute left-1/2 -bottom-12 md:-bottom-14 -translate-x-1/2 h-8 md:h-10 w-px bg-papel/25"
-                    />
-                    <span
-                      aria-hidden
-                      className="absolute top-1/2 -left-12 md:-left-14 -translate-y-1/2 w-8 md:w-10 h-px bg-papel/25"
-                    />
-                    <span
-                      aria-hidden
-                      className="absolute top-1/2 -right-12 md:-right-14 -translate-y-1/2 w-8 md:w-10 h-px bg-papel/25"
-                    />
+                {/* Grid 2×3 of real covers + 1 CTA slot */}
+                <div className="absolute inset-0 pt-14 pb-14 px-3 md:px-4 grid grid-cols-2 grid-rows-3 gap-2 md:gap-2.5 z-10">
+                  {[
+                    { slug: "tramarca", name: "Tramarca", tier: "Propio" },
+                    { slug: "shamusic", name: "Shamusic", tier: "Premium" },
+                    { slug: "anfisbena", name: "Anfisbena", tier: "Profesional" },
+                    { slug: "matraz-innova", name: "Matraz Innova", tier: "Profesional" },
+                    { slug: "claramel", name: "Claramel", tier: "Esencial" },
+                  ].map(({ slug, name, tier }) => (
+                    <Link
+                      key={slug}
+                      href={`/trabajos/${slug}`}
+                      className="relative bg-arena/10 overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-lacre"
+                    >
+                      <Image
+                        src={`/portfolio/${slug}-cover.jpg`}
+                        alt={`${name} — manual ${tier}`}
+                        fill
+                        sizes="(min-width: 1024px) 18vw, 45vw"
+                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                      />
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-negro/85 via-negro/30 to-transparent p-2 md:p-2.5">
+                        <p className="font-sans font-black text-[10px] md:text-xs text-papel leading-none">
+                          {name}<span className="text-lacre">.</span>
+                        </p>
+                        <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-papel/65 mt-0.5">
+                          {tier}
+                        </p>
+                      </div>
+                    </Link>
+                  ))}
 
-                    {/* The Lacre dot — the brand's icónico */}
-                    <div
-                      className="rounded-full bg-lacre shadow-[0_0_60px_-20px_rgba(196,85,58,0.5)]"
-                      style={{ width: "clamp(110px, 19vw, 200px)", aspectRatio: "1 / 1" }}
-                    />
-
-                    {/* Hex annotation, right of the dot */}
-                    <p className="absolute left-full top-1/2 -translate-y-1/2 ml-12 md:ml-16 font-mono text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-papel/50 whitespace-nowrap hidden sm:block">
-                      Lacre · #C4553A
+                  {/* CTA slot — sexto cuadro */}
+                  <Link
+                    href="/contacto"
+                    className="relative bg-lacre flex flex-col items-center justify-center text-center p-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-papel"
+                  >
+                    <p className="font-sans font-black text-papel text-sm md:text-base leading-tight">
+                      Tu manual<span className="text-papel">.</span>
                     </p>
-                  </div>
-
-                  {/* Wordmark below */}
-                  <p className="font-sans font-black text-2xl md:text-3xl tracking-[-0.03em] text-papel">
-                    Tramarca<span className="text-lacre">.</span>
-                  </p>
+                    <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-papel/85 mt-1.5">
+                      Pedir →
+                    </p>
+                  </Link>
                 </div>
 
-                {/* Bottom mono caption row */}
-                <div className="absolute bottom-5 left-5 right-5 md:bottom-7 md:left-7 md:right-7 flex items-end justify-between z-10">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/55">
-                    El Punto Final
+                {/* Bottom caption */}
+                <div className="absolute bottom-5 left-5 right-5 md:bottom-6 md:left-6 md:right-6 flex items-end justify-between z-20">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/65">
+                    Esencial · Profesional · Premium
                   </p>
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/55">
-                    Specimen 02
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/65">
+                    Portfolio
                   </p>
                 </div>
-              </figure>
+              </div>
             </div>
           </div>
         </div>
