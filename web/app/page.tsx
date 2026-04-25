@@ -211,78 +211,26 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Right column — portfolio real: 5 manuales entregados */}
+            {/* Right column — editorial photo: studio Tramarca en perspectiva 3/4 */}
             <div className="lg:col-span-5 relative">
-              <div
-                className="relative bg-negro aspect-square lg:aspect-[4/5] overflow-hidden"
-                aria-label="Cinco manuales entregados — portfolio real"
-              >
-                {/* Top caption */}
-                <div className="absolute top-5 left-5 right-5 md:top-6 md:left-6 md:right-6 flex items-start justify-between z-20">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/65">
-                    Cinco manuales entregados
+              <figure className="relative overflow-hidden bg-arena aspect-square lg:aspect-[4/5]">
+                <Image
+                  src="/hero-v8/home-hero.jpg"
+                  alt="Estudio Tramarca — diseñadora trabajando en un manual de marca con herramientas y portfolio visible al fondo, paleta industrial moderna con acento Lacre"
+                  fill
+                  sizes="(min-width: 1024px) 42vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+                <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/75 via-negro/20 to-transparent p-5 md:p-6">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">
+                    Estudio · 2026
                   </p>
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/65">
-                    2026
+                  <p className="mt-1 text-papel font-black text-base md:text-lg leading-tight">
+                    Donde se hace<span className="text-lacre">.</span>
                   </p>
-                </div>
-
-                {/* Grid 2×3 of real covers + 1 CTA slot */}
-                <div className="absolute inset-0 pt-14 pb-14 px-3 md:px-4 grid grid-cols-2 grid-rows-3 gap-2 md:gap-2.5 z-10">
-                  {[
-                    { slug: "tramarca", name: "Tramarca", tier: "Propio" },
-                    { slug: "shamusic", name: "Shamusic", tier: "Premium" },
-                    { slug: "anfisbena", name: "Anfisbena", tier: "Profesional" },
-                    { slug: "matraz-innova", name: "Matraz Innova", tier: "Profesional" },
-                    { slug: "claramel", name: "Claramel", tier: "Esencial" },
-                  ].map(({ slug, name, tier }) => (
-                    <Link
-                      key={slug}
-                      href={`/trabajos/${slug}`}
-                      className="relative bg-arena/10 overflow-hidden group focus:outline-none focus-visible:ring-2 focus-visible:ring-lacre"
-                    >
-                      <Image
-                        src={`/portfolio/${slug}-cover.jpg`}
-                        alt={`${name} — manual ${tier}`}
-                        fill
-                        sizes="(min-width: 1024px) 18vw, 45vw"
-                        className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                      />
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-negro/85 via-negro/30 to-transparent p-2 md:p-2.5">
-                        <p className="font-sans font-black text-[10px] md:text-xs text-papel leading-none">
-                          {name}<span className="text-lacre">.</span>
-                        </p>
-                        <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-papel/65 mt-0.5">
-                          {tier}
-                        </p>
-                      </div>
-                    </Link>
-                  ))}
-
-                  {/* CTA slot — sexto cuadro */}
-                  <Link
-                    href="/contacto"
-                    className="relative bg-lacre flex flex-col items-center justify-center text-center p-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-papel"
-                  >
-                    <p className="font-sans font-black text-papel text-sm md:text-base leading-tight">
-                      Tu manual<span className="text-papel">.</span>
-                    </p>
-                    <p className="font-mono text-[8px] uppercase tracking-[0.2em] text-papel/85 mt-1.5">
-                      Pedir →
-                    </p>
-                  </Link>
-                </div>
-
-                {/* Bottom caption */}
-                <div className="absolute bottom-5 left-5 right-5 md:bottom-6 md:left-6 md:right-6 flex items-end justify-between z-20">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/65">
-                    Esencial · Profesional · Premium
-                  </p>
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/65">
-                    Portfolio
-                  </p>
-                </div>
-              </div>
+                </figcaption>
+              </figure>
             </div>
           </div>
         </div>
