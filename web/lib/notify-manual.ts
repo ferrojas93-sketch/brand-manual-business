@@ -107,7 +107,6 @@ export async function sendManualToRequester(params: {
 
 export async function notifyStudioOfManualRequest(params: {
   email: string;
-  ip: string;
 }): Promise<void> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey || apiKey.trim().length === 0) {
@@ -121,7 +120,6 @@ export async function notifyStudioOfManualRequest(params: {
     `Nuevo lead — ha solicitado el manual Tramarca PDF.`,
     "",
     `Email: ${params.email}`,
-    `IP: ${params.ip}`,
     "",
     "Registro completo en Supabase → leads (source = manual_pdf_gate).",
   ].join("\n");
@@ -131,7 +129,6 @@ export async function notifyStudioOfManualRequest(params: {
   <h1 style="font-size:22px;font-weight:900;margin:0 0 20px;line-height:1.2;font-family:Georgia,serif">${escape(params.email)}</h1>
   <table style="font-size:14px;line-height:1.5;border-collapse:collapse">
     <tr><td style="padding:5px 16px 5px 0;color:#7A7672">Email</td><td style="padding:5px 0"><a href="mailto:${escape(params.email)}" style="color:#0C0C0C">${escape(params.email)}</a></td></tr>
-    <tr><td style="padding:5px 16px 5px 0;color:#7A7672">IP</td><td style="padding:5px 0;font-size:12px;color:#7A7672">${escape(params.ip)}</td></tr>
     <tr><td style="padding:5px 16px 5px 0;color:#7A7672">Source</td><td style="padding:5px 0">manual_pdf_gate</td></tr>
   </table>
   <p style="margin-top:20px;font-size:12px;color:#7A7672">Registro en Supabase → leads.</p>

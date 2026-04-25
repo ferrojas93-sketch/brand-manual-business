@@ -89,7 +89,7 @@ export async function POST(req: Request) {
     const signedUrl = await createManualSignedUrl();
     await sendManualToRequester({ email, signedUrl });
     // Studio notification en fire-and-forget: no bloquea la respuesta al usuario.
-    notifyStudioOfManualRequest({ email, ip }).catch((err) => {
+    notifyStudioOfManualRequest({ email }).catch((err) => {
       console.error("studio_notify_async_failed", {
         message: err instanceof Error ? err.message : "unknown",
       });

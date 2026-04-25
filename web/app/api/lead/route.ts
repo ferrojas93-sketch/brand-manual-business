@@ -186,7 +186,6 @@ export async function POST(req: Request) {
     company,
     tier: body.tier ?? "no-lo-se",
     message,
-    ip,
     website: companyWebsite,
     socialLinks,
     sector,

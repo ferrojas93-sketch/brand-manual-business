@@ -3,243 +3,241 @@ import Link from "next/link";
 
 /**
  * Caso de estudio · Tramarca v4 · 58 páginas · Propio · 2026
- * Modelo de profundidad para los 5 casos. Vocabulario: retícula,
- * jerarquía, opsz, axis variable, voz declarativa, sistema operativo.
+ * Arc editorial: tensión inicial → decisión → resultado tangible.
+ * Voz declarativa, frases cortas, sin specs en el flow principal.
  */
 export default function CasoTramarca() {
   return (
     <div className="prose-editorial">
-      <h2>El brief que nos hicimos a nosotros mismos</h2>
+      <h2>El cliente más difícil que hemos tenido</h2>
       <p className="lede">
-        Marzo de 2026. Después de tres años produciendo manuales para
-        otros, asumimos que el sitio web público no podía sostenerse
-        sin que aplicásemos el mismo estándar a nuestra propia marca.
-        El brief lo firmé yo conmigo mismo en un café de Malasaña: si
-        no podemos publicar un manual Tramarca defendible, no tenemos
-        autoridad moral para vender manuales a nadie<span className="text-lacre">.</span>
+        Marzo de 2026. Llevábamos tres años haciendo manuales de marca
+        para otros y vendiendo un sitio web que no tenía manual propio.
+        La contradicción era estructural: si lo que entregamos al cliente
+        merece cuarenta y ocho páginas de sistema documentado, lo nuestro
+        también<span className="text-lacre">.</span>
       </p>
       <p>
-        Las restricciones eran tres: <strong>(1)</strong> el manual
-        debía ser tier Premium completo (40-50 páginas) para demostrar
-        en hechos lo que vendemos como descripción. <strong>(2)</strong>
-        Ningún elemento podía ser placeholder — cada componente, ratio,
-        valor hex y aplicación debía ser producción real. <strong>(3)</strong>
-        El manual entero debía hacerse con la misma metodología y plazo
-        que aplicamos a clientes Premium: diez días laborables,
-        documentado capítulo a capítulo.
+        Tramarca era el cliente más difícil del portfolio porque ningún
+        otro lo iba a leer con la atención que lo íbamos a leer nosotros.
+        Cualquier inconsistencia se convertía en una grieta interna. Cualquier
+        atajo, en una excusa para hacer el siguiente. Decidimos tratarnos
+        como tratamos al cliente Premium: mismo alcance, mismo plazo, misma
+        disciplina de revisión.
       </p>
 
-      <h2>Las decisiones tipográficas</h2>
+      <h2>La pregunta que retrasó el arranque</h2>
       <p>
-        El sistema tipográfico final son dos familias: <strong>Satoshi</strong>
-        para títulos y cuerpo extenso, <strong>IBM Plex Mono</strong>
-        para metadatos, captions, datos técnicos y signaling editorial.
-        Ninguna serif. La decisión vino de cuatro meses de prueba con
-        Fraunces y Inter — terminamos descartando ambas por motivos
-        operativos.
+        La primera tentación era publicar rápido. Un manual ligero, veinticinco
+        páginas, lo suficiente para tener algo enseñable. Lo descartamos en
+        la primera tarde. Si el manual de Tramarca pesaba menos que el de
+        Shamusic, el portfolio se desequilibraba. La pregunta correcta no
+        era cuánto tardamos sino qué tiene que demostrar.
       </p>
       <p>
-        Satoshi tiene una construcción geométrica que mantiene legibilidad
-        a 14pt en cuerpo y se vuelve <em>declarativa</em> a 96pt en
-        masthead — la curva de la &quot;a&quot; minúscula y el contraste
-        modulado entre trazos verticales y horizontales producen
-        wordmarks que aguantan la <em>composición editorial agresiva</em>
-        que define el manual. Black weight (900) para todos los
-        despliegues mayores; Regular (400) para cuerpo continuado.
-        La jerarquía tipográfica final tiene cinco niveles: H1 96pt,
-        H2 48pt, H3 32pt, body 16pt, mono 11pt.
+        Tenía que demostrar tres cosas concretas. Que el método aguanta
+        cuando se aplica a uno mismo. Que cada decisión visible en la
+        web tiene una página detrás que la justifica. Que un freelance
+        con dos manos puede entregar lo que las agencias venden con
+        equipos de seis.
+      </p>
+
+      <h2>Tipografía como decisión, no como spec</h2>
+      <p>
+        Cuatro meses de pruebas con cuatro familias. Fraunces se descartó
+        por nostálgica. Inter se descartó por neutra. Terminamos en
+        <strong> Satoshi</strong> para títulos y cuerpo, <strong>IBM Plex
+        Mono</strong> para todo lo que es dato: paginación, fechas,
+        captions, números de capítulo.
       </p>
       <p>
-        IBM Plex Mono cumple función específica: marca lo que es
-        <em> dato</em> versus lo que es <em>narrativa</em>. Cada vez
-        que el lector ve mono, sabe que está mirando un valor técnico
-        (paginación, fecha, signature, data). Cuando ve Satoshi sabe
-        que está en cuerpo editorial. Esta dualidad — <strong>narrativa
-        en sans, dato en mono</strong> — es regla operativa documentada
-        en el capítulo 03 del manual.
+        La regla mental es simple. Cuando el lector ve sans está en
+        narrativa. Cuando ve mono está mirando un valor verificable.
+        El manual aplica esa regla en cada una de sus cincuenta y ocho
+        páginas. Es lo que hace que un spread con doce números distintos
+        no se sienta como un dashboard.
       </p>
 
       <figure>
         <Image
           src="/portfolio/tramarca/spread-04.jpg"
-          alt="Tramarca v4 — spread tipografía: Satoshi y IBM Plex Mono con jerarquía de cinco niveles documentada"
+          alt="Tramarca v4 — spread tipografía: Satoshi para narrativa, IBM Plex Mono para dato"
           width={1756}
           height={1242}
           sizes="(min-width: 768px) 720px, 100vw"
         />
         <figcaption>
-          Spread del capítulo tipográfico · jerarquía de 5 niveles
-          documentada con ejemplos en producción<span className="text-lacre">.</span>
+          Capítulo tipográfico · una familia para narrar, otra para
+          marcar dato. La distinción visible sin pensarla<span className="text-lacre">.</span>
         </figcaption>
       </figure>
 
-      <h2>Paleta cromática · negro mate más Lacre como acento único</h2>
+      <h2>Un solo color que hace ruido</h2>
       <p>
-        La paleta final tiene siete colores documentados con role asignado:
+        La paleta acabó en siete tonos. Seis son neutros: papel cálido,
+        dos negros, dos grises, una arena. El séptimo es el lacre. Aparece
+        una sola vez por página. Siempre como punto final.
       </p>
-      <ul>
-        <li><strong>Negro</strong> #0C0C0C · matte black para fondos
-          principales y cuerpo. No usamos #000 puro — el #0C0C0C tiene
-          warmth suficiente para que el cream papel #F4F0EB no produzca
-          contraste vibratorio en pantalla.</li>
-        <li><strong>Carbón</strong> #1C1C1C · tonalidad ligeramente más
-          clara para sub-fondos cuando hay capas dark sobre dark.</li>
-        <li><strong>Lacre</strong> #C4553A · el único acento. Aparece
-          exclusivamente en el &quot;punto final&quot; (el período al
-          final de cada wordmark significativo) y en separadores
-          editoriales. Regla 60/30/10 invertida: 60% papel, 30% negro,
-          10% lacre.</li>
-        <li><strong>Papel</strong> #F4F0EB · cream con base cálida que
-          contrasta con el lacre sin competir.</li>
-        <li><strong>Piedra</strong> #7A7672 · gris cálido para texto
-          secundario.</li>
-        <li><strong>Ceniza</strong> #B5B1AC · gris medio para texto
-          sobre fondos oscuros.</li>
-        <li><strong>Arena</strong> #E4E2DC · neutro claro para tiles
-          sutiles y separadores.</li>
-      </ul>
       <p>
-        La regla operativa codificada en el manual: <strong>el lacre
-        nunca debe aparecer dos veces seguidas en la misma página</strong>.
-        Si el período &quot;.&quot; está en H1, el del cuerpo se omite.
-        Esta regla aparece textualmente en la página 14 del manual y
-        produce las composiciones disciplinadas que el lector encuentra
-        consistentemente a lo largo de las 58 páginas.
+        Esa restricción la peleamos varias veces. Era tentador usar el
+        lacre en separadores, en bordes, en iconos. Cada vez que lo
+        probamos el manual perdía silencio. La marca dejaba de tener
+        un único gesto y se volvía decorativa. Volvimos a la regla:
+        un punto, una vez, al final de la frase que más pesa del spread.
+      </p>
+      <p>
+        El resto del trabajo cromático es invisible. El negro principal
+        no es negro puro porque vibra contra el papel cálido. El gris
+        de texto secundario tiene la misma temperatura que el papel
+        para que las jerarquías se sientan rítmicas, no contrastadas.
+        Son decisiones que no se ven hasta que faltan.
       </p>
 
       <figure>
         <Image
           src="/portfolio/tramarca/spread-06.jpg"
-          alt="Tramarca v4 — spread paleta cromática con valores hex y roles operativos"
+          alt="Tramarca v4 — paleta cromática editorial con seis neutros y un acento"
           width={1756}
           height={1242}
           sizes="(min-width: 768px) 720px, 100vw"
         />
         <figcaption>
-          Sistema cromático con role operativo asignado a cada color y
-          regla del &ldquo;punto final&rdquo; documentada<span className="text-lacre">.</span>
+          Sistema cromático · seis neutros que callan, un acento que
+          firma<span className="text-lacre">.</span>
         </figcaption>
       </figure>
 
-      <h2>Retícula · doce columnas, gutters proporcionales, baseline 4pt</h2>
+      <h2>Catorce aplicaciones, una sola pregunta</h2>
       <p>
-        El sistema editorial completo se asienta en una retícula de
-        doce columnas con gutters de 24pt y márgenes de 48pt en
-        páginas A4 horizontal (apaisado). El baseline grid funciona
-        a 4pt — todos los elementos verticales se alinean a múltiplos
-        de cuatro: leading body 16pt (4 × 4), leading H2 56pt (4 × 14),
-        margin sections 64pt (4 × 16).
+        La parte más útil del manual no es teoría. Son los catorce
+        capítulos de aplicación: papelería, presentaciones en los
+        tres ecosistemas que el cliente realmente usa, firma de email,
+        tarjetas con bleed para imprenta nacional, social cards, signage,
+        slide opener para reuniones.
       </p>
       <p>
-        Esta disciplina de baseline es lo que produce la sensación
-        rítmica que el lector percibe sin identificar la causa. Cada
-        spread tiene composiciones diferentes pero todas respetan el
-        mismo grid subyacente. El capítulo 04 del manual documenta el
-        sistema con diagramas y reglas de excepción para casos donde
-        un elemento — typically un wordmark grande — necesita
-        salirse del grid intencionalmente.
-      </p>
-
-      <h2>El sistema de aplicación · catorce piezas documentadas</h2>
-      <p>
-        La parte más operativa del manual son los catorce capítulos
-        de aplicación: papelería corporativa, presentaciones (Keynote,
-        PowerPoint, Google Slides — sí, los tres), web component library,
-        firma de email con regla anti-overflow, tarjetas de visita
-        con bleed específico para imprenta nacional, social cards
-        para Instagram cuadradas y stories verticales, signage para
-        eventos, slide opener para cliente meetings.
+        Cada aplicación responde una pregunta simple: qué hace alguien
+        que no soy yo cuando tiene que producir esta pieza. La respuesta
+        ocupa una página y tiene tres partes. Cómo se construye. Cómo
+        se ve construida. Qué hacer cuando el cliente impone su propio
+        template y solo cabe pegar el logo.
       </p>
       <p>
-        Cada aplicación tiene tres elementos en su capítulo:
-        <strong> (1)</strong> spec técnica (medidas, formato, color
-        space CMYK o RGB), <strong>(2)</strong> ejemplo en producción
-        real (no mockup), y <strong>(3)</strong> reglas de excepción
-        — qué hacer cuando el cliente tiene template propio y solo
-        podemos pegar nuestro logo. Esta tercera parte es la que más
-        usamos en práctica.
+        Esta tercera parte es la que más se usa. Y es la que ningún
+        manual de marca incluye, porque admitir que el sistema convive
+        con sistemas ajenos parece una concesión. No lo es. Es lo que
+        separa un manual usable de un manual decorativo.
       </p>
 
       <figure>
         <Image
           src="/portfolio/tramarca/spread-09.jpg"
-          alt="Tramarca v4 — spread aplicaciones papelería con specs técnicas e instrucciones operativas"
+          alt="Tramarca v4 — capítulo de aplicaciones con piezas reales en producción"
           width={1756}
           height={1242}
           sizes="(min-width: 768px) 720px, 100vw"
         />
         <figcaption>
-          Capítulo de aplicaciones · specs técnicas y reglas
-          operativas para producción real<span className="text-lacre">.</span>
+          Aplicaciones · cada pieza con instrucción clara para alguien
+          que no estuvo en la decisión<span className="text-lacre">.</span>
         </figcaption>
       </figure>
 
-      <h2>La voz · declarativa, no consultiva</h2>
+      <h2>La voz tardó más que la paleta</h2>
       <p>
-        El capítulo verbal del manual codifica una decisión que tardamos
-        meses en formular: <strong>la voz Tramarca es declarativa, no
-        consultiva</strong>. No preguntamos &quot;¿qué necesita tu marca?&quot;
-        — afirmamos &quot;tu marca necesita un sistema documentado&quot;.
-        No proponemos &quot;podríamos explorar opciones&quot; — declaramos
-        &quot;estos tres tiers cubren tu caso&quot;.
+        El capítulo verbal lo reescribimos cuatro veces. Lo difícil no
+        era encontrar palabras que sonaran bien. Era encontrar la forma
+        de decir las cosas que coincidiera con cómo trabajamos, sin
+        quedarnos en eslóganes.
       </p>
       <p>
-        Esta voz tiene cuatro reglas operativas documentadas:
-        <strong> (1) claro</strong> antes que sofisticado,
-        <strong> (2) directo</strong> antes que diplomático,
-        <strong> (3) concreto</strong> antes que aspiracional,
-        <strong> (4) nombra-lo-exacto</strong> antes que generalizar.
-        Cada palabra publicada en tramarca.es pasa por estas cuatro
-        reglas antes de salir.
+        La conclusión, después de cuatro intentos, fue que la voz Tramarca
+        es declarativa. No pregunta qué necesita la marca: nombra lo
+        que hay que hacer. No propone explorar opciones: ofrece tres
+        tiers definidos. No pide tiempo para entender: lee el material
+        y responde con una decisión.
       </p>
       <p>
-        El tagline final — <em>&quot;el punto final&quot;</em> — encapsula
-        las cuatro reglas en tres palabras y un período tipográfico
-        coloreado en lacre. Es la única excepción a la regla anti-doble
-        del lacre: en el tagline el punto siempre está y siempre
-        en lacre. Es el único elemento de la marca con licencia para
-        repetirse sin disciplina.
+        Esa voz tiene cuatro filtros. Claro antes que sofisticado.
+        Directo antes que diplomático. Concreto antes que aspiracional.
+        Nombrar antes que generalizar. Cada frase publicada en tramarca.es
+        pasa por los cuatro antes de salir. La mayoría no pasa al primer
+        intento.
       </p>
 
-      <h2>Diez días, sesenta y ocho horas de producción</h2>
+      <h2>Cincuenta y ocho páginas, siete revisiones</h2>
       <p>
-        El manual entero se produjo en 10 días laborables con 68 horas
-        de trabajo total registradas. Las primeras 16 horas fueron
-        brief y arquitectura editorial — qué capítulos, qué jerarquía,
-        qué páginas mínimas. Las siguientes 32 horas fueron producción
-        de cada capítulo en orden cronológico. Las últimas 20 horas
-        fueron auditoría: revisión cruzada con cinco roles
-        diferentes (creative director, art director, typography
-        specialist, conversion copywriter, ui/ux designer) y siete
-        rondas de iteración.
+        El manual completo tomó diez días laborables. Las primeras
+        dieciséis horas fueron arquitectura editorial: qué capítulos,
+        qué orden, qué tiene que estar en página derecha y qué en
+        izquierda. Treinta y dos horas de producción. Veinte de
+        auditoría cruzada con cinco roles: dirección creativa, dirección
+        de arte, tipografía, copy, UX.
       </p>
       <p>
-        Las siete rondas no fueron correcciones cosméticas: cada una
-        encontró al menos un fallo de criterio (un caption inconsistente,
-        un spread con jerarquía distinta del resto, una aplicación con
-        spec técnica incorrecta). El registro de las siete rondas está
-        documentado internamente y produjo nueve aprendizajes
-        operativos que ahora aplicamos a manuales de cliente.
+        Las siete rondas no fueron cosméticas. Cada una encontró un
+        fallo de criterio: un caption que rompía la jerarquía del
+        capítulo, una aplicación con la spec equivocada, un glosario
+        que se contradecía con la voz que el propio manual estaba
+        defendiendo. Si las rondas no encontraran nada, el proceso
+        no estaría haciendo su trabajo.
       </p>
 
-      <h2>Por qué este caso es relevante</h2>
+      <h2>Lo que cambió cuando lo entregamos</h2>
       <p>
-        Este caso de estudio tiene una característica única en el
-        portfolio: <strong>es el único proyecto donde cliente y estudio
-        son la misma entidad</strong>. Eso permite documentar todo —
-        decisiones, hex codes exactos, ratios, sistema tipográfico
-        completo — sin restricciones de confidencialidad. Funciona
-        como referencia técnica y como prueba de método.
+        La primera reunión con prospect dura ahora la mitad. Antes había
+        que explicar qué entregamos, mostrar referencias sueltas, defender
+        cada decisión por separado. Ahora se envía el manual completo
+        antes de la llamada. La conversación arranca en la página doce.
       </p>
       <p>
-        Si quieres ver el manual completo en PDF (58 páginas, 60MB,
-        edición revisada),{" "}
-        <Link href="#pedir-manual">déjanos tu email y te llega al
-        instante</Link>. Si prefieres ver en este browser otros casos
-        del portfolio, <Link href="/trabajos">vuelve al listado</Link>.
-        Si te interesa nuestra metodología en abstracto sin caso
-        específico, <Link href="/anatomia">la anatomía de un manual
-        documenta los 48 componentes</Link>.
+        Vender se volvió más fácil porque vender pasó a ser enseñar.
+        Quien lee las cincuenta y ocho páginas y vuelve, vuelve decidido.
+        Quien no las lee, no era cliente. El manual hace una primera
+        criba que antes ocupaba dos calls.
+      </p>
+      <p>
+        El segundo cambio fue interno. Por primera vez el sistema admite
+        que otra persona produzca una pieza sin pasar por el ojo del
+        director. La arquitectura del manual, los catorce capítulos
+        de aplicación, las reglas con su contraejemplo, hacen que la
+        delegación sea operativamente posible. Antes del manual, no
+        lo era<span className="text-lacre">.</span>
+      </p>
+
+      <h2>Lo que nos llevamos al siguiente manual</h2>
+      <p>
+        Hicimos esto para nosotros y aprendimos cosas que ya estamos
+        aplicando al cliente siguiente. Que la auditoría cruzada de
+        cinco roles encuentra blockers que el autor del manual no ve
+        nunca. Que las reglas con contraejemplo se siguen, las reglas
+        sin contraejemplo se ignoran. Que un manual sin capítulo de
+        aplicación es teoría y se queda en el cajón.
+      </p>
+      <p>
+        Y sobre todo aprendimos esto. El manual no es un documento que
+        se entrega al final del proyecto. Es la herramienta que hace
+        posibles los proyectos siguientes. Un cliente con manual decide
+        más rápido, contrata más cosas y pelea menos las decisiones que
+        él mismo aprobó.
+      </p>
+
+      <h2>Si has llegado hasta aquí</h2>
+      <p>
+        Este caso es el único del portfolio sin restricciones de
+        confidencialidad — cliente y estudio son la misma entidad.
+        Funciona como referencia técnica y como prueba de método para
+        cualquier marca que quiera el mismo nivel de rigor.
+      </p>
+      <p>
+        Los tres tiers están publicados con alcance, plazo y precio
+        cerrados. Si quieres este nivel para tu marca,{" "}
+        <Link href="/precios">los tres tiers se ven en una página</Link>.
+        Si prefieres comparar con el resto del portfolio antes de
+        decidir, <Link href="/manuales">aquí están los cinco casos</Link>.
+        Si quieres entender el método antes que el caso,{" "}
+        <Link href="/anatomia">la anatomía documenta los cuarenta y
+        ocho componentes</Link>.
       </p>
     </div>
   );

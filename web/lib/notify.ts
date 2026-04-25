@@ -14,7 +14,6 @@ type LeadNotification = {
   company: string;
   tier: string;
   message: string;
-  ip: string;
   website?: string | null;
   socialLinks?: Record<string, string>;
   sector?: string | null;
@@ -114,7 +113,6 @@ export async function notifyNewLead(lead: LeadNotification): Promise<void> {
     if (lead.socialLinks?.linkedin) textLines.push(`LinkedIn: ${lead.socialLinks.linkedin}`);
     if (lead.socialLinks?.instagram) textLines.push(`Instagram: ${lead.socialLinks.instagram}`);
     if (lead.socialLinks?.other) textLines.push(`Otro social: ${lead.socialLinks.other}`);
-    textLines.push(`IP: ${lead.ip}`);
     textLines.push("", "Mensaje:", lead.message);
     if (attachmentsSigned.length > 0) {
       textLines.push("", "Adjuntos:");
@@ -159,7 +157,6 @@ export async function notifyNewLead(lead: LeadNotification): Promise<void> {
       detailRows.push(
         row("Otro", `<a href="${escape(lead.socialLinks.other)}" target="_blank" rel="noopener" style="color:#0C0C0C">${escape(lead.socialLinks.other)}</a>`)
       );
-    detailRows.push(row("IP", `<span style="font-size:12px;color:#7A7672">${escape(lead.ip)}</span>`));
 
     const attachmentsHtml =
       attachmentsSigned.length > 0
