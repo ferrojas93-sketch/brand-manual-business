@@ -2,236 +2,223 @@ import Image from "next/image";
 import Link from "next/link";
 
 /**
- * Caso de estudio · Matraz Innova · 33 páginas · Profesional · 2026
+ * Caso de estudio · Matraz Innova · 33 páginas + 120 assets · Profesional · 2026
  * Arc editorial: tensión inicial → decisión → resultado tangible.
- * Laboratorio farmacéutico. Dos audiencias polares (médico y paciente),
- * una marca, sin perder rigor ni accesibilidad. AEMPS en el horizonte.
+ * Consultora con tres verticales — Business, Healthcare & Pharma, IT & Digital.
+ * El reto fue separar tres audiencias bajo una sola identidad sin diluirla.
  */
 export default function CasoMatrazInnova() {
   return (
     <div className="prose-editorial">
-      <h2>Una marca para dos lectores que no se conocen</h2>
+      <h2>Una consultora con tres verticales bajo una sola marca</h2>
       <p className="lede">
-        Febrero de 2026. Matraz Innova llegó al estudio con una pregunta
-        que reconocemos enseguida: cómo hablar con autoridad clínica al
-        médico que prescribe y, al día siguiente, hablar con claridad
-        accesible al paciente que tiene la caja en la mano. La directora
-        de marketing lo formuló sin rodeos: <em>sabemos hablar a un
-        médico; no sabemos hablar a su paciente</em><span className="text-lacre">.</span>
+        Matraz Innova es una consultora con sede en Las Rozas de Madrid.
+        Francisco Javier Tejero, Business Director, llegó al estudio con
+        una pregunta clara. La firma opera tres verticales —Business
+        Consulting, Healthcare and Pharma, IT and Digital— y cada una
+        habla a un comprador distinto. La marca tenía que distinguir
+        entre ellos sin partirse en tres<span className="text-lacre">.</span>
       </p>
       <p>
-        El problema no era de tono. Era estructural. Una sola marca tiene
-        que aparecer en ficha técnica regulada por AEMPS — donde cualquier
-        ambigüedad puede convertirse en sanción — y en packaging de
-        consumidor — donde cualquier formalidad excesiva expulsa al lector.
-        Una sola marca, dos códigos de lectura. Sin contradecirse.
+        El problema no era de tono. Era estructural. Tres verticales con
+        ciclos de venta distintos, vocabularios distintos y materiales
+        distintos, todos firmados por el mismo wordmark. Si el sistema
+        no separaba audiencias visualmente, el cliente potencial de un
+        vertical se perdía en mensajes pensados para otro. Si las separaba
+        demasiado, dejaban de leerse como la misma firma.
       </p>
 
       <h2>La pregunta que orientó el sistema</h2>
       <p>
-        La primera tentación era construir dos sub-marcas. Matraz Innova
-        Pharma para profesional sanitario y Matraz Innova Care para
-        consumidor. Lo descartamos en la primera tarde. Dos sub-marcas
-        habrían resuelto el problema de comunicación duplicando el coste
-        de mantenimiento. Para una empresa que exporta a tres mercados
-        europeos, eso no es opción.
+        La primera tentación era construir tres sub-marcas. Matraz Innova
+        Business, Matraz Innova Healthcare, Matraz Innova IT. Lo descartamos
+        en la primera tarde. Tres sub-marcas habrían resuelto la
+        diferenciación duplicando coste de mantenimiento por tres y
+        diluyendo el wordmark común que la firma quería preservar.
       </p>
       <p>
-        La pregunta correcta era otra: qué partes del sistema son comunes
-        a las dos audiencias y qué partes deben separarse explícitamente.
-        La respuesta dio la arquitectura del manual. Tipografía, retícula
-        y voz comparten principio. Color y registro tonal se separan por
-        audiencia. Esa decisión gobierna las treinta y tres páginas.
+        La pregunta correcta era otra. Qué partes del sistema son comunes
+        a las tres verticales y qué partes deben separarse explícitamente.
+        La respuesta dio la arquitectura del manual. Wordmark, tipografía,
+        retícula y tono general comparten principio. El color se separa
+        por vertical. Esa decisión gobierna las treinta y tres páginas
+        del manual y los ciento veinte assets que lo acompañan.
       </p>
 
-      <h2>Una sola tipografía con dos profundidades de lectura</h2>
+      <h2>El logo construido sobre la geometría del matraz</h2>
       <p>
-        El sistema tipográfico se redujo a una sola sans contemporánea con
-        cobertura completa de pesos y soporte multi-idioma. La elección
-        priorizó dos cosas a la vez. Legibilidad clínica a tamaños pequeños
-        — 8 a 10 puntos para fichas técnicas que el médico lee a la luz
-        del despacho. Autoridad visual a tamaños grandes — 48 a 64 puntos
-        para el masthead de campañas a paciente.
+        El logo se compone de cuatro paths SVG con función separada.
+        Wordmark Matraz Innova, la "i" central como pivote, el cuello
+        del matraz como elemento vertical superior y el cuerpo del matraz
+        como base. Esa descomposición permite usar el logo entero en
+        aplicaciones primarias y solo el cuerpo del matraz como signo
+        reducido en favicon, avatar y signature.
       </p>
       <p>
-        La regla mental quedó así. Una familia, peso modulado por contexto.
-        Black para wordmark y headlines de campaña. Bold para encabezados
-        de sección. Regular para body extenso. Light para captions y
-        metadatos clínicos. La leading body se calculó a 22 puntos
-        específicamente para sostener la lectura de fichas técnicas de
-        tres páginas seguidas sin fatigar.
+        El matraz no es ornamento. Es el referente del nombre y el
+        elemento que la consultora ya usaba antes del manual. La decisión
+        editorial no fue inventar un signo nuevo: fue limpiar el existente,
+        documentar las cuatro variantes y fijar la zona de respeto. El
+        manual codifica ese sistema con specs reproducibles para imprenta
+        y digital.
       </p>
 
       <figure>
         <Image
           src="/portfolio/matraz-innova/spread-04.jpg"
-          alt="Matraz Innova — sistema tipográfico una familia con jerarquía clínica"
+          alt="Matraz Innova — sistema tipográfico Inter sobre fondo dark theme premium"
           width={1756}
           height={1242}
           sizes="(min-width: 768px) 720px, 100vw"
         />
         <figcaption>
-          Sistema tipográfico · una familia, jerarquía clínica de cuatro
-          niveles documentada con leading calculada para lectura sostenida<span className="text-lacre">.</span>
+          Sistema tipográfico · Inter como única familia con jerarquía
+          modulada por peso para lectura sostenida<span className="text-lacre">.</span>
         </figcaption>
       </figure>
 
-      <h2>El color como lectura primaria</h2>
+      <h2>Tres colores, una vertical cada uno</h2>
       <p>
-        La paleta acabó en cinco tonos separados explícitamente en dos
-        sistemas. Azul institucional profundo para comunicación profesional
-        sanitaria. Verde botánico para comunicación a consumidor final.
-        Cream papel como neutro común. Tinta secundaria gris cálida para
-        body extenso. Y un rojo institucional reservado para warnings
-        clínicos en ficha técnica, regulado por capítulo específico.
+        El sistema cromático separa las tres verticales por color. Steel
+        #C0C0C8 para Business Consulting. Cyan #00B4D8 para Healthcare
+        and Pharma. Violet #7B5FFF para IT and Digital. Y un acento teal
+        #00D4AA común a las tres como firma de marca cuando la pieza no
+        pertenece a un vertical específico.
       </p>
       <p>
-        La regla operativa codificada en página 14: el azul institucional
-        y el verde de consumidor nunca aparecen juntos en la misma
-        composición. La marca distingue audiencia por color. Si el documento
-        es azul, está hablando al profesional. Si es verde, está hablando
-        al paciente. Esa separación cromática es la lectura primaria del
-        sistema, antes incluso del contenido.
+        La regla operativa codificada: cada vertical usa solo su color
+        más los neutros del sistema. Steel y Cyan no aparecen juntos en
+        la misma composición. Cyan y Violet tampoco. Esa disciplina cromática
+        permite a un cliente potencial reconocer en la primera mirada qué
+        vertical le habla. Cuando el delegado entrega una propuesta a un
+        director financiero, el dosier es Steel. Cuando entrega a un
+        responsable IT, es Violet. La señal entra antes que el contenido.
       </p>
       <p>
-        La disciplina cromática hace algo más sutil. Permite a la fuerza
-        comercial reconocer en una fracción de segundo qué materiales son
-        para qué visita. Cuando el delegado entra en la consulta del médico
-        con la carpeta azul, sabe que es la correcta. Cuando entra en
-        farmacia con la verde, también.
+        Sobre los tres colores de vertical opera el dark theme premium:
+        fondo #0A0A0B como base oscura del sistema. Esa decisión de fondo
+        no es estética. Es funcional. Una consultora con presentaciones
+        de cliente proyectadas en sala oscurece su marca para que el
+        contenido —datos, gráficos, casos— gane jerarquía sobre el
+        envoltorio.
       </p>
 
       <figure>
         <Image
           src="/portfolio/matraz-innova/spread-06.jpg"
-          alt="Matraz Innova — sistema cromático dual azul institucional y verde de consumidor"
+          alt="Matraz Innova — sistema cromático Steel, Cyan y Violet por vertical"
           width={1756}
           height={1242}
           sizes="(min-width: 768px) 720px, 100vw"
         />
         <figcaption>
-          Sistema cromático dual · azul institucional para profesional,
-          verde para consumidor. Nunca juntos en la misma composición<span className="text-lacre">.</span>
+          Sistema cromático · un color por vertical. Acento teal común
+          como firma de marca<span className="text-lacre">.</span>
         </figcaption>
       </figure>
 
-      <h2>Catorce aplicaciones, dos códigos regulatorios</h2>
+      <h2>Inter como sistema completo</h2>
       <p>
-        El manual cubre catorce aplicaciones distintas separadas por
-        contexto de uso. En el bloque B2B sanitario: ficha técnica de
-        producto, presentación a comité clínico en Keynote y PowerPoint
-        — ambas plantillas con grid base aplicado — papelería corporativa,
-        infografía de mecanismo de acción, póster para congreso médico.
-        En el bloque B2C consumidor: packaging primario de OTC, web de
-        divulgación, social cards Instagram, plantilla de campaña a
-        farmacia.
+        El sistema tipográfico se redujo a una sola familia. Inter cubre
+        wordmark, headlines, body, captions y datos. La elección priorizó
+        legibilidad a tamaños pequeños —body de presentación a 16 puntos
+        sobre fondo oscuro— y autoridad visual a tamaños grandes —masthead
+        de propuesta a 64 puntos. La misma familia atraviesa las tres
+        verticales sin reescribir el sistema cuando se cambia de Steel
+        a Cyan a Violet.
       </p>
       <p>
-        Cada aplicación incluye spec técnica completa. Medidas regulatorias
-        para packaging farmacéutico cumpliendo AEMPS. Tipografía mínima
-        legal — ocho puntos en ficha técnica, seis puntos en folleto de
-        información al paciente. Reglas de overprint para imprenta
-        farmacéutica nacional. Esta tercera capa de regulación es lo que
-        diferencia un manual farmacéutico de un manual de marca estándar.
+        Sobre la tipografía opera un patrón hexagonal recurrente como
+        textura de marca. Aparece en fondos secundarios, en separadores
+        de capítulo y en elementos decorativos del dark theme. Ese patrón
+        es la firma silenciosa del sistema cuando el color está callado.
+      </p>
+
+      <h2>Ciento veinte assets entregables</h2>
+      <p>
+        El manual se acompaña de un kit de aplicación con ciento veinte
+        assets reproducibles. Logos en veinte variantes —monocromos sobre
+        claro, monocromos sobre oscuro, color por vertical, versión
+        reducida. Seis plantillas de presentación 1920 por 1080 píxeles
+        para Keynote y PowerPoint. Ocho plantillas para social, Instagram
+        y LinkedIn. Dos documentos plantilla, dos modelos de tarjeta,
+        cuatro piezas de merchandising, ocho iconos del sistema, cinco
+        favicons en distintos tamaños, dos patrones hexagonales, una
+        plantilla email HTML, los tokens CSS exportables y un specimen
+        tipográfico de Inter aplicado al sistema.
       </p>
       <p>
-        Y es la razón por la que Matraz Innova vino a Tramarca. Buscaban
-        un manual defendible ante AEMPS sin renunciar a una identidad que
-        comunique salud accesible al consumidor. Ese cruce — rigor
-        regulatorio más accesibilidad de lectura — es donde el manual
-        tiene más densidad por página.
+        El kit no es anexo. Es la diferencia entre un manual que se lee
+        y un manual que se usa. Cuando un consultor de Matraz Innova
+        prepara una propuesta para un cliente de Healthcare a las once de
+        la noche del jueves, abre la plantilla Cyan y produce el documento
+        sin reabrir decisiones de marca.
       </p>
 
       <figure>
         <Image
           src="/portfolio/matraz-innova/atmosphere-01.jpg"
-          alt="Matraz Innova — packaging farmacéutico con specs regulatorias"
+          alt="Matraz Innova — kit de aplicación con plantillas de presentación y social"
           width={1756}
           height={1242}
           sizes="(min-width: 768px) 720px, 100vw"
         />
         <figcaption>
-          Aplicaciones · packaging farmacéutico con specs técnicas y
-          cumplimiento AEMPS documentado<span className="text-lacre">.</span>
+          Kit de aplicación · ciento veinte assets organizados por vertical
+          y por canal<span className="text-lacre">.</span>
         </figcaption>
       </figure>
 
-      <h2>Dos registros, un solo principio</h2>
-      <p>
-        El capítulo verbal es el más extenso del proyecto: ocho páginas.
-        Resolvía la pregunta inicial del brief — cómo hablar a dos
-        audiencias sin contradecirse. La solución codificada cabe en una
-        línea. Un único principio de precisión, dos registros tonales.
-      </p>
-      <p>
-        Registro técnico para profesional sanitario: técnico-preciso,
-        verificable, referenciado a fuentes — ensayos, vademécums,
-        regulación AEMPS. Cada afirmación clínica lleva su cita
-        bibliográfica al pie. La voz no presume autoridad: la documenta.
-      </p>
-      <p>
-        Registro divulgativo para consumidor final: claro sin jerga,
-        describe el beneficio práctico, traduce términos clínicos al
-        lenguaje cotidiano sin perder rigor. La voz no condesciende:
-        confía en que el lector entiende cuando se le explica bien. Cada
-        copy publicado pasa por las tres reglas del registro correspondiente
-        antes de salir<span className="text-lacre">.</span>
-      </p>
-
       <h2>Treinta y tres páginas, dos rondas</h2>
       <p>
-        El manual completo tomó siete días laborables. Las primeras dieciséis
-        horas fueron arquitectura: qué capítulos comparten las dos audiencias
-        y cuáles se separan. Veintidós horas de producción. Ocho horas de
-        auditoría cruzada con dirección creativa, dirección de arte, copy
-        y revisión regulatoria informada — todas las menciones a AEMPS
-        verificadas contra la documentación pública vigente antes del cierre.
-      </p>
-      <p>
-        Las dos rondas no fueron cosméticas. La primera encontró un caption
-        en el capítulo de packaging que confundía términos regulatorios.
-        La segunda encontró tres ejemplos de aplicación donde el verde de
-        consumidor aparecía en una ficha técnica clínica — exactamente lo
-        que el sistema prohibía. Si las rondas no encuentran nada, el
+        El manual completo se entregó como Profesional con dos rondas
+        incluidas. Las dos rondas no fueron cosméticas. La primera encontró
+        spreads donde el sistema cromático violaba su propia regla —Steel
+        y Cyan apareciendo juntos en una pieza institucional. La segunda
+        encontró tres assets del kit donde el patrón hexagonal contaminaba
+        la legibilidad del contenido. Si las rondas no encuentran nada, el
         proceso no está haciendo su trabajo.
       </p>
 
-      <h2>Lo que cambió tres semanas después</h2>
+      <h2>Lo que el manual cierra para Matraz Innova</h2>
       <p>
-        El manual entregado el lunes de la segunda semana se aplicó a las
-        plantillas internas en cinco días. La directora de marketing
-        reportó que el equipo dejó de preguntar criterio visual al cabo
-        de tres semanas. Las plantillas — papelería, Keynote, social cards,
-        ficha técnica tipo — cubrían el ochenta por ciento de los casos
-        de comunicación.
+        Tres verticales con un sistema común liberan al equipo de
+        renegociar criterio cada vez que cambia de cliente. La firma se
+        reconoce como Matraz Innova entera, mientras que la audiencia de
+        cada propuesta lee primero el color que le corresponde. El equipo
+        comercial deja de inventar el envoltorio en cada propuesta y dedica
+        ese tiempo al contenido específico del caso.
       </p>
       <p>
-        El veinte por ciento restante se documenta en log interno y se
-        incorpora al manual en revisiones programadas trimestrales. Esa
-        cadencia de revisión es parte del sistema, no una excepción. El
-        manual es vivo: lo que la realidad regulatoria modifique, el
-        manual lo registra.
-      </p>
-
-      <h2>Lo que nos llevamos al siguiente cliente regulado</h2>
-      <p>
-        Matraz Innova nos enseñó dos cosas concretas sobre los manuales
-        para sector regulado. Primero: el color puede hacer parte del
-        trabajo de la voz si el sistema lo separa con disciplina. Una
-        marca que distingue audiencia por color libera a la voz para
-        concentrarse en otros matices. Segundo: la regulación no es un
-        anexo del manual. Es un capítulo. Cuando va al final como nota
-        técnica, la fuerza comercial la ignora. Cuando va integrada en
-        cada aplicación, la cumple sin pensarlo.
+        La consultora gana otra cosa más sutil. Cuando un cliente de
+        Business Consulting entra en conversación cruzada con el equipo
+        de Healthcare —un proyecto que necesita las dos perspectivas— el
+        sistema permite mezclar verticales con regla. Acento teal común,
+        body en neutros del dark theme, color de cada vertical solo donde
+        habla el especialista correspondiente. Lo que antes pedía
+        improvisar identidad ahora se resuelve abriendo la página del
+        manual<span className="text-lacre">.</span>
       </p>
 
-      <h2>Si tu marca opera en sector regulado</h2>
+      <h2>Lo que nos llevamos al siguiente cliente con verticales</h2>
       <p>
-        Matraz Innova describe un patrón frecuente en farmacéutica,
-        sanitaria, legal y financiera: dos audiencias con expectativas
-        opuestas, una marca que tiene que hablar a las dos sin perder ni
-        rigor ni accesibilidad. El tier Profesional cubre exactamente este
-        caso, con sistema dual documentado y capítulo verbal extendido.
+        Matraz Innova nos enseñó algo concreto sobre consultoras y firmas
+        con varias unidades de negocio. La marca común no se defiende
+        repitiendo el wordmark. Se defiende repitiendo el sistema —misma
+        retícula, misma tipografía, mismo principio— y dejando que el
+        color haga la separación. Cuando esa separación es cromática y
+        explícita, las verticales coexisten sin diluirse. Cuando es ad
+        hoc, cada propuesta vuelve a empezar desde cero.
+      </p>
+
+      <h2>Si tu firma opera con varias verticales</h2>
+      <p>
+        Matraz Innova describe un patrón frecuente en consultoras y
+        servicios profesionales: una firma con varias unidades de negocio
+        que necesitan ser distinguibles para sus respectivas audiencias
+        sin dejar de leerse como la misma marca. El tier Profesional
+        cubre exactamente este caso, con sistema cromático separado por
+        vertical y kit de aplicación reproducible.
       </p>
       <p>
         Si quieres alcance, plazo y precio cerrados,{" "}

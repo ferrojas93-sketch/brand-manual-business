@@ -2,64 +2,65 @@ import Image from "next/image";
 import Link from "next/link";
 
 /**
- * Caso de estudio · Claramel · 29 páginas · Esencial · 2026
+ * Caso de estudio · Claramel · 29 páginas · Profesional · 2026
  * Arc editorial: tensión inicial → decisión → resultado tangible.
- * Asistente de IA personalizado on-device. La marca tiene voz literal —
- * la del propio asistente. El reto es documentar cómo habla un producto.
+ * Proyecto propio del estudio. Asistente IA on-device sobre Android,
+ * fork de Google AI Edge Gallery con Gemma 4 corriendo localmente.
+ * El reto fue documentar una marca cuyo diferenciador es lo invisible.
  */
 export default function CasoClaramel() {
   return (
     <div className="prose-editorial">
-      <h2>El producto que ya hablaba antes que la marca</h2>
+      <h2>Una marca para un producto que no manda nada al servidor</h2>
       <p className="lede">
-        Enero de 2026. Claramel llegó al estudio con un asistente de IA
-        que ya respondía en tres idiomas y un nombre que la fundadora
-        defendía con argumentos. No traía logo, no traía paleta, no traía
-        manifiesto. Traía algo más raro: un producto que ya tenía voz
-        literal — la del propio asistente — antes de que existiera la
-        marca que lo envolvía<span className="text-lacre">.</span>
+        Claramel es un proyecto propio del estudio. Un asistente de IA
+        on-device para Android, fork de Google AI Edge Gallery, con el
+        modelo Gemma 4 E4B-it corriendo localmente sobre Xiaomi 15 Ultra.
+        Nada sale del dispositivo. Esa es la decisión técnica de
+        partida<span className="text-lacre">.</span>
       </p>
       <p>
-        Eso cambia el orden del trabajo. En la mayoría de proyectos, la
-        marca define cómo va a hablar el producto. En Claramel, el producto
-        ya hablaba y la marca tenía que aprender a no contradecirlo. La
-        primera tarea no fue diseñar nada. Fue leer doscientos turnos de
-        conversación reales y extraer qué patrones repite el asistente
-        cuando responde bien.
+        El reto editorial fue particular. Cuando el diferenciador del
+        producto es la privacidad por arquitectura —ausencia de servidor,
+        modelo local, conversación que no viaja— la marca tiene que
+        comunicar lo que no ocurre. Nadie ve lo que no ocurre. La marca
+        tenía que hacer visible la promesa sin convertirla en disclaimer.
       </p>
 
-      <h2>Cómo se documenta una voz que no es eslogan</h2>
+      <h2>El método del estudio aplicado a un proyecto propio</h2>
       <p>
-        La voz Claramel no vive en una tagline. Vive en cada respuesta que
-        el asistente da a una pregunta concreta de un usuario concreto. Eso
-        es harder problem que escribir un manifiesto: tienes que codificar
-        cómo se comporta una IA sin convertirla en un guion rígido y sin
-        dejarla improvisar criterio.
+        Documentamos Claramel con el mismo método con el que documentamos
+        a un cliente externo: descubrimiento, arquitectura, sistema visual,
+        sistema verbal, aplicaciones, governance. Ningún atajo por ser
+        proyecto propio. Cuando el estudio hace algo para sí mismo, la
+        tentación es tratar la marca como secundaria al producto y
+        publicar antes de tiempo. La descartamos.
       </p>
       <p>
-        La conclusión, después de leer la transcripción, fue que el
-        asistente respondía bien cuando hacía tres cosas. Proponer en
-        lugar de afirmar. Explicar antes de ejecutar. Reconocer un límite
-        antes de inventar una respuesta. Esas tres reglas se quedaron como
-        principios verbales del manual y se aplicaron también a la web,
-        al onboarding y a los emails transaccionales.
+        La decisión fue tratar Claramel como un Profesional completo. Veintinueve
+        páginas, dos rondas de revisión, auditoría cruzada por dirección
+        creativa, dirección de arte, tipografía y copy. El criterio del
+        manual de cliente se aplica idéntico al manual interno. Si no
+        aguanta, el método no aguanta.
       </p>
 
-      <h2>El logo construido desde la geometría del nombre</h2>
+      <h2>El isotipo es una gota de luz</h2>
       <p>
-        Claramel viene de claro y melodía. La fundadora lo había explicado
-        media docena de veces sin que nadie lo capturara. El wordmark final
-        toma esa explicación al pie de la letra: una sans contemporánea
-        con dos modificaciones casi invisibles. El cuenco de la "a"
-        ligeramente abierto, lectura como receptividad. La "l" final con
-        un remate sutil, lectura como entrada de conversación.
+        El isotipo final es un disco ámbar como cuerpo de la IA y un disco
+        cream como chispa de luz arriba a la izquierda. El concepto que
+        gobernó la decisión: una gota de luz atrapada en una perla de
+        caramelo. La metáfora orienta el sistema cromático completo y
+        explica por qué la paleta gira alrededor del ámbar como tono
+        rector.
       </p>
       <p>
-        Las modificaciones se perciben solo en aplicación grande — masthead,
-        signage, splash de producto. A 16pt el wordmark funciona como una
-        sans normal, sin signature visual fuerte. Esa sutileza es deliberada.
-        Una marca de IA tiene que envejecer despacio, y los gestos
-        tipográficos demasiado expresivos envejecen rápido.
+        El disco como geometría primaria es deliberado. Un asistente de
+        IA conversacional necesita un signo blando, no un signo rígido.
+        El círculo no impone dirección de lectura. Funciona en avatar
+        cuadrado, en favicon a 16 píxeles, en signature email a tamaño
+        botón. La forma se reconoce sin requerir tamaño grande, y eso
+        importa para un producto que vive principalmente en pantalla
+        pequeña.
       </p>
 
       <figure>
@@ -76,147 +77,164 @@ export default function CasoClaramel() {
         </figcaption>
       </figure>
 
-      <h2>Tres colores que no compiten con el contenido</h2>
+      <h2>Mente clara, voz cálida</h2>
       <p>
-        La paleta acabó en tres tonos. Tinta cálida para body, cream papel
-        para fondos, un acento conversacional saturado. Tres es deliberado.
-        Cuatro hubieran sido excedente para un Esencial. Dos hubieran dejado
-        al producto sin signal cromático para distinguir estado activo de
-        estado pasivo.
+        El tagline rector es Mente clara. Voz cálida. Esa es la oferta
+        completa del producto en cinco palabras. Mente clara es la
+        precisión del modelo. Voz cálida es el registro de respuesta.
+        El manual lo coloca como pieza tipográfica con jerarquía de
+        capítulo, no como ornamento. Cada decisión posterior del sistema
+        se mide contra esas dos palabras.
       </p>
       <p>
-        La regla operativa codificada: el acento aparece solo cuando hay
-        conversación activa. En estados pasivos — esperando input, idle,
-        loading — el acento desaparece. El color funciona como signal
-        real, no como decoración. Cuando el asistente está pensando, el
-        producto está callado. Cuando responde, el color firma la respuesta.
+        Mente clara obliga a una jerarquía visual sobria, sin adornos que
+        compitan con el contenido del usuario. Voz cálida obliga a una
+        paleta no fría —ámbar como protagonista, no azul tech— y a una
+        tipografía con presencia editorial, no neutra. Las dos
+        consecuencias visuales se derivan del tagline antes de elegir
+        ninguna familia ni ningún hex.
+      </p>
+
+      <h2>Cinco colores con función operativa</h2>
+      <p>
+        La paleta canónica son cinco tonos. Miel #E8A026 como acento
+        rector y firma del producto activo. Tinta #141A2E como base oscura
+        para dark mode y body extenso sobre claro. Papel #F5EAD1 como
+        fondo claro y body principal. Salvia #8AA38C para estados secundarios
+        y signaling pasivo. Vino #6B2137 reservado para advertencias o
+        acento editorial puntual.
       </p>
       <p>
-        La proporción quedó 70% papel, 25% tinta, 5% acento. La cifra es
-        menos importante que la disciplina: el acento es escaso por
-        decisión. Cuando aparece, significa algo.
+        La regla operativa codificada: Miel aparece solo cuando el
+        asistente está respondiendo. En idle, en input vacío, en estado
+        loading, Miel desaparece. El color funciona como signal real, no
+        como decoración. Cuando el producto está callado, el color está
+        callado. Cuando responde, el color firma la respuesta.
       </p>
 
       <figure>
         <Image
           src="/portfolio/claramel/atmosphere-01.jpg"
-          alt="Claramel — paleta operativa sobre superficie clara"
+          alt="Claramel — paleta operativa con miel, tinta, papel, salvia y vino"
           width={1756}
           height={1242}
           sizes="(min-width: 768px) 720px, 100vw"
         />
         <figcaption>
-          Paleta · tres tonos con función definida. El acento solo
-          aparece cuando hay conversación activa<span className="text-lacre">.</span>
+          Paleta · cinco tonos con función definida. Miel solo aparece
+          cuando el asistente responde<span className="text-lacre">.</span>
         </figcaption>
       </figure>
 
-      <h2>Una sola tipografía y una decisión que duele</h2>
+      <h2>Tres tipografías con role separado</h2>
       <p>
-        El sistema tipográfico es deliberadamente único. Una sola sans
-        contemporánea cubre wordmark, headlines, body, captions y metadatos
-        del producto. La decisión de no introducir una segunda familia
-        viene del tier — el Esencial cubre marcas en arranque donde la
-        simplicidad operacional pesa más que la sofisticación visual.
+        El sistema tipográfico son tres familias con función definida.
+        Fraunces para display: masthead, headlines de marca, tagline en
+        aplicaciones primarias. Inter para body: contenido del producto,
+        UI, captions, copy de marketing. JetBrains Mono para data: nombre
+        de modelo, versión, latencia, hash de configuración local.
       </p>
       <p>
-        La decisión duele al equipo creativo. Una segunda familia mono
-        para los datos técnicos del asistente — versión, latencia, tokens
-        consumidos — habría sido más elegante editorialmente. Pero un
-        producto en arranque no necesita más superficies que mantener.
-        Necesita menos. Una familia, cuatro pesos, tres tamaños base. Eso
-        cubre el 95% de la operación.
-      </p>
-      <p>
-        Si Claramel crece y el Esencial deja de ser suficiente, el roadmap
-        documentado en la página final del manual indica qué se añade en
-        un Profesional posterior: segunda familia mono, capítulo extendido
-        de papelería, governance para terceros<span className="text-lacre">.</span>
+        La regla mental es la misma que aplicamos a otros manuales del
+        estudio. Cuando el lector ve serif está en territorio editorial.
+        Cuando ve sans está leyendo producto. Cuando ve mono está mirando
+        un valor verificable de sistema. La distinción es invisible hasta
+        que se rompe. En veintinueve páginas no se rompe.
       </p>
 
       <figure>
         <Image
           src="/portfolio/claramel/spread-07.jpg"
-          alt="Claramel — sistema tipográfico de una familia con jerarquía sobria"
+          alt="Claramel — sistema tipográfico Fraunces, Inter y JetBrains Mono con role separado"
           width={1756}
           height={1242}
           sizes="(min-width: 768px) 720px, 100vw"
         />
         <figcaption>
-          Sistema tipográfico · una familia, cuatro pesos, jerarquía
-          sobria para producto digital<span className="text-lacre">.</span>
+          Sistema tipográfico · Fraunces editorial, Inter producto,
+          JetBrains Mono dato de sistema<span className="text-lacre">.</span>
         </figcaption>
       </figure>
 
-      <h2>Cómo habla la IA en tres idiomas</h2>
+      <h2>Cómo se documenta la privacidad sin convertirla en disclaimer</h2>
       <p>
-        El capítulo verbal del manual es el más extenso del proyecto.
-        Claramel responde en español, inglés y portugués. Documenta variantes
-        regionales del español — el "vos" rioplatense, el "vosotros"
-        peninsular — porque la voz acompañante se rompe cuando el asistente
-        elige el pronombre equivocado al iniciar conversación.
+        El reto verbal específico de Claramel: comunicar que el modelo
+        corre on-device sin convertir esa información en una página de
+        términos legales. La solución codificada en el manual fue tratar
+        la privacidad como propiedad del producto, no como característica
+        de marketing. Cada vez que el manual habla del modelo lo nombra
+        como local. Cada vez que muestra una conversación, indica que el
+        contexto vive en el dispositivo.
       </p>
       <p>
-        Las tres reglas operativas — proponer antes que afirmar, explicar
-        antes que ejecutar, reconocer límites antes que inventar — se
-        documentan con ejemplos paralelos en cada idioma. No son
-        traducciones. Son reescrituras nativas. Lo que en español suena
-        natural como "puedo proponerte tres caminos" no funciona como
-        "I can propose you three paths" en inglés. Cada idioma tiene su
-        forma propia de proponer sin afirmar.
-      </p>
-
-      <h2>Aplicaciones mínimas viables</h2>
-      <p>
-        El Esencial cubre las aplicaciones críticas para un arranque limpio.
-        Sistema de logo con cuatro variantes. Componentes básicos del
-        producto — botón, input, mensaje del asistente, estado vacío. Meta
-        tags y OG card para web. Firma de email simple. Avatar de equipo
-        en producto y RRSS.
-      </p>
-      <p>
-        Cada aplicación tiene spec técnica — medidas exactas, formato,
-        color space — y un ejemplo aplicado. Lo que el Esencial no cubre
-        está documentado explícitamente en la última página, no como
-        omisión sino como roadmap. Saber qué falta es parte del manual.
+        Esa repetición no es eslogan. Es disciplina editorial. Si la
+        marca menciona el servidor que no usa cada vez que tiene ocasión,
+        suena defensiva. Si dice modelo local con la naturalidad con la
+        que dice modelo, la promesa entra en el lector sin requerir
+        argumento. El manual codifica ese vocabulario y lo aplica de
+        forma uniforme en producto, web, copy comercial y respuestas del
+        propio asistente.
       </p>
 
-      <h2>Lanzamiento dos semanas después</h2>
+      <h2>Aplicaciones del producto antes que aplicaciones de marca</h2>
       <p>
-        Claramel lanzó producto público el 26 de enero, dos semanas después
-        de recibir el manual. La fundadora aplicó el sistema directamente
-        sin intermediación. El manual estaba pensado para que un fundador
-        con criterio lo aplique sin agencia, y el resultado lo confirmó.
+        En un producto digital on-device, las aplicaciones del manual
+        no son papelería ni signage. Son componentes del propio producto.
+        El manual cubre, por orden de prioridad: avatar de la IA en el
+        chat, estados del asistente —idle, escuchando, pensando, respondiendo—,
+        tipografía aplicada a la respuesta del modelo, indicador on-device
+        siempre visible, screen de configuración local, splash de bienvenida.
       </p>
       <p>
-        El feedback que más nos importó llegó tres semanas después del
-        lanzamiento. Una usuaria preguntó al equipo si el asistente había
-        sido entrenado por un escritor. La respuesta era no — el asistente
-        seguía las tres reglas del capítulo verbal. Lo que la usuaria
-        leía como "voz humana" era disciplina codificada<span className="text-lacre">.</span>
+        Cada aplicación incluye spec técnica completa: medidas exactas,
+        formato, color space y comportamiento de estado. La parte que
+        más usa el equipo del producto es la documentación de estados.
+        Distinguir visualmente cuándo el modelo está pensando y cuándo
+        está respondiendo es lo que hace que la conversación se sienta
+        natural sin saturar al usuario con información de sistema.
       </p>
 
-      <h2>Lo que nos llevamos al siguiente proyecto de IA</h2>
+      <h2>Veintinueve páginas, dos rondas</h2>
       <p>
-        Claramel nos enseñó algo concreto sobre los manuales para producto
-        de IA. La voz no se documenta como manifiesto. Se documenta como
-        sistema de filtros — pocas reglas, aplicables turno a turno, con
-        contraejemplos para los casos donde el modelo se va por el camino
-        fácil. La diferencia entre un asistente que suena humano y uno que
-        suena genérico cabe en cuatro páginas de manual.
+        El manual completo se entregó como Profesional con dos rondas
+        incluidas. La auditoría cruzada encontró cosas que el método tenía
+        que encontrar. Una jerarquía de respuesta del asistente que
+        contradecía la regla de Mente clara con un peso tipográfico
+        excesivo. Un estado pasivo en el que Miel seguía apareciendo
+        contra la regla operativa codificada en el propio manual. Un
+        glosario que confundía modelo local con modelo offline —no son
+        lo mismo, y el manual lo separa.
+      </p>
+
+      <h2>Lo que el proyecto enseñó al estudio</h2>
+      <p>
+        Claramel nos enseñó dos cosas concretas. Primera, sobre marcas de
+        producto on-device: el diferenciador invisible —la privacidad por
+        arquitectura— se documenta como vocabulario, no como bandera. Si
+        cada pieza usa la misma palabra para nombrar el modelo local, la
+        promesa entra sin necesidad de argumentar. Si la marca cambia
+        de nombre cada vez —"sin servidor", "privado", "offline", "local"—
+        el lector deja de saber qué tiene delante.
+      </p>
+      <p>
+        Segunda, sobre proyectos propios: el método aguanta cuando se
+        aplica al estudio mismo. No hay descuento de rigor por ser proyecto
+        interno. Si Claramel se documentara con menos disciplina que un
+        cliente, el portfolio se desequilibraría hacia dentro. La decisión
+        editorial fue clara: mismo alcance, mismo plazo, mismas rondas<span className="text-lacre">.</span>
       </p>
 
       <h2>Si tu producto está en este punto</h2>
       <p>
-        Claramel describe un patrón frecuente: equipo pequeño con criterio,
-        producto técnico funcionando, urgencia razonable de tener marca
-        operativa antes del lanzamiento público. El tier Esencial cubre
-        exactamente este caso — suficiente para arrancar profesionalmente,
-        sin sobrediseño que el negocio aún no necesita.
+        Claramel describe un patrón frecuente: producto técnico funcionando,
+        diferenciador real pero abstracto, urgencia razonable de tener
+        marca operativa antes del lanzamiento. El tier Profesional cubre
+        exactamente este caso, con sistema visual, sistema verbal y
+        aplicaciones de producto documentados.
       </p>
       <p>
         Si quieres el alcance, plazo y precio cerrados,{" "}
-        <Link href="/precios#esencial">los tres tiers se ven en una
+        <Link href="/precios#profesional">los tres tiers se ven en una
         página</Link>. Si prefieres ver el resto del portfolio antes de
         decidir, <Link href="/manuales">aquí están los cinco casos</Link>.
       </p>
