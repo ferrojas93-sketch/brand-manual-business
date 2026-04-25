@@ -211,25 +211,81 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* Right column — single editorial hero (libro Tramarca cenital) */}
+            {/* Right column — logo specimen (Pentagram-style construction page) */}
             <div className="lg:col-span-5 relative">
-              <figure className="relative overflow-hidden bg-arena aspect-square lg:aspect-[4/5]">
-                <Image
-                  src="/hero-v7/home-hero.jpg"
-                  alt="Manual de marca abierto en spread editorial — tipografía a gran escala con punto Lacre en página izquierda, specimen tipográfico en página derecha, mano sosteniendo la página sobre concreto"
-                  fill
-                  sizes="(min-width: 1024px) 42vw, 100vw"
-                  className="object-cover"
-                  priority
+              <figure
+                className="relative overflow-hidden bg-negro aspect-square lg:aspect-[4/5]"
+                aria-label="Specimen del punto Lacre — el icónico de Tramarca con marcas de construcción"
+              >
+                {/* Background grid — very subtle */}
+                <div
+                  aria-hidden
+                  className="absolute inset-0 opacity-[0.05]"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(to right, #F4F0EB 1px, transparent 1px), linear-gradient(to bottom, #F4F0EB 1px, transparent 1px)",
+                    backgroundSize: "48px 48px",
+                  }}
                 />
-                <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/75 via-negro/20 to-transparent p-5 md:p-6">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">
-                    Fig. 01 · Spread editorial
+
+                {/* Top mono caption row */}
+                <div className="absolute top-5 left-5 right-5 md:top-7 md:left-7 md:right-7 flex items-start justify-between z-10">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/55">
+                    Cap. 02 · Identidad
                   </p>
-                  <p className="mt-1 text-papel font-black text-base md:text-lg leading-tight">
-                    El manual por dentro<span className="text-lacre">.</span>
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/55">
+                    v4 · 2026
                   </p>
-                </figcaption>
+                </div>
+
+                {/* Centered specimen — Lacre dot with construction marks */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center gap-10 md:gap-12 z-10">
+                  <div className="relative">
+                    {/* Crosshair construction marks */}
+                    <span
+                      aria-hidden
+                      className="absolute left-1/2 -top-12 md:-top-14 -translate-x-1/2 h-8 md:h-10 w-px bg-papel/25"
+                    />
+                    <span
+                      aria-hidden
+                      className="absolute left-1/2 -bottom-12 md:-bottom-14 -translate-x-1/2 h-8 md:h-10 w-px bg-papel/25"
+                    />
+                    <span
+                      aria-hidden
+                      className="absolute top-1/2 -left-12 md:-left-14 -translate-y-1/2 w-8 md:w-10 h-px bg-papel/25"
+                    />
+                    <span
+                      aria-hidden
+                      className="absolute top-1/2 -right-12 md:-right-14 -translate-y-1/2 w-8 md:w-10 h-px bg-papel/25"
+                    />
+
+                    {/* The Lacre dot — the brand's icónico */}
+                    <div
+                      className="rounded-full bg-lacre shadow-[0_0_60px_-20px_rgba(196,85,58,0.5)]"
+                      style={{ width: "clamp(110px, 19vw, 200px)", aspectRatio: "1 / 1" }}
+                    />
+
+                    {/* Hex annotation, right of the dot */}
+                    <p className="absolute left-full top-1/2 -translate-y-1/2 ml-12 md:ml-16 font-mono text-[8px] md:text-[9px] uppercase tracking-[0.25em] text-papel/50 whitespace-nowrap hidden sm:block">
+                      Lacre · #C4553A
+                    </p>
+                  </div>
+
+                  {/* Wordmark below */}
+                  <p className="font-sans font-black text-2xl md:text-3xl tracking-[-0.03em] text-papel">
+                    Tramarca<span className="text-lacre">.</span>
+                  </p>
+                </div>
+
+                {/* Bottom mono caption row */}
+                <div className="absolute bottom-5 left-5 right-5 md:bottom-7 md:left-7 md:right-7 flex items-end justify-between z-10">
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/55">
+                    El Punto Final
+                  </p>
+                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-papel/55">
+                    Specimen 02
+                  </p>
+                </div>
               </figure>
             </div>
           </div>
