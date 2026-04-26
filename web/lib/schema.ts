@@ -37,7 +37,7 @@ export const localBusinessSchema = {
   "@type": "LocalBusiness",
   "@id": `${SITE_URL}/#localbusiness`,
   name: "Tramarca",
-  image: `${SITE_URL}/og-tramarca-v2.jpg`,
+  image: `${SITE_URL}/og-tramarca-v4.jpg`,
   url: SITE_URL,
   priceRange: "€€",
   address: {
@@ -366,7 +366,7 @@ export const productSchema = {
   name: "Manual de marca Tramarca",
   description:
     "Manual de marca productizado en 3 tiers con pricing público IVA incluido, plazos publicados y entregables cerrados. Esencial 490€ · Profesional 990€ · Premium 1.990€.",
-  image: `${SITE_URL}/og-tramarca-v2.jpg`,
+  image: `${SITE_URL}/og-tramarca-v4.jpg`,
   brand: { "@id": `${SITE_URL}/#organization` },
   category: "Servicios profesionales · Diseño editorial · Manual de marca",
   sku: "TRAMARCA-MANUAL-MARCA",

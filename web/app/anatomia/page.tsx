@@ -24,7 +24,7 @@ const schemaGraph = jsonLdGraph(
     name: "Anatomía de un manual de marca — 16 capítulos, 48 componentes",
     description:
       "Documentación técnica de qué hay dentro de un manual de marca Tramarca. 16 capítulos y 48 componentes explicados por tier (Esencial, Profesional, Premium), alineados con el manual de marca propio publicado.",
-    image: `${SITE_URL}/og-tramarca-v2.jpg`,
+    image: `${SITE_URL}/og-tramarca-v4.jpg`,
   })
 );
 
