@@ -1,0 +1,24 @@
+{
+  "name": "Tramarca — Manuales de marca",
+  "short_name": "Tramarca",
+  "description": "Estudio editorial de manuales de marca. Tres tiers con precio cerrado e IVA incluido: 490€, 990€, 1.990€.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F4F0EB",
+  "theme_color": "#0C0C0C",
+  "orientation": "portrait-primary",
+  "lang": "es-ES",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
