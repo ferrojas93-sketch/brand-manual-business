@@ -125,7 +125,9 @@ export default async function ManualDetailPage({
       {CasoBody && (
         <section className="bg-papel border-y border-negro/10">
           <div className="mx-auto max-w-3xl px-6 py-16 md:py-24">
-            <CasoBody />
+            <div className="post-body">
+              <CasoBody />
+            </div>
           </div>
         </section>
       )}
