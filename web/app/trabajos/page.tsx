@@ -153,12 +153,9 @@ export default function TrabajosPage() {
                         </p>
                         {m.showDetail && (
                           <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-lacre">
-                            <Link
-                              href={`/trabajos/${m.slug}`}
-                              className="hover:text-lacre-hover underline underline-offset-4"
-                            >
+                            <span className="underline underline-offset-4 group-hover:text-lacre-hover">
                               Ver caso completo →
-                            </Link>
+                            </span>
                           </p>
                         )}
                       </div>
@@ -170,7 +167,17 @@ export default function TrabajosPage() {
                       key={m.slug}
                       className="border-b border-negro/15"
                     >
-                      {Body}
+                      {m.showDetail ? (
+                        <Link
+                          href={`/trabajos/${m.slug}`}
+                          aria-label={`Ver caso completo de ${m.name}`}
+                          className="group block hover:bg-negro/[0.03] focus-visible:outline-2 focus-visible:outline-lacre focus-visible:outline-offset-[-2px] transition-colors"
+                        >
+                          {Body}
+                        </Link>
+                      ) : (
+                        Body
+                      )}
                     </li>
                   );
                 })}

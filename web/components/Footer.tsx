@@ -46,7 +46,7 @@ export function Footer() {
           className="mt-6 flex flex-wrap gap-x-5 gap-y-2 text-[13px] text-ceniza"
         >
           {navLinks.map((l) => (
-            <Link key={l.href} href={l.href} className="hover:text-lacre transition-colors">
+            <Link key={l.href} href={l.href} className="inline-block py-2.5 -my-2.5 hover:text-lacre transition-colors">
               {l.label}
             </Link>
           ))}
@@ -54,7 +54,7 @@ export function Footer() {
             href="https://www.linkedin.com/company/tramarca"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-lacre transition-colors"
+            className="inline-block py-2.5 -my-2.5 hover:text-lacre transition-colors"
           >
             LinkedIn <span aria-hidden>↗</span>
           </a>
@@ -64,7 +64,7 @@ export function Footer() {
         <div className="mt-5 pt-5 border-t border-papel/10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-piedra-light">
           <div className="flex flex-wrap gap-x-4 gap-y-1">
             {legalLinks.map((l) => (
-              <Link key={l.href} href={l.href} className="hover:text-lacre transition-colors">
+              <Link key={l.href} href={l.href} className="inline-block py-2.5 -my-2.5 hover:text-lacre transition-colors">
                 {l.label}
               </Link>
             ))}

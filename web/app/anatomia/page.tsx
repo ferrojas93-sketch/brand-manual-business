@@ -34,7 +34,7 @@ const TIERS: Tier[] = ["E", "P", "M"];
 
 function TierBadge({ tiers }: { tiers: Tier[] }) {
   return (
-    <div className="flex items-center gap-1" aria-label={`Incluido en: ${tiers.map((t) => TIER_LABEL[t]).join(", ")}`}>
+    <div className="flex items-center gap-1" role="img" aria-label={`Incluido en: ${tiers.map((t) => TIER_LABEL[t]).join(", ")}`}>
       {TIERS.map((t) => (
         <span
           key={t}

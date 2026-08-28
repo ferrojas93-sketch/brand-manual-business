@@ -223,7 +223,7 @@ export default function HomePage() {
                   priority
                 />
                 <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/75 via-negro/20 to-transparent p-5 md:p-6">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-lacre">
                     Estudio · 2026
                   </p>
                   <p className="mt-1 text-papel font-black text-base md:text-lg leading-tight">

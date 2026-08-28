@@ -21,7 +21,7 @@ export function Nav() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-negro hover:text-lacre focus-visible:outline-2 focus-visible:outline-lacre focus-visible:outline-offset-4 transition-colors"
+              className="inline-flex items-center min-h-11 text-sm text-negro hover:text-lacre focus-visible:outline-2 focus-visible:outline-lacre focus-visible:outline-offset-4 transition-colors"
             >
               {link.label}
             </Link>
