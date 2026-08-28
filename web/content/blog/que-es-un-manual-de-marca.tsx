@@ -260,7 +260,7 @@ export default function PostBody() {
         Tras documentar el sistema, bajó a 1-2 horas.
       </p>
 
-      <h3>Onboarding de nuevo talento sin confusión</h3>
+      <h3>Un fichaje nuevo aplica la marca desde su primera semana</h3>
       <p>
         Contratas diseñador, marketing manager, community manager. Primer
         día les pasas el PDF + Figma + acceso a archivos. Segundo día ya
@@ -330,7 +330,7 @@ export default function PostBody() {
         </li>
         <li>
           Vas a lanzar variantes (submarcas, ediciones especiales,
-          co-branding con partners)
+          co-branding con marcas aliadas)
         </li>
         <li>
           La gente del equipo te pregunta más de una vez por semana

@@ -20,12 +20,13 @@ export async function verifyTurnstile(token: string | undefined, ip: string): Pr
         "turnstile_misconfig: TURNSTILE_SECRET_KEY missing in production. Anti-bot verification is DISABLED. Set it in Vercel env vars."
       );
     }
-    return true;
+    // Fail-closed en producción: sin secreto no hay verificación posible.
+    return process.env.NODE_ENV !== "production";
   }
   if (!token) return false;
   try {
     const body = new URLSearchParams({ secret, response: token, remoteip: ip });
-    const res = await fetch(VERIFY_URL, { method: "POST", body, cache: "no-store" });
+    const res = await fetch(VERIFY_URL, { method: "POST", body, cache: "no-store", signal: AbortSignal.timeout(8000) });
     const data = (await res.json()) as VerifyResponse;
     if (!data.success) {
       console.warn("turnstile_verify_failed", { codes: data["error-codes"] });

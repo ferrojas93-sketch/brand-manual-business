@@ -224,7 +224,7 @@ export default function CasoMatrazInnova() {
         Si quieres alcance, plazo y precio cerrados,{" "}
         <Link href="/precios#profesional">los tres tiers se ven en una
         página</Link>. Si prefieres ver el resto del portfolio antes,{" "}
-        <Link href="/manuales">aquí están los cinco casos</Link>.
+        <Link href="/trabajos">aquí están los cinco casos</Link>.
       </p>
     </div>
   );

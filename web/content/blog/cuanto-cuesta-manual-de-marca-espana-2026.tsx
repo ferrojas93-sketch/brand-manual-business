@@ -187,7 +187,7 @@ export default function PostBody() {
       <p>
         Laura eligió la agencia top-tier Madrid (45.000€ final). El proyecto
         incluía naming nuevo de tres submarcas, redefinición estratégica
-        completa, y onboarding del equipo interno. El estudio productizado
+        completa, y arranque del equipo interno. El estudio productizado
         no encajaba porque ese tier no incluye naming estratégico ni
         sesiones con stakeholders múltiples — y lo dijimos claramente cuando
         cotizamos.

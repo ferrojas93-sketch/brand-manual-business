@@ -217,7 +217,7 @@ export default function PostBody() {
       <p>
         Núria recibió el martes a las 16:00 cinco direcciones
         tipográficas iniciales del wordmark de su estudio. Tres
-        descartadas tras 30 minutos de revisión por email (asíncrono,
+        descartadas tras 30 minutos de revisión por email (por escrito,
         no llamada). Dos retenidas para siguiente iteración.
         Miércoles mañana, una variante final con micro-ajustes de
         kerning y proporción presentada en spread completo con todas
@@ -371,7 +371,7 @@ export default function PostBody() {
         <li>Figma editable con componentes nombrados consistente para diseñadora web</li>
         <li>Tokens CSS y JSON de color/tipografía para producto digital futuro</li>
         <li>Plantillas editables de papelería en Adobe + Canva</li>
-        <li>Guía de onboarding del equipo (1 página resumen ejecutivo)</li>
+        <li>Guía de arranque del equipo (1 página resumen ejecutivo)</li>
       </ul>
       <p>
         Todo el paquete entregado en Google Drive con estructura de

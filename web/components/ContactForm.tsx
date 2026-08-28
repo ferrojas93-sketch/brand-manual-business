@@ -11,16 +11,8 @@ import { cn } from "@/lib/utils";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
-const ALLOWED_MIME = [
-  "image/jpeg",
-  "image/png",
-  "image/svg+xml",
-  "image/webp",
-  "application/pdf",
-  "application/postscript",
-  "application/illustrator",
-];
-const ALLOWED_ACCEPT = ".pdf,.jpg,.jpeg,.png,.svg,.webp,.ai,.eps";
+const ALLOWED_MIME = ["image/jpeg", "image/png", "image/webp", "application/pdf"];
+const ALLOWED_ACCEPT = ".pdf,.jpg,.jpeg,.png,.webp";
 const MAX_FILE_BYTES = 5 * 1024 * 1024;
 const MAX_FILES = 5;
 
@@ -225,20 +217,20 @@ export function ContactForm({ defaultTier }: { defaultTier?: string }) {
       turnstileToken,
     };
 
-    const res = await fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    if (res.ok) {
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(`lead_http_${res.status}`);
       setStatus("sent");
       reset();
       setFiles([]);
-      turnstileRef.current?.reset();
-      setTurnstileToken(null);
-    } else {
+    } catch {
+      // Fallo de red o de servidor: mostrar error y permitir reintentar.
       setStatus("error");
+    } finally {
       turnstileRef.current?.reset();
       setTurnstileToken(null);
     }

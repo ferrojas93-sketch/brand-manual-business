@@ -26,11 +26,7 @@ export const organizationSchema = {
     "Brand book",
     "Manual identidad visual",
   ],
-  sameAs: [
-    "https://www.linkedin.com/company/tramarca",
-    "https://tramarca.com",
-    "https://tramarca.org",
-  ],
+  sameAs: ["https://www.linkedin.com/company/tramarca"],
 };
 
 export const localBusinessSchema = {
@@ -147,7 +143,7 @@ export const faqSchema = {
       name: "¿Qué incluye un manual de marca?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Sistema de identidad visual (logo, paleta, tipografía, grid), aplicaciones (papelería, firma de email, RRSS), guidelines de uso y, según el tier, estrategia de marca, identidad verbal y plantillas Figma editables. Entregamos PDF A4 landscape y archivos fuente. 48 componentes repartidos en 12 capítulos.",
+        text: "Sistema de identidad visual (logo, paleta, tipografía, grid), aplicaciones (papelería, firma de email, RRSS), guidelines de uso y, según el tier, estrategia de marca, identidad verbal y plantillas Figma editables. Entregamos PDF A4 landscape y archivos fuente. 48 componentes repartidos en 16 capítulos.",
       },
     },
     {
@@ -219,7 +215,7 @@ export const faqSchema = {
       name: "¿Cómo aseguráis que el manual encaja con lo que necesito?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "El brief firmado antes del kickoff define el scope acordado · 23 preguntas en 5 bloques. Cualquier ajuste durante las 2 rondas de revisión incluidas se acota contra ese brief. Si quieres ver el cuestionario antes de contratar, escríbenos y te lo enviamos.",
+        text: "El brief firmado antes del kickoff define el scope acordado · 23 preguntas en 5 bloques. Cualquier ajuste durante las rondas de revisión incluidas en tu tier (una en Esencial, dos en Profesional y Premium) se acota contra ese brief. Si quieres ver el cuestionario antes de contratar, escríbenos y te lo enviamos.",
       },
     },
     {

@@ -3,12 +3,13 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 /**
  * One-click unsubscribe token (RFC 8058).
  * HMAC-SHA256(email + version) -> base64url 16 bytes.
- * Reusa SUPABASE_SERVICE_ROLE_KEY como secret (ya rotamos si se filtra).
+ * Secret propio (UNSUBSCRIBE_SECRET). Fallback temporal a SUPABASE_SERVICE_ROLE_KEY
+ * para no invalidar enlaces ya enviados hasta que la variable exista en Vercel.
  */
 const VERSION = "v1";
 
 function getSecret(): string {
-  const secret = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const secret = process.env.UNSUBSCRIBE_SECRET ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!secret) throw new Error("unsubscribe_secret_missing");
   return secret;
 }

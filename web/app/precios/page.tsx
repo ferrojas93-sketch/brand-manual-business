@@ -6,6 +6,7 @@ import { FaqAccordion } from "@/components/FaqAccordion";
 import { ButtonLink, ButtonLinkTracked } from "@/components/Button";
 import { JsonLd } from "@/components/JsonLd";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 import { jsonLdGraph, serviceSchema, breadcrumbListSchema, productSchema } from "@/lib/schema";
 import { cn } from "@/lib/utils";
 
@@ -14,6 +15,7 @@ export const metadata: Metadata = {
   description:
     "Cuánto cuesta un manual de marca. Tres tiers: 490€, 990€, 1.990€. IVA incluido. Plazos 5-10 días. Precio cerrado publicado. Aquí los números.",
   alternates: { canonical: `${SITE_URL}/precios` },
+  openGraph: ogFor("/precios"),
 };
 
 const pricingFaqs = [
@@ -43,7 +45,7 @@ const pricingFaqs = [
   },
   {
     q: "¿Cómo aseguráis que el manual encaja con lo que necesito?",
-    a: "El brief firmado antes del kickoff define exactamente el scope acordado: 23 preguntas estructuradas en 5 bloques (negocio, audiencia, activos existentes, proveedores y casos de uso, tono y restricciones). Cualquier ajuste durante las 2 rondas de revisión incluidas se acota contra ese brief. Si quieres ver el cuestionario antes de contratar, escríbenos y te lo enviamos.",
+    a: "El brief firmado antes del kickoff define exactamente el scope acordado: 23 preguntas estructuradas en 5 bloques (negocio, audiencia, activos existentes, proveedores y casos de uso, tono y restricciones). Cualquier ajuste durante las rondas de revisión incluidas en tu tier (una en Esencial, dos en Profesional y Premium) se acota contra ese brief. Si quieres ver el cuestionario antes de contratar, escríbenos y te lo enviamos.",
   },
 ];
 
@@ -326,7 +328,7 @@ export default function PreciosPage() {
                 Agencia tradicional
               </p>
               <p className="mt-3 text-2xl md:text-3xl font-black tracking-tight tabular-nums">
-                6.000€–18.000€
+                1.500€–8.000€
               </p>
               <p className="mt-2 text-sm text-piedra leading-relaxed">
                 + IVA aparte. Discovery de semanas antes de empezar.

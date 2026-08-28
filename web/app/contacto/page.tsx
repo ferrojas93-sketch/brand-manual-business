@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Suspense } from "react";
 import { ContactForm } from "@/components/ContactForm";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { jsonLdGraph, breadcrumbListSchema, contactPageSchema } from "@/lib/schema";
 
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   description:
     "Rellena el formulario o escríbenos a hola@tramarca.es. Respondemos en menos de 24 horas laborables con propuesta y link de pago seguro via Stripe.",
   alternates: { canonical: `${SITE_URL}/contacto` },
+  openGraph: ogFor("/contacto"),
 };
 
 const schemaGraph = jsonLdGraph(

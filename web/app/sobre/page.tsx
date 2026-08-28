@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { jsonLdGraph, breadcrumbListSchema, aboutPageSchema } from "@/lib/schema";
 import { MANUALES } from "@/lib/manuales";
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   title: "Nosotros · Un estudio que solo hace manuales de marca",
   description: `Un estudio español que solo hace manuales de marca. Precio público, IVA incluido, plazo publicado. ${MANUALES.length} manuales entregados. Trabajamos por escrito.`,
   alternates: { canonical: `${SITE_URL}/sobre` },
+  openGraph: ogFor("/sobre"),
 };
 
 const schemaGraph = jsonLdGraph(
@@ -125,7 +127,7 @@ export default function SobrePage() {
                 Un sistema documentado, no un logo con colores<span className="text-lacre">.</span>
               </p>
               <p className="mt-5">
-                El 90% de lo que se vende como &ldquo;manual de marca&rdquo; en España son
+                Buena parte de lo que se vende como &ldquo;manual de marca&rdquo; en España son
                 ocho láminas con logo, paleta y tipografía. Un brand kit, no un manual.
                 Nosotros entregamos entre 20 y 50 páginas de sistema operativo: grid,
                 jerarquía, voz, aplicaciones, qué hacer y qué no. Un documento que tu

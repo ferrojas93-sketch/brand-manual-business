@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-
 /**
  * CSP · reporting group `csp-endpoint` permite browsers modernos hacer POST
  * a /api/csp-report con formato `application/reports+json` (Reporting API v1).
@@ -35,7 +33,7 @@ const reportToHeader = JSON.stringify({
 
 const securityHeaders = [
   {
-    key: isProd ? "Content-Security-Policy-Report-Only" : "Content-Security-Policy",
+    key: "Content-Security-Policy",
     value: cspDirectives,
   },
   { key: "Report-To", value: reportToHeader },

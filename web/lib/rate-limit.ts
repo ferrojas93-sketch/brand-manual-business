@@ -40,6 +40,7 @@ function makeIpLimiter(): RateLimiterRedis | RateLimiterMemory {
         duration: 60,
         inMemoryBlockOnConsumed: 10,
         inMemoryBlockDuration: 60,
+        insuranceLimiter: new RateLimiterMemory({ keyPrefix: "rl:ip:ins", points: 5, duration: 60 }),
       })
     : new RateLimiterMemory({ keyPrefix: "rl:ip", points: 5, duration: 60 });
   return ipLimiter;
@@ -56,6 +57,7 @@ function makeEmailLimiter(): RateLimiterRedis | RateLimiterMemory {
         duration: 3600,
         inMemoryBlockOnConsumed: 5,
         inMemoryBlockDuration: 3600,
+        insuranceLimiter: new RateLimiterMemory({ keyPrefix: "rl:email:ins", points: 3, duration: 3600 }),
       })
     : new RateLimiterMemory({ keyPrefix: "rl:email", points: 3, duration: 3600 });
   return emailLimiter;
@@ -78,8 +80,10 @@ async function consume(limiter: RateLimiterRedis | RateLimiterMemory, key: strin
     if (err && typeof err === "object" && "remainingPoints" in err) {
       return toResult(limit, err as RateLimiterRes, false);
     }
-    console.warn("ratelimit_unknown_error", { message: err instanceof Error ? err.message : "unknown" });
-    return { success: true, limit, remaining: limit, reset: Date.now() + 60_000 };
+    console.error("ratelimit_unknown_error", { message: err instanceof Error ? err.message : "unknown" });
+    // Fail-closed en producción: si el limitador está roto, no aceptamos tráfico sin control.
+    const allow = process.env.NODE_ENV !== "production";
+    return { success: allow, limit, remaining: allow ? limit : 0, reset: Date.now() + 60_000 };
   }
 }
 

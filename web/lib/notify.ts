@@ -64,7 +64,7 @@ async function signAttachmentUrls(attachments: Attachment[]): Promise<Array<Atta
       attachments.map(async (a) => {
         const { data, error } = await supabase.storage
           .from("lead-attachments")
-          .createSignedUrl(a.path, 60 * 60 * 24 * 7);
+          .createSignedUrl(a.path, 60 * 60 * 24 * 7, { download: a.filename });
         return { ...a, url: error ? null : (data?.signedUrl ?? null) };
       })
     );

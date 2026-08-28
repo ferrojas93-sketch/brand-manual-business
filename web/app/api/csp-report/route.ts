@@ -1,5 +1,10 @@
 import { NextResponse } from "next/server";
 import { getSupabaseAdmin } from "@/lib/supabase";
+import { limitByIp } from "@/lib/rate-limit";
+
+const MAX_BODY_BYTES = 8 * 1024;
+const NO_CONTENT = () => new NextResponse(null, { status: 204 });
+const clip = (v: unknown, n = 500) => String(v ?? "").slice(0, n);
 
 export const runtime = "nodejs";
 
@@ -55,6 +60,11 @@ export async function POST(req: Request) {
   const ip = getIp(req);
   const contentType = req.headers.get("content-type") ?? "";
 
+  const rl = await limitByIp(ip);
+  if (!rl.success) return new NextResponse(null, { status: 429 });
+  const declared = Number(req.headers.get("content-length") ?? 0);
+  if (declared > MAX_BODY_BYTES) return new NextResponse(null, { status: 413 });
+
   try {
     let violation: Record<string, unknown> | null = null;
 
@@ -80,21 +90,17 @@ export async function POST(req: Request) {
     }
 
     if (!violation) {
-      return NextResponse.json({ ok: true }, { status: 204 });
+      return NO_CONTENT();
     }
 
-    const directive = String(
+    const directive = clip(
       violation["effective-directive"] ??
         violation["effectiveDirective"] ??
         violation["violated-directive"] ??
         "unknown"
     );
-    const blockedUri = String(
-      violation["blocked-uri"] ?? violation["blockedURL"] ?? "unknown"
-    );
-    const documentUri = String(
-      violation["document-uri"] ?? violation["documentURL"] ?? "unknown"
-    );
+    const blockedUri = clip(violation["blocked-uri"] ?? violation["blockedURL"] ?? "unknown");
+    const documentUri = clip(violation["document-uri"] ?? violation["documentURL"] ?? "unknown");
 
     console.warn("csp_violation", {
       directive,
@@ -112,11 +118,10 @@ export async function POST(req: Request) {
           directive,
           blocked_uri: blockedUri,
           document_uri: documentUri,
-          source_file: String(violation["source-file"] ?? violation["sourceFile"] ?? ""),
-          sample: String(violation["script-sample"] ?? violation["sample"] ?? "").slice(0, 500),
+          source_file: clip(violation["source-file"] ?? violation["sourceFile"]),
+          sample: clip(violation["script-sample"] ?? violation["sample"]),
           ip,
-          user_agent: req.headers.get("user-agent") ?? null,
-          raw: violation,
+          user_agent: clip(req.headers.get("user-agent"), 300) || null,
         });
     } catch (dbErr) {
       // Tabla no creada aún · log silencioso
@@ -127,12 +132,12 @@ export async function POST(req: Request) {
       }
     }
 
-    return NextResponse.json({ ok: true }, { status: 204 });
+    return NO_CONTENT();
   } catch (err) {
     console.error("csp_report_exception", {
       message: err instanceof Error ? err.message : "unknown",
     });
-    return NextResponse.json({ ok: true }, { status: 204 });
+    return NO_CONTENT();
   }
 }
 

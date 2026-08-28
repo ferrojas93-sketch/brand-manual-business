@@ -8,11 +8,8 @@ const MAX_SIZE = 5 * 1024 * 1024;
 const ALLOWED_TYPES = new Set([
   "image/jpeg",
   "image/png",
-  "image/svg+xml",
   "image/webp",
   "application/pdf",
-  "application/postscript",
-  "application/illustrator",
 ]);
 
 type UploadRequest = {

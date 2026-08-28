@@ -213,7 +213,7 @@ export default function CasoTramarca() {
         cerrados. Si quieres este nivel para tu marca,{" "}
         <Link href="/precios">los tres tiers se ven en una página</Link>.
         Si prefieres comparar con el resto del portfolio antes de
-        decidir, <Link href="/manuales">aquí están los cinco casos</Link>.
+        decidir, <Link href="/trabajos">aquí están los cinco casos</Link>.
         Si quieres entender el método antes que el caso,{" "}
         <Link href="/anatomia">la anatomía documenta los cuarenta y
         ocho componentes</Link>.

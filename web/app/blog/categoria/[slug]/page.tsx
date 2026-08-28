@@ -9,6 +9,7 @@ import {
   type BlogCategory,
 } from "@/lib/blog";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { jsonLdGraph, breadcrumbListSchema, collectionPageSchema } from "@/lib/schema";
 
@@ -34,6 +35,9 @@ export async function generateMetadata({
     title: `${label} · Blog`,
     description: `Piezas editoriales Tramarca en la categoría ${label}. ${CATEGORY_KICKER[slug]}`,
     alternates: { canonical: `${SITE_URL}/blog/categoria/${slug}` },
+    openGraph: ogFor(`/blog/categoria/${slug}`),
+    // Listados thin con pocos posts: no indexar, sí seguir enlaces.
+    robots: { index: false, follow: true },
   };
 }
 

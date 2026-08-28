@@ -204,7 +204,7 @@ export default function CasoAnfisbena() {
         Si quieres ver alcance, plazo y precio cerrados,{" "}
         <Link href="/precios#profesional">los tres tiers se ven en una
         página</Link>. Si prefieres comparar con el resto del portfolio
-        antes de decidir, <Link href="/manuales">aquí están los cinco
+        antes de decidir, <Link href="/trabajos">aquí están los cinco
         casos</Link>.
       </p>
     </div>
