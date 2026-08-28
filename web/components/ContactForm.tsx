@@ -11,16 +11,8 @@ import { cn } from "@/lib/utils";
 
 const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
-const ALLOWED_MIME = [
-  "image/jpeg",
-  "image/png",
-  "image/svg+xml",
-  "image/webp",
-  "application/pdf",
-  "application/postscript",
-  "application/illustrator",
-];
-const ALLOWED_ACCEPT = ".pdf,.jpg,.jpeg,.png,.svg,.webp,.ai,.eps";
+const ALLOWED_MIME = ["image/jpeg", "image/png", "image/webp", "application/pdf"];
+const ALLOWED_ACCEPT = ".pdf,.jpg,.jpeg,.png,.webp";
 const MAX_FILE_BYTES = 5 * 1024 * 1024;
 const MAX_FILES = 5;
 
@@ -225,20 +217,20 @@ export function ContactForm({ defaultTier }: { defaultTier?: string }) {
       turnstileToken,
     };
 
-    const res = await fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-
-    if (res.ok) {
+    try {
+      const res = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error(`lead_http_${res.status}`);
       setStatus("sent");
       reset();
       setFiles([]);
-      turnstileRef.current?.reset();
-      setTurnstileToken(null);
-    } else {
+    } catch {
+      // Fallo de red o de servidor: mostrar error y permitir reintentar.
       setStatus("error");
+    } finally {
       turnstileRef.current?.reset();
       setTurnstileToken(null);
     }
@@ -292,12 +284,12 @@ export function ContactForm({ defaultTier }: { defaultTier?: string }) {
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <label className={labelCls} htmlFor="name">Tu nombre</label>
-            <input id="name" {...register("name")} className={inputCls} autoComplete="name" />
+            <input id="name" {...register("name")} className={inputCls} autoComplete="name" aria-required="true" />
             {errors.name && <p className={errorCls}>{errors.name.message}</p>}
           </div>
           <div>
             <label className={labelCls} htmlFor="email">Tu email</label>
-            <input id="email" type="email" {...register("email")} className={inputCls} placeholder="hola@empresa.com" autoComplete="email" />
+            <input id="email" type="email" {...register("email")} className={inputCls} placeholder="hola@empresa.com" autoComplete="email" aria-required="true" />
             {errors.email && <p className={errorCls}>{errors.email.message}</p>}
           </div>
         </div>
@@ -321,7 +313,7 @@ export function ContactForm({ defaultTier }: { defaultTier?: string }) {
         <div className="grid md:grid-cols-2 gap-8">
           <div>
             <label className={labelCls} htmlFor="tier">Tier que te interesa</label>
-            <select id="tier" {...register("tier")} className={cn(inputCls, "appearance-none cursor-pointer")}>
+            <select id="tier" {...register("tier")} className={cn(inputCls, "appearance-none cursor-pointer")} aria-required="true">
               <option value="esencial">Esencial · 490€</option>
               <option value="profesional">Profesional · 990€</option>
               <option value="premium">Premium · 1.990€</option>
@@ -347,6 +339,7 @@ export function ContactForm({ defaultTier }: { defaultTier?: string }) {
             id="message"
             rows={5}
             {...register("message")}
+            aria-required="true"
             className={cn(inputCls, "resize-none")}
             placeholder="Qué hacéis, qué buscáis del manual, qué problema os lleva a plantearlo ahora..."
           />
@@ -516,7 +509,7 @@ export function ContactForm({ defaultTier }: { defaultTier?: string }) {
       {/* Consentimiento + Turnstile + Submit */}
       <section className="space-y-6 pt-6 border-t border-negro/15">
         <label className="flex items-start gap-3 cursor-pointer">
-          <input type="checkbox" {...register("consent")} className="mt-1 accent-lacre w-4 h-4" />
+          <input type="checkbox" {...register("consent")} className="mt-0.5 accent-lacre w-5 h-5 shrink-0" aria-required="true" />
           <span className="text-sm text-piedra">
             He leído y acepto la{" "}
             <a href="/privacidad" className="underline hover:text-lacre">política de privacidad</a>.

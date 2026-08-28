@@ -77,7 +77,7 @@ const homeFaqs = [
   },
   {
     q: "¿Cómo aseguráis que el manual encaja con lo que necesito?",
-    a: "El brief firmado antes del kickoff define exactamente el scope acordado: 23 preguntas estructuradas en 5 bloques. Cualquier ajuste durante las 2 rondas de revisión incluidas se acota contra ese brief. Si quieres ver el cuestionario antes de contratar, escríbenos y te lo enviamos.",
+    a: "El brief firmado antes del kickoff define exactamente el scope acordado: 23 preguntas estructuradas en 5 bloques. Cualquier ajuste durante las rondas de revisión incluidas en tu tier (una en Esencial, dos en Profesional y Premium) se acota contra ese brief. Si quieres ver el cuestionario antes de contratar, escríbenos y te lo enviamos.",
   },
   {
     q: "¿Qué pasa si necesito más revisiones de las incluidas?",
@@ -97,7 +97,7 @@ const homeFaqs = [
   },
   {
     q: "¿Qué incluye un manual de marca?",
-    a: "Un manual de marca Tramarca incluye sistema de identidad visual (logo, paleta, tipografía, grid), aplicaciones (papelería, firma de email, RRSS), guidelines de uso y, según el tier, estrategia de marca, identidad verbal y plantillas Figma editables. Entregamos PDF A4 landscape y archivos fuente. Todo documentado capítulo a capítulo: 48 componentes repartidos en 12 capítulos. Puedes ver el índice completo en /anatomia.",
+    a: "Un manual de marca Tramarca incluye sistema de identidad visual (logo, paleta, tipografía, grid), aplicaciones (papelería, firma de email, RRSS), guidelines de uso y, según el tier, estrategia de marca, identidad verbal y plantillas Figma editables. Entregamos PDF A4 landscape y archivos fuente. Todo documentado capítulo a capítulo: 48 componentes repartidos en 16 capítulos. Puedes ver el índice completo en /anatomia.",
   },
   {
     q: "¿Cuánto tarda en entregarse un manual de marca?",
@@ -223,7 +223,7 @@ export default function HomePage() {
                   priority
                 />
                 <figcaption className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-negro/75 via-negro/20 to-transparent p-5 md:p-6">
-                  <p className="font-mono text-[9px] uppercase tracking-[0.3em] text-lacre">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.3em] text-lacre">
                     Estudio · 2026
                   </p>
                   <p className="mt-1 text-papel font-black text-base md:text-lg leading-tight">
@@ -522,7 +522,7 @@ export default function HomePage() {
             </div>
             <p className="max-w-md text-base md:text-lg text-piedra leading-relaxed">
               Un manual Tramarca no es un logo con color. Es un sistema documentado, por
-              escrito, con reglas aplicables. Ocho capítulos. Cero adornos.
+              escrito, con reglas aplicables. Dieciséis capítulos. Cero adornos.
             </p>
           </div>
 

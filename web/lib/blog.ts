@@ -303,7 +303,7 @@ export const POSTS: BlogPost[] = [
       },
       {
         q: "¿Qué archivos debe entregar el estudio al final?",
-        a: "PDF A4 landscape del manual, archivos fuente del logo (SVG + PNG @1x/@2x/@3x + PDF + EPS), Figma editable con componentes, tokens CSS/JSON de color y tipografía, plantillas editables de papelería (Adobe + Canva), y guía de onboarding del equipo. En tier Premium se añade copia física del manual encuadernada como libro de edición única enviada a oficina.",
+        a: "PDF A4 landscape del manual, archivos fuente del logo (SVG + PNG @1x/@2x/@3x + PDF + EPS), Figma editable con componentes, tokens CSS/JSON de color y tipografía, plantillas editables de papelería (Adobe + Canva), y guía de arranque del equipo. En tier Premium se añade copia física del manual encuadernada como libro de edición única enviada a oficina.",
       },
       {
         q: "¿Hago el manual yo mismo o lo encargo?",

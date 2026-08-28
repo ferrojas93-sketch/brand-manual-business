@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Condiciones generales de contratación",
   description:
     "Condiciones generales de contratación de Tramarca: tiers, pagos, plazos, revisiones, propiedad y cancelación.",
   alternates: { canonical: `${SITE_URL}/condiciones` },
+  openGraph: ogFor("/condiciones"),
 };
 
 export default function CondicionesPage() {

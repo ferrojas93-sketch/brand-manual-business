@@ -41,7 +41,7 @@ export const TIERS: Record<TierId, Tier> = {
   profesional: {
     id: "profesional",
     name: "Profesional",
-    label: "Para la mayoría de pymes. El que escogen ocho de cada diez.",
+    label: "Para la mayoría de pymes. El alcance que cubre casi todos los casos.",
     price: 990,
     priceDisplay: "990€",
     promise: "Sistema de marca completo con voz verbal y plantillas editables. Lo que necesitas para operar sin preguntar cada decisión.",

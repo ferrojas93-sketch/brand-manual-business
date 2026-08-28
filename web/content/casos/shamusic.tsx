@@ -223,7 +223,7 @@ export default function CasoShamusic() {
         Si quieres alcance, plazo y precio cerrados,{" "}
         <Link href="/precios#premium">los tres tiers se ven en una
         página</Link>. Si prefieres comparar con el resto del portfolio
-        antes de decidir, <Link href="/manuales">aquí están los cinco
+        antes de decidir, <Link href="/trabajos">aquí están los cinco
         casos</Link>.
       </p>
     </div>

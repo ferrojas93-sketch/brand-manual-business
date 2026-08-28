@@ -1,7 +1,5 @@
 import type { NextConfig } from "next";
 
-const isProd = process.env.NODE_ENV === "production";
-
 /**
  * CSP · reporting group `csp-endpoint` permite browsers modernos hacer POST
  * a /api/csp-report con formato `application/reports+json` (Reporting API v1).
@@ -16,8 +14,8 @@ const cspDirectives = [
   "img-src 'self' data: blob: https:",
   "font-src 'self' data: https://fonts.gstatic.com",
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io https://challenges.cloudflare.com",
-  "connect-src 'self' https://plausible.io https://challenges.cloudflare.com https://*.supabase.co",
+  "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://plausible.io https://challenges.cloudflare.com https://vercel.live",
+  "connect-src 'self' https://plausible.io https://challenges.cloudflare.com https://*.supabase.co https://vercel.live wss://*.pusher.com",
   "frame-src https://challenges.cloudflare.com",
   "worker-src 'self' blob:",
   "manifest-src 'self'",
@@ -35,7 +33,7 @@ const reportToHeader = JSON.stringify({
 
 const securityHeaders = [
   {
-    key: isProd ? "Content-Security-Policy-Report-Only" : "Content-Security-Policy",
+    key: "Content-Security-Policy",
     value: cspDirectives,
   },
   { key: "Report-To", value: reportToHeader },

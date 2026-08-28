@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { jsonLdGraph, breadcrumbListSchema } from "@/lib/schema";
 import {
@@ -15,6 +16,7 @@ export const metadata: Metadata = {
   description:
     "Glosario operativo de tipografía, color, layout, manual de marca y producción editorial. 40 términos definidos con ejemplos reales aplicados en los manuales que producimos.",
   alternates: { canonical: `${SITE_URL}/glosario` },
+  openGraph: ogFor("/glosario"),
 };
 
 const definedTermSetSchema = {

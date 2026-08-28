@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Política de cookies",
   description:
     "Política de cookies de Tramarca. Tipos de cookies utilizadas y opciones de configuración.",
   alternates: { canonical: `${SITE_URL}/cookies` },
+  openGraph: ogFor("/cookies"),
 };
 
 export default function CookiesPage() {

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { POSTS, CATEGORY_LABEL, type BlogCategory } from "@/lib/blog";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { jsonLdGraph, breadcrumbListSchema, collectionPageSchema } from "@/lib/schema";
 
@@ -11,6 +12,7 @@ export const metadata: Metadata = {
   description:
     "Guías, análisis de manuales famosos (NASA, Mailchimp, British Rail), curiosidades de logos y decisiones editoriales del estudio Tramarca. Contenido sin adornos.",
   alternates: { canonical: `${SITE_URL}/blog` },
+  openGraph: ogFor("/blog"),
 };
 
 const schemaGraph = jsonLdGraph(

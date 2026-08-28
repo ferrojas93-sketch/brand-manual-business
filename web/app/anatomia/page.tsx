@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ogFor } from "@/lib/seo";
 import Image from "next/image";
 import { ButtonLink, ButtonLinkTracked } from "@/components/Button";
 import { Reveal } from "@/components/Reveal";
@@ -12,6 +13,7 @@ export const metadata: Metadata = {
   description:
     "Qué hay dentro de un manual de marca Tramarca: 16 capítulos, 48 componentes documentados, desglosados por tier — Esencial 490€, Profesional 990€, Premium 1.990€ IVA incl.",
   alternates: { canonical: `${SITE_URL}/anatomia` },
+  openGraph: ogFor("/anatomia"),
 };
 
 const schemaGraph = jsonLdGraph(
@@ -32,7 +34,7 @@ const TIERS: Tier[] = ["E", "P", "M"];
 
 function TierBadge({ tiers }: { tiers: Tier[] }) {
   return (
-    <div className="flex items-center gap-1" aria-label={`Incluido en: ${tiers.map((t) => TIER_LABEL[t]).join(", ")}`}>
+    <div className="flex items-center gap-1" role="img" aria-label={`Incluido en: ${tiers.map((t) => TIER_LABEL[t]).join(", ")}`}>
       {TIERS.map((t) => (
         <span
           key={t}

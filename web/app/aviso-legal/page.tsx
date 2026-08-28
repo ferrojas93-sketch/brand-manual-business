@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Aviso legal",
   description: "Aviso legal de Tramarca. Titular, objeto del sitio y condiciones de uso.",
   alternates: { canonical: `${SITE_URL}/aviso-legal` },
+  openGraph: ogFor("/aviso-legal"),
 };
 
 export default function AvisoLegalPage() {

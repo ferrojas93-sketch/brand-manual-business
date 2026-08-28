@@ -6,6 +6,7 @@ import { MANUALES, getManual } from "@/lib/manuales";
 import { ButtonLink, ButtonLinkTracked } from "@/components/Button";
 import { ManualRequestForm } from "@/components/ManualRequestForm";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import {
   jsonLdGraph,
@@ -32,6 +33,7 @@ export async function generateMetadata({
     title: `${m.name} — manual de marca ${m.pages}pp`,
     description: `Caso: manual de marca ${m.pages} páginas entregado por Tramarca. Sistema, paleta, tipografía y guidelines de aplicación. Tier ${tierLabel}.`,
     alternates: { canonical: `${SITE_URL}/trabajos/${m.slug}` },
+    openGraph: ogFor(`/trabajos/${m.slug}`),
   };
 }
 

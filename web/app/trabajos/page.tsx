@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MANUALES } from "@/lib/manuales";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 import { JsonLd } from "@/components/JsonLd";
 import { ButtonLink } from "@/components/Button";
 import {
@@ -18,6 +19,7 @@ export const metadata: Metadata = {
   title: "Trabajos · Portfolio de manuales entregados",
   description: `${MANUALES.length} manuales de marca entregados por Tramarca — ${TOTAL_PAGES} páginas publicadas, ${SECTORS} sectores. Trabajo real, precio cerrado, plazo publicado.`,
   alternates: { canonical: `${SITE_URL}/trabajos` },
+  openGraph: ogFor("/trabajos"),
 };
 
 const schemaGraph = jsonLdGraph(
@@ -80,7 +82,7 @@ export default function TrabajosPage() {
                 Portfolio<span className="text-lacre">.</span>
               </h1>
               <p className="mt-8 max-w-md text-base md:text-lg text-piedra leading-[1.6]">
-                Cinco manuales publicados. Trabajo real para clientes reales,
+                Cuatro manuales para cliente y el nuestro propio, todos publicados,
                 entregado a precio cerrado y plazo publicado. Cada uno con caso
                 de estudio detallado — brief, decisiones, sistema y aplicaciones<span className="text-lacre">.</span>
               </p>
@@ -151,12 +153,9 @@ export default function TrabajosPage() {
                         </p>
                         {m.showDetail && (
                           <p className="mt-3 font-mono text-[11px] uppercase tracking-[0.2em] text-lacre">
-                            <Link
-                              href={`/trabajos/${m.slug}`}
-                              className="hover:text-lacre-hover underline underline-offset-4"
-                            >
+                            <span className="underline underline-offset-4 group-hover:text-lacre-hover">
                               Ver caso completo →
-                            </Link>
+                            </span>
                           </p>
                         )}
                       </div>
@@ -168,7 +167,17 @@ export default function TrabajosPage() {
                       key={m.slug}
                       className="border-b border-negro/15"
                     >
-                      {Body}
+                      {m.showDetail ? (
+                        <Link
+                          href={`/trabajos/${m.slug}`}
+                          aria-label={`Ver caso completo de ${m.name}`}
+                          className="group block hover:bg-negro/[0.03] focus-visible:outline-2 focus-visible:outline-lacre focus-visible:outline-offset-[-2px] transition-colors"
+                        >
+                          {Body}
+                        </Link>
+                      ) : (
+                        Body
+                      )}
                     </li>
                   );
                 })}

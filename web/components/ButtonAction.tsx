@@ -10,7 +10,7 @@ type Size = "md" | "lg";
 
 const variantStyles: Record<Variant, string> = {
   primary:
-    "bg-lacre text-papel hover:bg-lacre-hover border border-lacre hover:border-lacre-hover",
+    "bg-lacre-deep text-papel hover:bg-lacre border border-lacre-deep hover:border-lacre",
   secondary:
     "bg-papel text-negro hover:bg-arena border border-negro/20 hover:border-negro/40",
   ghost: "bg-transparent text-negro hover:bg-negro/5 border border-transparent",

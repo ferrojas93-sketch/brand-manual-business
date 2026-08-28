@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/tiers";
+import { ogFor } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "Política de privacidad",
   description:
     "Política de privacidad de Tramarca. Tratamiento de datos personales conforme al RGPD y la LOPDGDD.",
   alternates: { canonical: `${SITE_URL}/privacidad` },
+  openGraph: ogFor("/privacidad"),
   robots: { index: true, follow: true },
 };
 
@@ -108,6 +110,10 @@ export default function PrivacidadPage() {
             <li>
               <strong>Resend</strong> (envío transaccional de correos — cláusulas contractuales
               tipo de la Comisión Europea para transferencias fuera del EEE).
+            </li>
+            <li>
+              <strong>Cloudflare</strong> (verificación anti-bot Turnstile en los formularios —
+              recibe la dirección IP con la única finalidad de prevenir fraude y abuso).
             </li>
             <li>
               <strong>Vercel</strong> (hosting — cláusulas contractuales tipo de la Comisión
